@@ -53,6 +53,11 @@ p {
     font-size: 24px;
 }
 
+.wltable {
+	white-space: nowrap;
+	border-spacing: 15px;
+}
+
 .codelong {
     display: block;
     white-space: pre-wrap;
