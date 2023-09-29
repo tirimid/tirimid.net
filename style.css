@@ -1,5 +1,6 @@
 html {
-    color-scheme: dark light;
+    background-color: #080808;
+    color: #eeeeee;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 2%;
@@ -13,11 +14,20 @@ h1 {
 
 h2, h3 {
     text-align: center;
-    border-bottom: 2px solid #cccccc;
+    border-bottom: 2px solid #444444;
 }
 
 table {
     border-spacing: 6px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+code {
+    color: #ffffbb;
 }
 
 .codelong {
