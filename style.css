@@ -6,17 +6,17 @@ html {
 }
 
 h1 {
-	padding-bottom: 3%;
+    padding-bottom: 3%;
     text-align: center;
 }
 
 h2, h3 {
     text-align: center;
-	border-bottom: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
 }
 
 table {
-	border-spacing: 6px;
+    border-spacing: 6px;
 }
 
 .codelong {
