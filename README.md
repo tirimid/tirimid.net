@@ -1,2 +1,2 @@
-# tirimid.github.io
+# tirimid.net
 My website for publishing things
