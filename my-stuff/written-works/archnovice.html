@@ -23,7 +23,7 @@
       <li>
         <p>
           An x86_64-(sometimes called x64)-based computer with WiFi support
-          which you want to install Linux on
+          which you want to install Linux on*
         </p>
       </li>
       <li>
@@ -38,6 +38,11 @@
         </p>
       </li>
     </ul>
+    <p>
+      *I will be using WiFi for internet connectivity, but if you are willing to
+      adapt the information in this document to other needs, you can certainly
+      use something else like Ethernet.
+    </p>
     <p>
       If you have these few requirements, and you put your mind to the task, you
       will be able to gain a deep understanding in and experience with Linux. If
@@ -60,7 +65,9 @@
     </p>
     <p>
       I hope you find this instructional document useful. I have tried to keep
-      it concise while still detailing everything you will need to know.
+      it concise while still detailing everything you will need to know. Of
+      course, this means that I will be simplifying a lot and omitting a lot of
+      technical details - but oh so is the price of a 101-level introduction.
     </p>
     <h2>Preliminary</h2>
     <h3>Parts of a computer</h3>
@@ -104,21 +111,21 @@
             The GPU (Graphics Processing Unit) works in a somewhat similar way
             to the CPU. It, too, is used for executing code, but the code it
             executes is different from the code that the CPU executes. See,
-            unlike the CPU (which can do only a few things but does them very
-            fast), the GPU can do <em>very many</em> things, but it doesn't do
-            them as fast. This makes it suited to different tasks than the CPU.
-            While the CPU is best suited to complex logic and the handling of
-            basic programs, the GPU - due to its highly parallel nature - is
-            best suited to simple, but very repetitive tasks. For example, a
-            videogame calculating how each pixel on the screen should be
-            rendered is a very predictable, repetitive task. You could,
-            theoretically, perform it on a CPU - as it would be able to handle
-            it - but you would get terrible framerate. See, even though the CPU
-            is fast, the sheer number of operations that need to be performed
-            completely overwhelm it. Thus, they are done on the GPU - each
-            "thread of execution" is given only a few tasks individually, but
-            put together, their collective speed allows the GPU to be
-            significantly faster for videogame rendering than the CPU
+            unlike the CPU (which can do only a few things at any given moment
+            but does them very fast), the GPU can do <em>very many</em> things,
+            but it doesn't do them as fast. This makes it suited to different
+            tasks than the CPU. While the CPU is best suited to complex logic
+            and the handling of basic programs, the GPU - due to its highly
+            parallel nature - is best suited to simple, but very repetitive
+            tasks. For example, a videogame calculating how each pixel on the
+            screen should be rendered is a very predictable, repetitive task.
+            You could, theoretically, perform it on a CPU - as it would be able
+            to handle it - but you would get terrible framerate. See, even
+            though the CPU is fast, the sheer number of operations that need to
+            be performed completely overwhelm it. Thus, they are done on the
+            GPU - each "thread of execution" is given only a few tasks
+            individually, but put together, their collective speed allows the
+            GPU to be significantly faster for videogame rendering than the CPU
           </p>
         </td>
       </tr>
@@ -158,11 +165,64 @@
             <b>Disk</b>
           </p>
         </td>
+        <td>
+          <p>
+            If RAM is the short term memory, then the disk is the long term
+            memory of a computer. Like RAM, the disk can have information
+            written to and read from it - but there are multiple ways in which
+            the two differ. Most importantly, information written to the disk
+            will not be lost if the computer is turned off, as it does not
+            require continuous power to be supplied to it in order to store
+            data. Whenever you save a document on your computer, it is saved to
+            the disk. Another, less important difference is that no matter what
+            kind of disk you use, reading from / writing to it will be
+            significantly slower than doing the same thing in RAM, so you want
+            the computer to utilize RAM as efficiently as possible for the best
+            performance. The ways in which your computer interacts with the
+            disks inside it are standardized, and probably the most common
+            standards in use today are SATA and NVMe - you don't need to know
+            how either of those standards work, but you should probably at least
+            know them by name. Finally, the last difference you need to know
+            between RAM and the disk, is that the disk has significantly more
+            space available on it than RAM does - if you've ever opened Task
+            Manager and looked at your RAM usage, you will see that it probably
+            has a max space of something like 4, 8, or 16GB. Compare this to
+            your disk space, which is typically a max of many hundred gigabytes,
+            or even a few terabytes
+          </p>
+        </td>
       </tr>
       <tr>
         <td>
           <p>
             <b>Motherboard</b>
+          </p>
+        </td>
+        <td>
+          <p>
+            To continue the organ system metaphor, the motherboard is like the
+            blood vessels or nervous system of the computer - it ties all the
+            other components together in such a way that they can interact with
+            each other and be made useful. All the components of your computer
+            are physically connected into the motherboard. Another important
+            function of the motherboard is that it stores the computer's "BIOS",
+            the (B)asic (I)nput / (O)utput (S)ystem. Whenever your computer
+            boots up, it first checks that it indeed booted correctly, and then
+            makes use of BIOS to perform a range of simple tasks, so that it can
+            load the operating system you have installed on it. Another crucial
+            function of BIOS is giving you basic access to your computer's
+            components and configuration at a system level - through something
+            called the "boot menu". Whenever you are powering on your computer,
+            and you press the "boot menu key" - usually F2, F9, F10, F12, etc.
+            although this isn't standardized - you will be brought into a simple
+            menu which allows you to configure and view certain details about
+            your computer. I recommend you try this <em>now</em> to know which
+            key to press and how to navigate your boot menu. You may need to
+            restart your computer and try again several times in order to
+            properly figure this out. More modern systems will probably have
+            something called UEFI instead of BIOS, but the difference is not
+            significant here. Just know that they do basically the same thing
+            but they work in different ways, and UEFI has benefits over BIOS
           </p>
         </td>
       </tr>
@@ -183,9 +243,16 @@
         </td>
       </tr>
     </table>
+    <p>
+      Of course, the average home PC has much more than just <em>these</em>
+      components in it, but most of the others just serve an auxiliary purpose
+      and you really don't need to deeply understand them unless you are trying
+      to do something fairly specific.
+    </p>
     <h3>What are files and folders?</h3>
     <h3>What is an OS?</h3>
     <h3>What is Linux?</h3>
+    <h2>Before installing Linux...</h2>
     <h2>The OS installation</h2>
     <h2>After the installation</h2>
     <h2>What now?</h2>
