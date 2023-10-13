@@ -5,6 +5,88 @@
   </head>
   <body>
     <h1>ipa-translate</h1>
-    <p>stuff will be added here eventually...</p>
+    <h2>What is ipa-translate?</h2>
+    <p>
+      ipa-translate is a Rust crate which implements functionality implementing
+      multiple common standards for converting ASCII text into Unicode IPA
+      (International Phonetic Alphabet) text. The currently implemented
+      standards are:
+    </p>
+    <ul>
+      <li>
+        <p>
+          "Branner" (implemented according to
+          <a href="https://en.wikipedia.org/wiki/Comparison_of_ASCII_encodings_of_the_International_Phonetic_Alphabet" target="_blank">
+            this Wikipedia article</a>*)
+        </p>
+      </li>
+      <li>
+        <p>
+          Praat (implemented according to
+          <a href="https://www.fon.hum.uva.nl/praat/manual/Phonetic_symbols.html" target="_blank">
+            this Praat manual entry</a>)
+        </p>
+      </li>
+      <li>
+        <p>
+          SIL (implemented according to
+          <a href="https://help.keyman.com/keyboard/sil_ipa/1.8.6/sil_ipa" target="_blank">
+            this KeymanHelp page</a>**)
+        </p>
+      </li>
+      <li>
+        <p>
+          X-SAMPA (implemented according to
+          <a href="https://en.wikipedia.org/wiki/X-SAMPA" target="_blank">
+            this Wikipedia article</a>)
+        </p>
+      </li>
+    </ul>
+    <p>
+      *Slight implementation differences to given specification, please see
+      <code>/translations/branner.rs</code> for details
+    </p>
+    <p>
+      **Slight implementation differences to given specification, please see
+      <code>/translations/sil.rs</code> for details
+    </p>
+    <h2>Adding ipa-translate to your project</h2>
+    <p>
+      As with practically any other Rust crate, ipa-translate is hosted on
+      <a href="https://crates.io/crates/ipa-translate" target="_blank">
+        crates.io</a>, and has a
+      <a href="https://github.com/tirimid/ipa-translate" target="_blank">GitHub
+        page</a> using which you may clone the source directly or contribute to
+      the project. To add ipa-translate to your Cargo-based Rust project, run:
+    </p>
+    <code class="codelong">
+$ cargo add ipa-translate
+    </code>
+    <p>
+      To clone the source from GitHub, run:
+    </p>
+    <code class="codelong">
+$ git clone https://github.com/tirimid/ipa-translate
+    </code>
+    <h2>Using ipa-translate</h2>
+    <p>
+      The source example in the README explains the usage well:
+    </p>
+    <code class="codelong">
+use ipa_translate;
+
+fn main() {
+    let ipa = "prʲɪvʲet";
+    let xsampa = "pr_jIv_jet";
+    let praat = r"pr\^j\icv\^jet";
+    let branner = "prj^Ivj^et";
+    let sil = "prj^i=vj^et";
+
+    assert_eq!(ipa_translate::xsampa_to_ipa(xsampa), ipa);
+    assert_eq!(ipa_translate::praat_to_ipa(praat), ipa);
+    assert_eq!(ipa_translate::branner_to_ipa(branner), ipa);
+    assert_eq!(ipa_translate::sil_to_ipa(sil), ipa);
+}
+    </code>
   </body>
 </html>

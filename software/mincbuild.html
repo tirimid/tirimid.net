@@ -24,8 +24,8 @@
       doing this anyway, that's not really an issue.
     </p>
     <p>
-      As of writing this, mincbuild is only 936 lines of C code, and the
-      resulting binary from the build is 36KB in size. For reference, the CMake
+      As of writing this, mincbuild is only 991 lines of C code, and the
+      resulting binary from the build is 40KB in size. For reference, the CMake
       source tree is <em>over 1 MILLION lines of code!</em> While this bloat
       might kind of be useful in extremely large codebases, more minimalist
       software has zero need for that sorta crap.
@@ -497,6 +497,42 @@ $ mincbuild
     <code class="codelong">
 $ mincbuild buildinfo.conf
     </code>
+    <p>
+      You may also pass some command line flags to mincbuild in the standard
+      <code>getopt()</code>-compatible format in order to change certain parts
+      of the build process in such a way that a successful build won't differ in
+      any way than a clean <code>mincbuild</code> invocation, but still provide
+      some kind of useful functionality. The possible flags are:
+    </p>
+    <table>
+      <tr>
+        <td>
+          <code>-r</code>
+        </td>
+        <td>
+          The pruning phase of the build will be skipped and all files will be
+          compiled. Even already built objects that don't strictly require
+          rebuilding will be recompiled. This is useful in two main cases: a) if
+          you change the <code>mincbuild.conf</code> and want to rebuild the
+          project with the new settings, and b) if some part of your toolchain
+          has changed in such a way that a full rebuild is necessary
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>-v</code>
+        </td>
+        <td>
+          Verbose output regarding the build process will be written to standard
+          output. The progress messages that are normally outputted will also
+          contain the commands invoked by mincbuild at that point in the build
+        </td>
+      </tr>
+    </table>
+    <p>
+      As well as the basic <code>-h</code> flag that everyone already
+      understands.
+    </p>
     <p>
       You now understand everything there is to know about the basics of using
       mincbuild, and can stop reading if you are not interested in anything more
