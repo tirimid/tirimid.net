@@ -8,10 +8,9 @@
     <h1>ipa-translate</h1>
     <h2>What is ipa-translate?</h2>
     <p>
-      ipa-translate is a Rust crate which implements functionality implementing
-      multiple common standards for converting ASCII text into Unicode IPA
-      (International Phonetic Alphabet) text. The currently implemented
-      standards are:
+      ipa-translate is a Rust crate implementing multiple common standards
+      for converting ASCII text into Unicode IPA (International Phonetic
+      Alphabet) text. The currently implemented standards are:
     </p>
     <ul>
       <li>
@@ -44,11 +43,11 @@
       </li>
     </ul>
     <p>
-      *Slight implementation differences to given specification, please see
+      *Slight implementation differences to given specification, see
       <code>/translations/branner.rs</code> for details
     </p>
     <p>
-      **Slight implementation differences to given specification, please see
+      **Slight implementation differences to given specification, see
       <code>/translations/sil.rs</code> for details
     </p>
     <h2>Adding ipa-translate to your project</h2>
@@ -69,6 +68,14 @@ $ cargo add ipa-translate
     <code class="codelong">
 $ git clone https://github.com/tirimid/ipa-translate
     </code>
+    <p>
+      ipa-translate 0.1.8 has only one dependency, lazy-static, which a massive
+      number of other crates already depend on, so no other dependencies will be
+      added if you choose to use it in any reasonably sized project. The core
+      functionality of ipa-translate, the actual ASCII-IPA translation, is done
+      using functions from the Rust standard library since version 0.1.8,
+      keeping the implementation minimal and fast.
+    </p>
     <h2>Using ipa-translate</h2>
     <p>
       The source example in the README explains the usage well:
