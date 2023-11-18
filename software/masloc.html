@@ -5,6 +5,91 @@
   </head>
   <body>
     <h1>MASLOC</h1>
+    <p>
+      <i>
+        This webpage explains the creation, usage, and rationale behind the
+        (M)acro (A)ssembler (S)tyle (L)anguage (O)ptimizing (C)ompiler. It has
+        nothing to do with the Microfinance and Small Loans Centre, or the place
+        in Romania. The names being similar is simply a coincidence and I have
+        no association with either of the aforementioned entities.
+      </i>
+    </p>
+    <h2>What is MASLOC?</h2>
+    <p>stuff will be added here eventually...</p>
+    <h2>Why did I make MASLOC?</h2>
+    <p>stuff will be added here eventually...</p>
+    <h2>Using MASLOC</h2>
+    <p>stuff will be added here eventually...</p>
+    <h2>The compilation process</h2>
+    <p>stuff will be added here eventually...</p>
+    <h2>Standard library reference</h2>
+    <p>stuff will be added here eventually...</p>
+    <h2>Interop with other languages</h2>
+    <p>stuff will be added here eventually...</p>
+    <h2>Code examples</h2>
+    <h3>Hello world</h3>
+    <code class="codelong">
+import "std/hosted/io.mc"
+import "std/hosted/pgctl.mc"
+
+export fn
+_start
+{
+    "hello world\n" io_puts ();
+    0 pgctl_exit ();
+}
+    </code>
+    <h3>Hello world with Linux syscalls</h3>
+    <code class="codelong">
+// obviously, much of this could be inlined and in a real program should not be
+// uselessly extracted into their own functions.
+// this implementation is simply meant to make `_start` as similar as possible
+// to the version that uses the standard library.
+
+fn [abi := "sysv"]
+exit (rc: i32)
+{
+    asm {
+        "\tmov $60, %rax\n"
+        "\tsyscall\n"
+    }
+}
+
+fn [abi := "sysv"]
+write (fd: u32; s: u8*; n: u64)
+{
+    asm {
+        "\tmov $1, %rax\n"
+        "\tsyscall\n"
+    }
+}
+
+fn
+strlen: u64; (s: u8*)
+{
+    dim n: u64 := 0;
+
+    while 0 n s + [] != {
+        n +@;
+    }
+
+    ret n;
+}
+
+fn
+puts (s: u8*)
+{
+    s strlen () s 1 write ();
+}
+
+export fn
+_start
+{
+    "hello world\n" puts ();
+    0 exit ();
+}
+    </code>
+    <h3><code>echo</code> clone</h3>
     <p>stuff will be added here eventually...</p>
   </body>
 </html>
