@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../res/favicon.ico">
     <title>tirimid.net - MASLOC</title>
   </head>
   <body>
@@ -32,11 +33,11 @@
 import "std/hosted/io.mc"
 import "std/hosted/pgctl.mc"
 
-export fn
+glob fn
 _start
 {
-    "hello world\n" io_puts ();
-    0 pgctl_exit ();
+    ("hello world\n" io_puts);
+    (0 pgctl_exit);
 }
     </code>
     <h3>Hello world with Linux syscalls</h3>
@@ -56,7 +57,7 @@ exit (rc: i32)
 }
 
 fn [abi := "sysv"]
-write (fd: u32; s: u8*; n: u64)
+write (fd: u32, s: u8*, n: u64)
 {
     asm {
         "\tmov $1, %rax\n"
@@ -65,7 +66,7 @@ write (fd: u32; s: u8*; n: u64)
 }
 
 fn
-strlen: u64 (s: u8*)
+strlen: u64 <- (s: u8*)
 {
     dim n: u64 := 0;
 
@@ -79,17 +80,61 @@ strlen: u64 (s: u8*)
 fn
 puts (s: u8*)
 {
-    s strlen () s 1 write ();
+    ((s strlen) s 1 write);
 }
 
-export fn
+glob fn
 _start
 {
-    "hello world\n" puts ();
-    0 exit ();
+    ("hello world\n" puts);
+    (0 exit);
 }
     </code>
     <h3><code>echo</code> clone</h3>
-    <p>stuff will be added here eventually...</p>
+    <code class="codelong">
+import "std/hosted/env.mc"
+import "std/hosted/io.mc"
+import "std/hosted/pgctl.mc"
+
+glob fn
+_start
+{
+    for dim i: u64 := 1; (env_argc) i <; i +@ {
+        (i (env_argv) + [] "%s\n" io_printf);
+    }
+
+    (0 pgctl_exit);
+}
+    </code>
+    <h3>Fizzbuzz</h3>
+    <code class="codelong">
+import "std/hosted/io.mc"
+import "std/hosted/pgctl.mc"
+
+glob fn
+_start
+{
+    for dim i: u32 := 1; 100 i <; i +@ {
+        dim f: u8 := 0 3 i % =;
+        dim b: u8 := 0 5 i % =;
+
+        if f {
+            ("fizz" io_puts);
+        }
+
+        if b {
+            ("buzz" io_puts);
+        }
+
+        if f ! b ! && {
+            (i "%d" io_printf);
+        }
+
+        ('\n', io_putc);
+    }
+
+    (0 pgctl_exit);
+}
+    </code>
   </body>
 </html>
