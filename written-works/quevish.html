@@ -10,7 +10,8 @@
     <p>
       Quevish is a conlang I decided to make because I like conlangs and had the
       idea for one. This is not worth using for human communication and should
-      be seen as a hobby project rather than anything genuinely valuable.
+      be seen as a hobby project rather than anything genuinely valuable. In
+      fact, some parts of this will likely be poorly explained or rambly.
     </p>
     <h2>Phonology</h2>
     <h3>Phoneme Inventory + Romanization</h3>
@@ -573,8 +574,8 @@ use solid MOD VPINIT living advanced ID MOD primitive ID MOD ID NPINIT VPNPCOM
       trans. "the animal is eating", "an animal was eating", "animals eat", etc.
     </p>
     <code class="codelong">
-bym  myn    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
-use  liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
+bym myn    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
+use liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
 
 (VPNPCOM
   (VPINIT (MOD bym myn))
@@ -600,6 +601,140 @@ use  liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
       concept, rather than having to shuffle them around. Perhaps a version of
       the language that operates on a stack instead of a queue would be more
       human-usable.
+    </p>
+    <h4>VP Asserter - "goju" Particle</h4>
+    <p>
+      This particle is used in the situation that you want to mark a verb
+      <i>as</i> occuring, without giving it a subject or an agent to perform it.
+      Since a verb phrase is just a relationship and does not actually imply
+      anything material, the "goju" particle is used whenever you <i>do</i> want
+      to imply something material. The "goju" particle takes one operand, a verb
+      phrase or any other phrase constituted of a verb phrase (such as the
+      combined VPNP from the "zewi" particle), asserts it as being something
+      that materially occurs rather than just a semantic idea, and pushes the
+      result to the queue. The result may be treated as a verb phrase, just an
+      actually occuring verb phrase.
+    </p>
+    <p>
+      The "zewi" particle is by default assumed to work this way as well,
+      although you can theoretically mark it with "goju" to make it explicit.
+      So, "goju" can also be used for emphasis.
+    </p>
+    <p>
+      Example:
+    </p>
+    <code class="codelong">
+wi     guby
+living VPINIT
+    </code>
+    <p>
+      trans. "living", "to live", "to be alive", etc.
+    </p>
+    <code class="codelong">
+wi     guby   goju
+living VPINIT VPAS
+    </code>
+    <p>
+      trans. "living, which is a thing that occurs", "being alive happens", etc.
+    </p>
+    <p>
+      The interesting thing about this particle is mainly that it allows
+      subjectless sentences, but I also think it's just interesting to consider
+      what this kind of language feature implies about using it to describe
+      actions; since it creates a linguistic imposition of a difference between
+      an action existing in some abstract, nonperformable state, and an action
+      existing in a state of being performed abstractly. It's a bit difficult to
+      put into words, but think of a more explicit relationship between the
+      idea of running as a concept and the idea of running as a material action
+      that is being performed.
+    </p>
+    <p>
+      That's not really anything particularly amazing as far as languages or
+      philosophy go, but I still like the way in which the distinction is
+      implemented here.
+    </p>
+    <p>
+      One cool thing you can do though is this:
+    </p>
+    <code class="codelong">
+wi     guby   goju goju
+living VPINIT VPAS VPAS
+    </code>
+    <p>
+      trans. "living happening happens", "living, which happens, which happens",
+      etc.
+    </p>
+    <p>
+      And that's just really fun.
+    </p>
+    <h4>Target Applier - "zywo" Particle</h4>
+    <p>
+      The "zywo" particle is used to apply some target to a phrase. It takes two
+      operands - both being phrases, marks the first as somehow "tending
+      towards" or "targeting" the second, and enqueues the result of this
+      operation; allowing the result to be used as the same type of phrase as
+      the first operand. There are a few possible ways in which this could
+      appear to be useful, the most obvious of which is that it provides a way
+      to modify intransitive verbs to give them an object, thus making them
+      transitive. But, also, it ought be understood that this is not the
+      <i>only</i> way to use "zywo". The particle itself is just an assertion
+      that one thing targets, goes towards, tends towards, etc. another. You
+      could just as easily use it to describe mathematical limits; where one
+      value tends to another, or the tendency of the rate of profit to fall, or
+      my own tendency to do useless creative projects. You might also use it to
+      describe the tendency of an action to slow over time. The main point is
+      that it describes a target or tendency in a neutral sense.
+    </p>
+    <p>
+      Example:
+    </p>
+    <code class="codelong">
+bym myn    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
+use liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
+
+myn    wo           zi ga  zywo
+liquid life-causing ID MOD TGAP
+
+(TGAP
+  (VPNPCOM
+    (VPINIT (MOD bym myn))
+    (NPINIT (MOD (MOD wi bo) ju)))
+  (NPINIT (MOD myn wo)))
+    </code>
+    <p>
+      trans. "people drink water", "humanity has made use of water", etc.
+    </p>
+    <code class="codelong">
+wo     be     ga  mo    ga  gane   no     zi ga  zi gane   zywo
+divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP
+
+(TGAP
+  (NPINIT (MOD (MOD wo be) mo))
+  (NPINIT no))
+    </code>
+    <p>
+      trans. "religion shrinking in scope", "religiosity becoming less popular"*
+    </p>
+    <p>
+      *Remember that "zywo" is largely a grammatical, not necessarily strictly
+      semantic, assertion of tendency. The actual example here is not really a
+      sentence stating that "religion <i>is</i> becoming less popular", but
+      rather the idea <i>of</i> religion becoming less popular. If you actually
+      wanted to say that, you could say:
+    </p>
+    <code class="codelong">
+wo     be     ga  no    ga  gane   no     zi ga  zi gane   zywo guby   goju
+divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
+
+(VPAS
+  (VPINIT
+    (TGAP
+      (NPINIT (MOD (MOD wo be) mo))
+      (NPINIT no))))
+    </code>
+    <p>
+      trans. "religion is shrinking in scope", "religiosity is becoming less
+      popular", etc.
     </p>
     <h2>Custom Orthography</h2>
     <p>stuff will be added here eventually...</p>
@@ -676,6 +811,30 @@ use  liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
         <td>
           <p>
             "zewi" intransitive VPNP combiner
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            VPAS
+          </p>
+        </td>
+        <td>
+          <p>
+            "goju" VP asserter
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            TGAP
+          </p>
+        </td>
+        <td>
+          <p>
+            "zywo" target applier
           </p>
         </td>
       </tr>
