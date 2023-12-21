@@ -6,6 +6,8 @@ html {
     padding-top: 2%;
     padding-bottom: 2%;
     font-family: sans-serif;
+    width: 80ch;
+    margin: 0 auto;
 }
 
 h1 {
