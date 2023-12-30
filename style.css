@@ -1,10 +1,13 @@
 html {
+    background-image: url("res/bg.png");
+    background-repeat: repeat;
+    padding: 2%;
+}
+
+body {
     background-color: #080808;
     color: #eeeeee;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 4%;
     font-family: sans-serif;
     width: 80ch;
     margin: 0 auto;
