@@ -32,7 +32,7 @@ The actual `vvsml` binary takes two arguments. Run `vvsml` to see the following:
 
 ```
 $ vvsml
-error usage: `vvsml &lt;source file&gt; &lt;output file&gt;`
+error usage: `vvsml <source file> <output file>`
 ```
 
 The `source file` is meant to be the name of a VVSML source file, and `output
