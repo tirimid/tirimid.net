@@ -6,6 +6,7 @@ title: tirimid.net
 # tirimid.net
 
 ## About me
+
 * Main online usernames: tirimid, Tirimid, polytopelover
 * Preferred pronouns: any
 * Languages I understand: English, Russian
@@ -31,6 +32,7 @@ tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
 ## My written works
+
 * [The Sleeptalker Ritual](written-works/sleeptalkerritual.html): A
   ritualpasta-style thing about talking to spirits by doing an intentional
   possession of a person
@@ -38,6 +40,7 @@ not expect an immediate response.
   "evaluation" of a queue with a fairly regular and consistent syntax
 
 ## My software
+
 * [BFC](software/bfc.html): A tiny brainfuck compiler that turns brainfuck
   source input into GNU-as-compatible assembly output
 * [escl](software/escl.html): A hyperminimalist privelege elevation program,
