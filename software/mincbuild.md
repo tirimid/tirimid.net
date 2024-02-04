@@ -1,92 +1,82 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="../style.css"/>
-    <link rel="icon" href="../res/favicon.ico"/>
-    <title>tirimid.net - mincbuild</title>
-  </head>
-  <body>
-    <h1>mincbuild</h1>
-    <h2>What is mincbuild?</h2>
-    <p>
-      Mincbuild, which stands for (Min)imalist (C) (Build)system, is a
-      buildsystem designed to make project build easier for other minimalist
-      C(++) software. Now, you may be worried that this is just like all the
-      other buildsystems, and it has some shitty DSL that was designed by a
-      group of crackheads rolling dice to decide on fundamental features, but
-      no! The only piece of necessary configuration is a single conf file that
-      describes the basics of how your project should be built.
-    </p>
-    <p>
-      Of course, with no buildsystem DSL, mincbuild is meaningfully more
-      restrictive than other buildsystems. For example, you cannot build one set
-      of files using one command, and another set of files using another command
-      without setting up multiple configurations, but given that the target
-      usage for mincbuild is other minimalist software which shouldn't really be
-      doing this anyway, that's not really an issue.
-    </p>
-    <p>
-      As of writing this, mincbuild is only 991 lines of C code, and the
-      resulting binary from the build is 40KB in size. For reference, the CMake
-      source tree is <em>over 1 MILLION lines of code!</em> While this bloat
-      might kind of be useful in extremely large codebases, more minimalist
-      software has zero need for that sorta crap.
-    </p>
-    <p>
-      If your software is so minimalist (or designed in such a way) that the
-      entire source implementation fits in one file, you are better off using
-      something like Make, because mincbuild (while it will also work for this
-      use-case) is meant specifically for minimalist software implemented across
-      multiple source files.
-    </p>
-    <h2>Installation and setup</h2>
-    <p>
-      First, clone the repository from
-      <a href="https://github.com/tirimid/mincbuild" target="_blank">
-        the GitHub
-      </a>
-      using:
-    </p>
-    <code class="codelong">
+---
+layout: default
+title: mincbuild
+---
+
+# mincbuild
+
+## What is mincbuild?
+
+Mincbuild, which stands for (Min)imalist (C) (Build)system, is a buildsystem
+designed to make project build easier for other minimalist C(++) software. Now,
+you may be worried that this is just like all the other buildsystems, and it has
+some shitty DSL that was designed by a group of crackheads rolling dice to
+decide on fundamental features, but no! The only piece of necessary
+configuration is a single conf file that describes the basics of how your
+project should be built.
+
+Of course, with no buildsystem DSL, mincbuild is meaningfully more restrictive
+than other buildsystems. For example, you cannot build one set of files using
+one command, and another set of files using another command without setting up
+multiple configurations, but given that the target usage for mincbuild is other
+minimalist software which shouldn't really be doing this anyway, that's not
+really an issue.
+
+As of writing this, mincbuild is only 991 lines of C code, and the resulting
+binary from the build is 40KB in size. For reference, the CMake source tree is
+*over 1 MILLION lines of code!* While this bloat might kind of be useful in
+extremely large codebases, more minimalist software has zero need for that sorta
+crap.
+
+If your software is so minimalist (or designed in such a way) that the entire
+source implementation fits in one file, you are better off using something like
+Make, because mincbuild (while it will also work for this use-case) is meant
+specifically for minimalist software implemented across multiple source files.
+
+## Installation and setup
+
+First, clone the repository from [the GitHub](https://github.com/tirimid/mincbuild)
+using:
+
+```
 $ git clone https://github.com/tirimid/mincbuild
 $ cd mincbuild
-    </code>
-    <p>
-      Then, build the program. To do this, you will need a Linux system (or
-      perhaps MinGW or MacOS, I haven't tried it on either of those). Mincbuild
-      only relies on dependencies that should be available on any typical Linux
-      system (i.e. POSIX regex, POSIX threads, etc.), in accordance with a
-      minimalist philosophy of software design.
-    </p>
-    <code class="codelong">
+```
+
+Then, build the program. To do this, you will need a Linux system (or perhaps
+MinGW or MacOS, I haven't tried it on either of those). Mincbuild only relies on
+dependencies that should be available on any typical Linux system (i.e. POSIX
+regex, POSIX threads, etc.), in accordance with a minimalist philosophy of
+software design.
+
+```
 $ ./bootstrap.sh
 $ ./mincbuild
-    </code>
-    <p>
-      You will see a bunch of build progress output written to standard output
-      when rebuilding with the <code>mincbuild</code> binary. This is by design,
-      as I've always been frustrated with buildsystems that give you no
-      indication as to how long is left until the build is complete. After the
-      build, you may want to install the <code>mincbuild</code> binary to your
-      system path, so that you can more easily access it for usage. This can be
-      done using:
-    </p>
-    <code class="codelong">
+```
+
+You will see a bunch of build progress output written to standard output when
+rebuilding with the `mincbuild` binary. This is by design, as I've always been
+frustrated with buildsystems that give you no indication as to how long is left
+until the build is complete. After the build, you may want to install the
+`mincbuild` binary to your system path, so that you can more easily access it
+for usage. This can be done using:
+
+```
 $ ./install.sh
-    </code>
-    <p>
-      Which will install the binary to the <code>/usr/bin</code> directory. If
-      you wish to install manually to a different location, you may also do
-      that, as the <code>mincbuild</code> binary has no dependencies in the
-      filesystem other than the libraries it links with during the build.
-      Assuming you have installed the binary using <code>install.sh</code>, it
-      can be uninstalled by running <code>uninstall.sh</code>.
-    </p>
-    <h2>Using mincbuild</h2>
-    <p>
-      First, to use mincbuild for a project, your project must follow a set,
-      simple directory structure:
-    </p>
-    <code class="codelong">
+```
+
+Which will install the binary to the `/usr/bin` directory. If you wish to
+install manually to a different location, you may also do that, as the
+`mincbuild` binary has no dependencies in the filesystem other than the
+libraries it links with during the build. Assuming you have installed the binary
+using `install.sh`, it can be uninstalled by running `uninstall.sh`.
+
+## Using mincbuild
+
+First, to use mincbuild for a project, your project must follow a set, simple
+directory structure:
+
+```
 project/
     source-files/
         file.c
@@ -97,193 +87,54 @@ project/
         file.h
         ...
     mincbuild.conf
-    </code>
-    <p>
-      Obviously, the names of the files / directories involved can be changed,
-      they have just been named descriptively here for ease of understanding.
-      The main thing here is that this directory <em>structure</em> is set in
-      stone. Technically you can just use a single source directory for
-      everything and mincbuild will allow it, but by design, mincbuild is meant
-      for the structure outlined above. The rationale behind this is that it
-      enforces a consistent project organization which is common and easy to
-      understand. Anyway, that part is fairly obvious and requires no further
-      elaboration - the interesting thing is the <code>mincbuild.conf</code>.
-    </p>
-    <p>
-      The mincbuild conf takes the form of <code>key = value</code>
-      configuration pairs (notice the significant whitespace between the
-      <code>key</code>, <code>=</code>, and <code>value</code>). Comments begin
-      with a <code>#</code>, as with most basic conf files - and only lines
-      which <em>begin</em> with a <code>#</code> (not including leading
-      whitespace) will be treated as a comment. If a <code>#</code> comment
-      appears at the end of an otherwise non-comment line, it will not be
-      treated as a comment.
-    </p>
-    <p>
-      To begin with, there are a few keys that are absolutely essential to the
-      compilation phase of the build, and mincbuild will output an error if any
-      of these are missing. See the table below:
-    </p>
-    <table>
-      <tr>
-        <td>
-          <p>
-            <code>cc</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Path to the compiler used for compilation
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>cflags</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Flags passed to the compiler upon invocation
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>src_dir</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Path to the project source directory
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>inc_dir</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Path to the project header directory
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>lib_dir</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Path to the project build directory where compiled object files will
-            be placed
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>produce_output</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Boolean value determining whether linking should occur after the
-            compilation phase of the build
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>src_exts</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Space-separated list of all file extensions used for source files
-            within the project
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>hdr_exts</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Space-separated list of all file extensions used for header files
-            within the project
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>incs</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Space-separated list of all directories that should be added to the
-            include path besides the project include directory. Used for
-            dependencies stored on the project source tree
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>cc_inc_fmt</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Determines how include paths will be passed to the compiler upon
-            invocation. Should almost always be set to <code>-I%i</code>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>cc_cmd_fmt</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Determines how the compiler will be invoked. Should almost always be
-            set to <code>%c %f -o %c -c %s %i</code>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>cc_success_rc</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Return code outputted by the compiler upon a successful compilation
-            after being invoked. Should usually be set to <code>0</code>
-          </p>
-        </td>
-      </tr>
-    </table>
-    <p>
-      A basic <code>mincbuild.conf</code> which contains all of these keys would
-      look something like this:
-    </p>
-    <code class="codelong">
+```
+
+Obviously, the names of the files / directories involved can be changed, they
+have just been named descriptively here for ease of understanding. The main
+thing here is that this directory *structure* is set in stone. Technically you
+can just use a single source directory for everything and mincbuild will allow
+it, but by design, mincbuild is meant for the structure outlined above. The
+rationale behind this is that it enforces a consistent project organization
+which is common and easy to understand. Anyway, that part is fairly obvious and
+requires no further elaboration - the interesting thing is the `mincbuild.conf`.
+
+The mincbuild conf takes the form of `key = value` configuration pairs (notice
+the significant whitespace between the `key`, `=`, and `value`). Comments begin
+with a `#`, as with most basic conf files - and only lines which *begin* with a
+`#` (not including leading whitespace) will be treated as a comment. If a `#`
+comment appears at the end of an otherwise non-comment line, it will not be
+treated as a comment.
+
+To begin with, there are a few keys that are absolutely essential to the
+compilation phase of the build, and mincbuild will output an error if any of
+these are missing. See below:
+
+* `cc`: Path to the compiler used for compilation
+* `cflags`: Flags passed to the compiler upon invocation
+* `src_dir`: Path to the project source directory
+* `inc_dir`: Path to the project header directory
+* `lib_dir`: Path to the project build directory where compiled object files
+  will be placed
+* `produce_output`: Boolean value determining whether linking should occur after
+  the compilation phase of the build
+* `src_exts`: Space-separated list of all file extensions used for source files
+  within the project
+* `hdr_exts`: Space-separated list of all file extensions used for header files
+  within the project
+* `incs`: Space-separated list of all directories that should be added to the
+  include path besides the project include directory. Used for dependencies
+  stored on the project source tree
+* `cc_inc_fmt`: Determines how include paths will be passed to the compiler upon
+  invocation. Should almost always be set to `-I%i`
+* `cc_cmd_fmt`: Determines how the compiler will be invoked. Should almost
+  always be set to `%c %f -o %c -c %s %i`
+* `cc_success_rc`: Return code outputted by the compiler upon a successful
+  compilation after being invoked. Should usually be set to `0`
+
+A basic `mincbuild.conf` which contains all of these keys would look
+something like this:
+
+```
 # toolchain.
 cc = /usr/bin/gcc
 cflags = -std=c99 -pedantic
@@ -303,146 +154,49 @@ incs = NONE
 cc_inc_fmt = -I%i
 cc_cmd_fmt = %c %f -o %o -c %s %i
 cc_success_rc = 0
-    </code>
-    <p>
-      ... which will define a C project with a <code>src</code> source file
-      directory, an <code>include</code> header file directory, and a
-      <code>lib</code> object file output directory. Unlike <code>src</code> and
-      <code>include</code>, <code>lib</code> does not need to exist before the
-      build process - and will be automatically created if it is missing. When
-      mincbuild is invoked here, all source files in <code>src</code> will be
-      compiled to corresponding object files in <code>lib</code>, but the build
-      will stop at that. No linking will occur and you will be left with
-      <em>just</em> compiled object files - which is useful in the situation
-      that you want to link them individually into other projects.
-    </p>
-    <p>
-      Oh, and, by the way, in case you haven't noticed - the dummy name
-      <code>NONE</code> is used whenever a key should have an empty value,
-      rather than just leaving it blank. Another thing to keep in mind is that
-      trailing significant whitespace applies to the values of the configuration
-      file: i.e. a value "hello" is different to another value "hello " (notice
-      the trailing space) but it is <em>not</em> different to " hello" (notice
-      the leading space). This is important to note because if you meant to pass
-      "<code>NONE</code>" as one of the values, but accidentally passed
-      "<code>NONE </code>" (with a trailing space), the behavior will not be the
-      same in both cases.
-    </p>
-    <p>
-      However, for most projects it won't be enough to simply compile all the
-      sources - you want to link them all together. In order to do this, you
-      will need to set <code>produce_output</code> to <code>true</code> and
-      define the following keys, without which the mincbuild linking phase
-      cannot occur and an error will be outputted:
-    </p>
-    <table>
-      <tr>
-        <td>
-          <p>
-            <code>ld</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Path to the linker used for linking
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>ldflags</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Flags passed to the linker upon invocation
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>output</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Name of the output binary created upon linking
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>libs</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Space-separated list of all libraries that should be linked into the
-            project
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>ld_lib_fmt</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Determines how libraries will be passed to the linker upon
-            invocation. Should usually be set to <code>-l%l<code>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>ld_obj_fmt</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Determines how object files will be passed to the linker upon
-            invocation. Should almost always be set to <code>%o</code>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>ld_cmd_fmt</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Determines how the linker will be invoked. Should almost always be
-            set to <code>%c %f -o %b %o %l</code>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <code>ld_success_rc</code>
-          </p>
-        </td>
-        <td>
-          <p>
-            Return code outputted by the linker upon a successful linking after
-            being invoked. Should usually be set to <code>0</code>
-          </p>
-        </td>
-      </tr>
-    </table>
-    <p>
-      A basic <code>mincbuild.conf</code> which implements compilation and
-      linking would look something like:
-    </p>
-    <code class="codelong">
+```
+
+... which will define a C project with a `src` source file directory, an
+`include` header file directory, and a `lib` object file output directory.
+Unlike `src` and `include`, `lib` does not need to exist before the build
+process - and will be automatically created if it is missing. When mincbuild is
+invoked here, all source files in `src` will be compiled to corresponding object
+files in `lib`, but the build will stop at that. No linking will occur and you
+will be left with *just* compiled object files - which is useful in the
+situation that you want to link them individually into other projects.
+
+Oh, and, by the way, in case you haven't noticed - the dummy name `NONE` is used
+whenever a key should have an empty value, rather than just leaving it blank.
+Another thing to keep in mind is that trailing significant whitespace applies to
+the values of the configuration file: i.e. a value "hello" is different to
+another value "hello " (notice the trailing space) but it is *not* different to
+" hello" (notice the leading space). This is important to note because if you
+meant to pass "`NONE`" as one of the values, but accidentally passed "`NONE `"
+(with a trailing space), the behavior will not be the same in both cases.
+
+However, for most projects it won't be enough to simply compile all the
+sources - you want to link them all together. In order to do this, you will need
+to set `produce_output` to `true` and define the following keys, without which
+the mincbuild linking phase cannot occur and an error will be outputted:
+
+* `ld`: Path to the linker used for linking
+* `ldflags`: Flags passed to the linker upon invocation
+* `output`: Name of the output binary created upon linking
+* `libs`: Space-separated list of all libraries that should be linked into the
+  project
+* `ld_lib_fmt`: Determines how libraries will be passed to the linker upon
+  invocation. Should usually be set to `-l%l`
+* `ld_obj_fmt`: Determines how object files will be passed to the linker upon
+  invocation. Should almost always be set to `%o`
+* `ld_cmd_fmt`: Determines how the linker will be invoked. Should almost always
+  be set to `%c %f -o %b %o %l`
+* `ld_success_rc`: Return code outputted by the linker upon a successful linking
+  after being invoked. Should usually be set to `0`
+
+A basic `mincbuild.conf` which implements compilation and linking would look
+something like:
+
+```
 # toolchain.
 cc = /usr/bin/gcc
 ld = /usr/bin/gcc
@@ -470,80 +224,62 @@ ld_obj_fmt = %o
 ld_cmd_fmt = %c %f -o %b %o %l
 cc_success_rc = 0
 ld_success_rc = 0
-    </code>
-    <p>
-      ... which will define a C project with all the same properties as before,
-      except mincbuild will now also link the compiled object files into an
-      output binary called <code>demo</code>.
-    </p>
-    <p>
-      Finally, that's basically all you need to understand about the mincbuild
-      conf file and I can move on to the <code>mincbuild</code> command line
-      tool you built during the previous part of this guide. Using the
-      <code>mincbuild</code> command line tool is extremely simple. Just
-      navigate to the project directory which contains the
-      <code>mincbuild.conf</code>, and run:
-    </p>
-    <code class="codelong">
+```
+
+... which will define a C project with all the same properties as before, except
+mincbuild will now also link the compiled object files into an output binary
+called `demo`.
+
+Finally, that's basically all you need to understand about the mincbuild conf
+file and I can move on to the `mincbuild` command line tool you built during the
+previous part of this guide. Using the `mincbuild` command line tool is
+extremely simple. Just navigate to the project directory which contains the
+`mincbuild.conf`, and run:
+
+```
 $ mincbuild
-    </code>
-    <p>
-      Nice. Very simple. However, I said earlier that "the names of the files /
-      directories [in the project] can be changed", and this includes the
-      mincbuild conf. This is true, you can rename it to anything. If you rename
-      <code>mincbuild.conf</code> to something else, say,
-      <code>buildinfo.conf</code> or something, you will need to run the
-      following command instead:
-    </p>
-    <code class="codelong">
+```
+
+Nice. Very simple. However, I said earlier that "the names of the files /
+directories [in the project] can be changed", and this includes the mincbuild
+conf. This is true, you can rename it to anything. If you rename
+`mincbuild.conf` to something else, say, `buildinfo.conf` or something, you will
+need to run the following command instead:
+
+```
 $ mincbuild buildinfo.conf
-    </code>
-    <p>
-      You may also pass some command line flags to mincbuild in the standard
-      <code>getopt()</code>-compatible format in order to change certain parts
-      of the build process in such a way that a successful build won't differ in
-      any way than a clean <code>mincbuild</code> invocation, but still provide
-      some kind of useful functionality. The possible flags are:
-    </p>
-    <table>
-      <tr>
-        <td>
-          <code>-r</code>
-        </td>
-        <td>
-          The pruning phase of the build will be skipped and all files will be
-          compiled. Even already built objects that don't strictly require
-          rebuilding will be recompiled. This is useful in two main cases: a) if
-          you change the <code>mincbuild.conf</code> and want to rebuild the
-          project with the new settings, and b) if some part of your toolchain
-          has changed in such a way that a full rebuild is necessary
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>-v</code>
-        </td>
-        <td>
-          Verbose output regarding the build process will be written to standard
-          output. The progress messages that are normally outputted will also
-          contain the commands invoked by mincbuild at that point in the build
-        </td>
-      </tr>
-    </table>
-    <p>
-      As well as the basic <code>-h</code> flag that everyone already
-      understands.
-    </p>
-    <p>
-      You now understand everything there is to know about the basics of using
-      mincbuild, and can stop reading if you are not interested in anything more
-      complex.
-    </p>
-    <h2>The mincbuild build process explained</h2>
-    <p>stuff will be added here eventually...</p>
-    <h2>Using mincbuild to build libraries</h2>
-    <p>stuff will be added here eventually...</p>
-    <h2>Using mincbuild for non-C(++) projects</h2>
-    <p>stuff will be added here eventually...</p>
-  </body>
-</html>
+```
+
+You may also pass some command line flags to mincbuild in the standard
+`getopt()`-compatible format in order to change certain parts of the build
+process in such a way that a successful build won't differ in any way than a
+clean `mincbuild` invocation, but still provide some kind of useful
+functionality. The possible flags are:
+
+* `-r`: The pruning phase of the build will be skipped and all files will be
+  compiled. Even already built objects that don't strictly require rebuilding
+  will be recompiled. This is useful in two main cases: a) if you change the
+  `mincbuild.conf` and want to rebuild the project with the new settings, and b)
+  if some part of your toolchain has changed in such a way that a full rebuild
+  is necessary
+* `-v`: Verbose output regarding the build process will be written to standard
+  output. The progress messages that are normally outputted will also contain
+  the commands invoked by mincbuild at that point in the build
+
+As well as the basic `-h` flag that everyone already understands.
+
+You now understand everything there is to know about the basics of using
+mincbuild, and can stop reading if you are not interested in anything more
+complex.
+
+## The mincbuild build process explained
+
+stuff will be added here eventually...
+
+## Using mincbuild to build libraries
+
+stuff will be added here eventually...
+
+## Using mincbuild for non-C(++) projects
+
+stuff will be added here eventually...
