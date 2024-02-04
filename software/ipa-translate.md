@@ -17,10 +17,10 @@ The currently implemented standards are:
 * X-SAMPA (implemented according to [this Wikipedia Article](https://en.wikipedia.org/wiki/X-SAMPA))
 
 [^1]: Slight implementation differences to given specification, see
-`/translations/branner.rs` for details.
+      `/translations/branner.rs` for details.
 
 [^2]: Slight implementation differences to given specification, see
-`/translation/sil.rs` for details.
+      `/translation/sil.rs` for details.
 
 ## Adding ipa-translate to your project
 
