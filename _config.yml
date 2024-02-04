@@ -1,9 +1,2 @@
 remote_theme: tareqdandachi/jekyll-shell-theme
-
-header_pages:
-  - index.md
-  - written-works/quevish.md
-  - software/medioed.md
-  - software/mincbuild.md
-
 highlighter: rouge
