@@ -32,9 +32,9 @@ $ git clone https://github.com/tirimid/medioed
 $ cd medioed
 ```
 
-At this point you will need to have [mincbuild](mincbuild.html) installed, as
-that is the buildsystem I used for medioed. Actually, my desire to make medioed
-was a big reason I even created mincbuild to begin with. Anyway, once you have
+At this point you will need to have [mincbuild](mincbuild.md) installed, as that
+is the buildsystem I used for medioed. Actually, my desire to make medioed was a
+big reason I even created mincbuild to begin with. Anyway, once you have
 mincbuild installed, you can build medioed. Run:
 
 ```
