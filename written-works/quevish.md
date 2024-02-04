@@ -36,7 +36,7 @@ rounded. See below the vowels along with their Romanizations:
 
 | **-**         | **Front** | **Center** | **Back** |
 |---------------|-----------|------------|----------|
-| ***Close***   | i         | -          | u        |
+| **Close**     | i         | -          | u        |
 | **Nearclose** | -         | y          | -        |
 | **Openmid**   | e         | -          | o        |
 | **Open**      | a         | -          | -        |
