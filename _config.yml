@@ -1,2 +1,6 @@
 remote_theme: tareqdandachi/jekyll-shell-theme
+
+header_pages:
+  - index.md
+
 highlighter: rouge
