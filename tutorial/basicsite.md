@@ -20,12 +20,12 @@ engaged in more technical web activity, this guide should be suitable for you.
 
 First: what actually *is* a website?
 
-Well, it's actually rather simple. A website is a collection of files and
-directories (sometimes called folders), referencing each other in a way that
-gives them an overall "cohesion". This collection of files is then stored on a
-server, and the server's network is made available to the general public. When
-you access a website through your browser, all you are doing is downloading
-files and getting your browser to display them in a fancy way.
+Well, that's rather simple. A website is a collection of files and directories
+(sometimes called folders), referencing each other in a way that gives them an
+overall "cohesion". This collection of files is then stored on a server, and the
+server's network is made available to the general public. When you access a
+website through your browser, all you are doing is downloading files and getting
+your browser to display them in a fancy way.
 
 Knowing this, we can be more precise about *static* websites. A static website
 is just a site where the server's files don't need to be refreshed
@@ -34,7 +34,7 @@ change those files manually and upload them to the server[^1].
 
 So, we can actually move onto creating the site now.
 
-The technology we'll be using is called GitHub Pages, and in order to you it,
+The technology we'll be using is called GitHub Pages, and in order to use it,
 you need to [create a GitHub account](https://github.com/signup). If you plan to
 do any kind of programming or software development, you should already have a
 GitHub account.
