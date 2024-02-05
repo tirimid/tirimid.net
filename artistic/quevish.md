@@ -504,7 +504,7 @@ marker (C2/WM). The RHL is purely an orthographic feature with no influence on
 the syllable derived from a graph, but the other features have very real
 influence. These features are arranged within a graph as shown below:
 
-![](../res/written-works/quevish/graphlabeled.webp)
+![](../res/artistic/quevish/graphlabeled.webp)
 
 In this way, all graphs are monospacing horizontally.
 
@@ -513,13 +513,13 @@ syllable is, based on the modifications made to the base semi-square line which
 "hugs" the V. These modifications correspond to their respective phonemes as
 follows:
 
-![](../res/written-works/quevish/c1types.webp)
+![](../res/artistic/quevish/c1types.webp)
 
 And the V shows the nucleus vowel of a syllable. The square in the labeled graph
 is replaced by one of the following to represent the corresponding nucleus
 vowels:
 
-![](../res/written-works/quevish/vtypes.webp)
+![](../res/artistic/quevish/vtypes.webp)
 
 The way I derived these symbols is mostly arbitrary for the C1, but the V is
 based entirely (with some minor creative liberty) on the International Phonetic
@@ -536,11 +536,11 @@ more intuitive that was still readable.
 As an example of a word written in this orthography (ignoring C2/WM, we'll get
 there), we can take the verb phrase initializer, "guby":
 
-![](../res/written-works/quevish/guby.webp)
+![](../res/artistic/quevish/guby.webp)
 
 ... which is written the way it is because:
 
-![](../res/written-works/quevish/gubylabeled.webp)
+![](../res/artistic/quevish/gubylabeled.webp)
 
 So that should give you an idea of how the Basic Featural Orthography works for
 C-V pairs. Notice that, as I said, the RHL has no phonemic value and is only
@@ -552,7 +552,7 @@ parts, all of which are optional and used only in specific situations. These
 parts are the word start (WS), the second consonant (C2), and the word end (WE).
 They are divided in a manner like this:
 
-![](../res/written-works/quevish/c2wmlabeled.webp)
+![](../res/artistic/quevish/c2wmlabeled.webp)
 
 ... where the collective whole (C2/WM) is divided into the WS on the left, the
 C2 in the middle, and the WE on the right. The WS and WE have no direct value on
@@ -564,7 +564,7 @@ written as a diagonal down-right facing line, the WE as a dialogal up-right
 facing line. See below an example of what a word-initial, word-middle, and
 word-final syllable ("wi") would look like according to this rule:
 
-![](../res/written-works/quevish/wsweexample.webp)
+![](../res/artistic/quevish/wsweexample.webp)
 
 If you remember back to the phonotactics, there are three possible syllable
 structures: CV, CVm, and CVn. The C2 of a graph is used to indicate the phonemic
@@ -572,16 +572,16 @@ value of the coda consonant of a syllable. If it is absent, the syllable has no
 coda consonant and takes the CV form. Otherwise, the C2 corresponds to the "m"
 and "n" sounds as follows:
 
-![](../res/written-works/quevish/c2types.webp)
+![](../res/artistic/quevish/c2types.webp)
 
 As an example of how the C2 is written, see the following word, written with WS
 and WE omitted but featuring C1, V, C2, and RHL:
 
-![](../res/written-works/quevish/menja.webp)
+![](../res/artistic/quevish/menja.webp)
 
 ... written as such because:
 
-![](../res/written-works/quevish/menjalabeled.webp)
+![](../res/artistic/quevish/menjalabeled.webp)
 
 And for an in-practice example, take the sentence "wi guby goju":
 
@@ -594,11 +594,11 @@ trans. "living happens", "things are alive", "life is occuring", etc.
 
 Which is written as:
 
-![](../res/written-works/quevish/wigubygoju.webp)
+![](../res/artistic/quevish/wigubygoju.webp)
 
 ... because:
 
-![](../res/written-works/quevish/wigubygojulabeled.webp)
+![](../res/artistic/quevish/wigubygojulabeled.webp)
 
 In this larger example we see a demonstration of all the orthographic features
 except for the graph C2. It is easy to see at a glance where words begin and end
