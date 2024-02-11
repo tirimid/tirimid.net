@@ -103,7 +103,7 @@ the block is executed. The minimum to fulfill this would be two jump labels, and
 a conditional jump instruction, something like this:
 
 ```asm
-    cmp $0, (%r13) // BFC uses `r13` to store the data pointer.
+    cmpb $0, (%r13) // BFC uses `r13` to store the data pointer.
     je .Lce_1
 .Lcb_0: // BFC uses `cb_` as a prefix for condbegin jump labels.
     // ...
