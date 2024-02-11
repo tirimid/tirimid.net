@@ -77,7 +77,7 @@ Start by assigning every conditional ('[' and ']', which I shall call condbegin
 and condend respectively) its own "index" or "value" within the source. For
 example, take this short piece of Brainfuck code:
 
-```bf
+```
 >++++++++ [A <+++++++++>- ]B <.
 >++++ [C <+++++++>- ]D <+.
 ```
@@ -102,7 +102,7 @@ current position of the data pointer is 0, then you perform the jump. Otherwise,
 the block is executed. The minimum to fulfill this would be two jump labels, and
 a conditional jump instruction, something like this:
 
-```asm
+```
     cmpb $0, (%r13) // BFC uses `r13` to store the data pointer.
     je .Lce_1
 .Lcb_0: // BFC uses `cb_` as a prefix for condbegin jump labels.
@@ -172,7 +172,7 @@ the way data increments and decrements interact.
 See, one optimization I implemented was something like "increment shortening".
 That is, something like the following code:
 
-```asm
+```
     // equivalent to Brainfuck `++++`.
 .Lcb_0:
     incb (%r13)
@@ -184,7 +184,7 @@ That is, something like the following code:
 
 ... would get optimized to:
 
-```asm
+```
     // equivalent to Brainfuck `++++`.
 .Lcb_0:
     addb $4, (%r13)
@@ -202,7 +202,7 @@ own compiler.
 
 For instance, this code:
 
-```asm
+```
     // equivalent to Brainfuck `+++--`.
 .Lcb_0:
     inb (%r13)
@@ -215,7 +215,7 @@ For instance, this code:
 
 ... could trivially be optimized to:
 
-```asm
+```
     // equivalent to Brainfuck `+++--`.
     // three increments and two decrements is mathematically equivalent to one
     // increment.
