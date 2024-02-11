@@ -128,8 +128,8 @@ In practice, what BFC does is it creates a variable, `nests_rem`, and assigns it
 an initial value of 1. It also creates a variable called `jmplabel` with the
 currently stored label value, as described above. Then, it runs through the
 Brainfuck source from the current point; incrementing `nests_rem` if the current
-character is '[', and decrementing `nests_rem` if it is `]`. In either case, if
-the character is either `[` or `]`, `jmplabel` is incremented. As soon as
+character is '[', and decrementing `nests_rem` if it is ']'. In either case, if
+the character is either '[' or ']', `jmplabel` is incremented. As soon as
 `nests_rems` reaches zero, this algorithm terminates. By the end of this
 process, `jmplabel` is the index of the destination of the conditional jump. BFC
 doesn't need to worry about whether the label with this index actually exists
@@ -138,7 +138,7 @@ program.
 
 In the case of encountering a condend, you can simply follow this procedure but
 seek backwards through the source instead of forwards, and increment `nests_rem`
-in the case of a `]`, decrementing it in the case of a `[`.
+in the case of a ']', decrementing it in the case of a '['.
 
 BFC also adds jump label prefixes for readability when the generation is
 complete (i.e. `cb_XXXX`, `ce_XXXX`), but this is actually not necessary. Every
