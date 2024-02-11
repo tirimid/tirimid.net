@@ -55,7 +55,7 @@ After installation, you can run BFC in the following ways:
    GNU assembler, `/usr/bin/as`, and then GNU linker, `/usr/bin/ld`, after
    initial compilation):
    ```
-   $ bfc -bo input.bf output.o
+   $ bfc -bo input.bf output
    ```
 
 This is all detailed in the help menu displayed upon running:
