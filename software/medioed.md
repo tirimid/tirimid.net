@@ -67,18 +67,18 @@ At this point, no more setup is necessary.
 
 ## Using medioed
 
-After installation, you can run <code>medioed</code> in your terminal in a few
-different ways. Either you can run it on its own, with no arguments, or you can
-run it with an arbitrary number of arguments (which represent the files which
-will be opened in buffers upon program startup). You can then also specify any
-of the following options:
+After installation, you can run `medioed` in your terminal in a few different
+ways. Either you can run it on its own, with no arguments, or you can run it
+with an arbitrary number of arguments (which represent the files which will be
+opened in buffers upon program startup). You can then also specify any of the
+following options:
 
 * `-c`: Any files passed as arguments will be created if they don't exist. If
   they already exist, they will simply be opened normally, as if the flag hasn't
   been passed
 * `-d`: stderr will be redirected to a file specified in the source code. By
-  default, it will be called <code>medioed.log</code>. This is only useful for
-  development and debugging changes made to the source code
+  default, it will be called `medioed.log`. This is only useful for development
+  and debugging changes made to the source code
 * `-r`: Any opened external files will be treated as read-only and you will be
   unable to edit them. This includes files passed as command line arguments and
   those opened from within medioed using the C-x C-f keybind.

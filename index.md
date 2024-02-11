@@ -34,6 +34,8 @@ not expect an immediate response.
 
 ## Software
 
+* [BFC](software/bfc.md): A tiny brainfuck compiler that turns Brainfuck source
+  input into GNU-as-compatible assembly output
 * [escl](software/escl.md): A hyperminimalist privelege elevation program,
   similar to sudo or doas
 * [ipa-translate](software/ipa-translate.md): A Rust crate for translating ASCII
