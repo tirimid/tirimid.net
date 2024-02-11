@@ -34,27 +34,15 @@ not expect an immediate response.
 
 ## Software
 
-* [BFC](software/bfc.md): A tiny brainfuck compiler that turns brainfuck source
-  input into GNU-as-compatible assembly output
 * [escl](software/escl.md): A hyperminimalist privelege elevation program,
   similar to sudo or doas
-* [goblind](software/goblind.md): A minimalist tool for making daemons which
-  regularly execute commands on your system
 * [ipa-translate](software/ipa-translate.md): A Rust crate for translating ASCII
   text into the International Phonetic Alphabet (IPA)
-* [MASLOC](software/masloc.md): A low level programming language and compiler
-  designed to be extremely simple and fairly portable
 * [medioed](software/medioed.md): My personal mediocre text editor
 * [mincbuild](software/mincbuild.md): A minimal C(++) buildsystem which doesn't
   require you to learn any new technology, like a DSL
 * [VVSML](software/vvsml.md): A very simple markup language with fun syntax and
   utterly deranged features
-
-## Tutorials
-
-* [Making a Basic Static Site](tutorial/basicsite.md): A guide on how to create
-  a very basic static site using GitHub pages and Markdown, suitable for someone
-  with little to no technical knowledge
 
 ## Artistic written works
 
