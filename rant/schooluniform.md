@@ -31,7 +31,7 @@ The previously described implementation is an awful way to do school uniforms.
 I will do this in a sort of "response" format. That is, I have - throughout my
 time at the school - asked teachers and staff why the uniforms work this way,
 and they have given me various fallacious explanations. And I will explain why
-these explanations fail.
+these justifications fail.
 
 ### "Uniforms promote equality!"
 
