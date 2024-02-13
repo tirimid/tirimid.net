@@ -32,6 +32,11 @@ If you need to contact me for some reason, you can send an email to
 tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
+## Rants
+
+* [The Way School Uniforms Work is Garbage](rant/schooluniform.md): A short
+  essay rant about the (terrible) way school uniforms often work
+
 ## Software
 
 * [BFC](software/bfc.md): A tiny brainfuck compiler that turns Brainfuck source
