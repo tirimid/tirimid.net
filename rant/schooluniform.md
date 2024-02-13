@@ -95,10 +95,10 @@ otherwise. Bullying is basically *never* a rational thing. A bully isn't just
 gonna change their mind like that - can you imagine how odd it would be if they
 did?
 
-> Hmm, I wanted to tease you for your clothing, but it appears that would be
-  hypocritical of me to do - so I will not. Say, as your bully, would you like
-  to logically convince me of anything else? I am very willing to understand
-  your situation.
+"Hmm, I wanted to tease you for your clothing, but it appears that would be
+hypocritical of me to do - so I will not. Say, as your bully, would you like to
+logically convince me of anything else? I am very willing to understand your
+situation"
 
 ... said *noone ever*.
 
