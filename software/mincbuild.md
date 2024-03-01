@@ -22,8 +22,8 @@ multiple configurations, but given that the target usage for mincbuild is other
 minimalist software which shouldn't really be doing this anyway, that's not
 really an issue.
 
-As of writing this, mincbuild is only 991 lines of C code, and the resulting
-binary from the build is 40KB in size. For reference, the CMake source tree is
+As of writing this, mincbuild is only 1073 lines of C code, and the resulting
+binary from the build is 44KB in size. For reference, the CMake source tree is
 *over 1 MILLION lines of code!* While this bloat might kind of be useful in
 extremely large codebases, more minimalist software has zero need for that sorta
 crap.
@@ -43,33 +43,53 @@ $ git clone https://github.com/tirimid/mincbuild
 $ cd mincbuild
 ```
 
-Then, build the program. To do this, you will need a Linux system (or perhaps
-MinGW or MacOS, I haven't tried it on either of those). Mincbuild only relies on
-dependencies that should be available on any typical Linux system (i.e. POSIX
-regex, POSIX threads, etc.), in accordance with a minimalist philosophy of
-software design.
+Then, build the program. On Linux, this is a very simple process - mincbuild is
+designed for it. I have also had success with building mincbuild on Windows
+through MinGW, but it can be a trivial bit more involved.
+
+To build on Linux, run:
 
 ```
 $ ./bootstrap.sh
 $ ./mincbuild
 ```
 
-You will see a bunch of build progress output written to standard output when
-rebuilding with the `mincbuild` binary. This is by design, as I've always been
-frustrated with buildsystems that give you no indication as to how long is left
-until the build is complete. After the build, you may want to install the
-`mincbuild` binary to your system path, so that you can more easily access it
-for usage. This can be done using:
+To build on MinGW:
+
+1. Open `bootstrap.sh` in an editor (probably GNU nano)
+2. Remove `-lpthread` from `LIBS` (MinGW may not support pthread)
+3. Add `-DPRUNE_SINGLE_THREAD -DCOMPILE_SINGLE_THREAD` to `CFLAGS`
+4. Exit your text editor
+5. Run `./bootstrap.sh`
+6. If you get errors about how "uint16 is undefined" or something, you can do an
+   evil - *evil* - (but working) hack where you just go into the file causing
+   the error and insert a `typedef unsigned short uint16;`. You can also add an
+   `#include <sys/types.h>` higher up if needed, but it probably shouldn't be.
+7. Run `CFLAGS="-std=c99 -pedantic -D_POSIX_C_SOURCE=200809 -D_GNU_SOURCE
+   -DPRUNE_SINGLE_THREAD -DCOMPILE_SINGLE_THREAD" ./mincbuild.exe`
+
+You will notice upon the `mincbuild` binary that it prints build output with an
+extremely simple progress bar. This is because I've personally always hated it
+when buildsystems or build processes in general don't give you even a vague
+indication of how long is left until completion.
+
+As another note - something worth knowing is that the whole "PRUNE_SINGLE_THREAD
+COMPILE_SINGLE_THREAD" thing you do on MinGW will obviously neuter multithreaded
+functionality. This sucks for general usage, but is actually quite nice if you
+have specific compatibility requirements (I suppose MinGW actually counts as
+one?).
+
+Anyway - now, you can install mincbuild to your system. To do this, run:
 
 ```
-$ ./install.sh
+# ./install.sh
 ```
 
-Which will install the binary to the `/usr/bin` directory. If you wish to
-install manually to a different location, you may also do that, as the
-`mincbuild` binary has no dependencies in the filesystem other than the
-libraries it links with during the build. Assuming you have installed the binary
-using `install.sh`, it can be uninstalled by running `uninstall.sh`.
+And if you ever want to remove mincbuild from your system, run:
+
+```
+# ./uninstall.sh
+```
 
 ## Using mincbuild
 
@@ -104,6 +124,8 @@ with a `#`, as with most basic conf files - and only lines which *begin* with a
 `#` (not including leading whitespace) will be treated as a comment. If a `#`
 comment appears at the end of an otherwise non-comment line, it will not be
 treated as a comment.
+
+### Simple compilation
 
 To begin with, there are a few keys that are absolutely essential to the
 compilation phase of the build, and mincbuild will output an error if any of
@@ -174,6 +196,8 @@ another value "hello " (notice the trailing space) but it is *not* different to
 meant to pass "`NONE`" as one of the values, but accidentally passed "`NONE `"
 (with a trailing space), the behavior will not be the same in both cases.
 
+### Linking the project
+
 However, for most projects it won't be enough to simply compile all the
 sources - you want to link them all together. In order to do this, you will need
 to set `produce_output` to `true` and define the following keys, without which
@@ -230,6 +254,8 @@ ld_success_rc = 0
 mincbuild will now also link the compiled object files into an output binary
 called `demo`.
 
+### Using the binary
+
 Finally, that's basically all you need to understand about the mincbuild conf
 file and I can move on to the `mincbuild` command line tool you built during the
 previous part of this guide. Using the `mincbuild` command line tool is
@@ -268,18 +294,50 @@ functionality. The possible flags are:
 
 As well as the basic `-h` flag that everyone already understands.
 
+### Temporary overrides
+
+The fact that the compiler, linker, compiler flags, linker flags, etc. are
+hardcoded into the mincbuild conf is fine for most cases - especially if you've
+only tested you project on a single toolchain and cannot guarantee it building
+on anything else.
+
+However, let's say you have a program with a conditional compilation path which
+enables UTF-8 support for text handling, and to enable this conditional
+compilation path, you must compile with `-DENABLE_UTF_8_SUPPORT`. Well, it's
+fine to make an edit to the conf file if you are an end user, but if you are a
+programmer and need to frequently test your program both with *and* without
+UTF-8, it certainly gets annoying to constantly make changes to a build file.
+
+For this reason, mincbuild allows you to override specifically those variables.
+You can do this by setting the following environment variables:
+
+* `CC`: compiler
+* `LD`: linker
+* `CFLAGS`: compiler flags
+* `LDFLAGS`: linker flags
+
+So, in our above example, you might do something like:
+
+```
+$ CFLAGS="-DENABLE_UTF_8_SUPPORT mincbuild"
+```
+
+... to build with UTF-8 support.
+
+If the environment variable is not set, mincbuild will simply use the value
+specified in the conf file.
+
+As a hint, try running with `-v` to see that the command has actually changed
+after an override, and make sure it is correct. You should also remember that
+compiling different parts of the same project with different flags is often
+ill-advised.
+
+In fact, to be completely safe, you might want to run this instead:
+
+```
+$ CFLAGS="-DENABLE_UTF_8_SUPPORT mincbuild -vr"
+```
+
 You now understand everything there is to know about the basics of using
 mincbuild, and can stop reading if you are not interested in anything more
 complex.
-
-## The mincbuild build process explained
-
-stuff will be added here eventually...
-
-## Using mincbuild to build libraries
-
-stuff will be added here eventually...
-
-## Using mincbuild for non-C(++) projects
-
-stuff will be added here eventually...

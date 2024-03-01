@@ -43,6 +43,8 @@ not expect an immediate response.
   input into GNU-as-compatible assembly output
 * [escl](software/escl.md): A hyperminimalist privelege elevation program,
   similar to sudo or doas
+* [fs2di](software/fs2di.md): A program for generating disk images from
+  filesystem images
 * [ipa-translate](software/ipa-translate.md): A Rust crate for translating ASCII
   text into the International Phonetic Alphabet (IPA)
 * [medioed](software/medioed.md): My personal mediocre text editor
