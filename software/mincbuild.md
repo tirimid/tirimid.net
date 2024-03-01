@@ -339,5 +339,4 @@ $ CFLAGS="-DENABLE_UTF_8_SUPPORT mincbuild -vr"
 ```
 
 You now understand everything there is to know about the basics of using
-mincbuild, and can stop reading if you are not interested in anything more
-complex.
+mincbuild.
