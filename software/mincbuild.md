@@ -298,7 +298,7 @@ As well as the basic `-h` flag that everyone already understands.
 
 The fact that the compiler, linker, compiler flags, linker flags, etc. are
 hardcoded into the mincbuild conf is fine for most cases - especially if you've
-only tested you project on a single toolchain and cannot guarantee it building
+only tested your project on a single toolchain and cannot guarantee it building
 on anything else.
 
 However, let's say you have a program with a conditional compilation path which
@@ -319,7 +319,7 @@ You can do this by setting the following environment variables:
 So, in our above example, you might do something like:
 
 ```
-$ CFLAGS="-DENABLE_UTF_8_SUPPORT mincbuild"
+$ CFLAGS="-DENABLE_UTF_8_SUPPORT" mincbuild
 ```
 
 ... to build with UTF-8 support.
@@ -335,7 +335,7 @@ ill-advised.
 In fact, to be completely safe, you might want to run this instead:
 
 ```
-$ CFLAGS="-DENABLE_UTF_8_SUPPORT mincbuild -vr"
+$ CFLAGS="-DENABLE_UTF_8_SUPPORT" mincbuild -vr
 ```
 
 You now understand everything there is to know about the basics of using
