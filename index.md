@@ -5,6 +5,10 @@ title: tirimid.net
 
 # tirimid.net
 
+(this is me)
+
+![](res/meatmyputer.png)
+
 ## About me
 
 * Main online usernames: tirimid, Tirimid, polytopelover
