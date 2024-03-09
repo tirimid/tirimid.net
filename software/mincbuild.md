@@ -23,15 +23,13 @@ minimalist software which shouldn't really be doing this anyway, that's not
 really an issue.
 
 As of writing this, mincbuild is only 1073 lines of C code, and the resulting
-binary from the build is 44KB in size. For reference, the CMake source tree is
-*over 1 MILLION lines of code!* While this bloat might kind of be useful in
-extremely large codebases, more minimalist software has zero need for that sorta
-crap.
+binary from the build is 44KB in size.
 
 If your software is so minimalist (or designed in such a way) that the entire
 source implementation fits in one file, you are better off using something like
 Make, because mincbuild (while it will also work for this use-case) is meant
-specifically for minimalist software implemented across multiple source files.
+specifically for minimalist software implemented across multiple source files,
+allowing for incremental compilation.
 
 ## Installation and setup
 
