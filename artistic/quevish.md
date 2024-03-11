@@ -107,6 +107,11 @@ matter what other vowels the word contains. As such, we can view A-class and
 C-class vowels as mutually exclusive over a word, and B-class words as not
 having this restriction.
 
+As a simple visualization, I have created this Venn diagram (see below). Only
+vowel classes with overlap may co-occur in a word:
+
+![](../res/artistic/quevish/harmonyvenn.png)
+
 Since Quevish is a morphologically very simple language, there are no rules for
 vowel assimilation as there are no scenarios in which it has any reason to
 occur. The above phonotactic rules are more design guidelines for adding new
