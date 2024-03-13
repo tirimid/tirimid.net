@@ -456,7 +456,7 @@ liquid life-causing ID MOD TGAP
   (NPINIT (MOD myn wo)))
 ```
 
-trans. "people drink water", "humanity has made use of water", etc.
+trans. "people drinking water", "humanity making use of water", etc.
 
 ```
 wo     be     ga  mo    ga  gane   no     zi ga  zi gane   zywo
@@ -467,13 +467,13 @@ divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP
   (NPINIT no))
 ```
 
-trans. "religion shrinking in scope", "religiosity becoming less popular"[^1]
+trans. "religion shrinking in scope", "religiosity becoming less popular"
 
-[^1]: Remember that "zywo" is largely a grammatical, not necessarily strictly
-      semantic, assertion of tendency. The actual example here is not really a
-      sentence stating that "religion *is* becoming less popular", but rather
-      the idea *of* religion becoming less popular. If you actually wanted to
-      say that, you could say:
+Remember that "zywo" is largely a grammatical, not necessarily strictly
+semantic, assertion of tendency. The actual example here is not really a
+sentence stating that "religion *is* becoming less popular", but rather the idea
+*of* religion becoming less popular. If you actually wanted to say that, you
+could say:
 
 ```
 wo     be     ga  no    ga  gane   no     zi ga  zi gane   zywo guby   goju
@@ -488,6 +488,34 @@ divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
 
 trans. "religion is shrinking in scope", "religiosity is becoming less popular",
 etc.
+
+#### Tense markers
+
+At this point, it is important to state, in case it wasn't obvious, that in
+Quevish, a "grammatical particle" is a broader thing than in other languages. In
+fact, it is a catch-all term for all words in a sentence that operate on the
+evaluation queue. So, even though it may feel weird to call tense markers
+"particles", this is what they are in Quevish.
+
+stuff will be added here eventually...
+
+### Pseudo-roots
+
+Besides roots and grammatical particles, there are also pseudo-roots. I did not
+include them in the definition for how syntax is evaluated because they are
+actually just treated identically to roots. A pseudo-root is a word in a
+sentence which serves a grammatical purpose but acts like a semantic unit
+(root). They are needed because some words have meaning which is determined
+syntactically and contextually but that also implies information beyond that of
+a root.
+
+To put it in the simplest possible terms, while roots are purely semantic and
+imply nothing grammatically, psuedo-roots are conventional grammatical
+structures that are syntactically treated as if they were roots.
+
+#### Personal pronouns
+
+stuff will be added here eventually...
 
 ## Custom Orthography
 
