@@ -376,8 +376,9 @@ phrase is just a relationship and does not actually imply anything material, the
 "goju" particle takes one operand, a verb phrase or any other phrase constituted
 of a verb phrase (such as the combined VPNP from the "zewi" particle), asserts
 it as being something that materially occurs rather than just a semantic idea,
-and pushes the result to the queue. The result may be treated as a verb phrase,
-just an actually occuring verb phrase.
+and pushes the result to the queue. The result may be treated as an "asserted
+verb phrase", a subset of all verb phrases with the implication of material
+occurrance.
 
 The "zewi" particle is by default assumed to work this way as well, although you
 can theoretically mark it with "goju" to make it explicit. So, "goju" can also
@@ -489,23 +490,167 @@ divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
 trans. "religion is shrinking in scope", "religiosity is becoming less popular",
 etc.
 
+#### Passive negator - "zezy"
+
+The "zezy" particle is used to passively negate a phrase or a root. Quevish
+distinguishes between "passive negation" and "active negation". Passive negation
+is simply the absence of something, while active negation is the presence of its
+opposite. For roots and noun phrases, passive negation means forming a
+"non"-word. For verb phrases, it means the same thing but in verb form.
+
+For example, take the verb phrase:
+
+```
+bym my    ga  guby
+use solid MOD VPINIT
+```
+
+trans. "to eat", "to have eaten", "eating", etc.
+
+... and compare it to its passive negative:
+
+```
+bym my    ga  guby   zezy
+use solid MOD VPINIT PNEG
+```
+
+trans. "to not eat", "to have not eaten", "not eating", etc.
+
+#### Active negator - "gezy"
+
+The "gezy" particle is used to actively negate a phrase or a root. As described
+in the "zezy" section, active negation implies the presence of a phrase or
+root's opposite, rather than an absence of its value. For roots and noun
+phrases, active negation means forming a "counter"-word. For verb phrases, it
+means either forming a counter or a "reverse" word.
+
+To clarify the difference between active and passive negation, see the following
+examples:
+
+```
+bam zezy
+war PNEG
+```
+
+trans. "non-war", "peaceful", "calmness", etc.
+
+... compared to:
+
+```
+bam gezy
+war ANEG
+```
+
+trans. "anti-war", "against conflict", "counterterrorism", etc.
+
+As for verb phrases, they can - as stated - be either "counter" or "reverse",
+which should be determined based on context. A "counter"-verb is exactly what it
+seems like, and is semantically similar to how the above example works. A
+"reverse"-verb, however, is not. Rather than implying the presence of a verb's
+opposite, it implies the presence of a verb's reverse - like the English "un-"
+morpheme.
+
+If we take the verb phrase "bym my ga guby" (trans. "to eat") and actively
+negate it, we can interpret the difference between reverse negation and counter
+negation as follows:
+
+| **Verb phrase**     | **Negation type** | **Meaning**           |
+|---------------------|-------------------|-----------------------|
+| bym my ga guby      | None              | to eat                |
+| bym my ga guby zezy | Passive           | to not eat            |
+| bym my ga guby gezy | Active reverse    | to "un-eat"           |
+| bym my ga guby gezy | Active counter    | to vomit, to defecate |
+
+The active reverse has no good translation in English, since "un-eating" isn't
+something we conceptualize as a meaningful idea. However, this is what the
+phrase means when negated in active reverse.
+
+*Maybe "un-eat" means something like spitting out food? I interpret it as food
+rebuilding itself in the reverse way of how it was eaten, but Quevish allows
+some ambiguity.*
+
+#### Interrogative mood marker - "zanme"
+
+When asking a question, the verb in the question phrase must be marked as
+interrogative. By default, verbs are in the indicative mood, representing some
+kind of factual descriptor or material status. And in order to inquire about the
+value of something in a sentence, this is inappropriate - so the interrogative
+mood is used.
+
+The "zanme" grammatical particle is used for this. It takes one operand which is
+an asserted verb phrase, marks it as interrogative, and enqueues the result as a
+mood-marked asserted verb phrase. A "mood-marked verb phrase" is distinct from a
+"verb phrase" - the difference being that mood-marked verb phrases cannot be
+used as arguments for the mood marker particles, including zanme. In all other
+cases, mood-marked asserted verb phrases may be used as any other asserted verb
+phrase.
+
+If neither the subject or object(s) of an interrogative-marked verb is a
+question pronoun, or the verb does not have them, the question is asked with the
+intention of receiving a boolean response - either true or false.
+
+For example:
+
+```
+wo     be     ga  no    ga  gane   no     zi ga  zi gane   zywo guby   goju
+divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
+
+zanme
+INT
+
+(INT
+  (VPAS
+    (VPINIT
+      (TGAP
+        (NPINIT (MOD (MOD wo be) mo))
+        (NPINIT no)))))
+```
+
+trans. "is religion shrinking in scope?", "is religiosity becoming less
+popular?", etc.
+
+In order to respond to such a question (a *boolean* interrogative-marked
+sentence - non-boolean questions will be covered in the question pronouns
+section), you can say one of two things. Either you can reiterate the contents
+of the sentence in the indicative mood as an asserted verb phrase, using the
+passive negative if the answer is false; or you can respond using the roots
+"min" for truth, and "nin" for falsehood, relying on the other person to
+contextually determine the semantics of what you are saying.
+
+Example dialog:
+
+* A: wo be ga no ga gane no zi ga zi gane zywo guby goju zanme
+* B: min
+
+trans.:
+
+* A: is religion becoming less popular?
+* B: yes
+
+... or:
+
+* A: wo be ga no ga gane no zi ga zi gane zywo guby goju zanme
+* B: wo be ga no ga gane no zi ga zi gane zywo guby goju
+
+trans.:
+
+* A: is religion becoming less popular?
+* B: religion is becoming less popular
+
+For common conversation, the former option is easier and more practical. But for
+formal writing or professional interaction, you would probably want to use the
+latter in order to avoid ambiguity.
+
 #### Tense markers
 
-At this point, it is important to state, in case it wasn't obvious, that in
-Quevish, a "grammatical particle" is a broader thing than in other languages. In
-fact, it is a catch-all term for all words in a sentence that operate on the
-evaluation queue. So, even though it may feel weird to call tense markers
-"particles", this is what they are in Quevish.
-
-Tense markers are used to indicate the relative position of events on the
-timeline under consideration, similar to how most other languages do it. They
-each take one argument, a verb phrase, marks it as occurring on the point on the
-timeline specified by its tense, and enqueues the result as a tensed verb
-phrase. Here, I use the term "tensed verb phrase" as distinct from a "verb
-phrase" - the difference being that tensed verb phrases cannot be used as
-arguments for the tense marker particles, since that wouldn't make much sense in
-Quevish. In all other cases, tensed verb phrases may be used as any other verb
-phrase.
+Tense markers are grammatical particles used to indicate the relative position
+of events on the timeline under consideration, similar to how most other
+languages do it. They each take one argument, a verb phrase, marks it as
+occurring on the point on the timeline specified by its tense, and enqueues the
+result as a tensed verb phrase. Here, a "tensed verb phrase" is distinct from a
+"verb phrase" - the difference being that tensed verb phrases cannot be used as
+arguments for the tense marker particles. In all other cases, tensed verb
+phrases may be used as any other verb phrase.
 
 There are six tenses:
 
@@ -534,25 +679,24 @@ The above example does not make use of the tense marking particles, and I have
 just included it to demonstrate my point that immediacy / habituality are not
 considered in Quevish.
 
-By default, all verbs that are asserted with a VP-assertive particle (e.g. goju,
-zewi) are assumed to be of the present tense, so there is no marker for it. This
-may be represented as a null morpheme if you would prefer. The other tenses do
-have their own, explicit markers, which are implemented as grammatical particles
-in the manner described earlier. The following particle words are used as
-markers:
+As for tense markers, the following particles are used:
 
 | **Marker** | **Tense indicated** |
 |------------|---------------------|
 | gymbi      | Ancient past        |
 | gymbe      | Distant past        |
 | gymba      | Proximate past      |
+| gymby      | Present             |
 | gymbo      | Proximate future    |
 | gymbu      | Distant future      |
 
 You will notice that I have used the terminal vowels of these words in a very
 specific way to connect tense to a phonemic value. Front vowels fall under the
 "past" umbrella, and back vowels fall under the "future" umbrella. The more open
-the vowel is, the closer to the current moment the represented tense is.
+the vowel is, the closer to the current moment the represented tense is. The
+present tense marker, "gymby", has a center vowel; which is representative of
+the present being between the past and the future (center vowels are between
+front and back vowels).
 
 For examples of these tense markers, see the following:
 
@@ -590,8 +734,8 @@ points in time of the tenses orient themselves - so what is it? This is
 determined by the position on the timeline of the point-of-view speaker, which
 is itself determined contextually. So, for example, if I was speaking from the
 perspective of a soldier during the second world war, I would say "I am
-fighting" (using the verb phrase: bam guby) rather than "I was fighting" (using
-the verb phrase: bam guby gymba). However, if I was talking *about* that
+fighting" (using the verb phrase: bam guby gymby) rather than "I was fighting"
+(using the verb phrase: bam guby gymba). However, if I was talking *about* that
 soldier, as a modern observer rather than a historical point of view, I would
 use the proximate past tense.
 
@@ -613,6 +757,10 @@ imply nothing grammatically, psuedo-roots are conventional grammatical
 structures that are syntactically treated as if they were roots.
 
 #### Personal pronouns
+
+stuff will be added here eventually...
+
+#### Question pronouns
 
 stuff will be added here eventually...
 
@@ -771,9 +919,13 @@ stuff will be added here eventually...
 | VPNPCOM          | "zewi" intransitive VPNP combiner |
 | VPAS             | "goju" VP asserter                |
 | TGAP             | "zywo" target applier             |
+| PNEG             | "zezy" passive negator            |
+| ANEG             | "gezy" active negator             |
+| INT              | "zanme" interrogative mood marker |
 | APST             | "gymbi" ancient past marker       |
 | DPST             | "gymbe" distant past marker       |
 | PPST             | "gymba" proximate past marker     |
+| PRS              | "gymby" present marker            |
 | PFUT             | "gymbo" proximate future marker   |
 | DFUT             | "gymbu" distant future marker     |
 
@@ -796,9 +948,11 @@ them, which may alter your interpretation of the language heavily.
 | jen      | hidden, secret, encrypted, clandestine             |
 | jo       | bad, evil, harmful, complicated                    |
 | ju       | communication, talking, language, linguistics      |
+| min      | truth, correctness, following standards, compliant |
 | mo       | quantity, large, number, many, enlargement, growth |
 | my       | solid, single part, whole, entirety                |
 | myn      | liquid, gaseous, fluid, changing, in flux          |
+| nin      | falsehood, defiance, incorrect, non-standard       |
 | no       | small, few, shrinking, reduction in scope          |
 | ny       | primitive, incapable of thought                    |
 | wi       | living, moving, target of empathy                  |
