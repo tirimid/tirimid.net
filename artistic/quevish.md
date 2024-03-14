@@ -543,11 +543,11 @@ markers:
 
 | **Marker** | **Tense indicated** |
 |------------|---------------------|
-| gymbi	     | Ancient past        |
-| gymbe	     | Distant past        |
-| gymba	     | Proximate past      |
-| gymbu	     | Proximate future    |
-| gymbo	     | Distant future      |
+| gymbi      | Ancient past        |
+| gymbe      | Distant past        |
+| gymba      | Proximate past      |
+| gymbo      | Proximate future    |
+| gymbu      | Distant future      |
 
 You will notice that I have used the terminal vowels of these words in a very
 specific way to connect tense to a phonemic value. Front vowels fall under the
@@ -572,7 +572,7 @@ trans. "[in ancient times,] people were eating", "[long ago,] humanity ate",
 etc.
 
 ```
-bym my    ga  guby   gymbu wi     bo       zi ga  ju       zi ga  zi gane
+bym my    ga  guby   gymbo wi     bo       zi ga  ju       zi ga  zi gane
 use solid MOD VPINIT PFUT  living advanced ID MOD language ID MOD ID NPINIT
 
 zewi
@@ -774,8 +774,8 @@ stuff will be added here eventually...
 | APST             | "gymbi" ancient past marker       |
 | DPST             | "gymbe" distant past marker       |
 | PPST             | "gymba" proximate past marker     |
-| PFUT             | "gymbu" proximate future marker   |
-| DFUT             | "gymbo" distant future marker     |
+| PFUT             | "gymbo" proximate future marker   |
+| DFUT             | "gymbu" distant future marker     |
 
 ## Root reference dictionary
 
@@ -793,6 +793,7 @@ them, which may alter your interpretation of the language heavily.
 | bym      | usage, consumption, exploitation, able to be used  |
 | da       | immaterial, ideal, not existing, conceptual        |
 | du       | good, helpful, kind, simple                        |
+| jen      | hidden, secret, encrypted, clandestine             |
 | jo       | bad, evil, harmful, complicated                    |
 | ju       | communication, talking, language, linguistics      |
 | mo       | quantity, large, number, many, enlargement, growth |
