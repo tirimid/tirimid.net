@@ -579,7 +579,7 @@ zewi
 VPNPCOM
 
 (VPNPCOM
-  (VPINIT (MOD bym my))
+  (PFUT (VPINIT (MOD bym my)))
   (NPINIT (MOD (MOD wi bo) ju)))
 ```
 
