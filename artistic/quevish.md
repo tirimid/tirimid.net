@@ -14,7 +14,7 @@ this will likely be poorly explained or rambly.
 
 ## Phonology
 
-### Phoneme Inventory + Romanization
+### Phoneme inventory + Romanization
 
 In the Latin-script orthography for Quevish, capitalization is irrelevant and it
 is written case-insensitively. For conventional consistency, I will be writing
@@ -147,9 +147,9 @@ conventional syntactical features, just with slightly wackier format. Still,
 this is the actual process according to which phrases and sentences are
 evaluated, so forming them should simply follow the inverse process.
 
-### Grammatical Particles
+### Grammatical particles
 
-#### Modifier - "ga" Particle
+#### Modifier - "ga" particle
 
 When you want to combine words (as in, making compound "words", using adjectives
 to describe something, etc.) the "ga" grammatical particle is used. It takes two
@@ -185,7 +185,7 @@ use of specific grammatical particles for disambiguation, the actual meaning of
 the above phrase is dependent on more than the phrase itself. Still, it is meant
 to capture the "essence" of "animalness" if you will.
 
-#### Verb Phrase Initializer - "guby" Particle
+#### Verb phrase initializer - "guby" particle
 
 In Quevish, sentences must be built from the ground up, and the speaker may add
 in (or omit) as much information as they can reasonably desire. Sentences must
@@ -235,7 +235,7 @@ question the nature of something before being able to talk about it, it forces
 you to think about the way in which different parts of a phrase are really
 related to each other.
 
-#### Noun phrase initializer - "gane" Particle
+#### Noun phrase initializer - "gane" particle
 
 A noun phrase in Quevish is just a "noun" marked as being a noun phrase. Noun
 phrases may be modified like anything else, and may be used as modifiers like
@@ -277,7 +277,7 @@ particles are not limited with what they can accept as operands. What seems most
 intuitive to me for the interpretation of a verb phrase marked as a noun phrase
 is that it is effectively a gerund or participle-ey thing.
 
-#### Identity Requeuer - "zi" Particle
+#### Identity requeuer - "zi" particle
 
 Whenever you need to shuffle the queue, the "zi" identity grammatical particle
 can be used. All it does is dequeue an item from the evaluation queue, and
@@ -314,7 +314,7 @@ the same thing. In these small examples, the "zi" particle appears to not be
 very useful, but it becomes absolutely essential for queue manipulation in
 anything meaningfully complex.
 
-#### Intransitive VPNP Combiner - "zewi" Particle
+#### Intransitive VPNP combiner - "zewi" particle
 
 If you want to form an intransitive sentence / phrase (one with a subject and
 verb), the "zewi" grammatical particle is used. It takes two operands, the first
@@ -367,7 +367,7 @@ about the most recently introduced concept, rather than having to shuffle them
 around. Perhaps a version of the language that operates on a stack instead of a
 queue would be more human-usable.
 
-#### VP Asserter - "goju" Particle
+#### VP asserter - "goju" particle
 
 This particle is used in the situation that you want to mark a verb *as*
 occuring, without giving it a subject or an agent to perform it. Since a verb
@@ -423,7 +423,7 @@ trans. "living happening happens", "living, which happens, which happens", etc.
 
 And that's just really fun.
 
-#### Target Applier - "zywo" Particle
+#### Target applier - "zywo" particle
 
 The "zywo" particle is used to apply some target to a phrase. It takes two
 operands - both being phrases, marks the first as somehow "tending towards" or
@@ -497,7 +497,106 @@ fact, it is a catch-all term for all words in a sentence that operate on the
 evaluation queue. So, even though it may feel weird to call tense markers
 "particles", this is what they are in Quevish.
 
-stuff will be added here eventually...
+Tense markers are used to indicate the relative position of events on the
+timeline under consideration, similar to how most other languages do it. They
+each take one argument, a verb phrase, marks it as occurring on the point on the
+timeline specified by its tense, and enqueues the result as a tensed verb
+phrase. Here, I use the term "tensed verb phrase" as distinct from a "verb
+phrase" - the difference being that tensed verb phrases cannot be used as
+arguments for the tense marker particles, since that wouldn't make much sense in
+Quevish. In all other cases, tensed verb phrases may be used as any other verb
+phrase.
+
+There are six tenses:
+
+* Ancient past (roughly 500+ years ago)
+* Distant past (roughly 100+ years ago)
+* Proximate past (roughly 0-100 years ago)
+* Present (current events)
+* Proximate future (roughly 0-100 years in the future)
+* Distant future (roughly 100+ years in the future)
+
+Immediacy v.s. habituality are not distinguished. That is, Quevish makes no
+distinction between "the man eats" and "the man is eating":
+
+```
+bym my    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
+use solid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym my))
+  (NPINIT (MOD (MOD wi bo) ju)))
+```
+
+trans. "the man eats", "the man is eating", "the woman eats", etc.
+
+The above example does not make use of the tense marking particles, and I have
+just included it to demonstrate my point that immediacy / habituality are not
+considered in Quevish.
+
+By default, all verbs that are asserted with a VP-assertive particle (e.g. goju,
+zewi) are assumed to be of the present tense, so there is no marker for it. This
+may be represented as a null morpheme if you would prefer. The other tenses do
+have their own, explicit markers, which are implemented as grammatical particles
+in the manner described earlier. The following particle words are used as
+markers:
+
+| **Marker** | **Tense indicated** |
+|------------|---------------------|
+| gymbi	     | Ancient past        |
+| gymbe	     | Distant past        |
+| gymba	     | Proximate past      |
+| gymbu	     | Proximate future    |
+| gymbo	     | Distant future      |
+
+You will notice that I have used the terminal vowels of these words in a very
+specific way to connect tense to a phonemic value. Front vowels fall under the
+"past" umbrella, and back vowels fall under the "future" umbrella. The more open
+the vowel is, the closer to the current moment the represented tense is.
+
+For examples of these tense markers, see the following:
+
+```
+bym my    ga  guby   gymbi wi     bo       zi ga  ju       zi ga  zi gane
+use solid MOD VPINIT APST  living advanced ID MOD language ID MOD ID NPINIT
+
+zewi
+VPNPCOM
+
+(VPNPCOM
+  (APST (VPINIT (MOD bym my)))
+  (NPINIT (MOD (MOD wi bo) ju)))
+```
+
+trans. "[in ancient times,] people were eating", "[long ago,] humanity ate",
+etc.
+
+```
+bym my    ga  guby   gymbu wi     bo       zi ga  ju       zi ga  zi gane
+use solid MOD VPINIT PFUT  living advanced ID MOD language ID MOD ID NPINIT
+
+zewi
+VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym my))
+  (NPINIT (MOD (MOD wi bo) ju)))
+```
+
+trans. "people are soon going to eat", "a person will eat soon", etc.
+
+Another thing worthy of consideration is the point around which the relative
+points in time of the tenses orient themselves - so what is it? This is
+determined by the position on the timeline of the point-of-view speaker, which
+is itself determined contextually. So, for example, if I was speaking from the
+perspective of a soldier during the second world war, I would say "I am
+fighting" (using the verb phrase: bam guby) rather than "I was fighting" (using
+the verb phrase: bam guby gymba). However, if I was talking *about* that
+soldier, as a modern observer rather than a historical point of view, I would
+use the proximate past tense.
+
+So, tenses orient themselves relative to the point-of-view's position on the
+timeline rather than the actual speaker's position on the timeline.
 
 ### Pseudo-roots
 
@@ -517,9 +616,9 @@ structures that are syntactically treated as if they were roots.
 
 stuff will be added here eventually...
 
-## Custom Orthography
+## Custom orthography
 
-### Basic Featural Orthography
+### Basic featural orthography
 
 Sentences and phrases are divided into words, which are divided into syllables,
 which are divided into phonemes. In the Basic Featural Orthography for Quevish,
@@ -651,15 +750,17 @@ Of course, you don't actually *need* to follow these spacing guidelines if
 contextually unnecessary, but I still recommend that you do, it aids readability
 and helps disambiguate various sentence boundaries in general.
 
-### Syntactic Featural Orthography
+### Syntactic featural orthography
 
 stuff will be added here eventually...
 
-## Larger Usage Examples
+## Larger usage examples
+
+### The North wind and the Sun
 
 stuff will be added here eventually...
 
-## Glossing Abbreviation Table
+## Glossing abbreviation table
 
 | **Abbreviation** | **Meaning**                       |
 |------------------|-----------------------------------|
@@ -670,8 +771,13 @@ stuff will be added here eventually...
 | VPNPCOM          | "zewi" intransitive VPNP combiner |
 | VPAS             | "goju" VP asserter                |
 | TGAP             | "zywo" target applier             |
+| APST             | "gymbi" ancient past marker       |
+| DPST             | "gymbe" distant past marker       |
+| PPST             | "gymba" proximate past marker     |
+| PFUT             | "gymbu" proximate future marker   |
+| DFUT             | "gymbo" distant future marker     |
 
-## Root Reference Dictionary
+## Root reference dictionary
 
 This should not be treated as an exhaustive list of root definitions. In fact,
 they aren't really "definitions" at all. Instead, these are just some words
@@ -681,6 +787,7 @@ them, which may alter your interpretation of the language heavily.
 
 | **Root** | **Meaning**                                        |
 |----------|----------------------------------------------------|
+| bam	   | fight, conflict, warfare, terrorism, unjust	|
 | be       | material, really existing, actual                  |
 | bo       | advanced, experienced, capable of thought          |
 | bym      | usage, consumption, exploitation, able to be used  |
