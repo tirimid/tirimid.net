@@ -211,7 +211,7 @@ trans. "talking"
 ju       guby
 language VPINIT
 ```
-
+v
 trans. "to talk", "is talking", "was communicating", "will send messages", etc.
 
 ```
@@ -328,9 +328,9 @@ determined by the operands themselves, as well as context.
 
 Example:
 
-*(for these more complicated phrases I am including lisp-style tree
+*(For these more complicated phrases I am including lisp-style tree
 representations of the evaluated meaning as well as the usual gloss, as it will
-aid the ability to understand why the translations mean what they do)*
+aid the ability to understand why the translations mean what they do.)*
 
 ```
 bym my    ga  guby   wi     bo       zi ga  ny        zi ga  zi gane   zewi
@@ -616,9 +616,9 @@ The active reverse has no good translation in English, since "un-eating" isn't
 something we conceptualize as a meaningful idea. However, this is what the
 phrase means when negated in active reverse.
 
-*Maybe "un-eat" means something like spitting out food? I interpret it as food
+*(Maybe "un-eat" means something like spitting out food? I interpret it as food
 rebuilding itself in the reverse way of how it was eaten, but Quevish allows
-some ambiguity.*
+some ambiguity.)*
 
 Unlike the passive negator, "zezy", the active negator gezy is not
 self-inverting. That is, if the phrase "bam gezy gane" means counterterrorism,
@@ -804,6 +804,18 @@ use the proximate past tense.
 So, tenses orient themselves relative to the point-of-view's position on the
 timeline rather than the actual speaker's position on the timeline.
 
+#### AND-ative joiner - "gemi"
+
+stuff will be added here eventually...
+
+#### OR-ative joiner - "gumo"
+
+stuff will be added here eventually...
+
+#### XOR-ative joiner - "gumon"
+
+stuff will be added here eventually...
+
 ### Pseudo-roots
 
 Besides roots and grammatical particles, there are also pseudo-roots. I did not
@@ -825,7 +837,7 @@ There are four gender classes: masculine, feminine, third, and generic other.
 The gender of a pronoun aligns with the gender of the antecedent - although if
 the antecedent is a person, you should always use the gender category that they
 prefer, regardless of whether or not it aligns with the gender they identify
-with. There are also three number classes: single, paucal, and paucal.
+with. There are also three number classes: single, paucal, and plural.
 
 The gender classes are defined like this:
 
@@ -842,7 +854,7 @@ want to attribute a gender to them. If you *do* want to attribute a gender to
 them (like if you're talking about a toy doll designed to look like a human),
 you would use the appropriate masculine / feminine / third gender pronoun.
 
-And the number classes are defined like this:
+The number classes are defined like this:
 
 * Single: used for singular, cohesive units (e.g. a body may consist of
   trillions of cells, but "a body" is a singular unit on a macro scale)
@@ -862,10 +874,10 @@ The full table of gender-number pronoun definitions is this:
 
 | **-**             | **Single** | **Paucal** | **Plural** |
 |-------------------|------------|------------|------------|
-| **Masculine**     | zoju       | zojun      | zojum      |
-| **Feminine**      | zoje       | zojen      | zojem      |
-| **Third**         | zojo       | zojon      | zojom      |
-| **Generic other** | zoja       | zojan      | zojam      |
+| **Masculine**     | zyju       | zyjun      | zyjum      |
+| **Feminine**      | zyje       | zyjen      | zyjem      |
+| **Third**         | zyjo       | zyjon      | zyjom      |
+| **Generic other** | zyja       | zyjan      | zyjam      |
 
 In order to make things more consistent, the word-terminal syllable's vowel
 corresponds to the gender; and the coda consonant corresponds to the number.
@@ -875,7 +887,7 @@ This is intentional, for use in situations where strictly encoding this
 information is not necessary. So, for example:
 
 ```
-wi     bo       ga  ju       ga  gane.  bym myn    ga  guby   zoje zewi
+wi     bo       ga  ju       ga  gane.  bym myn    ga  guby   zyje zewi
 living advanced MOD language MOD NPINIT use liquid MOD VPINIT Xfsg VPNPCOM
 
 [first sentence]
@@ -917,14 +929,18 @@ this, these person suffixes are attached to the end of the pronoun:
 
 | **Person** | **Suffix** |
 |------------|------------|
-| 1          | -ba        |
-| 2          | -da        |
-| 3          | -wa        |
+| 1          | -ba/o      |
+| 2          | -da/o      |
+| 3          | -wa/o      |
+
+Each suffix either ends with a front ("a") or a back vowel ("o"). The one you
+choose to use depends on the other vowels in the word, and then you just select
+whichever one doesn't violate the vowel harmony rules.
 
 For example:
 
 ```
-bym myn    ga  guby   zojoba zewi
+bym myn    ga  guby   zyjobo zewi
 use liquid MOD VPINIT 1tsg   VPNPCOM
 
 (VPNPCOM
@@ -935,7 +951,7 @@ use liquid MOD VPINIT 1tsg   VPNPCOM
 trans. "I drink", "I will drink", "I had drunk", etc.
 
 ```
-bam   guby   gymbo zojoba zewi    zojuwa zywo
+bam   guby   gymbo zyjobo zewi    zyjuwo zywo
 fight VPINIT PFUT  1tsg   VPNPCOM 3msg   TGAP
 
 (TGAP
@@ -948,6 +964,10 @@ fight VPINIT PFUT  1tsg   VPNPCOM 3msg   TGAP
 trans. "I'm gonna fight him", "I will have a conflict with him", etc.
 
 #### Question pronouns
+
+stuff will be added here eventually...
+
+#### Proper nouns
 
 stuff will be added here eventually...
 
@@ -1093,9 +1113,17 @@ and helps disambiguate various sentence boundaries in general.
 
 stuff will be added here eventually...
 
-## Larger usage examples
+## Larger translation examples
 
-### The North wind and the Sun
+### The North Wind and the Sun
+
+stuff will be added here eventually...
+
+### The Internationale
+
+stuff will be added here eventually...
+
+### The Lord's Prayer
 
 stuff will be added here eventually...
 
@@ -1151,6 +1179,9 @@ them, which may alter your interpretation of the language heavily.
 | PRS              | "gymby" present marker            |
 | PFUT             | "gymbo" proximate future marker   |
 | DFUT             | "gymbu" distant future marker     |
+| JAND             | "gemi" AND-ative joiner           |
+| JOR              | "gumo" OR-ative joiner            |
+| JXOR             | "gumon" XOR-ative joiner          |
 
 ### Personal pronouns
 
