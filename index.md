@@ -38,6 +38,8 @@ not expect an immediate response.
 
 * [The Way School Uniforms Work is Garbage](essay/schooluniform.md): A short
   essay rant about the (terrible) way school uniforms often work
+* [What was the First Rhythm Game?](essay/firstrg.md): A short historical work
+  of research, trying to figure out what the first rhythm game was
 
 # Software
 
