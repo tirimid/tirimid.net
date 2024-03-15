@@ -909,7 +909,7 @@ first sentence only introduces something like "person", "humanity", or "people"
 into the overall context. It is the fact that the pronoun used in the second
 sentence is singular and feminine which allows the reader to deduce that the
 first sentence refers to a woman or a girl. This kind of grammatical structure:
-"<thing>. <verb> <pronoun>", should be used in Quevish for gender and number
+"{thing}. {verb} {pronoun}", should be used in Quevish for gender and number
 disambiguation where applicable.
 
 However, in some cases, you may want to clarify the person of a pronoun. For
@@ -1154,7 +1154,7 @@ them, which may alter your interpretation of the language heavily.
 
 ### Personal pronouns
 
-The gloss for personal pronouns takes the form of "<person><gender><number>".
+The gloss for personal pronouns takes the form of "{person}{gender}{number}".
 
 Person may be one of:
 
