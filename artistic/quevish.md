@@ -7,10 +7,11 @@ title: Quevish
 
 ## Introduction
 
-Quevish is a conlang I decided to make because I like conlangs and had the idea
-for one. This is not worth using for human communication and should be seen as a
-hobby project rather than anything genuinely valuable. In fact, some parts of
-this will likely be poorly explained or rambly.
+Quevish is a conlang I made. This page serves as the official documentation,
+reference grammar, textbook examples, and base reference dictionary. The main
+design principle is syntactic consistency and allowance of expressing yourself
+semantically in interesting ways. The glossing abbreviations used for sentence
+examples throughout the page can be found at the end.
 
 ## Phonology
 
@@ -20,9 +21,9 @@ In the Latin-script orthography for Quevish, capitalization is irrelevant and it
 is written case-insensitively. For conventional consistency, I will be writing
 Romanized Quevish entirely in lowercase and recommend that you do the same.
 
-All consonants in Quevish are voiced, I think this creates a strange but
-interesting sound to the language. Below are the Quevish consonants presented
-over the typical International Phonetic Alphabet table with their Romanizations:
+All consonants in Quevish are voiced, I think this gives an interesting sound to
+the language. Below are the Quevish consonants presented over the typical
+International Phonetic Alphabet table with their Romanizations:
 
 | **-**           | **Bilabial** | **Labiodental** | **Alveolar** | **Palatal** | **Velar** |
 |-----------------|--------------|-----------------|--------------|-------------|-----------|
@@ -516,6 +517,56 @@ use solid MOD VPINIT PNEG
 
 trans. "to not eat", "to have not eaten", "not eating", etc.
 
+The passive negator is self-inverting; that is, passively negating something
+which is already passively negative will cancel out the negation. However, this
+is *only* the case if applied directly to a passive negative. E.g., if you apply
+zezy to a word, then modify it with the "ga" modifier, then apply zezy again, it
+will not cancel out the original one.
+
+For example:
+
+```
+bym my    ga  guby   zezy zezy
+use solid MOD VPINIT PNEG PNEG
+
+(PNEG
+  (PNEG
+    (VPINIT (MOD bym my))))
+```
+
+trans. "to not not eat" = "to eat", "to have not not eaten" = "to have eaten",
+etc.
+
+```
+bym my    ga  guby   zezy jen    ga
+use solid MOD VPINIT PNEG hidden MOD
+
+(MOD
+  (PNEG (VPINIT (MOD bym my)))
+  jen)
+```
+
+trans. "to secretly not eat", "to have secretly not eat", "privately not
+eating", etc.
+
+```
+bym my    ga  guby   zezy jen    ga  zezy
+use solid MOD VPINIT PNEG hidden MOD PNEG
+
+(PNEG
+  (MOD
+    (PNEG (VPINIT (MOD bym my)))
+    jen))
+```
+
+trans. "to not secretly not eat", "to not have secretly not eaten", "not
+privately not eating", etc.
+
+Looking at the syntax trees, the application of the self-inversion rules becomes
+much more evident. Basically, an odd number of passive negations on a single
+node in the syntax tree is equivalent to a single passive negation - which an
+even number is equivalent to none.
+
 #### Active negator - "gezy"
 
 The "gezy" particle is used to actively negate a phrase or a root. As described
@@ -568,6 +619,17 @@ phrase means when negated in active reverse.
 *Maybe "un-eat" means something like spitting out food? I interpret it as food
 rebuilding itself in the reverse way of how it was eaten, but Quevish allows
 some ambiguity.*
+
+Unlike the passive negator, "zezy", the active negator gezy is not
+self-inverting. That is, if the phrase "bam gezy gane" means counterterrorism,
+then "bam gezy gezy gane" is *not* just terrorism. It would, instead, be
+translated as something along the lines of "the movement fighting
+counterterrorism", rather than terrorism itself. This example assumes both
+negations are active counter - but if we assume only the first one is active
+counter and the second is actually active reverse, then we could instead
+translate it as something like "the undoing of counterterrorism measures". As
+stated before, it is dependent on context whether or not any individual "gezy"
+implies active reverse or active counter negation.
 
 #### Interrogative mood marker - "zanme"
 
@@ -758,9 +820,138 @@ structures that are syntactically treated as if they were roots.
 
 #### Personal pronouns
 
-stuff will be added here eventually...
+Quevish distinguishes personal pronouns along two categories, gender and number.
+There are four gender classes: masculine, feminine, third, and generic other.
+The gender of a pronoun aligns with the gender of the antecedent - although if
+the antecedent is a person, you should always use the gender category that they
+prefer, regardless of whether or not it aligns with the gender they identify
+with. There are also three number classes: single, paucal, and paucal.
+
+The gender classes are defined like this:
+
+* Masculine: used for men and things generally viewed as male
+* Feminine: used for women and things generally viewed as female
+* Third: used for anyone who wishes not to identify with either the masculine or
+  feminine class, and things generally viewed as having a gender that isn't male
+  or female
+* Generic other: used when the antecedent either does not have a gender, or has
+  a gender which is ambiguous and unclear
+
+The generic other gender would be used for inanimate objects whenever you don't
+want to attribute a gender to them. If you *do* want to attribute a gender to
+them (like if you're talking about a toy doll designed to look like a human),
+you would use the appropriate masculine / feminine / third gender pronoun.
+
+And the number classes are defined like this:
+
+* Single: used for singular, cohesive units (e.g. a body may consist of
+  trillions of cells, but "a body" is a singular unit on a macro scale)
+* Paucal: used to embody the concept of "a few" singular, cohesive units - what
+  this means may depend on interpretation but is always more than one and less
+  than ten, and always an integer number
+* Plural: used when the single and paucal do not apply
+
+The plural number is a catch all for non-single non-paucal. The most obvious
+implication of this is that plural would be used for, e.g. a hundred of
+something, but it also has other uses. Probably the most interesting is that the
+plural number is always used when it comes to non-positive-integer amounts, like
+0.5, -1, Pi, 0, sqrt(-1), etc. Single and Paucal can only be used for positive
+integer values.
+
+The full table of gender-number pronoun definitions is this:
+
+| **-**             | **Single** | **Paucal** | **Plural** |
+|-------------------|------------|------------|------------|
+| **Masculine**     | zoju       | zojun      | zojum      |
+| **Feminine**      | zoje       | zojen      | zojem      |
+| **Third**         | zojo       | zojon      | zojom      |
+| **Generic other** | zoja       | zojan      | zojam      |
+
+In order to make things more consistent, the word-terminal syllable's vowel
+corresponds to the gender; and the coda consonant corresponds to the number.
+
+You will notice that these pronouns do not contain information regarding person.
+This is intentional, for use in situations where strictly encoding this
+information is not necessary. So, for example:
+
+```
+wi     bo       ga  ju       ga  gane.  bym myn    ga  guby   zoje zewi
+living advanced MOD language MOD NPINIT use liquid MOD VPINIT Xfsg VPNPCOM
+
+[first sentence]
+(NPINIT (MOD (MOD wi bo) ju))
+
+[second sentence]
+(VPNPCOM
+  (VPINIT (MOD bym myn))
+  Xfsg)
+```
+
+trans. "the woman is drinking", "the women drank", "the girl drinks", etc.
+
+There are a few interesting things to dissect in this example.
+
+First of all, pronouns are syntactically noun phrases. While they are
+pseudo-roots in a strictly grammatical sense, they are semantically used to
+substitute for noun phrases, and so they are noun phrases themselves, so you do
+not need to mark them with "gane", as that would be redundant.
+
+Second of all, even though the person of the pronoun is not specified, it is
+obvious what it refers to anyway, through context. The first sentence
+establishes the antecedent of the pronoun used in the second sentence. While
+both sentences are syntactically valid, only the second one would be
+semantically valid without the context of the other. When I say that encoding
+person into the pronoun is sometimes not necessary, I am referring to these
+kinds of situations.
+
+Third of all, the example shows how pronouns can be used for disambiguation. The
+first sentence only introduces something like "person", "humanity", or "people"
+into the overall context. It is the fact that the pronoun used in the second
+sentence is singular and feminine which allows the reader to deduce that the
+first sentence refers to a woman or a girl. This kind of grammatical structure:
+"<thing>. <verb> <pronoun>", should be used in Quevish for gender and number
+disambiguation where applicable.
+
+However, in some cases, you may want to clarify the person of a pronoun. For
+this, these person suffixes are attached to the end of the pronoun:
+
+| **Person** | **Suffix** |
+|------------|------------|
+| 1          | -ba        |
+| 2          | -da        |
+| 3          | -wa        |
+
+For example:
+
+```
+bym myn    ga  guby   zojoba zewi
+use liquid MOD VPINIT 1tsg   VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym myn))
+  1tsg)
+```
+
+trans. "I drink", "I will drink", "I had drunk", etc.
+
+```
+bam   guby   gymbo zojoba zewi    zojuwa zywo
+fight VPINIT PFUT  1tsg   VPNPCOM 3msg   TGAP
+
+(TGAP
+  (VPNPCOM
+    (PFUT (VPINIT bam))
+    1tsg)
+  3msg)
+```
+
+trans. "I'm gonna fight him", "I will have a conflict with him", etc.
 
 #### Question pronouns
+
+stuff will be added here eventually...
+
+## Number system
 
 stuff will be added here eventually...
 
@@ -908,27 +1099,6 @@ stuff will be added here eventually...
 
 stuff will be added here eventually...
 
-## Glossing abbreviation table
-
-| **Abbreviation** | **Meaning**                       |
-|------------------|-----------------------------------|
-| MOD              | "ga" modifier                     |
-| VPINIT           | "guby" verb phrase initializer    |
-| NPINIT           | "gane" noun phrase initializer    |
-| ID               | "zi" identity requeuer            |
-| VPNPCOM          | "zewi" intransitive VPNP combiner |
-| VPAS             | "goju" VP asserter                |
-| TGAP             | "zywo" target applier             |
-| PNEG             | "zezy" passive negator            |
-| ANEG             | "gezy" active negator             |
-| INT              | "zanme" interrogative mood marker |
-| APST             | "gymbi" ancient past marker       |
-| DPST             | "gymbe" distant past marker       |
-| PPST             | "gymba" proximate past marker     |
-| PRS              | "gymby" present marker            |
-| PFUT             | "gymbo" proximate future marker   |
-| DFUT             | "gymbu" distant future marker     |
-
 ## Root reference dictionary
 
 This should not be treated as an exhaustive list of root definitions. In fact,
@@ -958,3 +1128,50 @@ them, which may alter your interpretation of the language heavily.
 | wi       | living, moving, target of empathy                  |
 | wo       | life sustaining, life causing, divine              |
 | wun      | requirement, prerequisite, before, previous        |
+
+## Glossing abbreviations
+
+### Particle gloss tables
+
+| **Abbreviation** | **Meaning**                       |
+|------------------|-----------------------------------|
+| MOD              | "ga" modifier                     |
+| VPINIT           | "guby" verb phrase initializer    |
+| NPINIT           | "gane" noun phrase initializer    |
+| ID               | "zi" identity requeuer            |
+| VPNPCOM          | "zewi" intransitive VPNP combiner |
+| VPAS             | "goju" VP asserter                |
+| TGAP             | "zywo" target applier             |
+| PNEG             | "zezy" passive negator            |
+| ANEG             | "gezy" active negator             |
+| INT              | "zanme" interrogative mood marker |
+| APST             | "gymbi" ancient past marker       |
+| DPST             | "gymbe" distant past marker       |
+| PPST             | "gymba" proximate past marker     |
+| PRS              | "gymby" present marker            |
+| PFUT             | "gymbo" proximate future marker   |
+| DFUT             | "gymbu" distant future marker     |
+
+### Personal pronouns
+
+The gloss for personal pronouns takes the form of "<person><gender><number>".
+
+Person may be one of:
+
+* "X": unspecified
+* "1": first
+* "2": second
+* "3": third
+
+Gender may be one of:
+
+* "m": masculine
+* "f": feminine
+* "t": third
+* "o": generic other
+
+Number may be one of:
+
+* "sg": single
+* "pc": paucal
+* "pl": plural
