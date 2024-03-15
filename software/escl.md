@@ -1,11 +1,12 @@
 ---
 layout: default
 title: escl
+date_published: 2024-02-04
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# escl
-
-## What is escl?
+# What is escl?
 
 Escl, whose name is originally derived from "privilege (esc)a(l)ation", is a
 program in the vein of sudo or doas, used to elevate non-root user privileges to
@@ -20,7 +21,7 @@ any files other than that, so you don't need to worry about breaking anything.
 Escl arose from my personal desire for a hyperminimalist privilege elevation
 tool which is extremely easy to manage and has zero dependencies.
 
-## Installation and setup
+# Installation and setup
 
 First, clone the source tree from [the GitHub](https://github.com/tirimid/escl),
 then build and install escl. This can be done with:
@@ -105,7 +106,7 @@ passwd NqEAUtoNkpmAs
 
 The added passwords are stored in hashed form for a basic level of security.
 
-## Using escl
+# Using escl
 
 After escl has been installed and set up via the process outlined above, all
 permitted users will be able to use it. For example, if alice decides to upgrade
@@ -120,7 +121,7 @@ as sudo or doas.
 
 That's it, that's all there is to it.
 
-## User / password management
+# User / password management
 
 There are several things that you may want to do to manage the state of escl
 after installation. For example, you may want to add / remove users and

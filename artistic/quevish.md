@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Quevish
+date_published: 2023-12-20
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# Quevish
-
-## Introduction
+# Introduction
 
 Quevish is a conlang I made. This page serves as the official documentation,
 reference grammar, textbook examples, and base reference dictionary. The main
@@ -13,9 +14,9 @@ design principle is syntactic consistency and allowance of expressing yourself
 semantically in interesting ways. The glossing abbreviations used for sentence
 examples throughout the page can be found at the end.
 
-## Phonology
+# Phonology
 
-### Phoneme inventory + Romanization
+## Phoneme inventory + Romanization
 
 In the Latin-script orthography for Quevish, capitalization is irrelevant and it
 is written case-insensitively. For conventional consistency, I will be writing
@@ -42,7 +43,7 @@ rounded. See below the vowels along with their Romanizations:
 | **Openmid**   | e         | -          | o        |
 | **Open**      | a         | -          | -        |
 
-### Phonotactics
+## Phonotactics
 
 There are a few things to talk about here. Namely: basic rules for maintaining
 future consistency should I ever choose to work further on Quevish, which
@@ -118,7 +119,7 @@ vowel assimilation as there are no scenarios in which it has any reason to
 occur. The above phonotactic rules are more design guidelines for adding new
 roots or grammatical particles to the language.
 
-## Grammar
+# Grammar
 
 Quevish is an analytic language with focus on expression-based syntax. The
 syntax of the language consists of "roots" and "grammatical particles", the
@@ -148,9 +149,9 @@ conventional syntactical features, just with slightly wackier format. Still,
 this is the actual process according to which phrases and sentences are
 evaluated, so forming them should simply follow the inverse process.
 
-### Grammatical particles
+## Grammatical particles
 
-#### Modifier - "ga" particle
+### Modifier - "ga" particle
 
 When you want to combine words (as in, making compound "words", using adjectives
 to describe something, etc.) the "ga" grammatical particle is used. It takes two
@@ -186,7 +187,7 @@ use of specific grammatical particles for disambiguation, the actual meaning of
 the above phrase is dependent on more than the phrase itself. Still, it is meant
 to capture the "essence" of "animalness" if you will.
 
-#### Verb phrase initializer - "guby" particle
+### Verb phrase initializer - "guby" particle
 
 In Quevish, sentences must be built from the ground up, and the speaker may add
 in (or omit) as much information as they can reasonably desire. Sentences must
@@ -236,7 +237,7 @@ question the nature of something before being able to talk about it, it forces
 you to think about the way in which different parts of a phrase are really
 related to each other.
 
-#### Noun phrase initializer - "gane" particle
+### Noun phrase initializer - "gane" particle
 
 A noun phrase in Quevish is just a "noun" marked as being a noun phrase. Noun
 phrases may be modified like anything else, and may be used as modifiers like
@@ -278,7 +279,7 @@ particles are not limited with what they can accept as operands. What seems most
 intuitive to me for the interpretation of a verb phrase marked as a noun phrase
 is that it is effectively a gerund or participle-ey thing.
 
-#### Identity requeuer - "zi" particle
+### Identity requeuer - "zi" particle
 
 Whenever you need to shuffle the queue, the "zi" identity grammatical particle
 can be used. All it does is dequeue an item from the evaluation queue, and
@@ -315,7 +316,7 @@ the same thing. In these small examples, the "zi" particle appears to not be
 very useful, but it becomes absolutely essential for queue manipulation in
 anything meaningfully complex.
 
-#### Intransitive VPNP combiner - "zewi" particle
+### Intransitive VPNP combiner - "zewi" particle
 
 If you want to form an intransitive sentence / phrase (one with a subject and
 verb), the "zewi" grammatical particle is used. It takes two operands, the first
@@ -368,7 +369,7 @@ about the most recently introduced concept, rather than having to shuffle them
 around. Perhaps a version of the language that operates on a stack instead of a
 queue would be more human-usable.
 
-#### VP asserter - "goju" particle
+### VP asserter - "goju" particle
 
 This particle is used in the situation that you want to mark a verb *as*
 occuring, without giving it a subject or an agent to perform it. Since a verb
@@ -425,7 +426,7 @@ trans. "living happening happens", "living, which happens, which happens", etc.
 
 And that's just really fun.
 
-#### Target applier - "zywo" particle
+### Target applier - "zywo" particle
 
 The "zywo" particle is used to apply some target to a phrase. It takes two
 operands - both being phrases, marks the first as somehow "tending towards" or
@@ -491,7 +492,7 @@ divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
 trans. "religion is shrinking in scope", "religiosity is becoming less popular",
 etc.
 
-#### Passive negator - "zezy"
+### Passive negator - "zezy"
 
 The "zezy" particle is used to passively negate a phrase or a root. Quevish
 distinguishes between "passive negation" and "active negation". Passive negation
@@ -567,7 +568,7 @@ much more evident. Basically, an odd number of passive negations on a single
 node in the syntax tree is equivalent to a single passive negation - which an
 even number is equivalent to none.
 
-#### Active negator - "gezy"
+### Active negator - "gezy"
 
 The "gezy" particle is used to actively negate a phrase or a root. As described
 in the "zezy" section, active negation implies the presence of a phrase or
@@ -631,7 +632,7 @@ translate it as something like "the undoing of counterterrorism measures". As
 stated before, it is dependent on context whether or not any individual "gezy"
 implies active reverse or active counter negation.
 
-#### Interrogative mood marker - "zanme"
+### Interrogative mood marker - "zanme"
 
 When asking a question, the verb in the question phrase must be marked as
 interrogative. By default, verbs are in the indicative mood, representing some
@@ -703,7 +704,7 @@ For common conversation, the former option is easier and more practical. But for
 formal writing or professional interaction, you would probably want to use the
 latter in order to avoid ambiguity.
 
-#### Tense markers
+### Tense markers
 
 Tense markers are grammatical particles used to indicate the relative position
 of events on the timeline under consideration, similar to how most other
@@ -804,19 +805,19 @@ use the proximate past tense.
 So, tenses orient themselves relative to the point-of-view's position on the
 timeline rather than the actual speaker's position on the timeline.
 
-#### AND-ative joiner - "gemi"
+### AND-ative joiner - "gemi"
 
 stuff will be added here eventually...
 
-#### OR-ative joiner - "gumo"
+### OR-ative joiner - "gumo"
 
 stuff will be added here eventually...
 
-#### XOR-ative joiner - "gumon"
+### XOR-ative joiner - "gumon"
 
 stuff will be added here eventually...
 
-### Pseudo-roots
+## Pseudo-roots
 
 Besides roots and grammatical particles, there are also pseudo-roots. I did not
 include them in the definition for how syntax is evaluated because they are
@@ -830,7 +831,7 @@ To put it in the simplest possible terms, while roots are purely semantic and
 imply nothing grammatically, psuedo-roots are conventional grammatical
 structures that are syntactically treated as if they were roots.
 
-#### Personal pronouns
+### Personal pronouns
 
 Quevish distinguishes personal pronouns along two categories, gender and number.
 There are four gender classes: masculine, feminine, third, and generic other.
@@ -963,21 +964,21 @@ fight VPINIT PFUT  1tsg   VPNPCOM 3msg   TGAP
 
 trans. "I'm gonna fight him", "I will have a conflict with him", etc.
 
-#### Question pronouns
+### Question pronouns
 
 stuff will be added here eventually...
 
-#### Proper nouns
+### Proper nouns
 
 stuff will be added here eventually...
 
-## Number system
+# Number system
 
 stuff will be added here eventually...
 
-## Custom orthography
+# Custom orthography
 
-### Basic featural orthography
+## Basic featural orthography
 
 Sentences and phrases are divided into words, which are divided into syllables,
 which are divided into phonemes. In the Basic Featural Orthography for Quevish,
@@ -1109,25 +1110,25 @@ Of course, you don't actually *need* to follow these spacing guidelines if
 contextually unnecessary, but I still recommend that you do, it aids readability
 and helps disambiguate various sentence boundaries in general.
 
-### Syntactic featural orthography
+## Syntactic featural orthography
 
 stuff will be added here eventually...
 
-## Larger translation examples
+# Larger translation examples
 
-### The North Wind and the Sun
-
-stuff will be added here eventually...
-
-### The Internationale
+## The North Wind and the Sun
 
 stuff will be added here eventually...
 
-### The Lord's Prayer
+## The Internationale
 
 stuff will be added here eventually...
 
-## Root reference dictionary
+## The Lord's Prayer
+
+stuff will be added here eventually...
+
+# Root reference dictionary
 
 This should not be treated as an exhaustive list of root definitions. In fact,
 they aren't really "definitions" at all. Instead, these are just some words
@@ -1157,9 +1158,9 @@ them, which may alter your interpretation of the language heavily.
 | wo       | life sustaining, life causing, divine              |
 | wun      | requirement, prerequisite, before, previous        |
 
-## Glossing abbreviations
+# Glossing abbreviations
 
-### Particle gloss tables
+## Particle gloss tables
 
 | **Abbreviation** | **Meaning**                       |
 |------------------|-----------------------------------|
@@ -1183,7 +1184,7 @@ them, which may alter your interpretation of the language heavily.
 | JOR              | "gumo" OR-ative joiner            |
 | JXOR             | "gumon" XOR-ative joiner          |
 
-### Personal pronouns
+## Personal pronouns
 
 The gloss for personal pronouns takes the form of "{person}{gender}{number}".
 

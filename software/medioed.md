@@ -1,11 +1,12 @@
 ---
 layout: default
 title: medioed
+date_published: 2024-02-04
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# medioed
-
-## The idea
+# The idea
 
 medioed stands for (Medio)cre Text (Ed)itor. As the name suggests, it is a
 mediocre text editor for Linux systems. It doesn't have any particularly
@@ -22,7 +23,7 @@ rather than some consistent design principle.
 
 medioed is free software.
 
-## Installing medioed
+# Installing medioed
 
 Go to [the GitHub](https://github.com/tirimid/medioed). Clone the repository and
 enter the cloned directory by doing:
@@ -65,7 +66,7 @@ scripts do is a file copy / deletion.
 
 At this point, no more setup is necessary.
 
-## Using medioed
+# Using medioed
 
 After installation, you can run `medioed` in your terminal in a few different
 ways. Either you can run it on its own, with no arguments, or you can run it
@@ -87,6 +88,6 @@ And also `-h`, which will simply display usage information in a more terse way.
 
 more stuff will be added here eventually...
 
-## Configuring and customizing medioed
+# Configuring and customizing medioed
 
 stuff will be added here eventually...

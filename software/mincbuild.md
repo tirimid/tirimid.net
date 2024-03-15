@@ -1,11 +1,12 @@
 ---
 layout: default
 title: mincbuild
+date_published: 2023-09-29
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# mincbuild
-
-## What is mincbuild?
+# What is mincbuild?
 
 Mincbuild, which stands for (Min)imalist (C) (Build)system, is a buildsystem
 designed to make project build easier for other minimalist C(++) software. Now,
@@ -31,7 +32,7 @@ Make, because mincbuild (while it will also work for this use-case) is meant
 specifically for minimalist software implemented across multiple source files,
 allowing for incremental compilation.
 
-## Installation and setup
+# Installation and setup
 
 First, clone the repository from [the GitHub](https://github.com/tirimid/mincbuild)
 using:
@@ -89,7 +90,7 @@ And if you ever want to remove mincbuild from your system, run:
 # ./uninstall.sh
 ```
 
-## Using mincbuild
+# Using mincbuild
 
 First, to use mincbuild for a project, your project must follow a set, simple
 directory structure:
@@ -123,7 +124,7 @@ with a `#`, as with most basic conf files - and only lines which *begin* with a
 comment appears at the end of an otherwise non-comment line, it will not be
 treated as a comment.
 
-### Simple compilation
+## Simple compilation
 
 To begin with, there are a few keys that are absolutely essential to the
 compilation phase of the build, and mincbuild will output an error if any of
@@ -194,7 +195,7 @@ another value "hello " (notice the trailing space) but it is *not* different to
 meant to pass "`NONE`" as one of the values, but accidentally passed "`NONE `"
 (with a trailing space), the behavior will not be the same in both cases.
 
-### Linking the project
+## Linking the project
 
 However, for most projects it won't be enough to simply compile all the
 sources - you want to link them all together. In order to do this, you will need
@@ -252,7 +253,7 @@ ld_success_rc = 0
 mincbuild will now also link the compiled object files into an output binary
 called `demo`.
 
-### Using the binary
+## Using the binary
 
 Finally, that's basically all you need to understand about the mincbuild conf
 file and I can move on to the `mincbuild` command line tool you built during the
@@ -292,7 +293,7 @@ functionality. The possible flags are:
 
 As well as the basic `-h` flag that everyone already understands.
 
-### Temporary overrides
+## Temporary overrides
 
 The fact that the compiler, linker, compiler flags, linker flags, etc. are
 hardcoded into the mincbuild conf is fine for most cases - especially if you've

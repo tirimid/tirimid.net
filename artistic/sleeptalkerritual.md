@@ -1,9 +1,10 @@
 ---
 layout: default
 title: The Sleeptalker Ritual
+date_published: 2023-12-19
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
-
-# The Sleeptalker Ritual
 
 Did you know you can talk to supernatural spirits? It's true.
 
@@ -107,7 +108,7 @@ failure during the second or third phase, after a link has been made, is
 entirely dependent on the spirit you have reached, and most likely far, far
 worse than the simple "nothing".
 
-## Awaiting contact
+# Awaiting contact
 
 1. Wait until the conduit is asleep. The more soundly they are sleeping, the
    better, as you will be afforded more maximum time for the conversation. If
@@ -144,7 +145,7 @@ worse than the simple "nothing".
    you hear it, that means your call has been answered, and someone - or
    something - is on the other end.
 
-## The conversation
+# The conversation
 
 Your conversation with the supernatural can take the form of any other
 conversation you may have, but experience shows that certain formats are more
@@ -196,7 +197,7 @@ such information, so don't take it for granted. And even if it's not a demon,
 and even if it says the truth, don't be surprised to learn something you wish
 you hadn't.
 
-## Bidding farewell
+# Bidding farewell
 
 When you want to end the Sleeptalker Ritual, there are two ways to do so. First
 is allowing the conduit to wake up - as stated earlier, this is best avoided.

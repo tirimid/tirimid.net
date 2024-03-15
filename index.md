@@ -3,13 +3,11 @@ layout: default
 title: tirimid.net
 ---
 
-# tirimid.net
-
 (this is me)
 
 ![](res/meatmyputer.png)
 
-## About me
+# About me
 
 * Main online usernames: tirimid, Tirimid, polytopelover
 * Preferred pronouns: any
@@ -36,12 +34,12 @@ If you need to contact me for some reason, you can send an email to
 tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
-## Essays
+# Essays
 
 * [The Way School Uniforms Work is Garbage](essay/schooluniform.md): A short
   essay rant about the (terrible) way school uniforms often work
 
-## Software
+# Software
 
 * [BFC](software/bfc.md): A tiny brainfuck compiler that turns Brainfuck source
   input into GNU-as-compatible assembly output
@@ -57,7 +55,7 @@ not expect an immediate response.
 * [VVSML](software/vvsml.md): A very simple markup language with fun syntax and
   utterly deranged features
 
-## Artistic written works
+# Artistic written works
 
 * [The Sleeptalker Ritual](artistic/sleeptalkerritual.md): A ritualpasta-style
   thing about talking to spirits by doing an intentional possession of a person

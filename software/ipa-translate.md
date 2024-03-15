@@ -1,11 +1,12 @@
 ---
 layout: default
 title: ipa-translate
+date_published: 2024-02-04
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# ipa-translate
-
-## What is ipa-translate?
+# What is ipa-translate?
 
 ipa-translate is a Rust crate implementing multiple common standards for
 converting ASCII text into Unicode IPA (International Phonetic Alphabet) text.
@@ -22,7 +23,7 @@ The currently implemented standards are:
 [^2]: Slight implementation differences to given specification, see
       `/translation/sil.rs` for details.
 
-## Adding ipa-translate to your project
+# Adding ipa-translate to your project
 
 As with practically any other Rust crate, ipa-translate is hosted on [crates.io](https://crates.io/crates/ipa-translate),
 and has a [GitHub page](https://github.com/tirimid/ipa-translate) using which
@@ -46,7 +47,7 @@ of ipa-translate, the actual ASCII-IPA translation, is done using functions from
 the Rust standard library since version 0.1.8+, keeping the implementation
 minimal and fast.
 
-## Using ipa-translate
+# Using ipa-translate
 
 The source example in the README explains the usage well:
 

@@ -1,11 +1,12 @@
 ---
 layout: default
 title: The Way School Uniforms Work is Garbage
+date_published: 2024-02-13
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# The Way School Uniforms Work is Garbage
-
-## School uniforms
+# School uniforms
 
 Everyone knows what school uniforms are, so I'm not going to explain that. I'm
 mainly speaking from personal experience and reasoning when I say that the way
@@ -22,18 +23,18 @@ days with PE, you must wear PE clothes, and non-PE clothes otherwise). For
 secondary, it works the same except girls and boys wear the same clothes on
 non-PE days (still different on PE days).
 
-## The thesis
+# The thesis
 
 The previously described implementation is an awful way to do school uniforms.
 
-## The arguments
+# The arguments
 
 I will do this in a sort of "response" format. That is, I have - throughout my
 time at the school - asked teachers and staff why the uniforms work this way,
 and they have given me various fallacious explanations. And I will explain why
 these justifications fail.
 
-### "Uniforms promote equality!"
+## "Uniforms promote equality!"
 
 In theory, yes. In practice, abso-fuckin'-lutely not.
 
@@ -66,7 +67,7 @@ explicit uniforms and teachers having far looser dress codes (relatively
 speaking); and the unhealthy power dynamic this implies. Maybe one day I'll
 write about how the traditional teacher-student power relationship is horrific.
 
-### "Uniforms reduce stress!"
+## "Uniforms reduce stress!"
 
 The idea is that when students don't need to worry about picking out their
 clothes in the morning, that they will be less stressed. The idiotism of this
@@ -102,7 +103,7 @@ situation"
 
 ... said *noone ever*.
 
-### "Uniforms save time!"
+## "Uniforms save time!"
 
 This one is tangentially related to the previous argument.
 
@@ -130,7 +131,7 @@ such uniform code exists for them. This fact alone disproves the "time save"
 hypothesis - even the overworked people who actually need to save time don't
 bother with the kinds of uniforms we have.
 
-### "You need to get used to it!"
+## "You need to get used to it!"
 
 The idea here is that, since students will likely wear a uniform or formal
 attire at their future place of work, that they need to get used to it early.
@@ -148,13 +149,13 @@ wear my uniform, how 'bout you fuckin' pay me for it? Oh - you won't? That's
 cause its a terrible justification and not reasonably comparable to a job
 situation.
 
-### "Students all wearing uniforms creates a good school image!"
+## "Students all wearing uniforms creates a good school image!"
 
 If you believe that the professionalism of a school, an abstract theoretical
 thing, is more important than the comfort and personal expression of its
 students, which are very real - then you are a shithead. Fuck you.
 
-## Conclusion
+# Conclusion
 
 I hope you see why these common justifications and defenses of school uniforms
 are steaming garbage - the intellectual equivalent of having your head shoved in

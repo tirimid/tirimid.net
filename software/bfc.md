@@ -1,11 +1,12 @@
 ---
 layout: default
 title: BFC
+date_published: 2024-02-11
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# BFC
-
-## What is BFC?
+# What is BFC?
 
 BFC, or (B)rain(F)uck (C)ompiler, is a Brainfuck compiler capable of taking
 Brainfuck source files and producing from them GNU-as-compatible assembly files
@@ -22,7 +23,7 @@ implementing a Brainfuck compiler.
 
 BFC is free software.
 
-## Installing and using
+# Installing and using
 
 First, clone the source from the [GitHub repo](https://github.com/tirimid/bfc),
 build the project using [mincbuild](mincbuild.md), and install it.
@@ -64,7 +65,7 @@ This is all detailed in the help menu displayed upon running:
 $ bfc -h
 ```
 
-## How jump labels are generated (implementation of '[' and ']')
+# How jump labels are generated (implementation of '[' and ']')
 
 This is probably the only thing that caused me any headache while implementing
 BFC, so I will document it here in case any prospective Brainfuck compiler
@@ -144,7 +145,7 @@ BFC also adds jump label prefixes for readability when the generation is
 complete (i.e. `cb_XXXX`, `ce_XXXX`), but this is actually not necessary. Every
 label has a unique index anyway, so the label prefixes are not required.
 
-## Implementation-specific limitations
+# Implementation-specific limitations
 
 * Depending on what Brainfuck specification you read, you will see several
   definitions for what to do if the data pointer leaves the acceptable range of
@@ -159,7 +160,7 @@ label has a unique index anyway, so the label prefixes are not required.
   creating some sort of optimization-friendly intermediary, although this isn't
   *necessarily* a bad thing for a language as simple as Brainfuck.
 
-## How you could improve on the design of BFC
+# How you could improve on the design of BFC
 
 Most obviously, you can try to solve the problems described above in your
 implementation.

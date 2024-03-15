@@ -1,11 +1,12 @@
 ---
 layout: default
 title: VVSML
+date_published: 2023-01-16
+date_latest_revision: 2024-03-15
+author: tirimid
 ---
 
-# VVSML
-
-## What is VVSML... And why?
+# What is VVSML... And why?
 
 So, you know Markdown and HTML, right? It's kind of like that. VVSML is a markup
 language designed to build into a HTML file. If you want simplicity, use
@@ -16,7 +17,7 @@ then: "why not just use HTML? It has a proglang-like syntax without the fuss of
 LaTeX". Honestly, I just really dislike how HTML feels to write. Plus, HTML has
 no dedicated features for conlanging - which I wanted.
 
-## Using VVSML
+# Using VVSML
 
 First; download, build, and install the VVSML program from [the GitHub](https://github.com/tirimid/vvsml).
 You can do so using:
@@ -181,7 +182,7 @@ place a `list` inside of another `list`, or a `table` inside an `ordered_list`,
 a `table` inside a `row`, and so on. A `row`, however, cannot appear outside of
 a `table`. You now know all the core features of VVSML, congratuations!
 
-## Some of the crazier features
+# Some of the crazier features
 
 Apart from the core features, `vvsml` also implements some convenient stuff that
 I just thought would be kind of nice. First, character escapes. If you wanted a
