@@ -103,7 +103,7 @@ side A is rarely used for games - and, indeed, side B is used for Dance
 Aerobics, which can be seen when looking at gameplay[^6].
 
 [^5]: [strategywiki.org contributors; "Power Pad"](https://strategywiki.org/w/index.php?title=Category:Power_Pad&oldid=925921)
-[^6]: [Power Trip Gaming; "Power Trip - Game 092 | Dance Aerobics - part 1"](https://www.youtube.com/watch?v=N3iYclDUr0U)
+[^6]: [Power Trip Gaming; "Power Trip - Game 092 \| Dance Aerobics - part 1"](https://www.youtube.com/watch?v=N3iYclDUr0U)
 
 The main gamemode consists of watching the movements of an instructor on
 screen - who is displayed as standing on the same Power Pad - and mirroring
