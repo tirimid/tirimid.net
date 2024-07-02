@@ -1,0 +1,356 @@
+---
+layout: default
+title: VVSML
+date_published: 2023-01-16
+date_latest_revision: 2024-03-15
+author: tirimid
+---
+
+# What is VVSML... And why?
+
+So, you know Markdown and HTML, right? It's kind of like that. VVSML is a markup
+language designed to build into a HTML file. If you want simplicity, use
+Markdown. I didn't want simplicity: I wanted a programming-language-like syntax
+based loosely on LaTeX, but without all the fuss involved in using LaTeX. Thus,
+(V)ery (V)ery (S)imple (M)arkup (L)anguage was born. The question comes about,
+then: "why not just use HTML? It has a proglang-like syntax without the fuss of
+LaTeX". Honestly, I just really dislike how HTML feels to write. Plus, HTML has
+no dedicated features for conlanging - which I wanted.
+
+# Using VVSML
+
+First; download, build, and install the VVSML program from [the GitHub](https://github.com/tirimid/vvsml).
+You can do so using:
+
+```
+$ git clone https://github.com/tirimid/vvsml
+$ cd vvsml
+$ cargo build --release
+$ sudo cp target/release/vvsml /usr/bin
+```
+
+The actual `vvsml` binary takes two arguments. Run `vvsml` to see the following:
+
+```
+$ vvsml
+error usage: `vvsml <source file> <output file>`
+```
+
+The `source file` is meant to be the name of a VVSML source file, and `output
+file` is meant to be the name of the file in which to output HTML code generated
+using the VVSML source. If the given `output file` does not exist, it should be
+created by the program. So, what are we waiting for? Let's get the show on the
+road. Create a new file for VVSML source - I suggest using the `.vvsml`
+extension for it. Then, open it in your text editor. Run:
+
+```
+$ touch hello.vvsml
+$ emacs -nw hello.vvsml
+```
+
+Below is some demo source code in VVSML:
+
+```
+contents
+{
+    chapter {This is a very large heading}
+    section {This is a large heading}
+    subsection {This is a relatively small heading}
+    text {This is a paragraph}
+}
+```
+
+The LaTeX influence is obvious. Note that this can be laid out in many ways,
+`vvsml` doesn't care if you place braces on the same line, a new line, if they
+are touching the keyword, etc. Also, the whitespace in the above example is
+arbitrary. VVSML is very relaxed with regard to formatting, but it cares
+intensely about structure. To explain how `vvsml` handles code structure, we
+have to understand two main types of substructure: "layers" and "textual
+extractors". A layer is a code element which contains sub-elements as a list -
+in this example, the `contents` contains a `chapter`, a `section`, a
+`subsection`, and a `text`; in that order. Each of those are textual extractors:
+they do not and cannot contain other code elements. Instead, they contain
+literal text as data. Flipwise, layers cannot contain textual data but they can
+contain code elements (textual extractors and other layers). In fact, try adding
+some random words into the `contents`, as follows:
+
+```
+contents
+{
+    chapter {...}
+    section {...}
+    subsection {...}
+    text {...}
+    here is some random text outside of a textual extractor!
+}
+```
+
+Then, try to build as follows:
+
+```
+$ vvsml hello.vvsml out.html
+error test.vvsml:7 - expected one of [chapter, section, subsection, text, list,
+ordered list, table, block end], found other
+```
+
+See? It gives us a list of code elements which we can place inside the
+`contents`. We cannot have textual data inside a layer. Awesome! We have a
+nicely formatted markup file describing the contents of a document; what now?
+Well, you now know pretty much everything necessary to write things using VVSML.
+Now I will go over the more advanced layers, those you saw in the prior error
+message. See the below code:
+
+```
+contents
+{
+    list
+    {
+        subsection {first item in list}
+        text {second item in list}
+        chapter {third item in list}
+        section {...}
+    }
+    ordered_list
+    {
+        subsection {first item in list}
+        text {second item in list}
+        chapter {third item in list}
+        section {...}
+    }
+}
+```
+
+This is a demonstration of the `list` and `ordered_list` layers. They work in
+effectively the same way: their child layers are displayed as lists when the
+output HTML is viewed in a web browser. Both are actually ordered: the items are
+displayed in the same order that they are written in the VVSML source. The only
+difference between the two types of list is that `list` outputs a list which
+uses dot or bullet points, while `ordered_list` outputs a list whose entries are
+numbered starting from 1. That's it for the list layers. Now, see the following
+`table` code:
+
+```
+contents
+{
+    table
+    {
+        row
+        {
+            text {-}
+            text {a}
+            text {b}
+            text {c}
+        }
+        row
+        {
+            text {1}
+            text {a1}
+            text {b1}
+            text {c1}
+        }
+        row
+        {
+            text {2}
+            text {a2}
+            text {b2}
+            text {c2}
+        }
+        row
+        {
+            text {3}
+            text {a3}
+            text {b3}
+            text {c3}
+        }
+    }
+}
+```
+
+A `table` can only contain one code element: the `row`. These `row`s, however,
+can contain any layer or textual extractor. Since it's hard to put into words,
+check out the cool table produced by the above code:
+
+| - | a  | b  | c  |
+|---|----|----|----|
+| 1 | a1 | b1 | c1 |
+| 2 | a2 | b2 | c2 |
+| 3 | a3 | b3 | c3 |
+
+I hope that clears up any confusion. Anyway, it may be important to note that
+each of these layers can be nested inside of each other. That is to say, you can
+place a `list` inside of another `list`, or a `table` inside an `ordered_list`,
+a `table` inside a `row`, and so on. A `row`, however, cannot appear outside of
+a `table`. You now know all the core features of VVSML, congratuations!
+
+# Some of the crazier features
+
+Apart from the core features, `vvsml` also implements some convenient stuff that
+I just thought would be kind of nice. First, character escapes. If you wanted a
+"}" in a `text`, you wouldn't normally be able to add it - but with escape
+characters, you can. To escape a character, add `]]$` in front of it. The only
+characters that can be escaped are "{", "}", "@", ".", and "]". Trying to escape
+anything else will cause `vvsml` to output an error.
+
+That's nice, but it's not crazy. What is crazy is the preprocessor. In VVSML,
+there are several "preprocessor directives" which can be placed in your code to
+cause `vvsml` to do certain things before actually processing anything. The
+first preprocessor directives to know are `.define_macro` and `macro`.
+
+```
+.define_macro {name of macro} {value after expansion}
+contents
+{
+    text {.macro {name of macro}}
+}
+```
+
+This does exactly what you would expect. Note that all `.define_macro`s are
+processed before any `.macro`s, so you can define them anywhere you want in the
+file - they don't have to appear before their first usage in the file. After
+macro expansion, the above code looks like this:
+
+```
+
+contents
+{
+    text {value after expansion}
+}
+```
+
+Unlike the prior code elements, `.define_macro` takes two arguments instead of
+just one. The first describes the name of a symbol in a symbol table, and the
+second describes the value of that symbol. Note that the name of the symbol (and
+the value) can be any valid UTF-8 string. Then, `.macro` does a lookup in the
+symbol table using its argument, and replaces itself with the value if the
+lookup is successful.
+
+The next preprocessor directive is `.link`. `.link` takes a piece of text and
+makes it into a clickable URL when its output is viewed in a browser. Like
+`.define_macro`, it takes two arguments: the text of the link, and the
+destination. See:
+
+```
+contents
+{
+    text {the below link will send you to google.com:}
+    text {.link {a link to google.com} {https://google.com/}}
+}
+```
+
+Then: `.unicode`. This one takes a single argument, a unicode codepoint in
+hexadecimal. See:
+
+```
+contents
+{
+    subsection {the two texts below will output the same HTML}
+    text {/.unicode {0068}.unicode {0065}.unicode {026a}/}
+    text {/&#104;&#101;&#618;/}
+}
+```
+
+So that's pretty simple so far - nothing too wacky. The next few features are
+either more complex or crazier. So then, regular expressions. If you want the
+preprocessor to scan through your entire file and perform regex-replacements on
+its text, VVSML gives you `.replace_all`. All written regex replacements are
+done in the order they appear in the file - top down, left to right.
+`.replace_all` takes two arguments: the regular expression to match against, and
+the replacements. Note that the first argument can't really contain curly braces
+since that would mess up `vvsml`'s function. Check the below example:
+
+```
+.replace_all {this is very [gb][oa][od]d?} {regular expressions...}
+contents
+{
+    text {this is very good}
+    text {this is very bad}
+}
+```
+
+After preprocessing, this becomes:
+
+```
+
+contents
+{
+    text {regular expressions...}
+    text {regular expressions...}
+}
+```
+
+The next feature, `.format`, is much more involved. In the previous parts of
+this... tutorial? you have seen many ways to format a written document -
+different sized headers, URLs, lists, tables, etc. However, there is more to
+formatting than just general layouts. For example, there is text weight and
+minor positioning like sub / superscripting. This is where `.format` comes in.
+`.format` takes two arguments: a string containing some textual data, and a
+string describing how that text should be formatted. This "description" of the
+formatting is done by writing certain format specifiers in the descriptor
+string. See the text below defining each of the available format specifiers:
+
+* `b`: The text should be made bold
+* `i`: The text should be made italic
+* `_`: The text should be subscripted
+* `^`: The text should be superscripted
+* `s`: The text should have a strikethrough
+* `x`: The text should be treated as X-SAMPA text and be converted to IPA
+  unicode characters
+* `p`: The text should be treated as Praat text and be converted to IPA unicode
+  characters
+* `B`: The text should be treated as Branner text and be converted to IPA
+  unicode characters
+
+These can be combined in any way to overlap their effects. See:
+
+```
+contents
+{
+    text {.format {b} {bold}}
+    text {.format {i} {italic}}
+    text {.format {si_} {strikethrough, italic, and subscripted}}
+    text {.format {b^} {bold and superscripted}}
+    text {.format {x} {Eks sAmp@}}
+}
+```
+
+I think this is a very nice demonstration of the `.format` preprocessor
+directive. The last feature I want to talk about in this section is
+`.external_table`. After seeing the above syntax for the `table` layer, you
+probably thought: "wow, this is inconvenient and I wish there was a nicer syntax
+for it". Well, `vvsml` defines a separate syntax for tables which is easier and
+much less unwieldy. In order to use it, create a new file to store this table -
+I recommend the `.vvtab` file extension. Then, open this file in your text
+editor:
+
+```
+$ touch example.vvtab
+$ emacs -nw example.vvtab
+```
+
+After opening this file, try writing the following code:
+
+```
+- & a  & b  & c  $
+1 & a1 & b1 & c1 $
+2 & a2 & b2 & c2 $
+3 & a3 & b3 & c3 $
+```
+
+Then, go back to `hello.vvsml` and write the following:
+
+```
+contents
+{
+    .external_table {example.vvtab}
+}
+```
+
+`.external_table` takes one argument - the path of the file containing your
+table. I call this special table syntax "VVtab", a mixing of "VVSML" and
+"table". In VVtab, all table elements are assumed to be `text`s. Each item in a
+row is seperated by a `&`, and each row is seperated by a `$`. Again, the LaTeX
+influence here is clearly visible. The fact that "&" and "$" are pretty common
+characters necessitates that VVtab introduce an escape character for being able
+to write them without being interpreted as seperators. Simple: just place a "\"
+before them. Done and dusted. Note that the above table is equivalent to the one
+described in the previous section.
