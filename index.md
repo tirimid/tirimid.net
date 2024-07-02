@@ -39,8 +39,6 @@ not expect an immediate response.
   input into GNU-as-compatible assembly output
 * [escl](tirimid/escl.md): A hyperminimalist privelege elevation program,
   similar to sudo or doas
-* [fs2di](tirimid/fs2di.md): A program for generating disk images from
-  filesystem images
 * [ipa-translate](tirimid/ipa-translate.md): A Rust crate for translating ASCII
   text into the International Phonetic Alphabet (IPA)
 * [medioed](tirimid/medioed.md): My personal mediocre text editor

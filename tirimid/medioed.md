@@ -2,9 +2,13 @@
 layout: default
 title: medioed
 date_published: 2024-02-04
-date_latest_revision: 2024-03-31
+date_latest_revision: 2024-07-02
 author: tirimid
 ---
+
+*NOTE: I am (at least for now) discontinuing work on this project. I'm creating
+a new personal text editor which will work differently. The below text has not
+been updated to reflect this.*
 
 # The idea
 
@@ -227,7 +231,3 @@ entered them again.
 Try not to enter ridiculously long macros, as there is a limit on size (512
 keypresses). Exceeding this limit will simply result in a truncated macro
 recording, with the end part missing.
-
-# Configuring and customizing medioed
-
-stuff will be added here eventually...
