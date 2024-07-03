@@ -2,7 +2,7 @@
 layout: default
 title: What was the First Rhythm Game?
 date_published: 2024-03-15
-date_latest_revision: 2024-03-15
+date_latest_revision: 2024-07-03
 author: tirimid
 ---
 
@@ -140,7 +140,7 @@ melodic note when the pressure sensors are activated, and "the player is given a
 song to play and the player must memorise to play the notes as they come as
 every missed note loses points"[^7]. Which is also quite interesting, as it
 demonstrates the idea of symbolically mapping certain inputs to certain pitches;
-a core tenant of charting for games like Stepmania and osu!mania, where mappers
+a core tenet of charting for games like Stepmania and osu!mania, where mappers
 will usually try to have some sort of pitch-relevancy, as it makes for a more
 intuitive experience when played.
 
