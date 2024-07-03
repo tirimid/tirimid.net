@@ -48,6 +48,8 @@ not expect an immediate response.
   queue with a fairly regular and consistent syntax
 * [The Sleeptalker Ritual](tirimid/sleeptalkerritual.md): A ritualpasta-style
   thing about talking to spirits by doing an intentional possession of a person
+* [Unnamic](tirimid/unnamic.md): A conlang project I made to create something a
+  bit more phonologically and morphologically complex than my usual stuff
 * [VVSML](tirimid/vvsml.md): A very simple markup language with fun syntax and
   utterly deranged features
 * [What was the First Rhythm Game?](tirimid/firstrg.md): A short historical work
