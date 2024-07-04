@@ -112,30 +112,30 @@ See the table below:
 
 | *Cluster-initial consonant* | *Legal in onset?* | *Legal in coda?* |
 |-----------------------------|-------------------|------------------|
-| m                           | &cross;           | &check;          |
-| n                           | &cross;           | &check;          |
-| p                           | &check;           | &check;          |
-| b                           | &check;           | &check;          |
-| t                           | &check;           | &check;          |
-| d                           | &check;           | &check;          |
-| k                           | &check;           | &check;          |
-| ɡ                           | &check;           | &check;          |
-| q                           | &check;           | &cross;          |
-| ɢ                           | &check;           | &cross;          |
-| ɸ                           | &check;           | &cross;          |
-| β                           | &check;           | &cross;          |
-| θ                           | &check;           | &check;          |
-| ð                           | &check;           | &check;          |
-| s                           | &check;           | &check;          |
-| z                           | &check;           | &check;          |
-| ʂ                           | &check;           | &check;          |
-| ʐ                           | &cross;           | &check;          |
-| ɕ                           | &check;           | &check;          |
-| ʑ                           | &cross;           | &check;          |
-| x                           | &check;           | &check;          |
-| ɣ                           | &check;           | &cross;          |
-| ɾ                           | &cross;           | &check;          |
-| r                           | &cross;           | &check;          |
+| m                           | ✗                 | ✓                |
+| n                           | ✗                 | ✓                |
+| p                           | ✓                 | ✓                |
+| b                           | ✓                 | ✓                |
+| t                           | ✓                 | ✓                |
+| d                           | ✓                 | ✓                |
+| k                           | ✓                 | ✓                |
+| ɡ                           | ✓                 | ✓                |
+| q                           | ✓                 | ✗                |
+| ɢ                           | ✓                 | ✗                |
+| ɸ                           | ✓                 | ✗                |
+| β                           | ✓                 | ✗                |
+| θ                           | ✓                 | ✓                |
+| ð                           | ✓                 | ✓                |
+| s                           | ✓                 | ✓                |
+| z                           | ✓                 | ✓                |
+| ʂ                           | ✓                 | ✓                |
+| ʐ                           | ✗                 | ✓                |
+| ɕ                           | ✓                 | ✓                |
+| ʑ                           | ✗                 | ✓                |
+| x                           | ✓                 | ✓                |
+| ɣ                           | ✓                 | ✗                |
+| ɾ                           | ✗                 | ✓                |
+| r                           | ✗                 | ✓                |
 
 This means that a word like /'kɾɛʐə.βne/ would be legal, but /'ʐɾɛkə.neβ/ would
 not.
