@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Unnamic
-date_published: 2023-07-02
+date_published: 2024-07-02
 date_latest_revision: 2024-07-04
 author: tirimid
 ---
