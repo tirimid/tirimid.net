@@ -143,7 +143,116 @@ not.
 
 ### Phonemic transformations
 
-stuff will be added here eventually...
+Phonemic transformations are sequences of changes applied to phonemes in order
+to indicate some sort of morphological difference. This is one of the things I
+wanted to try out with the conlang, so it is core to how it works. As such, it
+is necessary that I define a few termins to describe what kind of
+transformations the Unnamic language uses.
+
+First, the simplest: "V-transformations". V-transformations apply to individual
+vowel phonemes, and there are only two possible transformations for a vowel.
+Those two transformations are V-0 and V-1. V-0 is the 0th transformation (i.e.
+the "basic", untransformed form of the vowel) and V-1 is the transformed form.
+
+As always, a table is worth a hundred million or so words, so here is the
+relationship between vowels, their V-0 forms, and their V-1 forms.
+
+| *Vowel* | *V-0 form* | *V-1 form* |
+|---------|------------|------------|
+| i       | i          | y          |
+| y       | y          | i          |
+| ɨ       | ɨ          | o          |
+| ɯ       | ɯ          | u          |
+| u       | u          | ɯ          |
+| e       | e          | ø          |
+| ø       | ø          | e          |
+| ə       | ə          | -          |
+| o       | o          | ɨ          |
+| ɛ       | ɛ          | ʌ          |
+| ʌ       | ʌ          | ɛ          |
+
+As you can see, different vowels map to each other; being each others' V-1
+forms. When a vowel has an alternate rounded/unrounded form, its V-1 is the that
+form. The only exception is the /ə/, as it has no morphological use and is only
+ever uttered as a syllable separator.
+
+Second, "C-transformations". C-transformations apply to individual consonant
+phonemes. For any given consonant phoneme, there are four transformational
+forms: C-0 through C-3.
+
+Here is the table for C-transformations:
+
+| *Consonant* | *C-0 form* | *C-1 form* | *C-2 form* | *C-3 form* |
+|-------------|------------|------------|------------|------------|
+| m           | m          | mʲ         | n          | nʲ         |
+| n           | n          | nʲ         | m          | mʲ         |
+| p           | p          | pʲ         | b          | bʲ         |
+| b           | b          | bʲ         | p          | pʲ         |
+| t           | t          | tʲ         | d          | dʲ         |
+| d           | d          | dʲ         | t          | tʲ         |
+| k           | k          | kʲ         | ɡ          | ɡʲ         |
+| ɡ           | ɡ          | ɡʲ         | k          | kʲ         |
+| q           | q          | q          | ɢ          | ɢ          |
+| ɢ           | ɢ          | ɢ          | q          | q          |
+| ɸ           | ɸ          | ɸʲ         | β          | βʲ         |
+| β           | β          | βʲ         | ɸ          | ɸʲ         |
+| θ           | θ          | θʲ         | ð          | ðʲ         |
+| ð           | ð          | ðʲ         | θ          | θʲ         |
+| s           | s          | sʲ         | z          | zʲ         |
+| z           | z          | zʲ         | s          | sʲ         |
+| ʂ           | ʂ          | ʂ          | ʐ          | ʐ          |
+| ʐ           | ʐ          | ʐ          | ʂ          | ʂ          |
+| ɕ           | ɕ          | ɕ          | ʑ          | ʑ          |
+| ʑ           | ʑ          | ʑ          | ɕ          | ɕ          |
+| x           | x          | xʲ         | ɣ          | ɣʲ         |
+| ɣ           | ɣ          | ɣʲ         | x          | xʲ         |
+| ɾ           | ɾ          | ɾʲ         | r          | rʲ         |
+| r           | r          | rʲ         | ɾ          | ɾʲ         |
+
+The pattern is obvious. With few exceptions, going from C-0 to C-1 palatalizes
+the consonant; going from C-1 to C-2 depalatalizes it and changes the
+voicedness, and going from C-2 to C-3 repalatalizes it.
+
+Third, we can put together V-transformations and C-transformations to get
+"S-transformations". As you can probably guess, S-transformations apply to
+entire syllables, and are actually just specific combinations of
+C-transformations and V-transformations. S-transformational forms range from S-0
+to S-7.
+
+Here is a table describing this idea:
+
+| *S-transformational form* | *Syllable structure* |
+|---------------------------|----------------------|
+| S-0                       | C-0* V-0 C-0*        |
+| S-1                       | C-0* V-1 C-0*        |
+| S-2                       | C-1* V-0 C-1*        |
+| S-3                       | C-1* V-1 C-1*        |
+| S-4                       | C-2* V-0 C-2*        |
+| S-5                       | C-2* V-1 C-2*        |
+| S-6                       | C-3* V-0 C-3*        |
+| S-7                       | C-3* V-1 C-3*        |
+
+To further elaborate: when transforming a syllable from S-0 to S-1, the vowel is
+transformed from V-0 to V-1. When transforming from S-1 to S-2, the consonants
+all change from C-0 to C-1 and the vowel changes back to V-0. When transforming
+from S-2 to S-3, the vowel changes from V-0 to V-1. And so on...
+
+To fully illustrate what this actually means in practice, take the following
+example of all the S-transformational forms of the syllable /kɾɛβsʐ/:
+
+| *Syllable form* | *Syllable* |
+|-----------------|------------|
+| S-0             | kɾɛβsʐ     |
+| S-1             | kɾʌβsʐ     |
+| S-2             | kʲɾʲɛβʲsʲʐ |
+| S-3             | kʲɾʲʌβʲsʲʐ |
+| S-4             | ɡrɛɸzʂ     |
+| S-5             | ɡrʌɸzʂ     |
+| S-6             | ɡʲrʲɛɸʲzʲʂ |
+| S-7             | ɡʲrʲʌɸʲzʲʂ |
+
+This is important because this idea of transformation will be used extensively
+throughout the conlang.
 
 ### Stress
 
