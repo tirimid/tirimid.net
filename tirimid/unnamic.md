@@ -344,16 +344,16 @@ phonemes, the vowel of the word is prefixed with a "y". If the first syllable of
 the word is stressed, then stress is not explicitly written; otherwise, the
 stressed syllable is prefixed with a single quote (').
 
-For example, the word /kɾɛʐə'βne.ɡʲrʲʌɸʲzʲʂ/ would be written as "Kraezhe 'wne
+For example, the word /kɾɛʐə'βne.ɡʲrʲʌɸʲzʲʂ/ would be written as "Kraezhe 'wnei
 grryafzsz". For a more comprehensive example of how stress and palatalization
 interacts with the Romanization, see the following table:
 
-*Word: Kraezhe wne /kɾɛʐə.βne/*
+*Word: Kraezhe wnei /kɾɛʐə.βne/*
 
 | *-*                      | *Word unpalatalized* | *Word palatalized* |
 |--------------------------|----------------------|--------------------|
-| *Stress on 1st syllable* | Kraezhe wne          | Kryaezhe wnye      |
-| *Stress on 2nd syllable* | Kraezhe 'wne         | Kryaezhe 'wnye     |
+| *Stress on 1st syllable* | Kraezhe wnei         | Kryaezhe wnyei     |
+| *Stress on 2nd syllable* | Kraezhe 'wnei        | Kryaezhe 'wnyei    |
 
 This system is certainly not perfect, but it's the best I've come up with, after
 a few tries, that balances my goals for the Romanization.
