@@ -98,15 +98,57 @@ The following consonant pairs are valid within clusters:
 | *ɾ* | ɾm  | ɾn  | ɾp  | ɾb  | ɾt  | ɾd  | ɾk  | ɾɡ  | ɾq  | ɾɢ  | ɾɸ  | ɾβ  | ɾθ  | ɾð  | ɾs  | ɾz  | ɾʂ  | ɾʐ  | ɾɕ  | ɾʑ  | ɾx  | ɾɣ  | -   | -   |
 | *r* | rm  | rn  | rp  | rb  | rt  | rd  | rk  | rɡ  | rq  | rɢ  | rɸ  | rβ  | rθ  | rð  | rs  | rz  | rʂ  | rʐ  | rɕ  | rʑ  | rx  | rɣ  | -   | -   |
 
-### Legal syllable structures
+### Legal syllable-position consonants
 
-stuff will be added here eventually...
+The legality of 0th transformation consonants / consonant clusters is limited
+further, by the position of the cluster in the syllable. The initial consonant
+of a consonant cluster (including single-consonant "clusters") determines which
+positions the cluster may take within a syllable. I.e., some consonant clusters
+are legal in the coda but not the onset of a syllable, and vice versa - somewhat
+like how the consonant "-ng" in English cannot be used in the onset of a
+syllable.
+
+See the table below:
+
+| *Cluster-initial consonant* | *Legal in onset?* | *Legal in coda?* |
+|-----------------------------|-------------------|------------------|
+| m                           | &cross;           | &check;          |
+| n                           | &cross;           | &check;          |
+| p                           | &check;           | &check;          |
+| b                           | &check;           | &check;          |
+| t                           | &check;           | &check;          |
+| d                           | &check;           | &check;          |
+| k                           | &check;           | &check;          |
+| ɡ                           | &check;           | &check;          |
+| q                           | &check;           | &cross;          |
+| ɢ                           | &check;           | &cross;          |
+| ɸ                           | &check;           | &cross;          |
+| β                           | &check;           | &cross;          |
+| θ                           | &check;           | &check;          |
+| ð                           | &check;           | &check;          |
+| s                           | &check;           | &check;          |
+| z                           | &check;           | &check;          |
+| ʂ                           | &check;           | &check;          |
+| ʐ                           | &cross;           | &check;          |
+| ɕ                           | &check;           | &check;          |
+| ʑ                           | &cross;           | &check;          |
+| x                           | &check;           | &check;          |
+| ɣ                           | &check;           | &cross;          |
+| ɾ                           | &cross;           | &check;          |
+| r                           | &cross;           | &check;          |
+
+This means that a word like /'kɾɛʐə.βne/ would be legal, but /'ʐɾɛkə.neβ/ would
+not.
 
 ### Phonemic transformations
 
 stuff will be added here eventually...
 
 ### Stress
+
+stuff will be added here eventually...
+
+# Romanization
 
 stuff will be added here eventually...
 
