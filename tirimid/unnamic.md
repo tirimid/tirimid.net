@@ -252,15 +252,111 @@ example of all the S-transformational forms of the syllable /kɾɛβsʐ/:
 | S-7             | ɡʲrʲʌɸʲzʲʂ |
 
 This is important because this idea of transformation will be used extensively
-throughout the conlang.
+throughout the conlang. For shorthand, I will also say that "transforming" a
+vowel / consonant / syllable / word (see next section) refers to incrementing
+the degree of transformation (e.g. S-0 increments to S-1), and "detransforming"
+it refers to decrementing the degree of transformation (e.g. S-1 decrements to
+S-0).
+
+As a special case, when an S-7 form is transformed, it wraps around to S-0. Same
+for C-3, V1, etc. And when an S-0, C-0, ..., form is detransformed, it becomes
+S-7, C-3, etc. Kind of like integer over/underflow behavior.
 
 ### Stress
 
-stuff will be added here eventually...
+Phonemic stress is indicated by increased emphasis on a syllable, such as
+increased volume of speech, change in pitch, etc. Words each have a single
+stressed syllable; and it is worth noting that the stressed syllable includes
+the syllable separator in multi-syllable words. I.e., you'd also pronounce the
+/ə/ with increased pitch, volume, whatever.
+
+As I briefly mentioned in the previous section, stress is relevant to phonemic
+transformations. Apart from V-, C-, and S-transformations, I define a
+"W-transformation", or "word transformation". W-transformations define which
+syllable the phonemic stress of a word falls on and are orthogonal to
+S/C/V-transformations.
+
+By default, words are in W-0 form. In W-0 form, stress falls on the first
+syllable. In W-1 form, it falls on the second syllable. In W-2, on the third.
+Thus, this is the simplest possible phonemic transformation.
 
 # Romanization
 
-stuff will be added here eventually...
+In order to avoid having to write everything in IPA, it is necessary to define
+some sort of Romanization system. The Unnamic Romanization has the following
+three goals:
+
+1. Map 1:1 to the IPA representation
+2. Be ASCII-compatible
+3. Not look *too* terrible
+
+The easiest part is representing individual phonemes.
+
+The consonants are represented as follows:
+
+| *Phoneme* | *Representation* |
+|-----------|------------------|
+| m         | m                |
+| n         | n                |
+| p         | p                |
+| b         | b                |
+| t         | t                |
+| d         | d                |
+| k         | k                |
+| ɡ         | g                |
+| q         | q                |
+| ɢ         | gg               |
+| ɸ         | f                |
+| β         | w                |
+| θ         | th               |
+| ð         | dh               |
+| s         | s                |
+| z         | z                |
+| ʂ         | sz               |
+| ʐ         | zh               |
+| ɕ         | sc               |
+| ʑ         | j                |
+| x         | kh               |
+| ɣ         | gh               |
+| ɾ         | r                |
+| r         | rr               |
+
+And vowels are as follows:
+
+| *Phoneme* | *Representation* |
+|-----------|------------------|
+| i         | i                |
+| y         | eu               |
+| ɨ         | y                |
+| ɯ         | ue               |
+| u         | u                |
+| e         | ei               |
+| ø         | oe               |
+| ə         | e                |
+| o         | o                |
+| ɛ         | ae               |
+| ʌ         | a                |
+
+Words are written such that the first character of their first syllable is
+capitalized, and all the syllables are separated by spaces. If any of the
+syllables are in such an S-transformational form that contains palatalized
+phonemes, the vowel of the word is prefixed with a "y". If the first syllable of
+the word is stressed, then stress is not explicitly written; otherwise, the
+stressed syllable is prefixed with a single quote (').
+
+For example, the word /kɾɛʐə'βne.ɡʲrʲʌɸʲzʲʂ/ would be written as "Kraezhe 'wne
+grryafzsz". For a more comprehensive example of how stress and palatalization
+interacts with the Romanization, see the following table:
+
+*Word: Kraezhe wne /kɾɛʐə.βne/*
+
+| *-*                      | *Word unpalatalized* | *Word palatalized* |
+|--------------------------|----------------------|--------------------|
+| *Stress on 1st syllable* | Kraezhe wne          | Kryaezhe wnye      |
+| *Stress on 2nd syllable* | Kraezhe 'wne         | Kryaezhe 'wnye     |
+
+This system is certainly not perfect, but it's the best I've come up with, after
+a few tries, that balances my goals for the Romanization.
 
 # Grammar
 
