@@ -2,9 +2,10 @@
 layout: default
 title: Unnamic
 date_published: 2023-07-02
-date_latest_revision: 2024-07-02
+date_latest_revision: 2024-07-04
 author: tirimid
 ---
+
 
 # Introduction
 
@@ -112,30 +113,30 @@ See the table below:
 
 | *Cluster-initial consonant* | *Legal in onset?* | *Legal in coda?* |
 |-----------------------------|-------------------|------------------|
-| m                           | ✗                 | ✓                |
-| n                           | ✗                 | ✓                |
-| p                           | ✓                 | ✓                |
-| b                           | ✓                 | ✓                |
-| t                           | ✓                 | ✓                |
-| d                           | ✓                 | ✓                |
-| k                           | ✓                 | ✓                |
-| ɡ                           | ✓                 | ✓                |
-| q                           | ✓                 | ✗                |
-| ɢ                           | ✓                 | ✗                |
-| ɸ                           | ✓                 | ✗                |
-| β                           | ✓                 | ✗                |
-| θ                           | ✓                 | ✓                |
-| ð                           | ✓                 | ✓                |
-| s                           | ✓                 | ✓                |
-| z                           | ✓                 | ✓                |
-| ʂ                           | ✓                 | ✓                |
-| ʐ                           | ✗                 | ✓                |
-| ɕ                           | ✓                 | ✓                |
-| ʑ                           | ✗                 | ✓                |
-| x                           | ✓                 | ✓                |
-| ɣ                           | ✓                 | ✗                |
-| ɾ                           | ✗                 | ✓                |
-| r                           | ✗                 | ✓                |
+| m                           | No                | Yes              |
+| n                           | No                | Yes              |
+| p                           | Yes               | Yes              |
+| b                           | Yes               | Yes              |
+| t                           | Yes               | Yes              |
+| d                           | Yes               | Yes              |
+| k                           | Yes               | Yes              |
+| ɡ                           | Yes               | Yes              |
+| q                           | Yes               | No               |
+| ɢ                           | Yes               | No               |
+| ɸ                           | Yes               | No               |
+| β                           | Yes               | No               |
+| θ                           | Yes               | Yes              |
+| ð                           | Yes               | Yes              |
+| s                           | Yes               | Yes              |
+| z                           | Yes               | Yes              |
+| ʂ                           | Yes               | Yes              |
+| ʐ                           | No                | Yes              |
+| ɕ                           | Yes               | Yes              |
+| ʑ                           | No                | Yes              |
+| x                           | Yes               | Yes              |
+| ɣ                           | Yes               | No               |
+| ɾ                           | No                | Yes              |
+| r                           | No                | Yes              |
 
 This means that a word like /'kɾɛʐə.βne/ would be legal, but /'ʐɾɛkə.neβ/ would
 not.
@@ -173,5 +174,9 @@ stuff will be added here eventually...
 stuff will be added here eventually...
 
 # Glossing abbreviations
+
+stuff will be added here eventually...
+
+# Additional conlang tools
 
 stuff will be added here eventually...
