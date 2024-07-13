@@ -33,6 +33,8 @@ If you need to contact me for some reason, you can send an email to
 tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
+![](res/gamingfumo.png)
+
 # Aggregated pages
 
 * [BFC](tirimid/bfc.md): A tiny brainfuck compiler that turns Brainfuck source
