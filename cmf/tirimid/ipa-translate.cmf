@@ -1,0 +1,74 @@
+DOC-TITLE ipa-translate
+DOC-AUTHOR tirimid
+DOC-CREATED 2024-02-04
+DOC-REVISED 2024-10-11
+
+=What is ipa-translate?
+
+    ipa-translate is a Rust crate implementing multiple common standards for
+converting ASCII text into Unicode IPA (International Phonetic Alphabet) text.
+The currently implemented standards are:
+
+*"Branner" (implemented according to @[https://en.wikipedia.org/wiki/Comparison_of_ASCII_encodings_of_the_International_Phonetic_Alphabet|this Wikipedia article][^1|1])
+*Praat (implemented according to @[https://www.fon.hum.uva.nl/praat/manual/Phonetic_symbols.html|this Praat manual entry])
+*SIL (implemented according to @[https://help.keyman.com/keyboard/sil_ipa/1.8.6/sil_ipa|this KeymanHelp page][^2|2])
+*X-SAMPA (implemented according to @[https://en.wikipedia.org/wiki/X-SAMPA|this Wikipedia article])
+
+=Adding ipa-translate to your project
+
+    As with practically any other Rust crate, ipa-translate is hosted on @[https://crates.io/crates/ipa-translate|crates.io],
+and has a @[https://github.com/tirimid/ipa-translate|GitHub page] using which
+you may clone the source directly or contribute to the project. To add
+ipa-translate to your Cargo-based Rust project, run:
+
+```
+$ cargo add ipa-translate
+```
+
+    To clone the source from GitHub, run:
+
+```
+$ git clone https://github.com/tirimid/ipa-translate
+```
+
+    ipa-translate 0.1.8+ has only one dependency, lazy-static, which a massive
+number of other crates already depend on, so no other dependencies will be added
+if you choose to use it in any reasonably sized project. The core functionality
+of ipa-translate, the actual ASCII-IPA translation, is done using functions from
+the Rust standard library since version 0.1.8+, keeping the implementation
+minimal and fast.
+
+=Using ipa-translate
+
+    The source example in the README explains the usage well:
+
+```
+use ipa_translate;
+
+fn main() {
+    let ipa = "prʲɪvʲet";
+    
+    let xsampa = "pr_jIv_jet";
+    let praat = r"pr\^j\icv\^jet";
+    let branner = "prj^Ivj^et";
+    let sil = "prj^i=vj^et";
+
+    // forward translation.
+    assert_eq!(ipa_translate::xsampa_to_ipa(xsampa), ipa);
+    assert_eq!(ipa_translate::praat_to_ipa(praat), ipa);
+    assert_eq!(ipa_translate::branner_to_ipa(branner), ipa);
+    assert_eq!(ipa_translate::sil_to_ipa(sil), ipa);
+
+    // inverse translation.
+    assert_eq!(ipa_translate::ipa_to_xsampa(ipa), xsampa);
+    assert_eq!(ipa_translate::ipa_to_praat(ipa), praat);
+    assert_eq!(ipa_translate::ipa_to_branner(ipa), branner);
+    assert_eq!(ipa_translate::ipa_to_sil(ipa), sil);
+}
+```
+
+[^1]**[1]**: Slight implementation differences to given specification, see
+             `/translations/branner.rs` for details.
+
+[^2]**[2]**: Slight implementation differences to given specification, see
+             `/translation/sil.rs` for details.

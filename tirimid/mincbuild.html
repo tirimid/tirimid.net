@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mincbuild</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+}
+
+table, tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">mincbuild</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2023-09-29 (rev. 2024-10-11)</div>
+<h1>What is mincbuild?</h1>
+<p>Mincbuild, which stands for (Min)imalist (C) (Build)system, is a buildsystem
+designed to make project build easier for other minimalist C(++) software. Now,
+you may be worried that this is just like all the other buildsystems, and it has
+some shitty DSL that was designed by a group of crackheads rolling dice to
+decide on fundamental features, but no! The only piece of necessary
+configuration is a single conf file that describes the basics of how your
+project should be built.</p>
+<p>Of course, with no buildsystem DSL, mincbuild is meaningfully more
+restrictive than other buildsystems. For example, you cannot build one set of
+files using one command, and another set of files using another command without
+setting up multiple configurations, but given that the target usage for
+mincbuild is other minimalist software which shouldn&apos;t really be doing this
+anyway, that&apos;s not really an issue.</p>
+<p>As of writing this, mincbuild is only 1073 lines of C code, and the
+resulting binary from the build is 44KB in size.</p>
+<p>If your software is so minimalist (or designed in such a way) that the
+entire source implementation fits in one file, you are better off using
+something like Make, because mincbuild (while it will also work for this
+use-case) is meant specifically for minimalist software implemented across
+multiple source files, allowing for incremental compilation.</p>
+<h1>Installation and setup</h1>
+<p>First, clone the repository from <a href="https://github.com/tirimid/mincbuild">the GitHub</a>
+using:</p>
+<div class="long-code">$ git clone https://github.com/tirimid/mincbuild
+$ cd mincbuild</div>
+<p>Then, build the program. On Linux, this is a very simple process - mincbuild
+is designed for it. I have also had success with building mincbuild on Windows
+through MinGW, but it can be a trivial bit more involved.</p>
+<p>To build on Linux, run:</p>
+<div class="long-code">$ ./bootstrap.sh
+$ ./mincbuild</div>
+<p>To build on MinGW:</p>
+<ol>
+<li>Open <code>bootstrap.sh</code> in an editor (probably GNU nano)</li>
+<li>Remove <code>-lpthread</code> from <code>LIBS</code> (MinGW may not support pthread)</li>
+<li>Add <code>-DPRUNE_SINGLE_THREAD -DCOMPILE_SINGLE_THREAD</code> to <code>CFLAGS</code></li>
+<li>Exit your text editor</li>
+<li>Run <code>./bootstrap.sh</code></li>
+<li>If you get errors about how &quot;uint16 is undefined&quot; or something, you can do an
+ evil - <i>evil</i> - (but working) hack where you just go into the file causing the
+ error and insert a <code>typedef unsigned short uint16;</code>. You can also add an
+ <code>#include &lt;sys/types.h&gt;</code> higher up if needed, but it probably shouldn&apos;t be.</li>
+<li>Run <code>CFLAGS=&quot;-std=c99 -pedantic -D_POSIX_C_SOURCE=200809 -D_GNU_SOURCE
+ -DPRUNE_SINGLE_THREAD -DCOMPILE_SINGLE_THREAD&quot; ./mincbuild.exe</code></li>
+</ol>
+<p>You will notice upon the <code>mincbuild</code> binary that it prints build output with
+an extremely simple progress bar. This is because I&apos;ve personally always hated
+it when buildsystems or build processes in general don&apos;t give you even a vague
+indication of how long is left until completion.</p>
+<p>As another note - something worth knowing is that the whole
+&quot;PRUNE_SINGLE_THREAD COMPILE_SINGLE_THREAD&quot; thing you do on MinGW will obviously
+neuter multithreaded functionality. This sucks for general usage, but is
+actually quite nice if you have specific compatibility requirements (I suppose
+MinGW actually counts as one?).</p>
+<p>Anyway - now, you can install mincbuild to your system. To do this, run:</p>
+<div class="long-code"># ./install.sh</div>
+<p>And if you ever want to remove mincbuild from your system, run:</p>
+<div class="long-code"># ./uninstall.sh</div>
+<h1>Using mincbuild</h1>
+<p>First, to use mincbuild for a project, your project must follow a set,
+simple directory structure:</p>
+<div class="long-code">project/
+    source-files/
+        file.c
+        file.c
+        ...
+    header-files/
+        file.h
+        file.h
+        ...
+    mincbuild.conf</div>
+<p>Obviously, the names of the files / directories involved can be changed,
+they have just been named descriptively here for ease of understanding. The main
+thing here is that this directory <i>structure</i> is set in stone. Technically you
+can just use a single source directory for everything and mincbuild will allow
+it, but by design, mincbuild is meant for the structure outlined above. The
+rationale behind this is that it enforces a consistent project organization
+which is common and easy to understand. Anyway, that part is fairly obvious and
+requires no further elaboration - the interesting thing is the <code>mincbuild.conf</code>.</p>
+<p>The mincbuild conf takes the form of <code>key = value</code> configuration pairs
+(notice the significant whitespace between the <code>key</code>, <code>=</code>, and <code>value</code>).
+Comments begin with a <code>#</code>, as with most basic conf files - and only lines which
+<i>begin</i> with a <code>#</code> (not including leading whitespace) will be treated as a
+comment. If a <code>#</code> comment appears at the end of an otherwise non-comment line,
+it will not be treated as a comment.</p>
+<h2>Simple compilation</h2>
+<p>To begin with, there are a few keys that are absolutely essential to the
+compilation phase of the build, and mincbuild will output an error if any of
+these are missing. See below:</p>
+<ul>
+<li><code>cc</code>: Path to the compiler used for compilation</li>
+<li><code>cflags</code>: Flags passed to the compiler upon invocation</li>
+<li><code>src_dir</code>: Path to the project source directory</li>
+<li><code>inc_dir</code>: Path to the project header directory</li>
+<li><code>lib_dir</code>: Path to the project build directory where compiled object files will
+ be placed</li>
+<li><code>produce_output</code>: Boolean value determining whether linking should occur after
+ the compilation phase of the build</li>
+<li><code>src_exts</code>: Space-separated list of all file extensions used for source files
+ within the project</li>
+<li><code>hdr_exts</code>: Space-separated list of all file extensions used for header files
+ within the project</li>
+<li><code>incs</code>: Space-separated list of all directories that should be added to the
+ include path besides the project include directory. Used for dependencies
+ stored on the project source tree</li>
+<li><code>cc_inc_fmt</code>: Determines how include paths will be passed to the compiler upon
+ invocation. Should almost always be set to <code>-I%i</code></li>
+<li><code>cc_cmd_fmt</code>: Determines how the compiler will be invoked. Should almost always
+ be set to <code>%c %f -o %c -c %s %i</code></li>
+<li><code>cc_success_rc</code>: Return code outputted by the compiler upon a successful
+ compilation after being invoked. Should usually be set to <code>0</code></li>
+</ul>
+<p>A basic <code>mincbuild.conf</code> which contains all of these keys would look
+something like this:</p>
+<div class="long-code"># toolchain.
+cc = /usr/bin/gcc
+cflags = -std=c99 -pedantic
+
+# project.
+src_dir = src
+inc_dir = include
+lib_dir = lib
+produce_output = false
+src_exts = c
+hdr_exts = h
+
+# dependencies.
+incs = NONE
+
+# toolchain information.
+cc_inc_fmt = -I%i
+cc_cmd_fmt = %c %f -o %o -c %s %i
+cc_success_rc = 0</div>
+<p>... which will define a C project with a <code>src</code> source file directory, an
+<code>include</code> header file directory, and a <code>lib</code> object file output directory.
+Unlike <code>src</code> and <code>include</code>, <code>lib</code> does not need to exist before the build
+process - and will be automatically created if it is missing. When mincbuild is
+invoked here, all source files in <code>src</code> will be compiled to corresponding object
+files in <code>lib</code>, but the build will stop at that. No linking will occur and you
+will be left with <i>just</i> compiled object files - which is useful in the
+situation that you want to link them individually into other projects.</p>
+<p>Oh, and, by the way, in case you haven&apos;t noticed - the dummy name <code>NONE</code> is
+used whenever a key should have an empty value, rather than just leaving it
+blank. Another thing to keep in mind is that trailing significant whitespace
+applies to the values of the configuration file: i.e. a value &quot;hello&quot; is
+different to another value &quot;hello &quot; (notice the trailing space) but it is <i>not</i>
+different to &quot; hello&quot; (notice the leading space). This is important to note
+because if you meant to pass &quot;<code>NONE</code>&quot; as one of the values, but accidentally
+passed &quot;<code>NONE </code>&quot; (with a trailing space), the behavior will not be the same in
+both cases.</p>
+<h2>Linking the project</h2>
+<p>However, for most projects it won&apos;t be enough to simply compile all the
+sources - you want to link them all together. In order to do this, you will need
+to set <code>produce_output</code> to <code>true</code> and define the following keys, without which
+the mincbuild linking phase cannot occur and an error will be outputted:</p>
+<ul>
+<li><code>ld</code>: Path to the linker used for linking</li>
+<li><code>ldflags</code>: Flags passed to the linker upon invocation</li>
+<li><code>output</code>: Name of the output binary created upon linking</li>
+<li><code>libs</code>: Space-separated list of all libraries that should be linked into the
+ project</li>
+<li><code>ld_lib_fmt</code>: Determines how libraries will be passed to the linker upon
+ invocation. Should usually be set to <code>-l%l</code></li>
+<li><code>ld_obj_fmt</code>: Determines how object files will be passed to the linker upon
+ invocation. Should almost always be set to <code>%o</code></li>
+<li><code>ld_cmd_fmt</code>: Determines how the linker will be invoked. Should almost always
+ be set to <code>%c %f -o %b %o %l</code></li>
+<li><code>ld_success_rc</code>: Return code outputted by the linker upon a successful linking
+ after being invoked. Should usually be set to <code>0</code></li>
+</ul>
+<p>A basic <code>mincbuild.conf</code> which implements compilation and linking would look
+something like:</p>
+<div class="long-code"># toolchain.
+cc = /usr/bin/gcc
+ld = /usr/bin/gcc
+cflags = -std=c99 -pedantic
+ldflags = NONE
+
+# project.
+src_dir = src
+inc_dir = include
+lib_dir = lib
+produce_output = true
+output = demo
+src_exts = c
+hdr_exts = h
+
+# dependencies.
+incs = NONE
+libs = NONE
+
+# toolchain information.
+cc_inc_fmt = -I%i
+cc_cmd_fmt = %c %f -o %o -c %s %i
+ld_lib_fmt = -l%l
+ld_obj_fmt = %o
+ld_cmd_fmt = %c %f -o %b %o %l
+cc_success_rc = 0
+ld_success_rc = 0</div>
+<p>... which will define a C project with all the same properties as before,
+except mincbuild will now also link the compiled object files into an output
+binary called <code>demo</code>.</p>
+<h2>Using the binary</h2>
+<p>Finally, that&apos;s basically all you need to understand about the mincbuild
+conf file and I can move on to the <code>mincbuild</code> command line tool you built
+during the previous part of this guide. Using the <code>mincbuild</code> command line tool
+is extremely simple. Just navigate to the project directory which contains the
+<code>mincbuild.conf</code>, and run:</p>
+<div class="long-code">$ mincbuild</div>
+<p>Nice. Very simple. However, I said earlier that &quot;the names of the files /
+directories [in the project] can be changed&quot;, and this includes the mincbuild
+conf. This is true, you can rename it to anything. If you rename
+<code>mincbuild.conf</code> to something else, say, <code>buildinfo.conf</code> or something, you will
+need to run the following command instead:</p>
+<div class="long-code">$ mincbuild buildinfo.conf</div>
+<p>You may also pass some command line flags to mincbuild in the standard
+<code>getopt()</code>-compatible format in order to change certain parts of the build
+process in such a way that a successful build won&apos;t differ in any way than a
+clean <code>mincbuild</code> invocation, but still provide some kind of useful
+functionality. The possible flags are:</p>
+<ul>
+<li><code>-r</code>: The pruning phase of the build will be skipped and all files will be
+ compiled. Even already built objects that don&apos;t strictly require rebuilding
+ will be recompiled. This is useful in two main cases: a) if you change the
+ <code>mincbuild.conf</code> and want to rebuild the project with the new settings, and b)
+ if some part of your toolchain has changed in such a way that a full rebuild is
+ necessary</li>
+<li><code>-v</code>: Verbose output regarding the build process will be written to standard
+ output. The progress messages that are normally outputted will also contain the
+ commands invoked by mincbuild at that point in the build</li>
+</ul>
+<p>As well as the basic <code>-h</code> flag that everyone already understands.</p>
+<h2>Temporary overrides</h2>
+<p>The fact that the compiler, linker, compiler flags, linker flags, etc. are
+hardcoded into the mincbuild conf is fine for most cases - especially if you&apos;ve
+only tested your project on a single toolchain and cannot guarantee it building
+on anything else.</p>
+<p>However, let&apos;s say you have a program with a conditional compilation path
+which enables UTF-8 support for text handling, and to enable this conditional
+compilation path, you must compile with <code>-DENABLE_UTF_8_SUPPORT</code>. Well, it&apos;s
+fine to make an edit to the conf file if you are an end user, but if you are a
+programmer and need to frequently test your program both with <i>and</i> without
+UTF-8, it certainly gets annoying to constantly make changes to a build file.</p>
+<p>For this reason, mincbuild allows you to override specifically those
+variables. You can do this by setting the following environment variables:</p>
+<ul>
+<li><code>CC</code>: compiler</li>
+<li><code>LD</code>: linker</li>
+<li><code>CFLAGS</code>: compiler flags</li>
+<li><code>LDFLAGS</code>: linker flags</li>
+</ul>
+<p>So, in our above example, you might do something like:</p>
+<div class="long-code">$ CFLAGS=&quot;-DENABLE_UTF_8_SUPPORT&quot; mincbuild</div>
+<p>... to build with UTF-8 support.</p>
+<p>If the environment variable is not set, mincbuild will simply use the value
+specified in the conf file.</p>
+<p>As a hint, try running with <code>-v</code> to see that the command has actually
+changed after an override, and make sure it is correct. You should also remember
+that compiling different parts of the same project with different flags is often
+ill-advised.</p>
+<p>In fact, to be completely safe, you might want to run this instead:</p>
+<div class="long-code">$ CFLAGS=&quot;-DENABLE_UTF_8_SUPPORT&quot; mincbuild -vr</div>
+<p>You now understand everything there is to know about the basics of using
+mincbuild.
+</p>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>escl</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+}
+
+table, tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">escl</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2024-02-04 (rev. 2024-10-11)</div>
+<h1>What is escl?</h1>
+<p>Escl, whose name is originally derived from &quot;privilege (esc)a(l)ation&quot;, is a
+program in the vein of sudo or doas, used to elevate non-root user privileges to
+root, for the sake of executing commands which you otherwise wouldn&apos;t be able
+to. It is minimalist software with no dependencies on things which wouldn&apos;t be
+available on every Linux system ever - using only libcrypt and some POSIX
+functions. As of writing this, the file containing the entire escl
+implementation, <code>escl.c</code>, is 275 lines of code. As well as this, all of its
+configuration is stored in a single file and the program doesn&apos;t interact with
+any files other than that, so you don&apos;t need to worry about breaking anything.</p>
+<p>Escl arose from my personal desire for a hyperminimalist privilege elevation
+tool which is extremely easy to manage and has zero dependencies.</p>
+<h1>Installation and setup</h1>
+<p>First, clone the source tree from <a href="https://github.com/tirimid/escl">the GitHub</a>,
+then build and install escl. This can be done with:</p>
+<div class="long-code">$ git clone https://github.com/tirimid/escl
+$ cd escl
+$ make
+$ su
+# make install</div>
+<p>If you ever wish to uninstall escl, run the following:</p>
+<div class="long-code"># make uninstall</div>
+<p>You will notice that in the previous commands, I have entered <code>su</code> and
+didn&apos;t exit. This is because the next few commands you will be executing must
+also be run as root.</p>
+<p>Anyway, now that you have installed the compiled <code>escl</code> binary onto your
+system, you need to understand how escl actually works. Escl has a system of
+users and passwords, which can only be managed by root. By default, no users are
+allowed to use escl for privelege elevation, and no passwords exist for them to
+authenticate with. Once added, any permitted user will be able to authenticate
+with any registered password. All information about escl permissions and state
+is stored - by default - in the file: <code>/etc/escl.conf</code>, although this can be
+changed by editing the source and recompiling. Anyway, the point is that escl
+requires some light setup in order to be made useful - nothing scary, only one
+or two commands.</p>
+<p>Let&apos;s say that we have two users, one called &quot;alice&quot; and the other called
+&quot;bob&quot;, and we want to give them the ability to elevate privileges by entering
+any of three passwords: &quot;pass1&quot;, &quot;secretword&quot;, or &quot;mixedradixNS&quot;. The First step
+would be to add the users, alice and bob, to the <code>/etc/escl.conf</code>. This can
+either be done manually, or using the <code>escl</code> binary. For the sake of
+completeness, I will demonstrate both methods.</p>
+<p>To manually add the user &quot;alice&quot; to <code>/etc/escl.conf</code>, do the following in
+vim (or whatever the equivalent is for your text editor):</p>
+<div class="long-code"># vim /etc/escl.conf
+i
+user alice
+ESC
+:wq
+RET</div>
+<p>To add a user using the binary, run:</p>
+<div class="long-code"># escl -ua bob</div>
+<p>Adding users using the binary is the preferred method of doing so, as it
+will reduce human error. Now that both users have been added, you need to give
+them passwords to use for authentication. This is done by running:</p>
+<div class="long-code"># escl -pa</div>
+<p>And entering the password you want to use. You can either run the command
+multiple times to add multiple passwords, or you can run the command once with
+the <code>-pa</code> flag repeated however many times you want to add a new password.</p>
+<p>This is the basic setup process complete. If you <code>cat</code> the output of
+<code>/etc/escl.conf</code>, you will see something like:</p>
+<div class="long-code">$ cat /etc/escl.conf
+user alice
+user bob
+passwd BhCKeKJIqV1uk
+passwd JxLXnoDReSE7k
+passwd NqEAUtoNkpmAs</div>
+<p>The added passwords are stored in hashed form for a basic level of security.</p>
+<h1>Using escl</h1>
+<p>After escl has been installed and set up via the process outlined above, all
+permitted users will be able to use it. For example, if alice decides to upgrade
+her Arch Linux system with escl on it, she would run:</p>
+<div class="long-code">$ escl pacman -Syu</div>
+<p>... and enter one of the registered passwords. In this way, it is used the
+same as sudo or doas.</p>
+<p>That&apos;s it, that&apos;s all there is to it.</p>
+<h1>User / password management</h1>
+<p>There are several things that you may want to do to manage the state of escl
+after installation. For example, you may want to add / remove users and
+passwords, or regenerate the hash used to store a certain password for security
+reasons. Using the <code>escl</code> binary, these tasks are all made trivially easy.</p>
+<p>Adding users and passwords has already been covered in the above section.</p>
+<p>To remove the user alice&apos;s ability to use escl, run the following command:</p>
+<div class="long-code"># escl -ur alice</div>
+<p>To remove a password from the <code>/etc/escl.conf</code> so that users can no longer
+authenticate with it, run the following command and enter the password you wish
+to remove:</p>
+<div class="long-code"># escl -pr</div>
+<p>To regenerate the hash used to store a password in <code>/etc/escl.conf</code>, simply
+remove a password and readd it. The salt used for generating a hash is
+randomized whenever a password is added, so this process will have the effect of
+hash regeneration. To quickly remove and add a password, run:</p>
+<div class="long-code"># escl -pr -pa</div>
+</body>
+</html>

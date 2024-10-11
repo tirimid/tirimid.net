@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quevish</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+}
+
+table, tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">Quevish</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2023-12-20 (rev. 2024-10-12)</div>
+<h1>Introduction</h1>
+<p>Quevish is a conlang I made. This page serves as the official documentation,
+reference grammar, textbook examples, and base reference dictionary. The main
+design principle is syntactic consistency and allowance of expressing yourself
+semantically in interesting ways. The glossing abbreviations used for sentence
+examples throughout the page can be found at the end.</p>
+<h1>Phonology</h1>
+<h2>Phoneme inventory + Romanization</h2>
+<p>In the Latin-script orthography for Quevish, capitalization is irrelevant
+and it is written case-insensitively. For conventional consistency, I will be
+writing Romanized Quevish entirely in lowercase and recommend that you do the
+same.</p>
+<p>All consonants in Quevish are voiced, I think this gives an interesting
+sound to the language. Below are the Quevish consonants presented over the
+typical International Phonetic Alphabet table with their Romanizations:</p>
+<table>
+<tr>
+<td><b>-</b>          </td>
+<td><b>Bilabial</b></td>
+<td><b>Labiodental</b></td>
+<td><b>Alveolar</b></td>
+<td><b>Palatal</b></td>
+<td><b>Velar</b></td>
+</tr>
+<tr>
+<td><b>Plosive</b>    </td>
+<td>b           </td>
+<td>-              </td>
+<td>d           </td>
+<td>-          </td>
+<td>g        </td>
+</tr>
+<tr>
+<td><b>Nasal</b>      </td>
+<td>m           </td>
+<td>-              </td>
+<td>n           </td>
+<td>-          </td>
+<td>-        </td>
+</tr>
+<tr>
+<td><b>Fricative</b>  </td>
+<td>-           </td>
+<td>w              </td>
+<td>z           </td>
+<td>-          </td>
+<td>-        </td>
+</tr>
+<tr>
+<td><b>Approximant</b></td>
+<td>-           </td>
+<td>-              </td>
+<td>-           </td>
+<td>j          </td>
+<td>-        </td>
+</tr>
+</table>
+<p>All vowels in Quevish are unrounded, with the exception of &quot;o&quot;, which is
+rounded. See below the vowels along with their Romanizations:</p>
+<table>
+<tr>
+<td><b>-</b>        </td>
+<td><b>Front</b></td>
+<td><b>Center</b></td>
+<td><b>Back</b></td>
+</tr>
+<tr>
+<td><b>Close</b>    </td>
+<td>i        </td>
+<td>-         </td>
+<td>u       </td>
+</tr>
+<tr>
+<td><b>Nearclose</b></td>
+<td>-        </td>
+<td>y         </td>
+<td>-       </td>
+</tr>
+<tr>
+<td><b>Openmid</b>  </td>
+<td>e        </td>
+<td>-         </td>
+<td>o       </td>
+</tr>
+<tr>
+<td><b>Open</b>     </td>
+<td>a        </td>
+<td>-         </td>
+<td>-       </td>
+</tr>
+</table>
+<h2>Phonotactics</h2>
+<p>There are a few things to talk about here. Namely: basic rules for
+maintaining future consistency should I ever choose to work further on Quevish,
+which combinations of consonants and vowels consitute legal syllables, and
+gemination and vowel harmony rules.</p>
+<p>First, consistency. All syllables in Quevish take the form of a consonant,
+followed by a vowel, optionally followed by either &quot;m&quot; or &quot;n&quot;. This is kind of
+like how in Japanese a syllable will end in either a &quot;n&quot; sound or a vowel, and
+where I took this idea from. So, laying it out in a visually easier format, we
+get the following legal syllable structures:</p>
+<ul>
+<li>CV</li>
+<li>CVm</li>
+<li>CVn</li>
+</ul>
+<p>Also, the second rule for guaranteeing consistency (oriented towards future
+compatibility) is that all word-initial syllables beginning with either &quot;g&quot; or
+&quot;z&quot; are reserved for grammatical use and are not allowed for roots. The
+difference between grammatical particles and roots will be explained - but it&apos;s
+probably good enough to think of them as function words vs. content words in
+order to understand why I would want to reserve this. Thus, I guarantee that no
+roots in the official reference dictionary provided on this page will begin in
+&quot;g&quot; or &quot;z&quot;.</p>
+<p>Second, here is a table of which C-V pairs can appear in a syllable. Those
+not present in the table are illegal and phonotactically disallowed from
+appearing within syllables:</p>
+<table>
+<tr>
+<td><b>-</b></td>
+<td><b>b</b></td>
+<td><b>d</b></td>
+<td><b>g</b></td>
+<td><b>m</b></td>
+<td><b>n</b></td>
+<td><b>w</b></td>
+<td><b>z</b></td>
+<td><b>j</b></td>
+</tr>
+<tr>
+<td><b>i</b></td>
+<td>bi   </td>
+<td>-    </td>
+<td>-    </td>
+<td>mi   </td>
+<td>ni   </td>
+<td>wi   </td>
+<td>zi   </td>
+<td>-    </td>
+</tr>
+<tr>
+<td><b>u</b></td>
+<td>bu   </td>
+<td>du   </td>
+<td>gu   </td>
+<td>mu   </td>
+<td>nu   </td>
+<td>wu   </td>
+<td>zu   </td>
+<td>ju   </td>
+</tr>
+<tr>
+<td><b>y</b></td>
+<td>by   </td>
+<td>dy   </td>
+<td>gy   </td>
+<td>my   </td>
+<td>ny   </td>
+<td>wy   </td>
+<td>zy   </td>
+<td>-    </td>
+</tr>
+<tr>
+<td><b>e</b></td>
+<td>be   </td>
+<td>de   </td>
+<td>-    </td>
+<td>me   </td>
+<td>ne   </td>
+<td>we   </td>
+<td>ze   </td>
+<td>je   </td>
+</tr>
+<tr>
+<td><b>o</b></td>
+<td>bo   </td>
+<td>do   </td>
+<td>go   </td>
+<td>mo   </td>
+<td>no   </td>
+<td>wo   </td>
+<td>zo   </td>
+<td>jo   </td>
+</tr>
+<tr>
+<td><b>a</b></td>
+<td>ba   </td>
+<td>da   </td>
+<td>ga   </td>
+<td>ma   </td>
+<td>na   </td>
+<td>wa   </td>
+<td>za   </td>
+<td>ja   </td>
+</tr>
+</table>
+<p>The eliminated ones are chosen fairly arbitrarily, either because I couldn&apos;t
+easily pronounce them or I felt they didn&apos;t really fit within the context of the
+other legal syllables.</p>
+<p>Third, gemination and harmony rules. For gemination, there is only one
+rule - multiple &quot;m&quot;s and &quot;n&quot;s cannot occur consecutively. Since, as a result of
+the other phonotactical rules, this might only happen with two-letter long
+scenarios, the rule on what to do is defined in terms of two-letter
+modification. Namely, if multiple &quot;m&quot;s or &quot;n&quot;s occur consecutively, the second
+letter is changed to the other. For example, the word &quot;janna&quot; would become
+&quot;janma&quot;, and &quot;jamma&quot; would become &quot;jamna&quot;. In practice, this is like
+search-replacing all &quot;mm&quot;s to &quot;mn&quot;s, and all &quot;nn&quot;s to &quot;nm&quot;s.</p>
+<p>As for vowel harmony, the way it works is that there are three classes of
+vowels, A-class, B-class, and C-class. These classes are composed as follows:</p>
+<table>
+<tr>
+<td><b>A-class</b></td>
+<td><b>B-class</b></td>
+<td><b>C-class</b></td>
+</tr>
+<tr>
+<td>i, e, a    </td>
+<td> y         </td>
+<td> u, o      </td>
+</tr>
+</table>
+<p>... and these classes share overlap in a certain way. A-class vowels can
+only occur in words without C-class vowels. Likewise, C-class vowels can only
+occur in words without A-class vowels. B-class vowels can occur in all words, no
+matter what other vowels the word contains. As such, we can view A-class and
+C-class vowels as mutually exclusive over a word, and B-class words as not
+having this restriction.</p>
+<p>As a simple visualization, I have created this Venn diagram (see below).
+Only vowel classes with overlap may co-occur in a word:</p>
+<img src="../res/tirimid/quevish/harmonyvenn.png">
+<p>Since Quevish is a morphologically very simple language, there are no rules
+for vowel assimilation as there are no scenarios in which it has any reason to
+occur. The above phonotactic rules are more design guidelines for adding new
+roots or grammatical particles to the language.</p>
+<h1>Grammar</h1>
+<p>Quevish is an analytic language with focus on expression-based syntax. The
+syntax of the language consists of &quot;roots&quot; and &quot;grammatical particles&quot;, the
+latter modifying the former to create meaning in a sentence. Phrases are said in
+a kind of &quot;queue notation&quot;, such that the roots are operands and the particles
+are operators. Then, the sentence is &quot;evaluated&quot; on a &quot;queue&quot; to create meaning.
+Hence, the &quot;Quev&quot; in Quevish, which stands for &quot;Queue evaluation&quot;.</p>
+<p>This evaluation process happens as follows:</p>
+<ol>
+<li>Run through the words in the phrase in sequence until you encounter a
+ grammatical particle, pushing any roots to the evaluation queue in the process</li>
+<li>Once you encounter a grammatical particle, the correct number of operands is
+ dequeued from the evaluation queue and operated on by the particle</li>
+<li>The result of the operation is pushed to the queue - all grammatical particles
+ will push exactly one thing to the queue</li>
+<li>Jump back to the first step if there are still more words left to read in the
+ phrase, otherwise go to the next step</li>
+<li>If there is more than one operand in the evaluation queue, the phrase was
+ malformed and has no meaning; otherwise the only item remaining in the queue is
+ to be taken as somehow representing the information of the phrase</li>
+</ol>
+<p>This is very programming-language-ey but that&apos;s kind of the goal with
+Quevish. In practice, you can treat most grammatical particles as case markers
+or other conventional syntactical features, just with slightly wackier format.
+Still, this is the actual process according to which phrases and sentences are
+evaluated, so forming them should simply follow the inverse process.</p>
+<h2>Grammatical particles</h2>
+<h3>Modifier - &quot;ga&quot; particle</h3>
+<p>When you want to combine words (as in, making compound &quot;words&quot;, using
+adjectives to describe something, etc.) the &quot;ga&quot; grammatical particle is used.
+It takes two operands and marks that its first operand is modified in some way
+by its second operand.</p>
+<p>Example:</p>
+<div class="long-code">wi
+living</div>
+<p>trans. &quot;creature&quot;</p>
+<div class="long-code">wi     bo       ny
+living advanced primitive</div>
+<p>trans. (malformed expression, no meaning)</p>
+<div class="long-code">wi     bo       ga  ny        ga
+living advanced MOD primitive MOD</div>
+<p>trans. &quot;animal&quot;, &quot;animals&quot;, &quot;animalistic&quot;, etc.</p>
+<p>Since Quevish does not explicitly distinguish between adjectives, nouns,
+plurality, or anything like that by default - and instead relies on context or
+use of specific grammatical particles for disambiguation, the actual meaning of
+the above phrase is dependent on more than the phrase itself. Still, it is meant
+to capture the &quot;essence&quot; of &quot;animalness&quot; if you will.</p>
+<h3>Verb phrase initializer - &quot;guby&quot; particle</h3>
+<p>In Quevish, sentences must be built from the ground up, and the speaker may
+add in (or omit) as much information as they can reasonably desire. Sentences
+must contain at least a verb phrase. A verb phrase is simply a &quot;verb&quot; which may
+be modified by other words or phrases, and may modify other words or phrases.
+The &quot;guby&quot; particle is used to mark something as being a verb phrase, most
+commonly a root. It takes one operand, marks it as a verb phrase, and then
+pushes the marked operand to the queue. The pushed operand may then be used like
+any other, and modified using the &quot;ga&quot; particle. Effectively, this allow you to
+describe it using a kind of &quot;adverb&quot;.</p>
+<p>Example:</p>
+<div class="long-code">ju
+language</div>
+<p>trans. &quot;talking&quot;</p>
+<div class="long-code">ju       guby
+language VPINIT</div>
+<p>trans. &quot;to talk&quot;, &quot;is talking&quot;, &quot;was communicating&quot;, &quot;will send messages&quot;,
+etc.</p>
+<div class="long-code">ju       guby   bo       ga
+language VPINIT advanced MOD</div>
+<p>trans. &quot;to talk eloquently&quot;, &quot;was communicating with experience&quot;, etc.</p>
+<p>Note that &quot;guby&quot; does not require, nor does it introduce, any tense, aspect,
+or other such information to the verb phrase. Thus, as seen above, it can imply
+many meanings - the key similarity is that all of them are in some way or
+another derived from the underlying meanings of the roots. All of them have
+<i>some</i> relation to &quot;advancedness&quot; and communication, and this relation is in the
+form of roots to verb phrases.</p>
+<p>Quevish, as a language, is very open to interpretation in this way. Your
+conception of the roots&apos; meanings will fundamentally determine your usage of the
+language. Your conception of what it means to &quot;modify&quot; something will too,
+similarly so. In this way, it is somewhat toki-pona-esque, as it forces you to
+question the nature of something before being able to talk about it, it forces
+you to think about the way in which different parts of a phrase are really
+related to each other.</p>
+<h3>Noun phrase initializer - &quot;gane&quot; particle</h3>
+<p>A noun phrase in Quevish is just a &quot;noun&quot; marked as being a noun phrase.
+Noun phrases may be modified like anything else, and may be used as modifiers
+like anything else. The &quot;gane&quot; particle takes one operand, marks it as a noun
+phrase, and pushes the marked operand back to the evaluation queue. Basically,
+its the same thing as &quot;guby&quot; particle except for noun phrases instead of verb
+phrases.</p>
+<p>While it is up to the individual speaker / listener, the way I interpret
+modifying noun phrases is that modifying them by a root is like describing it
+with an adjective, and modifying them with another noun phrase is like creating
+a compound word.</p>
+<p>Example:</p>
+<div class="long-code">wi     bo       ga  ny        ga  gane
+living advanced MOD primitive MOD NPINIT</div>
+<p>trans. &quot;animal&quot;</p>
+<div class="long-code">wi     gane
+living NPINIT</div>
+<p>trans. &quot;life&quot;</p>
+<div class="long-code">wi     guby   gane
+living VPINIT NPINIT</div>
+<p>trans. &quot;the action of living&quot;</p>
+<p>One interesting thing that can be done (as demonstrated above) is the
+marking of verb phrases as noun phrases. This is possible because the phrase
+initializer particles are not limited with what they can accept as operands.
+What seems most intuitive to me for the interpretation of a verb phrase marked
+as a noun phrase is that it is effectively a gerund or participle-ey thing.</p>
+<h3>Identity requeuer - &quot;zi&quot; particle</h3>
+<p>Whenever you need to shuffle the queue, the &quot;zi&quot; identity grammatical
+particle can be used. All it does is dequeue an item from the evaluation queue,
+and immediately requeue it without any processing. This has the effect of moving
+the front item to the back of the queue.</p>
+<p>Example:</p>
+<div class="long-code">wi     jo  ga
+living bad MOD</div>
+<p>trans. &quot;living thing that is evil&quot;</p>
+<div class="long-code">wi     jo  zi ga
+living bad ID MOD</div>
+<p>trans. &quot;evil thing that is living&quot;</p>
+<div class="long-code">jo  wi     ga
+bad living MOD</div>
+<p>trans. &quot;evil thing that is living&quot;</p>
+<p>You can see that the last two evaluate to the same thing. That is because,
+in this example, the &quot;zi&quot; identity requeue simply swaps the order from the front
+of both items in the evaluation queue, so &quot;wi jo zi&quot; and &quot;jo wi&quot; are effectively
+the same thing. In these small examples, the &quot;zi&quot; particle appears to not be
+very useful, but it becomes absolutely essential for queue manipulation in
+anything meaningfully complex.</p>
+<h3>Intransitive VPNP combiner - &quot;zewi&quot; particle</h3>
+<p>If you want to form an intransitive sentence / phrase (one with a subject
+and verb), the &quot;zewi&quot; grammatical particle is used. It takes two operands, the
+first of which must be a verb phrase, and the second of which must be a noun
+phrase. It pushes to the evaluation queue an item representing a phrase where
+the verb phrase (first operand) is somehow acted out by the noun phrase or
+subject (second operand). Generally the subject will be the agent of the action
+but the actual nature of what does the action, what the action is, and how it
+works is determined by the operands themselves, as well as context.</p>
+<p>Example:</p>
+<p><i>(For these more complicated phrases I am including sexpr-style tree
+representations of the evaluated meaning as well as the usual gloss, as it will
+aid the ability to understand why the translations mean what they do.)</i></p>
+<div class="long-code">bym my    ga  guby   wi     bo       zi ga  ny        zi ga  zi gane   zewi
+use solid MOD VPINIT living advanced ID MOD primitive ID MOD ID NPINIT VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym my))
+  (NPINIT (MOD (MOD wi bo) ny)))</div>
+<p>trans. &quot;the animal is eating&quot;, &quot;an animal was eating&quot;, &quot;animals eat&quot;, etc.</p>
+<div class="long-code">bym myn    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
+use liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym myn))
+  (NPINIT (MOD (MOD wi bo) ju)))</div>
+<p>trans. &quot;people drink&quot;, &quot;the man will drink&quot;, &quot;the women drank&quot;, etc.</p>
+<p>Of course, &quot;bym my ga guby&quot; and &quot;bym myn ga guby&quot; don&apos;t explicitly mean
+&quot;drink&quot; or &quot;eat&quot;, but I&apos;m just using them that way in the context here. They
+refer more broadly to using liquids / solids, but you still get the idea...</p>
+<p>With these slightly more complicated full sentence examples, the need for an
+identity requeue operator becomes very clear. Since Quevish works on a queue and
+not a stack, it would be impossible to refer to information which has just been
+introduced to the phrase without shuffling the current front items to the back
+of the queue. This is also one of the reasons that Quevish is not a practical
+language for actual use, as it simply makes more sense to humans when you talk
+about the most recently introduced concept, rather than having to shuffle them
+around. Perhaps a version of the language that operates on a stack instead of a
+queue would be more human-usable.</p>
+<h3>VP asserter - &quot;goju&quot; particle</h3>
+<p>This particle is used in the situation that you want to mark a verb <i>as</i>
+occuring, without giving it a subject or an agent to perform it. Since a verb
+phrase is just a relationship and does not actually imply anything material, the
+&quot;goju&quot; particle is used whenever you <i>do</i> want to imply something material. The
+&quot;goju&quot; particle takes one operand, a verb phrase or any other phrase constituted
+of a verb phrase (such as the combined VPNP from the &quot;zewi&quot; particle), asserts
+it as being something that materially occurs rather than just a semantic idea,
+and pushes the result to the queue. The result may be treated as an &quot;asserted
+verb phrase&quot;, a subset of all verb phrases with the implication of material
+occurrance.</p>
+<p>The &quot;zewi&quot; particle is by default assumed to work this way as well, although
+you can theoretically mark it with &quot;goju&quot; to make it explicit. So, &quot;goju&quot; can
+also be used for emphasis.</p>
+<p>Example:</p>
+<div class="long-code">wi     guby
+living VPINIT</div>
+<p>trans. &quot;living&quot;, &quot;to live&quot;, &quot;to be alive&quot;, etc.</p>
+<div class="long-code">wi     guby   goju
+living VPINIT VPAS</div>
+<p>trans. &quot;living, which is a thing that occurs&quot;, &quot;being alive happens&quot;, etc.</p>
+<p>The interesting thing about this particle is mainly that it allows
+subjectless sentences, but I also think it&apos;s just interesting to consider what
+this kind of language feature implies about using it to describe actions; since
+it creates a linguistic imposition of a difference between an action existing in
+some abstract, nonperformable state, and an action existing in a state of being
+performed abstractly. It&apos;s a bit difficult to put into words, but think of a
+more explicit relationship between the idea of running as a concept and the idea
+of running as a material action that is being performed.</p>
+<p>That&apos;s not really anything particularly amazing as far as languages or
+philosophy go, but I still like the way in which the distinction is implemented
+here.</p>
+<p>One cool thing you can do though is this:</p>
+<div class="long-code">wi     guby   goju goju
+living VPINIT VPAS VPAS</div>
+<p>trans. &quot;living happening happens&quot;, &quot;living, which happens, which happens&quot;,
+etc.</p>
+<p>And that&apos;s just really fun.</p>
+<h3>Target applier - &quot;zywo&quot; particle</h3>
+<p>The &quot;zywo&quot; particle is used to apply some target to a phrase. It takes two
+operands - both being phrases, marks the first as somehow &quot;tending towards&quot; or
+&quot;targeting&quot; the second, and enqueues the result of this operation; allowing the
+result to be used as the same type of phrase as the first operand. There are a
+few possible ways in which this could appear to be useful, the most obvious of
+which is that it provides a way to modify intransitive verbs to give them an
+object, thus making them transitive. But, also, it ought be understood that this
+is not the <i>only</i> way to use &quot;zywo&quot;. The particle itself is just an assertion
+that one thing targets, goes towards, tends towards, etc. another. You could
+just as easily use it to describe mathematical limits; where one value tends to
+another, or the tendency of the rate of profit to fall, or my own tendency to do
+useless creative projects. You might also use it to describe the tendency of an
+action to slow over time. The main point is that it describes a target or
+tendency in a neutral sense.</p>
+<p>Example:</p>
+<div class="long-code">bym myn    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
+use liquid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
+
+myn    wo           zi ga  zywo
+liquid life-causing ID MOD TGAP
+
+(TGAP
+  (VPNPCOM
+    (VPINIT (MOD bym myn))
+    (NPINIT (MOD (MOD wi bo) ju)))
+  (NPINIT (MOD myn wo)))</div>
+<p>trans. &quot;people drinking water&quot;, &quot;humanity making use of water&quot;, etc.</p>
+<div class="long-code">wo     be     ga  mo    ga  gane   no     zi ga  zi gane   zywo
+divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP
+
+(TGAP
+  (NPINIT (MOD (MOD wo be) mo))
+  (NPINIT no))</div>
+<p>trans. &quot;religion shrinking in scope&quot;, &quot;religiosity becoming less popular&quot;</p>
+<p>Remember that &quot;zywo&quot; is largely a grammatical, not necessarily strictly
+semantic, assertion of tendency. The actual example here is not really a
+sentence stating that &quot;religion <i>is</i> becoming less popular&quot;, but rather the idea
+<i>of</i> religion becoming less popular. If you actually wanted to say that, you
+could say:</p>
+<div class="long-code">wo     be     ga  no    ga  gane   no     zi ga  zi gane   zywo guby   goju
+divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
+
+(VPAS
+  (VPINIT
+    (TGAP
+      (NPINIT (MOD (MOD wo be) mo))
+      (NPINIT no))))</div>
+<p>trans. &quot;religion is shrinking in scope&quot;, &quot;religiosity is becoming less
+popular&quot;, etc.</p>
+<h3>Passive negator - &quot;zezy&quot;</h3>
+<p>The &quot;zezy&quot; particle is used to passively negate a phrase or a root. Quevish
+distinguishes between &quot;passive negation&quot; and &quot;active negation&quot;. Passive negation
+is simply the absence of something, while active negation is the presence of its
+opposite. For roots and noun phrases, passive negation means forming a
+&quot;non&quot;-word. For verb phrases, it means the same thing but in verb form.</p>
+<p>For example, take the verb phrase:</p>
+<div class="long-code">bym my    ga  guby
+use solid MOD VPINIT</div>
+<p>trans. &quot;to eat&quot;, &quot;to have eaten&quot;, &quot;eating&quot;, etc.</p>
+<p>... and compare it to its passive negative:</p>
+<div class="long-code">bym my    ga  guby   zezy
+use solid MOD VPINIT PNEG</div>
+<p>trans. &quot;to not eat&quot;, &quot;to have not eaten&quot;, &quot;not eating&quot;, etc.</p>
+<p>The passive negator is self-inverting; that is, passively negating something
+which is already passively negative will cancel out the negation. However, this
+is <i>only</i> the case if applied directly to a passive negative. E.g., if you apply
+zezy to a word, then modify it with the &quot;ga&quot; modifier, then apply zezy again, it
+will not cancel out the original one.</p>
+<p>For example:</p>
+<div class="long-code">bym my    ga  guby   zezy zezy
+use solid MOD VPINIT PNEG PNEG
+
+(PNEG
+  (PNEG
+    (VPINIT (MOD bym my))))</div>
+<p>trans. &quot;to not not eat&quot; = &quot;to eat&quot;, &quot;to have not not eaten&quot; = &quot;to have
+eaten&quot;, etc.</p>
+<div class="long-code">bym my    ga  guby   zezy jen    ga
+use solid MOD VPINIT PNEG hidden MOD
+
+(MOD
+  (PNEG (VPINIT (MOD bym my)))
+  jen)</div>
+<p>trans. &quot;to secretly not eat&quot;, &quot;to have secretly not eat&quot;, &quot;privately not
+eating&quot;, etc.</p>
+<div class="long-code">bym my    ga  guby   zezy jen    ga  zezy
+use solid MOD VPINIT PNEG hidden MOD PNEG
+
+(PNEG
+  (MOD
+    (PNEG (VPINIT (MOD bym my)))
+    jen))</div>
+<p>trans. &quot;to not secretly not eat&quot;, &quot;to not have secretly not eaten&quot;, &quot;not
+privately not eating&quot;, etc.</p>
+<p>Looking at the syntax trees, the application of the self-inversion rules
+becomes much more evident. Basically, an odd number of passive negations on a
+single node in the syntax tree is equivalent to a single passive
+negation - which an even number is equivalent to none.</p>
+<h3>Active negator - &quot;gezy&quot;</h3>
+<p>The &quot;gezy&quot; particle is used to actively negate a phrase or a root. As
+described in the &quot;zezy&quot; section, active negation implies the presence of a
+phrase or root&apos;s opposite, rather than an absence of its value. For roots and
+noun phrases, active negation means forming a &quot;counter&quot;-word. For verb phrases,
+it means either forming a counter or a &quot;reverse&quot; word.</p>
+<p>To clarify the difference between active and passive negation, see the
+following examples:</p>
+<div class="long-code">bam zezy
+war PNEG</div>
+<p>trans. &quot;non-war&quot;, &quot;peaceful&quot;, &quot;calmness&quot;, etc.</p>
+<p>... compared to:</p>
+<div class="long-code">bam gezy
+war ANEG</div>
+<p>trans. &quot;anti-war&quot;, &quot;against conflict&quot;, &quot;counterterrorism&quot;, etc.</p>
+<p>As for verb phrases, they can - as stated - be either &quot;counter&quot; or
+&quot;reverse&quot;, which should be determined based on context. A &quot;counter&quot;-verb is
+exactly what it seems like, and is semantically similar to how the above example
+works. A &quot;reverse&quot;-verb, however, is not. Rather than implying the presence of a
+verb&apos;s opposite, it implies the presence of a verb&apos;s reverse - like the English
+&quot;un-&quot; morpheme.</p>
+<p>If we take the verb phrase &quot;bym my ga guby&quot; (trans. &quot;to eat&quot;) and actively
+negate it, we can interpret the difference between reverse negation and counter
+negation as follows:</p>
+<table>
+<tr>
+<td><b>Verb phrase</b>    </td>
+<td><b>Negation type</b></td>
+<td> <b>Meaning</b>          </td>
+</tr>
+<tr>
+<td>bym my ga guby     </td>
+<td>None             </td>
+<td> to eat               </td>
+</tr>
+<tr>
+<td>bym my ga guby zezy</td>
+<td>Passive          </td>
+<td> to not eat           </td>
+</tr>
+<tr>
+<td>bym my ga guby gezy</td>
+<td>Active reverse   </td>
+<td> to &quot;un-eat&quot;          </td>
+</tr>
+<tr>
+<td>bym my ga guby gezy</td>
+<td>Active counter   </td>
+<td> to vomit, to defecate</td>
+</tr>
+</table>
+<p>The active reverse has no good translation in English, since &quot;un-eating&quot;
+isn&apos;t something we conceptualize as a meaningful idea. However, this is what the
+phrase means when negated in active reverse.</p>
+<p><i>(Maybe &quot;un-eat&quot; means something like spitting out food? I interpret it as
+food rebuilding itself in the reverse way of how it was eaten, but Quevish
+allows some ambiguity.)</i></p>
+<p>Unlike the passive negator, &quot;zezy&quot;, the active negator gezy is not
+self-inverting. That is, if the phrase &quot;bam gezy gane&quot; means counterterrorism,
+then &quot;bam gezy gezy gane&quot; is <i>not</i> just terrorism. It would, instead, be
+translated as something along the lines of &quot;the movement fighting
+counterterrorism&quot;, rather than terrorism itself. This example assumes both
+negations are active counter - but if we assume only the first one is active
+counter and the second is actually active reverse, then we could instead
+translate it as something like &quot;the undoing of counterterrorism measures&quot;. As
+stated before, it is dependent on context whether or not any individual &quot;gezy&quot;
+implies active reverse or active counter negation.</p>
+<h3>Interrogative mood marker - &quot;zanme&quot;</h3>
+<p>When asking a question, the verb in the question phrase must be marked as
+interrogative. By default, verbs are in the indicative mood, representing some
+kind of factual descriptor or material status. And in order to inquire about the
+value of something in a sentence, this is inappropriate - so the interrogative
+mood is used.</p>
+<p>The &quot;zanme&quot; grammatical particle is used for this. It takes one operand
+which is an asserted verb phrase, marks it as interrogative, and enqueues the
+result as a mood-marked asserted verb phrase. A &quot;mood-marked verb phrase&quot; is
+distinct from a &quot;verb phrase&quot; - the difference being that mood-marked verb
+phrases cannot be used as arguments for the mood marker particles, including
+zanme. In all other cases, mood-marked asserted verb phrases may be used as any
+other asserted verb phrase.</p>
+<p>If neither the subject or object(s) of an interrogative-marked verb is a
+question pronoun, or the verb does not have them, the question is asked with the
+intention of receiving a boolean response - either true or false.</p>
+<p>For example:</p>
+<div class="long-code">wo     be     ga  no    ga  gane   no     zi ga  zi gane   zywo guby   goju
+divine actual MOD large MOD NPINIT shrink ID MOD ID NPINIT TGAP VPINIT VPAS
+
+zanme
+INT
+
+(INT
+  (VPAS
+    (VPINIT
+      (TGAP
+        (NPINIT (MOD (MOD wo be) mo))
+        (NPINIT no)))))</div>
+<p>trans. &quot;is religion shrinking in scope?&quot;, &quot;is religiosity becoming less
+popular?&quot;, etc.</p>
+<p>In order to respond to such a question (a <i>boolean</i> interrogative-marked
+sentence - non-boolean questions will be covered in the question pronouns
+section), you can say one of two things. Either you can reiterate the contents
+of the sentence in the indicative mood as an asserted verb phrase, using the
+passive negative if the answer is false; or you can respond using the roots
+&quot;min&quot; for truth, and &quot;nin&quot; for falsehood, relying on the other person to
+contextually determine the semantics of what you are saying.</p>
+<p>Example dialog:</p>
+<ol>
+<li>A: wo be ga no ga gane no zi ga zi gane zywo guby goju zanme</li>
+<li>B: min</li>
+</ol>
+<p>trans.:</p>
+<ol>
+<li>A: is religion becoming less popular?</li>
+<li>B: yes</li>
+</ol>
+<p>... or:</p>
+<ol>
+<li>A: wo be ga no ga gane no zi ga zi gane zywo guby goju zanme</li>
+<li>B: wo be ga no ga gane no zi ga zi gane zywo guby goju</li>
+</ol>
+<p>trans.:</p>
+<ol>
+<li>A: is religion becoming less popular?</li>
+<li>B: religion is becoming less popular</li>
+</ol>
+<p>For common conversation, the former option is easier and more practical. But
+for formal writing or professional interaction, you would probably want to use
+the latter in order to avoid ambiguity.</p>
+<h3>Tense markers</h3>
+<p>Tense markers are grammatical particles used to indicate the relative
+position of events on the timeline under consideration, similar to how most
+other languages do it. They each take one argument, a verb phrase, marks it as
+occurring on the point on the timeline specified by its tense, and enqueues the
+result as a tensed verb phrase. Here, a &quot;tensed verb phrase&quot; is distinct from a
+&quot;verb phrase&quot; - the difference being that tensed verb phrases cannot be used as
+arguments for the tense marker particles. In all other cases, tensed verb
+phrases may be used as any other verb phrase.</p>
+<p>There are six tenses:</p>
+<ul>
+<li>Ancient past (roughly 500+ years ago)</li>
+<li>Distant past (roughly 100+ years ago)</li>
+<li>Proximate past (roughly 0-100 years ago)</li>
+<li>Present (current events)</li>
+<li>Proximate future (roughly 0-100 years in the future)</li>
+<li>Distant future (roughly 100+ years in the future)</li>
+</ul>
+<p>Immediacy v.s. habituality are not distinguished. That is, Quevish makes no
+distinction between &quot;the man eats&quot; and &quot;the man is eating&quot;:</p>
+<div class="long-code">bym my    ga  guby   wi     bo       zi ga  ju       zi ga  zi gane   zewi
+use solid MOD VPINIT living advanced ID MOD language ID MOD ID NPINIT VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym my))
+  (NPINIT (MOD (MOD wi bo) ju)))</div>
+<p>trans. &quot;the man eats&quot;, &quot;the man is eating&quot;, &quot;the woman eats&quot;, etc.</p>
+<p>The above example does not make use of the tense marking particles, and I
+have just included it to demonstrate my point that immediacy / habituality are
+not considered in Quevish.</p>
+<p>As for tense markers, the following particles are used:</p>
+<table>
+<tr>
+<td><b>Marker</b></td>
+<td><b>Tense indicated</b></td>
+</tr>
+<tr>
+<td>gymbi     </td>
+<td>Ancient past       </td>
+</tr>
+<tr>
+<td>gymbe     </td>
+<td>Distant past       </td>
+</tr>
+<tr>
+<td>gymba     </td>
+<td>Proximate past     </td>
+</tr>
+<tr>
+<td>gymby     </td>
+<td>Present            </td>
+</tr>
+<tr>
+<td>gymbo     </td>
+<td>Proximate future   </td>
+</tr>
+<tr>
+<td>gymbu     </td>
+<td>Distant future     </td>
+</tr>
+</table>
+<p>You will notice that I have used the terminal vowels of these words in a
+very specific way to connect tense to a phonemic value. Front vowels fall under
+the &quot;past&quot; umbrella, and back vowels fall under the &quot;future&quot; umbrella. The more
+open the vowel is, the closer to the current moment the represented tense is.
+The present tense marker, &quot;gymby&quot;, has a center vowel; which is representative
+of the present being between the past and the future (center vowels are between
+front and back vowels).</p>
+<p>For examples of these tense markers, see the following:</p>
+<div class="long-code">bym my    ga  guby   gymbi wi     bo       zi ga  ju       zi ga  zi gane
+use solid MOD VPINIT APST  living advanced ID MOD language ID MOD ID NPINIT
+
+zewi
+VPNPCOM
+
+(VPNPCOM
+  (APST (VPINIT (MOD bym my)))
+  (NPINIT (MOD (MOD wi bo) ju)))</div>
+<p>trans. &quot;[in ancient times,] people were eating&quot;, &quot;[long ago,] humanity ate&quot;,
+etc.</p>
+<div class="long-code">bym my    ga  guby   gymbo wi     bo       zi ga  ju       zi ga  zi gane
+use solid MOD VPINIT PFUT  living advanced ID MOD language ID MOD ID NPINIT
+
+zewi
+VPNPCOM
+
+(VPNPCOM
+  (PFUT (VPINIT (MOD bym my)))
+  (NPINIT (MOD (MOD wi bo) ju)))</div>
+<p>trans. &quot;people are soon going to eat&quot;, &quot;a person will eat soon&quot;, etc.</p>
+<p>Another thing worthy of consideration is the point around which the relative
+points in time of the tenses orient themselves - so what is it? This is
+determined by the position on the timeline of the point-of-view speaker, which
+is itself determined contextually. So, for example, if I was speaking from the
+perspective of a soldier during the second world war, I would say &quot;I am
+fighting&quot; (using the verb phrase: bam guby gymby) rather than &quot;I was fighting&quot;
+(using the verb phrase: bam guby gymba). However, if I was talking <i>about</i> that
+soldier, as a modern observer rather than a historical point of view, I would
+use the proximate past tense.</p>
+<p>So, tenses orient themselves relative to the point-of-view&apos;s position on the
+timeline rather than the actual speaker&apos;s position on the timeline.</p>
+<h3>AND-ative joiner - &quot;gemi&quot;</h3>
+<p>stuff will be added here eventually...</p>
+<h3>OR-ative joiner - &quot;gumo&quot;</h3>
+<p>stuff will be added here eventually...</p>
+<h3>XOR-ative joiner - &quot;gumon&quot;</h3>
+<p>stuff will be added here eventually...</p>
+<h2>Pseudo-roots</h2>
+<p>Besides roots and grammatical particles, there are also pseudo-roots. I did
+not include them in the definition for how syntax is evaluated because they are
+actually just treated identically to roots. A pseudo-root is a word in a
+sentence which serves a grammatical purpose but acts like a semantic unit
+(root). They are needed because some words have meaning which is determined
+syntactically and contextually but that also implies information beyond that of
+a root.</p>
+<p>To put it in the simplest possible terms, while roots are purely semantic
+and imply nothing grammatically, psuedo-roots are conventional grammatical
+structures that are syntactically treated as if they were roots.</p>
+<h3>Personal pronouns</h3>
+<p>Quevish distinguishes personal pronouns along two categories, gender and
+number. There are four gender classes: masculine, feminine, third, and generic
+other. The gender of a pronoun aligns with the gender of the
+antecedent - although if the antecedent is a person, you should always use the
+gender category that they prefer, regardless of whether or not it aligns with
+the gender they identify with. There are also three number classes: single,
+paucal, and plural.</p>
+<p>The gender classes are defined like this:</p>
+<ul>
+<li>Masculine: used for men and things generally viewed as male</li>
+<li>Feminine: used for women and things generally viewed as female</li>
+<li>Third: used for anyone who wishes not to identify with either the masculine or
+ feminine class, and things generally viewed as having a gender that isn&apos;t male
+ or female</li>
+<li>Generic other: used when the antecedent either does not have a gender, or has
+ a gender which is ambiguous and unclear</li>
+</ul>
+<p>The generic other gender would be used for inanimate objects whenever you
+don&apos;t want to attribute a gender to them. If you <i>do</i> want to attribute a gender
+to them (like if you&apos;re talking about a toy doll designed to look like a human),
+you would use the appropriate masculine / feminine / third gender pronoun.</p>
+<p>The number classes are defined like this:</p>
+<ul>
+<li>Single: used for singular, cohesive units (e.g. a body may consist of trillions
+ of cells, but &quot;a body&quot; is a singular unit on a macro scale)</li>
+<li>Paucal: used to embody the concept of &quot;a few&quot; singular, cohesive units - what
+ this means may depend on interpretation but is always more than one and less
+ than ten, and always an integer number</li>
+<li>Plural: used when the single and paucal do not apply</li>
+</ul>
+<p>The plural number is a catch all for non-single non-paucal. The most obvious
+implication of this is that plural would be used for, e.g. a hundred of
+something, but it also has other uses. Probably the most interesting is that the
+plural number is always used when it comes to non-positive-integer amounts, like
+0.5, -1, Pi, 0, sqrt(-1), etc. Single and Paucal can only be used for positive
+integer values.</p>
+<p>The full table of gender-number pronoun definitions is this:</p>
+<table>
+<tr>
+<td><b>-</b>            </td>
+<td><b>Single</b></td>
+<td><b>Paucal</b></td>
+<td><b>Plural</b></td>
+</tr>
+<tr>
+<td><b>Masculine</b>    </td>
+<td>zyju      </td>
+<td>zyjun     </td>
+<td>zyjum     </td>
+</tr>
+<tr>
+<td><b>Feminine</b>     </td>
+<td>zyje      </td>
+<td>zyjen     </td>
+<td>zyjem     </td>
+</tr>
+<tr>
+<td><b>Third</b>        </td>
+<td>zyjo      </td>
+<td>zyjon     </td>
+<td>zyjom     </td>
+</tr>
+<tr>
+<td><b>Generic other</b></td>
+<td>zyja      </td>
+<td>zyjan     </td>
+<td>zyjam     </td>
+</tr>
+</table>
+<p>In order to make things more consistent, the word-terminal syllable&apos;s vowel
+corresponds to the gender; and the coda consonant corresponds to the number.</p>
+<p>You will notice that these pronouns do not contain information regarding
+person. This is intentional, for use in situations where strictly encoding this
+information is not necessary. So, for example:</p>
+<div class="long-code">wi     bo       ga  ju       ga  gane.  bym myn    ga  guby   zyje zewi
+living advanced MOD language MOD NPINIT use liquid MOD VPINIT Xfsg VPNPCOM
+
+[first sentence]
+(NPINIT (MOD (MOD wi bo) ju))
+
+[second sentence]
+(VPNPCOM
+  (VPINIT (MOD bym myn))
+  Xfsg)</div>
+<p>trans. &quot;the woman is drinking&quot;, &quot;the girl drinks&quot;, etc.</p>
+<p>There are a few interesting things to dissect in this example.</p>
+<p>First of all, pronouns are syntactically noun phrases. While they are
+pseudo-roots in a strictly grammatical sense, they are semantically used to
+substitute for noun phrases, and so they are noun phrases themselves, so you do
+not need to mark them with &quot;gane&quot;, as that would be redundant.</p>
+<p>Second of all, even though the person of the pronoun is not specified, it is
+obvious what it refers to anyway, through context. The first sentence
+establishes the antecedent of the pronoun used in the second sentence. While
+both sentences are syntactically valid, only the second one would be
+semantically valid without the context of the other. When I say that encoding
+person into the pronoun is sometimes not necessary, I am referring to these
+kinds of situations.</p>
+<p>Third of all, the example shows how pronouns can be used for disambiguation.
+The first sentence only introduces something like &quot;person&quot;, &quot;humanity&quot;, or
+&quot;people&quot; into the overall context. It is the fact that the pronoun used in the
+second sentence is singular and feminine which allows the reader to deduce that
+the first sentence refers to a woman or a girl. This kind of grammatical
+structure: &quot;{thing}. {verb} {pronoun}&quot;, should be used in Quevish for gender and
+number disambiguation where applicable.</p>
+<p>However, in some cases, you may want to clarify the person of a pronoun. For
+this, these person suffixes are attached to the end of the pronoun:</p>
+<table>
+<tr>
+<td><b>Person</b></td>
+<td><b>Suffix</b></td>
+</tr>
+<tr>
+<td>1         </td>
+<td>-ba/o     </td>
+</tr>
+<tr>
+<td>2         </td>
+<td>-da/o     </td>
+</tr>
+<tr>
+<td>3         </td>
+<td>-wa/o     </td>
+</tr>
+</table>
+<p>Each suffix either ends with a front (&quot;a&quot;) or a back vowel (&quot;o&quot;). The one
+you choose to use depends on the other vowels in the word, and then you just
+select whichever one doesn&apos;t violate the vowel harmony rules.</p>
+<p>For example:</p>
+<div class="long-code">bym myn    ga  guby   zyjobo zewi
+use liquid MOD VPINIT 1tsg   VPNPCOM
+
+(VPNPCOM
+  (VPINIT (MOD bym myn))
+  1tsg)</div>
+<p>trans. &quot;I drink&quot;, &quot;I will drink&quot;, &quot;I had drunk&quot;, etc.</p>
+<div class="long-code">bam   guby   gymbo zyjobo zewi    zyjuwo zywo
+fight VPINIT PFUT  1tsg   VPNPCOM 3msg   TGAP
+
+(TGAP
+  (VPNPCOM
+    (PFUT (VPINIT bam))
+    1tsg)
+  3msg)</div>
+<p>trans. &quot;I&apos;m gonna fight him&quot;, &quot;I will have a conflict with him&quot;, etc.</p>
+<h3>Question pronouns</h3>
+<p>stuff will be added here eventually...</p>
+<h3>Proper nouns</h3>
+<p>stuff will be added here eventually...</p>
+<h1>Number system</h1>
+<p>stuff will be added here eventually...</p>
+<h1>Custom orthography</h1>
+<h2>Basic featural orthography</h2>
+<p>Sentences and phrases are divided into words, which are divided into
+syllables, which are divided into phonemes. In the Basic Featural Orthography
+for Quevish, each graph is divided into features; with graphs mapping directly
+to syllables and features mapping (with two exceptions) directly to phonemes.
+Graph directionality is not defined, but I will be using left to right, top to
+bottom, and recommend that you do the same for the sake of consistency. If you
+wish to use a different directionality, you may do so and should place a little
+marker (perhaps an arrow) indicating it. You should assume that anything
+unmarked is written left to right, top to bottom.</p>
+<p>Each graph is divided into four features: the first consonant (C1), the
+vowel (V), the right-hand line (RHL), and the optional second consonant and word
+marker (C2/WM). The RHL is purely an orthographic feature with no influence on
+the syllable derived from a graph, but the other features have very real
+influence. These features are arranged within a graph as shown below:</p>
+<img src="../res/tirimid/quevish/graphlabeled.webp">
+<p>In this way, all graphs are monospacing horizontally.</p>
+<p>I will explain what the C2/WM is in a bit. The C1 shows the onset consonant
+of a syllable is, based on the modifications made to the base semi-square line
+which &quot;hugs&quot; the V. These modifications correspond to their respective phonemes
+as follows:</p>
+<img src="../res/tirimid/quevish/c1types.webp">
+<p>And the V shows the nucleus vowel of a syllable. The square in the labeled
+graph is replaced by one of the following to represent the corresponding nucleus
+vowels:</p>
+<img src="../res/tirimid/quevish/vtypes.webp">
+<p>The way I derived these symbols is mostly arbitrary for the C1, but the V is
+based entirely (with some minor creative liberty) on the International Phonetic
+Alphabet vowel chart, as it is commonly rendered. Each V is made of two lines,
+the intersection point of which corresponds roughly to where the vowel falls on
+the vowel chart. If you ever forget the precise phonemic value of the Quevish
+vowels, it can be roughly derived from the V graphemes; which I reckon is a nice
+feature. The consonants are mostly arbitrary and vibes-based, but the plosives
+all have circles, the nasals all have tilde-like waves (based on the IPA
+diacritics for nasalization), the fricatives all have downward-pointing arrows,
+and the palatal approximant is just a line since I couldn&apos;t think of anything
+more intuitive that was still readable.</p>
+<p>As an example of a word written in this orthography (ignoring C2/WM, we&apos;ll
+get there), we can take the verb phrase initializer, &quot;guby&quot;:</p>
+<img src="../res/tirimid/quevish/guby.webp">
+<p>... which is written the way it is because:</p>
+<img src="../res/tirimid/quevish/gubylabeled.webp">
+<p>So that should give you an idea of how the Basic Featural Orthography works
+for C-V pairs. Notice that, as I said, the RHL has no phonemic value and is only
+used for written clarity to make it easier to quickly read two separate graphs
+as being - indeed - separate.</p>
+<p>As for the C2/WM, it makes sense to consider it as being divided into three
+parts, all of which are optional and used only in specific situations. These
+parts are the word start (WS), the second consonant (C2), and the word end (WE).
+They are divided in a manner like this:</p>
+<img src="../res/tirimid/quevish/c2wmlabeled.webp">
+<p>... where the collective whole (C2/WM) is divided into the WS on the left,
+the C2 in the middle, and the WE on the right. The WS and WE have no direct
+value on the phonemic values within a syllable, but rather dictate interations
+<i>between</i> syllables. Rather intuitively, the WS (word start) is written if a
+syllable is word-initial and the WE (word end) is written if a syllable is
+word-terminal. If a word consists of one syllable, you would expect both to be
+present. The WS is written as a diagonal down-right facing line, the WE as a
+diagonal up-right facing line. See below an example of what a word-initial,
+word-middle, and word-final syllable (&quot;wi&quot;) would look like according to this
+rule:</p>
+<img src="../res/tirimid/quevish/wsweexample.webp">
+<p>If you remember back to the phonotactics, there are three possible syllable
+structures: CV, CVm, and CVn. The C2 of a graph is used to indicate the phonemic
+value of the coda consonant of a syllable. If it is absent, the syllable has no
+coda consonant and takes the CV form. Otherwise, the C2 corresponds to the &quot;m&quot;
+and &quot;n&quot; sounds as follows:</p>
+<img src="../res/tirimid/quevish/c2types.webp">
+<p>As an example of how the C2 is written, see the following word, written with
+WS and WE omitted but featuring C1, V, C2, and RHL:</p>
+<img src="../res/tirimid/quevish/menja.webp">
+<p>... written as such because:</p>
+<img src="../res/tirimid/quevish/menjalabeled.webp">
+<p>And for an in-practice example, take the sentence &quot;wi guby goju&quot;:</p>
+<div class="long-code">wi     guby   goju
+living VPINIT VPAS</div>
+<p>trans. &quot;living happens&quot;, &quot;things are alive&quot;, &quot;life is occuring&quot;, etc.</p>
+<p>Which is written as:</p>
+<img src="../res/tirimid/quevish/wigubygoju.webp">
+<p>... because:</p>
+<img src="../res/tirimid/quevish/wigubygojulabeled.webp">
+<p>In this larger example we see a demonstration of all the orthographic
+features except for the graph C2. It is easy to see at a glance where words
+begin and end due to the symmetric WS-WE markings, allowing the Basic Featural
+Orthography to be written without requiring any spacing between graph, which is
+done when using this system. Spacing is arbitrary in the BFO and is mostly
+insignificant, having no influence on the written value of a phrase. However,
+this is untrue in the context of larger writing. Due to there being no
+punctuation marks, spacing ought to be used when separating:</p>
+<ul>
+<li>Sentences (use one unit of space equivalent in horizontal width to the
+ monospace width of a graph)</li>
+<li>Quotation (use two or more units)</li>
+<li>Paragraphs (use two or more units)</li>
+</ul>
+<p>Of course, you don&apos;t actually <i>need</i> to follow these spacing guidelines if
+contextually unnecessary, but I still recommend that you do, it aids readability
+and helps disambiguate various sentence boundaries in general.</p>
+<h2>Syntactic featural orthography</h2>
+<p>stuff will be added here eventually...</p>
+<h1>Larger translation examples</h1>
+<h2>The North Wind and the Sun</h2>
+<p>stuff will be added here eventually...</p>
+<h2>The Internationale</h2>
+<p>stuff will be added here eventually...</p>
+<h2>The Lord&apos;s Prayer</h2>
+<p>stuff will be added here eventually...</p>
+<h1>Root reference dictionary</h1>
+<p>This should not be treated as an exhaustive list of root definitions. In
+fact, they aren&apos;t really &quot;definitions&quot; at all. Instead, these are just some
+words intended to describe the &quot;vibe&quot; of various roots. By design, Quevish roots
+are extremely broad in meaning and you may attribute personal qualities to each
+of them, which may alter your interpretation of the language heavily.</p>
+<table>
+<tr>
+<td><b>Root</b></td>
+<td><b>Meaning</b>                                       </td>
+</tr>
+<tr>
+<td>bam     </td>
+<td>fight, conflict, warfare, terrorism, unjust       </td>
+</tr>
+<tr>
+<td>be      </td>
+<td>material, really existing, actual                 </td>
+</tr>
+<tr>
+<td>bo      </td>
+<td>advanced, experienced, capable of thought         </td>
+</tr>
+<tr>
+<td>bym     </td>
+<td>usage, consumption, exploitation, able to be used </td>
+</tr>
+<tr>
+<td>da      </td>
+<td>immaterial, ideal, not existing, conceptual       </td>
+</tr>
+<tr>
+<td>du      </td>
+<td>good, helpful, kind, simple                       </td>
+</tr>
+<tr>
+<td>jen     </td>
+<td>hidden, secret, encrypted, clandestine            </td>
+</tr>
+<tr>
+<td>jo      </td>
+<td>bad, evil, harmful, complicated                   </td>
+</tr>
+<tr>
+<td>ju      </td>
+<td>communication, talking, language, linguistics     </td>
+</tr>
+<tr>
+<td>min     </td>
+<td>truth, correctness, following standards, compliant</td>
+</tr>
+<tr>
+<td>mo      </td>
+<td>quantity, large, number, many, enlargement, growth</td>
+</tr>
+<tr>
+<td>my      </td>
+<td>solid, single part, whole, entirety               </td>
+</tr>
+<tr>
+<td>myn     </td>
+<td>liquid, gaseous, fluid, changing, in flux         </td>
+</tr>
+<tr>
+<td>nin     </td>
+<td>falsehood, defiance, incorrect, non-standard      </td>
+</tr>
+<tr>
+<td>no      </td>
+<td>small, few, shrinking, reduction in scope         </td>
+</tr>
+<tr>
+<td>ny      </td>
+<td>primitive, incapable of thought                   </td>
+</tr>
+<tr>
+<td>wi      </td>
+<td>living, moving, target of empathy                 </td>
+</tr>
+<tr>
+<td>wo      </td>
+<td>life sustaining, life causing, divine             </td>
+</tr>
+<tr>
+<td>wun     </td>
+<td>requirement, prerequisite, before, previous       </td>
+</tr>
+</table>
+<h1>Glossing abbreviations</h1>
+<h2>Particle gloss tables</h2>
+<table>
+<tr>
+<td><b>Abbreviation</b></td>
+<td><b>Meaning</b>                      </td>
+</tr>
+<tr>
+<td>MOD             </td>
+<td>&quot;ga&quot; modifier                    </td>
+</tr>
+<tr>
+<td>VPINIT          </td>
+<td>&quot;guby&quot; verb phrase initializer   </td>
+</tr>
+<tr>
+<td>NPINIT          </td>
+<td>&quot;gane&quot; noun phrase initializer   </td>
+</tr>
+<tr>
+<td>ID              </td>
+<td>&quot;zi&quot; identity requeuer           </td>
+</tr>
+<tr>
+<td>VPNPCOM         </td>
+<td>&quot;zewi&quot; intransitive VPNP combiner</td>
+</tr>
+<tr>
+<td>VPAS            </td>
+<td>&quot;goju&quot; VP asserter               </td>
+</tr>
+<tr>
+<td>TGAP            </td>
+<td>&quot;zywo&quot; target applier            </td>
+</tr>
+<tr>
+<td>PNEG            </td>
+<td>&quot;zezy&quot; passive negator           </td>
+</tr>
+<tr>
+<td>ANEG            </td>
+<td>&quot;gezy&quot; active negator            </td>
+</tr>
+<tr>
+<td>INT             </td>
+<td>&quot;zanme&quot; interrogative mood marker</td>
+</tr>
+<tr>
+<td>APST            </td>
+<td>&quot;gymbi&quot; ancient past marker      </td>
+</tr>
+<tr>
+<td>DPST            </td>
+<td>&quot;gymbe&quot; distant past marker      </td>
+</tr>
+<tr>
+<td>PPST            </td>
+<td>&quot;gymba&quot; proximate past marker    </td>
+</tr>
+<tr>
+<td>PRS             </td>
+<td>&quot;gymby&quot; present marker           </td>
+</tr>
+<tr>
+<td>PFUT            </td>
+<td>&quot;gymbo&quot; proximate future marker  </td>
+</tr>
+<tr>
+<td>DFUT            </td>
+<td>&quot;gymbu&quot; distant future marker    </td>
+</tr>
+<tr>
+<td>JAND            </td>
+<td>&quot;gemi&quot; AND-ative joiner          </td>
+</tr>
+<tr>
+<td>JOR             </td>
+<td>&quot;gumo&quot; OR-ative joiner           </td>
+</tr>
+<tr>
+<td>JXOR            </td>
+<td>&quot;gumon&quot; XOR-ative joiner         </td>
+</tr>
+</table>
+<h2>Personal pronouns</h2>
+<p>The gloss for personal pronouns takes the form of &quot;{person}{gender}{number}&quot;.</p>
+<p>Person may be one of:</p>
+<ul>
+<li>&quot;X&quot;: unspecified</li>
+<li>&quot;1&quot;: first</li>
+<li>&quot;2&quot;: second</li>
+<li>&quot;3&quot;: third</li>
+</ul>
+<p>Gender may be one of:</p>
+<ul>
+<li>&quot;m&quot;: masculine</li>
+<li>&quot;f&quot;: feminine</li>
+<li>&quot;t&quot;: third</li>
+<li>&quot;o&quot;: generic other</li>
+</ul>
+<p>Number may be one of:</p>
+<ul>
+<li>&quot;sg&quot;: single</li>
+<li>&quot;pc&quot;: paucal</li>
+<li>&quot;pl&quot;: plural
+</li>
+</ul>
+</body>
+</html>

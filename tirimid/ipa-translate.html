@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ipa-translate</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+}
+
+table, tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">ipa-translate</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2024-02-04 (rev. 2024-10-11)</div>
+<h1>What is ipa-translate?</h1>
+<p>ipa-translate is a Rust crate implementing multiple common standards for
+converting ASCII text into Unicode IPA (International Phonetic Alphabet) text.
+The currently implemented standards are:</p>
+<ul>
+<li>&quot;Branner&quot; (implemented according to <a href="https://en.wikipedia.org/wiki/Comparison_of_ASCII_encodings_of_the_International_Phonetic_Alphabet">this Wikipedia article</a><sup><a href="#1">[1]</a></sup>)</li>
+<li>Praat (implemented according to <a href="https://www.fon.hum.uva.nl/praat/manual/Phonetic_symbols.html">this Praat manual entry</a>)</li>
+<li>SIL (implemented according to <a href="https://help.keyman.com/keyboard/sil_ipa/1.8.6/sil_ipa">this KeymanHelp page</a><sup><a href="#2">[2]</a></sup>)</li>
+<li>X-SAMPA (implemented according to <a href="https://en.wikipedia.org/wiki/X-SAMPA">this Wikipedia article</a>)</li>
+</ul>
+<h1>Adding ipa-translate to your project</h1>
+<p>As with practically any other Rust crate, ipa-translate is hosted on <a href="https://crates.io/crates/ipa-translate">crates.io</a>,
+and has a <a href="https://github.com/tirimid/ipa-translate">GitHub page</a> using which
+you may clone the source directly or contribute to the project. To add
+ipa-translate to your Cargo-based Rust project, run:</p>
+<div class="long-code">$ cargo add ipa-translate</div>
+<p>To clone the source from GitHub, run:</p>
+<div class="long-code">$ git clone https://github.com/tirimid/ipa-translate</div>
+<p>ipa-translate 0.1.8+ has only one dependency, lazy-static, which a massive
+number of other crates already depend on, so no other dependencies will be added
+if you choose to use it in any reasonably sized project. The core functionality
+of ipa-translate, the actual ASCII-IPA translation, is done using functions from
+the Rust standard library since version 0.1.8+, keeping the implementation
+minimal and fast.</p>
+<h1>Using ipa-translate</h1>
+<p>The source example in the README explains the usage well:</p>
+<div class="long-code">use ipa_translate;
+
+fn main() {
+    let ipa = &quot;prʲɪvʲet&quot;;
+    
+    let xsampa = &quot;pr_jIv_jet&quot;;
+    let praat = r&quot;pr^jicv^jet&quot;;
+    let branner = &quot;prj^Ivj^et&quot;;
+    let sil = &quot;prj^i=vj^et&quot;;
+
+    // forward translation.
+    assert_eq!(ipa_translate::xsampa_to_ipa(xsampa), ipa);
+    assert_eq!(ipa_translate::praat_to_ipa(praat), ipa);
+    assert_eq!(ipa_translate::branner_to_ipa(branner), ipa);
+    assert_eq!(ipa_translate::sil_to_ipa(sil), ipa);
+
+    // inverse translation.
+    assert_eq!(ipa_translate::ipa_to_xsampa(ipa), xsampa);
+    assert_eq!(ipa_translate::ipa_to_praat(ipa), praat);
+    assert_eq!(ipa_translate::ipa_to_branner(ipa), branner);
+    assert_eq!(ipa_translate::ipa_to_sil(ipa), sil);
+}</div>
+<div class="footnote" id="1"><b>[1]</b>: Slight implementation differences to given specification, see
+             <code>/translations/branner.rs</code> for details.</div>
+<div class="footnote" id="2"><b>[2]</b>: Slight implementation differences to given specification, see
+             <code>/translation/sil.rs</code> for details.
+</div>
+</body>
+</html>

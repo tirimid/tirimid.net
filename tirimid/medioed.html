@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>medioed</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+}
+
+table, tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">medioed</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2024-02-04 (rev. 2024-10-11)</div>
+<p><i>NOTE: I am (at least for now) discontinuing work on this project. I&apos;m
+creating a new personal text editor which will work differently. The below text
+has not been updated to reflect this.</i></p>
+<h1>The idea</h1>
+<p>medioed stands for (Medio)cre Text (Ed)itor. As the name suggests, it is a
+mediocre text editor for Linux systems. It doesn&apos;t have any particularly
+advanced features, but it is still perfectly usable for general, low-scale text
+editing. It builds to a standalone binary with no external dependencies in the
+filesystem. The idea behind medioed is to create a sort of &quot;decluttered GNU
+Emacs&quot; from scratch which supports only the features which I personally am
+likely to use. It&apos;s a project to create <i>my</i> perfect text editor.</p>
+<p>Relative to other, more popular, text editors, medioed is fairly minimalist.
+Although probably not as minimalist as some people may like, since the only
+qualifier for whether something is added is my personal taste in text editors,
+rather than some consistent design principle.</p>
+<p>medioed is free software.</p>
+<ol>
+<li> Installing medioed</li>
+</ol>
+<p>Go to <a href="https://github.com/tirimid/medioed">the GitHub</a>. Clone the repository
+and enter the cloned directory by doing:</p>
+<div class="long-code">$ git clone https://github.com/tirimid/medioed
+$ cd medioed</div>
+<p>At this point you will need to have either <a href="mincbuild.html">mincbuild</a> or
+Make installed. Mincbuild is the buildsystem I used for medioed. Actually, my
+desire to make medioed was a big reason I even created mincbuild to begin with.
+Anyway, once you have one of the two installed, you can build medioed.</p>
+<p>Run:</p>
+<div class="long-code">$ mincbuild</div>
+<p>... or:</p>
+<div class="long-code">$ make</div>
+<p>... and the project will be built, assuming the compilation suceeds. If it
+doesn&apos;t, check your toolchain and see if you can edit the <code>mincbuild.conf</code> or
+<code>Makefile</code> to make it work.</p>
+<p>Once you have built the project, you can install the <code>medioed</code> binary to
+your system. To do this, run the following:</p>
+<div class="long-code"># ./install.sh</div>
+<p>And if you ever want to uninstall it, run:</p>
+<div class="long-code"># ./uninstall.sh</div>
+<p>The default installation location will be at <code>/usr/bin</code>, and you can change
+this by editing the <code>install.sh</code> and <code>uninstall.sh</code> scripts - or you can install
+the binary manually if you have some kind of special procedure for it, since all
+the scripts do is a file copy / deletion.</p>
+<p>At this point, no more setup is strictly necessary.</p>
+<h2>Optional dependencies</h2>
+<p>The actual medioed program itself has no dependencies. However, for the
+manpage viewer label integration, it opens a pipe to <code>man</code> using <code>popen()</code>.
+Nothing bad will happen if Man isn&apos;t present on the system - you just won&apos;t be
+able to use the feature. This makes Man an optional dependency (although it
+should be present on all sane Linux systems anyway).</p>
+<h1>Using medioed</h1>
+<h2>Command line</h2>
+<p>After installation, you can run <code>medioed</code> in your terminal in a few
+different ways. Either you can run it on its own, with no arguments, or you can
+run it with an arbitrary number of arguments (which represent the files which
+will be opened in buffers upon program startup). You can then also specify any
+of the following options:</p>
+<ul>
+<li><code>-c</code>: Any files passed as arguments will be created if they don&apos;t exist. If
+ they already exist, they will simply be opened normally, as if the flag hasn&apos;t
+ been passed</li>
+<li><code>-d</code>: stderr will be redirected to a file specified in the source code. By
+ default, it will be called <code>medioed.log</code>. This is only useful for development
+ and debugging changes made to the source code</li>
+<li><code>-r</code>: Any opened external files will be treated as read-only and you will be
+ unable to edit them. This includes files passed as command line arguments and
+ those opened from within medioed using the C-x C-f keybind.</li>
+</ul>
+<p>And also <code>-h</code>, which will simply display usage information in a more terse
+way.</p>
+<h2>Interactive mode</h2>
+<p>Running medioed opens an interactive mode text editor in the terminal.</p>
+<p>Medioed, being inspired by GNU Emacs, is modeless - unlike Vim. A lot of the
+keybinds are also based on GNU Emacs. Any printing character you enter (which
+isn&apos;t part of a keybind) will be written to the current selected buffer.</p>
+<p>Files written from / read to buffers are assumed to be in UTF-8, implemented
+through the use of C locales and wide characters. Buffer editing is performed
+through wide character operations.</p>
+<h3>Frames and buffers</h3>
+<p>The editor has a system of frames and buffers. Buffers represent the
+underlying textual data buffers in memory - so when you read a file, it is
+written into a buffer. Buffers also store information like data source (file,
+freshly created, etc.) and a limited undo history. Frames, on the other hand,
+represent the actual visible &quot;windows&quot; presented to the user. Frames are bound
+to buffers, and are the thing which allow the user to interact with a buffer.
+Frames and buffers should have a 1:1 correspondence in practice, but are
+technically different. Frames store information like cursor position and syntax
+highlighting mode (local mode).</p>
+<h3>Local and global modes</h3>
+<p>&quot;Local mode&quot; is just the name for the syntax highlighting settings. When
+using Markdown syntax highlighting, you are in the <code>md</code> local mode. Local modes
+are called that because they are local to every frame, and do not reset when you
+switch between them. In the source, local mode &quot;X&quot; is implemented in
+<code>src/hl/hl_X.c</code>, and made visible to the editor in <code>src/conf.c</code>.</p>
+<p>&quot;Global mode&quot; is the name for a collection of functions which hook into
+specific editor events, like key presses or editor updates. Only one global mode
+can be active at a time, hence the name. When you switch to a frame which
+requests a specific global mode, the current active global mode quits and the
+new one initializes. In practice, the global modes currently only make use of
+the init hook, where they add their own mode-specific keybindings to the global
+set. These keybindings are used to handle indentation, smart parenthetical
+insertion and deletion, and in some cases other quality-of-life things.</p>
+<p>In short: local modes are syntax highlighters, global modes provide
+programming language tooling in the editor.</p>
+<h3>Supermodal interaction</h3>
+<p>Some aspects of the editor completely ignore the active global and local
+modes. These are: the prompt and the label. There can only be a single prompt or
+label active at a time, and the user interacts with them &quot;directly&quot;, partially
+bypassing the usual keyboard input system. That is, when you issue C-f to the
+prompt, it prevents the main keyboard system from treating it as a bind. The
+only thing that the keyboard system still does is record the keypress for macro
+purposes, if macro recording is active.</p>
+<h3>Cheatsheet - Important keybinds</h3>
+<p>To get a comprehensive list of keybinds, consult <code>src/conf.c</code> and the source
+file for the individual global mode you wish to see (<code>src/mode/mode_X.c</code>). There
+are also a few prompt and label specific keybinds which you can see
+comprehensively in <code>src/prompt.c</code> and <code>src/label.c</code> What follows is a few
+select, important keybinds a beginner user ought to know.</p>
+<h4>Basic</h4>
+<ul>
+<li>C-x C-c: quit medioed</li>
+<li>C-c M-g g: change active globalmode</li>
+<li>C-c M-g l: change active localmode</li>
+</ul>
+<h4>Prompt</h4>
+<ul>
+<li>C-g: quit</li>
+<li>C-f: forward one character</li>
+<li>C-b: back one character</li>
+<li>BACKSPC: delete one character, backwards from cursor</li>
+</ul>
+<h4>Label</h4>
+<ul>
+<li>C-g: quit</li>
+<li>C-n: scroll down one line</li>
+<li>C-p: scroll up one line</li>
+</ul>
+<h4>Cursor</h4>
+<ul>
+<li>C-f: forward one character</li>
+<li>M-f: forward one word</li>
+<li>C-b: back one character</li>
+<li>M-b: back one word</li>
+<li>C-a: start of current line</li>
+<li>C-e: end of current line</li>
+<li>C-n: next line</li>
+<li>C-p: previous line</li>
+</ul>
+<h4>Buffer</h4>
+<ul>
+<li>RET: create new line at cursor</li>
+<li>C-d: delete one character, forwards from cursor</li>
+<li>M-BACKSPC: delete one word, backwards from cursor</li>
+<li>BACKSPC: delete one character, backwards from cursor</li>
+<li>C-x C-f: read file into buffer</li>
+<li>C-x u: undo last linear series of changes</li>
+<li>C-x C-s: write buffer to source file</li>
+<li>C-c n: create new scrap buffer</li>
+</ul>
+<h4>Frame</h4>
+<ul>
+<li>C-x b: next frame</li>
+<li>C-c b: previous frame</li>
+<li>C-x k: kill active frame</li>
+</ul>
+<h3>Macros</h3>
+<p>Much like many other things in medioed, the macro system is inspired by that
+of GNU Emacs. By default, a macro is <i>not</i> recording. To begin recording a
+macro, press F3 - now, you will see that, at the bottom of the screen, your
+keypress history will be recorded. Once you have set the base for your macro,
+press F4 to stop recording. When you are not recording, and if a macro has
+already <i>been</i> recorded, you may press F4 to execute it. Macro execution in
+medioed works by feeding the recorded inputs back into the keyboard system, as
+if the user has entered them again.</p>
+<p>Try not to enter ridiculously long macros, as there is a limit on size (512
+keypresses). Exceeding this limit will simply result in a truncated macro
+recording, with the end part missing.
+</p>
+</body>
+</html>

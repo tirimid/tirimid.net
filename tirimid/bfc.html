@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BFC</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+}
+
+table, tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">BFC</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2024-02-11 (rev. 2024-10-11)</div>
+<h1>What is BFC?</h1>
+<p>BFC, or (B)rain(F)uck (C)ompiler, is a Brainfuck compiler capable of taking
+Brainfuck source files and producing from them GNU-as-compatible assembly files
+encompassing equivalent functionality. I made this project because my friend and
+I wanted to make brainfuck interpreters, but I decided that too many of those
+already existed. And while many brainfuck compilers also exist, there are
+substantially fewer of those than there are interpreters.</p>
+<p>It only supports an x86_64 Linux target, but the underlying architecture is
+designed in such a way that it should be fairly trivial to expand it to other
+targets. I am not supporting / working on BFC anymore but still decided to write
+this article in case someone wants to read some learned experience on
+implementing a Brainfuck compiler.</p>
+<p>BFC is free software.</p>
+<h1>Installing and using</h1>
+<p>First, clone the source from the <a href="https://github.com/tirimid/bfc">GitHub repo</a>,
+build the project using <a href="mincbuild.html">mincbuild</a>, and install it.</p>
+<div class="long-code">$ git clone https://github.com/tirimid/bfc
+$ mincbuild
+# ./install.sh</div>
+<p>This process will install the compiled <code>bfc</code> binary to <code>/usr/bin</code>. To
+uninstall it you can either manually delete it, or run:</p>
+<div class="long-code"># ./uninstall.sh</div>
+<h2>Running BFC</h2>
+<p>Generate an assembly source file from a Brainfuck source file:</p>
+<div class="long-code">$ bfc input.bf output.s</div>
+<p>Generate an object file from a Brainfuck source file (this will invoke GNU
+assembler on the system from <code>/usr/bin/as</code> after initial compilation):</p>
+<div class="long-code">$ bfc -o input.bf output.o</div>
+<p>Generate an executable binary from a Brainfuck source file (this will invoke
+GNU assembler, <code>/usr/bin/as</code>, and then GNU linker, <code>/usr/bin/ld</code>, after initial
+compilation):</p>
+<div class="long-code">$ bfc -bo input.bf output</div>
+<p>This is all detailed in the help menu displayed upon running:</p>
+<div class="long-code">$ bfc -h</div>
+<h1>How jump labels are generated (implementation of &apos;[&apos; and &apos;]&apos;)</h1>
+<p>This is probably the only thing that caused me any headache while
+implementing BFC, so I will document it here in case any prospective Brainfuck
+compiler implementors want to save themself the struggle.</p>
+<p>The thing is, this is actually very simple; you just need to think about it
+in the proper way.</p>
+<p>Start by assigning every conditional (&apos;[&apos; and &apos;]&apos;, which I shall call
+condbegin and condend respectively) its own &quot;index&quot; or &quot;value&quot; within the
+source. For example, take this short piece of Brainfuck code:</p>
+<div class="long-code">&gt;++++++++ [A &lt;+++++++++&gt;- ]B &lt;.
+&gt;++++ [C &lt;+++++++&gt;- ]D &lt;+.</div>
+<p>I have suffixed each conditional with a letter-comment name. So when I refer
+to &quot;condbegin A&quot;, I am talking about the one on the first line, on the left.</p>
+<p>Imagine assigning each of these conditionals a unique index:</p>
+<ul>
+<li>A has index 0</li>
+<li>B has index 1</li>
+<li>C has index 2</li>
+<li>D has index 3</li>
+</ul>
+<p>When writing out the compiled assembly you will refer to each of these
+conditionals by their number indices - BFC does this in hexadecimal to save
+space in files many conditionals.</p>
+<p>Now imagine you are currently at condbegin A, and you need to decide whether
+to jump to condend B. The way this is done in Brainfuck is that if the value at
+the current position of the data pointer is 0, then you perform the jump.
+Otherwise, the block is executed. The minimum to fulfill this would be two jump
+labels, and a conditional jump instruction, something like this:</p>
+<div class="long-code">    cmpb $0, (%r13) // BFC uses <code>r13</code> to store the data pointer.
+    je .Lce_1
+.Lcb_0: // BFC uses <code>cb_</code> as a prefix for condbegin jump labels.
+    // ...
+.Lce_1: // BFC uses <code>ce_</code> as a prefix for condend jump labels.</div>
+<p>Assuming a well-formed program - you can assume, upon entering a condbegin,
+that there will be at least N + 1 condend labels following it, where N is the
+number of other condbegin labels that follow it. This is because every condbegin
+must have a condend to terminate it.</p>
+<p>Thus, you can just take the current jump label which you&apos;re in upon
+encountering a condbegin (you can either store this as compiler state or
+determine it by seeking backwards through the file and counting all instances of
+&apos;[&apos; and &apos;]&apos;), and run through the source until you have found N + 1 condend
+labels.</p>
+<p>Then, you can conditionally jump to the label with index J + 2N + 1, where J
+is the index of the encountered condbegin label and N is the minimum number of
+other condbegin labels encountered before a condend label.</p>
+<p>In practice, what BFC does is it creates a variable, <code>nests_rem</code>, and
+assigns it an initial value of 1. It also creates a variable called <code>jmplabel</code>
+with the currently stored label value, as described above. Then, it runs through
+the Brainfuck source from the current point; incrementing <code>nests_rem</code> if the
+current character is &apos;[&apos;, and decrementing <code>nests_rem</code> if it is &apos;]&apos;. In either
+case, if the character is either &apos;[&apos; or &apos;]&apos;, <code>jmplabel</code> is incremented. As soon
+as <code>nests_rems</code> reaches zero, this algorithm terminates. By the end of this
+process, <code>jmplabel</code> is the index of the destination of the conditional jump. BFC
+doesn&apos;t need to worry about whether the label with this index actually exists
+yet, since it knows that it will inevitably be generated later in a well-formed
+program.</p>
+<p>In the case of encountering a condend, you can simply follow this procedure
+but seek backwards through the source instead of forwards, and increment
+<code>nests_rem</code> in the case of a &apos;]&apos;, decrementing it in the case of a &apos;[&apos;.</p>
+<p>BFC also adds jump label prefixes for readability when the generation is
+complete (i.e. <code>cb_XXXX</code>, <code>ce_XXXX</code>), but this is actually not necessary. Every
+label has a unique index anyway, so the label prefixes are not required.</p>
+<h1>Implementation-specific limitations</h1>
+<ul>
+<li>Depending on what Brainfuck specification you read, you will see several
+ definitions for what to do if the data pointer leaves the acceptable range of
+ cells. Generally, the pointer should either wrap around to the other end or the
+ compiler / interpreter should facilitate behavior which gives the Brainfuck
+ source the impression that it has unlimited space (i.e. by allocating more
+ space for cells). BFC does not do this, it simply outputs an error and
+ terminates.</li>
+<li>Only an x86_64 Linux target is supported.</li>
+<li>Generation of Intel-syntax assembly is not supported.</li>
+<li>The compiler operates directly based on the Brainfuck source rather than
+ creating some sort of optimization-friendly intermediary, although this isn&apos;t
+ <i>necessarily</i> a bad thing for a language as simple as Brainfuck.</li>
+</ul>
+<ol>
+<li> How you could improve on the design of BFC</li>
+</ol>
+<p>Most obviously, you can try to solve the problems described above in your
+implementation.</p>
+<p>As a short note, try to look at optimizations you implement and optimize
+them further. Actually, one thing I missed when initially implementing compiler
+optimizations (which I won&apos;t add now since I&apos;m not working on BFC anymore) is
+the way data increments and decrements interact.</p>
+<p>See, one optimization I implemented was something like &quot;increment
+shortening&quot;. That is, something like the following code:</p>
+<div class="long-code">    // equivalent to Brainfuck <code>++++</code>.
+.Lcb_0:
+    incb (%r13)
+    incb (%r13)
+    incb (%r13)
+    incb (%r13)
+    // ...</div>
+<p>... would get optimized to:</p>
+<div class="long-code">    // equivalent to Brainfuck <code>++++</code>.
+.Lcb_0:
+    addb $4, (%r13)
+    // ...</div>
+<p>... which is not only more efficient in terms of speed, but also in terms of
+generated filesize. This optimization works by literally scanning the Brainfuck
+source and counting how many consecutive <code>+</code>s occur at a specific point in the
+code. But, actually, this can be taken further. You could have a counter
+variable keeping track of the current &quot;increment amount&quot; and <i>also</i> count <code>-</code>s.</p>
+<p>BFC doesn&apos;t do this, but it should be absolutely trivial to implement in
+your own compiler.</p>
+<p>For instance, this code:</p>
+<div class="long-code">    // equivalent to Brainfuck <code>+++--</code>.
+.Lcb_0:
+    inb (%r13)
+    inb (%r13)
+    inb (%r13)
+    decb (%r13)
+    decb (%r13)
+    // ...</div>
+<p>... could trivially be optimized to:</p>
+<div class="long-code">    // equivalent to Brainfuck <code>+++--</code>.
+    // three increments and two decrements is mathematically equivalent to one
+    // increment.
+.Lcb_0:
+    addb $1, (%r13)
+    // ...</div>
+<p>The compiler could even be made to check for a special case of +/-1 and
+generate an <code>incb</code> / <code>decb</code> instead of an <code>addb</code> / <code>subb</code>, if such an
+instruction would be more efficient in the targeted instruction set.
+</p>
+</body>
+</html>
