@@ -1,0 +1,12 @@
+DOC-TITLE HTTP status 404
+
+    The 404 HTTP status code, Not Found, is returned by the server when you try
+to access a resource that does not exist, or under rare circumstances, due to
+another server error.
+    This is probably happening because:
+
+*You clicked on a link that doesn't exist on tirimid.net anymore
+*You typed the web address incorrectly and tried to access a page that never
+ existed on tirimid.net
+*You tried to access a page which has moved locations in the website's directory
+ tree
