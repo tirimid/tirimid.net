@@ -1,19 +1,13 @@
-.PHONY: all clean
+.PHONY: all
 
-CMF_DIR := cmf
-HTML_DIR := html
-CMFC := cmfc
-STYLE_FILE := style.css
-
-CMF_FILES := $(shell find $(CMF_DIR) -type f -name "*.cmf")
-HTML_FILES := $(patsubst $(CMF_DIR)/%.cmf,$(HTML_DIR)/%.html,$(CMF_FILES))
+CMF_FILES := $(shell find cmf -type f -name "*.cmf")
+HTML_FILES := $(patsubst cmf/%.cmf,html/%.html,$(CMF_FILES))
 
 all: $(HTML_FILES)
+	cp -r html/* .
+	rm -rf html
 
-clean:
-	rm -rf $(HTML_DIR)
-
-$(HTML_DIR)/%.html: $(CMF_DIR)/%.cmf
+html/%.html: cmf/%.cmf
 	@ mkdir -p $@
 	@ rmdir $@
-	$(CMFC) -o $@ -s $(STYLE_FILE) $<
+	cmfc -o $@ -s style.css $<
