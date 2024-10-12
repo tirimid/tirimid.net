@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VVSML</title>
+<style>html {
+	background-color: #2a2a2e;
+	padding-top: 5ch;
+	padding-bottom: 5ch;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f8f8ff;
+	border: 7ch solid #f8f8ff;
+	width: 80ch;
+	box-shadow: 2ch 2ch 2ch #0f0f0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	padding-top: 1ch;
+	font-size: 4.5ch;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3ch;
+}
+
+h3 {
+	font-size: 2.5ch;
+}
+
+h4, h5, h6 {
+	font-size: 2ch;
+}
+
+li {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+}
+
+td {
+	font-family: serif;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 1ch;
+}
+
+table {
+	margin: 1ch;
+	display: block;
+	overflow-x: scroll;
+	border-collapse: collapse;
+}
+
+tr, td {
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+p {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 4ch;
+	margin: 0 auto;
+}
+
+.footnote {
+	font-family: serif;
+	text-align: justify;
+	padding: 1ch;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00779f;
+}
+
+a:hover {
+	background-color: #00779f;
+	color: #fffff1;
+}
+
+.long-code {
+	font-family: monospace;
+	margin: 1ch;
+	padding: 2ch;
+	background-color: #e7e7ee;
+	white-space: pre-wrap;
+	tab-size: 6;
+}
+
+blockquote {
+	font-family: serif;
+	text-align: justify;
+	text-indent: 0ch;
+	margin: 0 auto;
+	padding-left: 6ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+.doc-title {
+	font-size: 7ch;
+	font-family: serif;
+	text-align: center;
+}
+
+.doc-author, .doc-date {
+	font-size: 2ch;
+	font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="doc-title">VVSML</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2023-01-06 (rev. 2024-10-12)</div>
+<h1>What is VVSML... And why?</h1>
+<p>So, you know Markdown and HTML, right? It&apos;s kind of like that. VVSML is a
+markup language designed to build into a HTML file. If you want simplicity, use
+Markdown. I didn&apos;t want simplicity: I wanted a programming-language-like syntax
+based loosely on LaTeX, but without all the fuss involved in using LaTeX. Thus,
+(V)ery (V)ery (S)imple (M)arkup (L)anguage was born. The question comes about,
+then: &quot;why not just use HTML? It has a proglang-like syntax without the fuss of
+LaTeX&quot;. Honestly, I just really dislike how HTML feels to write. Plus, HTML has
+no dedicated features for conlanging - which I wanted.</p>
+<h1>Using VVSML</h1>
+<p>First; download, build, and install the VVSML program from <a href="https://github.com/tirimid/vvsml">the GitHub</a>.
+You can do so using:</p>
+<div class="long-code">$ git clone https://github.com/tirimid/vvsml
+$ cd vvsml
+$ cargo build --release
+$ sudo cp target/release/vvsml /usr/bin</div>
+<p>The actual <code>vvsml</code> binary takes two arguments. Run <code>vvsml</code> to see the
+following:</p>
+<div class="long-code">$ vvsml
+error usage: <code>vvsml &lt;source file&gt; &lt;output file&gt;</code></div>
+<p>The <code>source file</code> is meant to be the name of a VVSML source file, and
+<code>output file</code> is meant to be the name of the file in which to output HTML code
+generated using the VVSML source. If the given <code>output file</code> does not exist, it
+should be created by the program. So, what are we waiting for? Let&apos;s get the
+show on the road. Create a new file for VVSML source - I suggest using the
+<code>.vvsml</code> extension for it. Then, open it in your text editor. Run:</p>
+<div class="long-code">$ touch hello.vvsml
+$ emacs -nw hello.vvsml</div>
+<p>Below is some demo source code in VVSML:</p>
+<div class="long-code">contents
+{
+    chapter {This is a very large heading}
+    section {This is a large heading}
+    subsection {This is a relatively small heading}
+    text {This is a paragraph}
+}</div>
+<p>The LaTeX influence is obvious. Note that this can be laid out in many ways,
+<code>vvsml</code> doesn&apos;t care if you place braces on the same line, a new line, if they
+are touching the keyword, etc. Also, the whitespace in the above example is
+arbitrary. VVSML is very relaxed with regard to formatting, but it cares
+intensely about structure. To explain how <code>vvsml</code> handles code structure, we
+have to understand two main types of substructure: &quot;layers&quot; and &quot;textual
+extractors&quot;. A layer is a code element which contains sub-elements as a list -
+in this example, the <code>contents</code> contains a <code>chapter</code>, a <code>section</code>, a
+<code>subsection</code>, and a <code>text</code>; in that order. Each of those are textual extractors:
+they do not and cannot contain other code elements. Instead, they contain
+literal text as data. Flipwise, layers cannot contain textual data but they can
+contain code elements (textual extractors and other layers). In fact, try adding
+some random words into the <code>contents</code>, as follows:</p>
+<div class="long-code">contents
+{
+    chapter {...}
+    section {...}
+    subsection {...}
+    text {...}
+    here is some random text outside of a textual extractor!
+}</div>
+<p>Then, try to build as follows:</p>
+<div class="long-code">$ vvsml hello.vvsml out.html
+error test.vvsml:7 - expected one of [chapter, section, subsection, text, list,
+ordered list, table, block end], found other</div>
+<p>See? It gives us a list of code elements which we can place inside the
+<code>contents</code>. We cannot have textual data inside a layer. Awesome! We have a
+nicely formatted markup file describing the contents of a document; what now?
+Well, you now know pretty much everything necessary to write things using VVSML.
+Now I will go over the more advanced layers, those you saw in the prior error
+message. See the below code:</p>
+<div class="long-code">contents
+{
+    list
+    {
+        subsection {first item in list}
+        text {second item in list}
+        chapter {third item in list}
+        section {...}
+    }
+    ordered_list
+    {
+        subsection {first item in list}
+        text {second item in list}
+        chapter {third item in list}
+        section {...}
+    }
+}</div>
+<p>This is a demonstration of the <code>list</code> and <code>ordered_list</code> layers. They work
+in effectively the same way: their child layers are displayed as lists when the
+output HTML is viewed in a web browser. Both are actually ordered: the items are
+displayed in the same order that they are written in the VVSML source. The only
+difference between the two types of list is that <code>list</code> outputs a list which
+uses dot or bullet points, while <code>ordered_list</code> outputs a list whose entries are
+numbered starting from 1. That&apos;s it for the list layers. Now, see the following
+<code>table</code> code:</p>
+<div class="long-code">contents
+{
+    table
+    {
+        row
+        {
+            text {-}
+            text {a}
+            text {b}
+            text {c}
+        }
+        row
+        {
+            text {1}
+            text {a1}
+            text {b1}
+            text {c1}
+        }
+        row
+        {
+            text {2}
+            text {a2}
+            text {b2}
+            text {c2}
+        }
+        row
+        {
+            text {3}
+            text {a3}
+            text {b3}
+            text {c3}
+        }
+    }
+}</div>
+<p>A <code>table</code> can only contain one code element: the <code>row</code>. These <code>row</code>s,
+however, can contain any layer or textual extractor. Since it&apos;s hard to put into
+words, check out the cool table produced by the above code:</p>
+<table>
+<tr>
+<td>-</td>
+<td>a </td>
+<td>b </td>
+<td>c </td>
+</tr>
+<tr>
+<td>1</td>
+<td>a1</td>
+<td>b1</td>
+<td>c1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>a2</td>
+<td>b2</td>
+<td>c2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>a3</td>
+<td>b3</td>
+<td>c3</td>
+</tr>
+</table>
+<p>I hope that clears up any confusion. Anyway, it may be important to note
+that each of these layers can be nested inside of each other. That is to say,
+you can place a <code>list</code> inside of another <code>list</code>, or a <code>table</code> inside an
+<code>ordered_list</code>, a <code>table</code> inside a <code>row</code>, and so on. A <code>row</code>, however, cannot
+appear outside of a <code>table</code>. You now know all the core features of VVSML,
+congratuations!</p>
+<h1>Some of the crazier features</h1>
+<p>Apart from the core features, <code>vvsml</code> also implements some convenient stuff
+that I just thought would be kind of nice. First, character escapes. If you
+wanted a &quot;}&quot; in a <code>text</code>, you wouldn&apos;t normally be able to add it - but with
+escape characters, you can. To escape a character, add <code>]]$</code> in front of it. The
+only characters that can be escaped are &quot;{&quot;, &quot;}&quot;, &quot;@&quot;, &quot;.&quot;, and &quot;]&quot;. Trying to
+escape anything else will cause <code>vvsml</code> to output an error.</p>
+<p>That&apos;s nice, but it&apos;s not crazy. What is crazy is the preprocessor. In
+VVSML, there are several &quot;preprocessor directives&quot; which can be placed in your
+code to cause <code>vvsml</code> to do certain things before actually processing anything.
+The first preprocessor directives to know are <code>.define_macro</code> and <code>macro</code>.</p>
+<div class="long-code">.define_macro {name of macro} {value after expansion}
+contents
+{
+    text {.macro {name of macro}}
+}</div>
+<p>This does exactly what you would expect. Note that all <code>.define_macro</code>s are
+processed before any <code>.macro</code>s, so you can define them anywhere you want in the
+file - they don&apos;t have to appear before their first usage in the file. After
+macro expansion, the above code looks like this:</p>
+<div class="long-code">
+contents
+{
+    text {value after expansion}
+}</div>
+<p>Unlike the prior code elements, <code>.define_macro</code> takes two arguments instead
+of just one. The first describes the name of a symbol in a symbol table, and the
+second describes the value of that symbol. Note that the name of the symbol (and
+the value) can be any valid UTF-8 string. Then, <code>.macro</code> does a lookup in the
+symbol table using its argument, and replaces itself with the value if the
+lookup is successful.</p>
+<p>The next preprocessor directive is <code>.link</code>. <code>.link</code> takes a piece of text
+and makes it into a clickable URL when its output is viewed in a browser. Like
+<code>.define_macro</code>, it takes two arguments: the text of the link, and the
+destination. See:</p>
+<div class="long-code">contents
+{
+    text {the below link will send you to google.com:}
+    text {.link {a link to google.com} {https://google.com/}}
+}</div>
+<p>Then: <code>.unicode</code>. This one takes a single argument, a unicode codepoint in
+hexadecimal. See:</p>
+<div class="long-code">contents
+{
+    subsection {the two texts below will output the same HTML}
+    text {/.unicode {0068}.unicode {0065}.unicode {026a}/}
+    text {/&amp;#104;&amp;#101;&amp;#618;/}
+}</div>
+<p>So that&apos;s pretty simple so far - nothing too wacky. The next few features
+are either more complex or crazier. So then, regular expressions. If you want
+the preprocessor to scan through your entire file and perform regex-replacements
+on its text, VVSML gives you <code>.replace_all</code>. All written regex replacements are
+done in the order they appear in the file - top down, left to right.
+<code>.replace_all</code> takes two arguments: the regular expression to match against, and
+the replacements. Note that the first argument can&apos;t really contain curly braces
+since that would mess up <code>vvsml</code>&apos;s function. Check the below example:</p>
+<div class="long-code">.replace_all {this is very [gb][oa][od]d?} {regular expressions...}
+contents
+{
+    text {this is very good}
+    text {this is very bad}
+}</div>
+<p>After preprocessing, this becomes:</p>
+<div class="long-code">
+contents
+{
+    text {regular expressions...}
+    text {regular expressions...}
+}</div>
+<p>The next feature, <code>.format</code>, is much more involved. In the previous parts of
+this... tutorial? you have seen many ways to format a written document -
+different sized headers, URLs, lists, tables, etc. However, there is more to
+formatting than just general layouts. For example, there is text weight and
+minor positioning like sub / superscripting. This is where <code>.format</code> comes in.
+<code>.format</code> takes two arguments: a string containing some textual data, and a
+string describing how that text should be formatted. This &quot;description&quot; of the
+formatting is done by writing certain format specifiers in the descriptor
+string. See the text below defining each of the available format specifiers:</p>
+<ul>
+<li><code>b</code>: The text should be made bold</li>
+<li><code>i</code>: The text should be made italic</li>
+<li><code>_</code>: The text should be subscripted</li>
+<li><code>^</code>: The text should be superscripted</li>
+<li><code>s</code>: The text should have a strikethrough</li>
+<li><code>x</code>: The text should be treated as X-SAMPA text and be converted to IPA unicode
+ characters</li>
+<li><code>p</code>: The text should be treated as Praat text and be converted to IPA unicode
+ characters</li>
+<li><code>B</code>: The text should be treated as Branner text and be converted to IPA unicode
+ characters</li>
+</ul>
+<p>These can be combined in any way to overlap their effects. See:</p>
+<div class="long-code">contents
+{
+    text {.format {b} {bold}}
+    text {.format {i} {italic}}
+    text {.format {si_} {strikethrough, italic, and subscripted}}
+    text {.format {b^} {bold and superscripted}}
+    text {.format {x} {Eks sAmp@}}
+}</div>
+<p>I think this is a very nice demonstration of the <code>.format</code> preprocessor
+directive. The last feature I want to talk about in this section is
+<code>.external_table</code>. After seeing the above syntax for the <code>table</code> layer, you
+probably thought: &quot;wow, this is inconvenient and I wish there was a nicer syntax
+for it&quot;. Well, <code>vvsml</code> defines a separate syntax for tables which is easier and
+much less unwieldy. In order to use it, create a new file to store this table -
+I recommend the <code>.vvtab</code> file extension. Then, open this file in your text
+editor:</p>
+<div class="long-code">$ touch example.vvtab
+$ emacs -nw example.vvtab</div>
+<p>After opening this file, try writing the following code:</p>
+<div class="long-code">- &amp; a  &amp; b  &amp; c  $
+1 &amp; a1 &amp; b1 &amp; c1 $
+2 &amp; a2 &amp; b2 &amp; c2 $
+3 &amp; a3 &amp; b3 &amp; c3 $</div>
+<p>Then, go back to <code>hello.vvsml</code> and write the following:</p>
+<div class="long-code">contents
+{
+    .external_table {example.vvtab}
+}</div>
+<p><code>.external_table</code> takes one argument - the path of the file containing your
+table. I call this special table syntax &quot;VVtab&quot;, a mixing of &quot;VVSML&quot; and
+&quot;table&quot;. In VVtab, all table elements are assumed to be <code>text</code>s. Each item in a
+row is seperated by a <code>&amp;</code>, and each row is seperated by a <code>$</code>. Again, the LaTeX
+influence here is clearly visible. The fact that &quot;&amp;&quot; and &quot;$&quot; are pretty common
+characters necessitates that VVtab introduce an escape character for being able
+to write them without being interpreted as seperators. Simple: just place a &quot;&quot;
+before them. Done and dusted. Note that the above table is equivalent to the one
+described in the previous section.
+</p>
+</body>
+</html>
