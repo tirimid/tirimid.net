@@ -1,7 +1,9 @@
 DOC-TITLE medioed
 DOC-AUTHOR tirimid
 DOC-CREATED 2024-02-04
-DOC-REVISED 2024-10-11
+DOC-REVISED 2024-10-20
+
+=
 
     *NOTE: I am (at least for now) discontinuing work on this project. I'm
 creating a new personal text editor which will work differently. The below text
@@ -22,7 +24,7 @@ qualifier for whether something is added is my personal taste in text editors,
 rather than some consistent design principle.
     medioed is free software.
 
-# Installing medioed
+=Installing medioed
 
     Go to @[https://github.com/tirimid/medioed|the GitHub]. Clone the repository
 and enter the cloned directory by doing:

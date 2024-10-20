@@ -3,7 +3,7 @@
 <head>
 <title>mincbuild</title>
 <style>html {
-	background-color: #2a2a2e;
+	background-color: #000000;
 	padding-top: 5ch;
 	padding-bottom: 5ch;
 }
@@ -11,17 +11,9 @@
 body {
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #f8f8ff;
-	border: 7ch solid #f8f8ff;
 	width: 80ch;
-	box-shadow: 2ch 2ch 2ch #0f0f0f;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: sans-serif;
-}
-
-h2, h3, h4, h5, h6 {
+	color: #ffffff;
+	font-family: monospace;
 	font-weight: normal;
 }
 
@@ -33,51 +25,49 @@ h1 {
 
 h2 {
 	font-size: 3ch;
+	font-weight: bold;
 }
 
 h3 {
 	font-size: 2.5ch;
+	font-weight: bold;
 }
 
 h4, h5, h6 {
 	font-size: 2ch;
+	font-weight: bold;
 }
 
 li {
-	font-family: serif;
-	text-align: justify;
 	margin: 0 auto;
 }
 
 td {
-	font-family: serif;
-	text-align: justify;
 	margin: 0 auto;
 	padding: 1ch;
 }
 
 table {
-	margin: 1ch;
+	margin-left: 1ch;
+	margin-right: 1ch;
+	margin-top: 3ch;
+	margin-bottom: 3ch;
 	display: block;
 	overflow-x: scroll;
 	border-collapse: collapse;
 }
 
 tr, td {
-	border: solid 1px #000000;
+	border: solid 1px #ffffff;
 	border-collapse: collapse;
 }
 
 p {
-	font-family: serif;
-	text-align: justify;
 	text-indent: 4ch;
 	margin: 0 auto;
 }
 
 .footnote {
-	font-family: serif;
-	text-align: justify;
 	padding: 1ch;
 }
 
@@ -87,26 +77,27 @@ img {
 }
 
 a {
-	color: #00779f;
+	color: #00ffff;
 }
 
 a:hover {
-	background-color: #00779f;
-	color: #fffff1;
+	background-color: #00ffff;
+	color: #000000;
 }
 
 .long-code {
-	font-family: monospace;
-	margin: 1ch;
+	width: 87ch;
+	margin-right: 1ch;
+	margin-top: 3ch;
+	margin-bottom: 3ch;
+	margin-left: -5ch;
 	padding: 2ch;
-	background-color: #e7e7ee;
+	border: 1px solid #ffffff;
 	white-space: pre-wrap;
 	tab-size: 6;
 }
 
 blockquote {
-	font-family: serif;
-	text-align: justify;
 	text-indent: 0ch;
 	margin: 0 auto;
 	padding-left: 6ch;
@@ -116,13 +107,10 @@ blockquote {
 
 .doc-title {
 	font-size: 7ch;
-	font-family: serif;
-	text-align: center;
 }
 
 .doc-author, .doc-date {
 	font-size: 2ch;
-	font-family: sans-serif;
 }
 </style>
 </head>
