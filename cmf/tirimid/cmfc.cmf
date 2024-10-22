@@ -1,7 +1,6 @@
 DOC-TITLE CMFC
-DOC-AUTHOR tirimid
 DOC-CREATED 2024-10-12
-DOC-REVISED 2024-10-20
+DOC-REVISED 2024-10-22
 
 =What is CMFC?
 
@@ -54,7 +53,9 @@ command:
 of events, executed by the `cmfc` binary when invoked:
 
 #Read command line arguments
-#Read in the contents of the input file and (if provided) style file
+#Read in the contents of the input file and (if provided) style and docdata
+ files
+#Parse the docdata file (if provided), ignoring everything but DOC directives
 #Parse the input file and construct a document AST
 #Write out the HTML generated from the AST into the output file (or if it isn't
  specified, standard output), along with the contents of the style file as the
@@ -64,6 +65,7 @@ of events, executed by the `cmfc` binary when invoked:
 line flags which the program will accept:
 
 *`-A` will dump the AST directly instead of generating HTML
+*`-d` will specify the docdata file which base DOC directives are read from
 *`-h` will display help text
 *`-o` will specify the output file (standard output if omitted)
 *`-s` will specify the style file to put in the HTML's `<style>` section

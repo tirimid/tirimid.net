@@ -86,11 +86,11 @@ a:hover {
 }
 
 .long-code {
-	width: 87ch;
+	width: 85ch;
 	margin-right: 1ch;
 	margin-top: 3ch;
 	margin-bottom: 3ch;
-	margin-left: -5ch;
+	margin-left: -4ch;
 	padding: 2ch;
 	border: 1px solid #ffffff;
 	white-space: pre-wrap;
@@ -110,14 +110,21 @@ blockquote {
 }
 
 .doc-author, .doc-date {
-	font-size: 2ch;
+	color: #999999;
+	font-size: 2.5ch;
+}
+
+.doc-license {
+	color: #999999;
+	font-size: 2.5ch;
+	padding-top: 3ch;
 }
 </style>
 </head>
 <body>
 <div class="doc-title">CMFC</div>
 <div class="doc-author">tirimid</div>
-<div class="doc-date">2024-10-12 (rev. 2024-10-20)</div>
+<div class="doc-date">2024-10-12 (rev. 2024-10-22)</div>
 <h1>What is CMFC?</h1>
 <p>CMFC is a compiler for a markup language I designed, CMF. This page will
 serve as both documentation and a tutorial surrounding both of them, should
@@ -157,7 +164,9 @@ command:</p>
 of events, executed by the <code>cmfc</code> binary when invoked:</p>
 <ol>
 <li>Read command line arguments</li>
-<li>Read in the contents of the input file and (if provided) style file</li>
+<li>Read in the contents of the input file and (if provided) style and docdata
+ files</li>
+<li>Parse the docdata file (if provided), ignoring everything but DOC directives</li>
 <li>Parse the input file and construct a document AST</li>
 <li>Write out the HTML generated from the AST into the output file (or if it isn&apos;t
  specified, standard output), along with the contents of the style file as the
@@ -167,6 +176,7 @@ of events, executed by the <code>cmfc</code> binary when invoked:</p>
 line flags which the program will accept:</p>
 <ul>
 <li><code>-A</code> will dump the AST directly instead of generating HTML</li>
+<li><code>-d</code> will specify the docdata file which base DOC directives are read from</li>
 <li><code>-h</code> will display help text</li>
 <li><code>-o</code> will specify the output file (standard output if omitted)</li>
 <li><code>-s</code> will specify the style file to put in the HTML&apos;s <code>&lt;style&gt;</code> section</li>
@@ -339,5 +349,5 @@ dolore eu fugiat nulla pariatur.</p>
 <h1>DOC directives</h1>
 <p>stuff will be added here eventually...
 </p>
-</body>
+<div class="doc-license"><p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://tirimid.net">tirimid</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p></div></body>
 </html>
