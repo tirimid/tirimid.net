@@ -34,6 +34,8 @@ not expect an immediate response.
  similar to sudo or doas
 *@[tirimid/ipa-translate.html|ipa-translate]: A Rust crate for translating ASCII
  text into the International Phonetic Alphabet (IPA)
+*@[tirimid/lithic.html|lithic]: A programming language and transpiler I created
+ for personal usage, made to be minimal and easy
 *@[tirimid/medioed.html|medioed]: My first personal mediocre text editor
 *@[tirimid/mincbuild.html|mincbuild]: A minimal C(++) buildsystem which doesn't
  require you to learn any new technology, like a DSL
@@ -51,3 +53,5 @@ not expect an immediate response.
 =Rei plushie
 
 !()res/gamingreiplushie.webp
+
+!()res/reiplushiefanta.webp
