@@ -2,14 +2,14 @@ DOC-TITLE tirimid.net
 
 =About me
 
-*Main online usernames: tirimid, Tirimid, polytopelover
-*Preferred pronouns: any
-*Languages I understand: English, Russian
+*Online usernames: tirimid, Tirimid, polytopelover
+*Languages I understand: English, Russian, (very limited) Spanish
 *Some things I like: programming, cool design, math, electronics, writing,
- conlangs
-*Some things I hate: bloatware, planned obsolescence, the advertising industry
+ conlangs, music
+*Some things I hate: bloatware, planned obsolescence, the advertising industry,
+ the capitalist economic system
 *Favorite operating systems: Gentoo Linux, Arch Linux
-*Favorite programming languages: C, (minimal subset of) C++
+*Favorite mainstream programming languages: C, (minimal subset of) C++
 *GitHub: @[https://github.com/tirimid|tirimid]
 
     Hello, I'm tirimid (sometimes Tirimid or polytopelover) and this is my
@@ -34,8 +34,6 @@ not expect an immediate response.
  similar to sudo or doas
 *@[tirimid/ipa-translate.html|ipa-translate]: A Rust crate for translating ASCII
  text into the International Phonetic Alphabet (IPA)
-*@[tirimid/lithic.html|lithic]: A programming language and transpiler I created
- for personal usage, made to be minimal and easy
 *@[tirimid/medioed.html|medioed]: My first personal mediocre text editor
 *@[tirimid/mincbuild.html|mincbuild]: A minimal C(++) buildsystem which doesn't
  require you to learn any new technology, like a DSL
@@ -49,9 +47,3 @@ not expect an immediate response.
  utterly deranged features
 *@[tirimid/firstrg.html|What was the First Rhythm Game?]: A short historical
  work of research, trying to figure out what the first rhythm game was
-
-=Rei plushie
-
-!()res/gamingreiplushie.webp
-
-!()res/reiplushiefanta.webp
