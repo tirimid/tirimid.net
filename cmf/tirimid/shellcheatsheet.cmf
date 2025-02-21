@@ -1,0 +1,54 @@
+DOC-TITLE Shell Commands Cheatsheet
+DOC-CREATED 2025-02-21
+
+=
+
+    *This document was created so that I could send it to my friends. It is
+intended for beginners to the command line as a quick reference, and does not
+substitute for an explanation of the command line's function. The commands
+featured will change over time, as this is created for my friends' use.*
+
+=Notes
+
+    Shell commands are prefixed with a `$`. This is a shell prompt and *not*
+part of the actual command, so it should not be entered when copying the
+commands into your terminal.
+    When entering the commands, you will frequently want to replace some part of
+the command with something else. Things that should be replaced are indicated
+with capital letters and surrounded with angle brackets, `<LIKE THIS>`.
+
+=Basic commands
+
+-------------------------------------------------------------------
+|**The command**      |**What it does**                           |
+-------------------------------------------------------------------
+|`$ ls`               |List all files in the current directory    |
+-------------------------------------------------------------------
+|`$ pwd`              |Show the full path of the current directory|
+-------------------------------------------------------------------
+|`$ cd <DIR>`         |Move to another directory                  |
+-------------------------------------------------------------------
+|`$ touch <FILE>`     |Create a new file                          |
+-------------------------------------------------------------------
+|`$ mkdir <DIR>`      |Create a new directory                     |
+-------------------------------------------------------------------
+|`$ rmdir <DIR>`      |Delete a directory if it is empty          |
+-------------------------------------------------------------------
+|`$ rm <FILE>`        |Delete a file                              |
+-------------------------------------------------------------------
+|`$ rm -rf <FILE/DIR>`|Recursively delete a file / directory      |
+-------------------------------------------------------------------
+|`$ ./<FILE>`         |Run a binary from the current directory    |
+-------------------------------------------------------------------
+|`$ clear`            |Clear the text from the terminal           |
+-------------------------------------------------------------------
+|`$ sudo <COMMAND>`   |Run a command with elevated privileges     |
+-------------------------------------------------------------------
+
+=Compiling code
+
+------------------------------------------------------------------------
+|**The command**             |**What it does**                         |
+------------------------------------------------------------------------
+|`$ gcc -o <BINARY> <C FILE>`|Compiles a C file to an executable binary|
+------------------------------------------------------------------------
