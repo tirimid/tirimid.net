@@ -2,73 +2,105 @@
 <html>
 <head>
 <title>ipa-translate</title>
-<style>html {
-	background-color: #000000;
-	padding-top: 5ch;
-	padding-bottom: 5ch;
+<style>@font-face {
+	font-family: "Hello Note";
+	font-style: normal;
+	src: url("/res/font/hellonote.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Splashpoint";
+	font-style: normal;
+	src: url("/res/font/splashpoint.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Splashpoint";
+	font-style: italic;
+	src: url("/res/font/splashpointital.woff") format("woff");
+}
+
+html {
+	background-image: url("/res/cliff_watcher.png");
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 body {
+	background-color: #000000bb;
+	border: 4px solid #cecece;
+	padding: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80ch;
-	color: #ffffff;
-	font-family: monospace;
+	width: 1000px;
+	color: #cecece;
 	font-weight: normal;
+	font-size: 180%;
+	box-shadow: 0 0 25px #000000;
 }
 
 h1 {
-	padding-top: 1ch;
-	font-size: 4.5ch;
-	font-weight: bold;
+	font-size: 50pt;
 }
 
 h2 {
-	font-size: 3ch;
-	font-weight: bold;
+	font-size: 40pt;
 }
 
 h3 {
-	font-size: 2.5ch;
-	font-weight: bold;
+	font-size: 30pt;
 }
 
 h4, h5, h6 {
-	font-size: 2ch;
+	font-size: 20pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-left: -20px;
+	margin-right: -20px;
+	background-color: #cecece;
+	color: #000000;
 	font-weight: bold;
+	font-family: "Hello Note";
+	padding: 15px;
 }
 
 li {
 	margin: 0 auto;
+	font-family: "Hello Note";
 }
 
 td {
 	margin: 0 auto;
-	padding: 1ch;
+	padding: 10px;
+	font-family: "Hello Note";
 }
 
 table {
-	margin-left: 1ch;
-	margin-right: 1ch;
-	margin-top: 3ch;
-	margin-bottom: 3ch;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	display: block;
 	overflow-x: scroll;
 	border-collapse: collapse;
 }
 
 tr, td {
-	border: solid 1px #ffffff;
+	border: solid 4px #cecece;
 	border-collapse: collapse;
 }
 
 p {
-	text-indent: 4ch;
+	text-indent: 50px;
 	margin: 0 auto;
+	font-family: "Hello Note";
+	padding: 10px;
 }
 
 .footnote {
-	padding: 1ch;
+	padding: 10px;
+	font-family: "Hello Note";
 }
 
 img {
@@ -86,38 +118,42 @@ a:hover {
 }
 
 .long-code {
-	width: 85ch;
-	margin-right: 1ch;
-	margin-top: 3ch;
-	margin-bottom: 3ch;
-	margin-left: -4ch;
-	padding: 2ch;
-	border: 1px solid #ffffff;
+	width: 900px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 20px;
+	border: 4px solid #cecece;
 	white-space: pre-wrap;
-	tab-size: 6;
+	tab-size: 2;
+	font-family: monospace;
 }
 
 blockquote {
-	text-indent: 0ch;
+	text-indent: 0;
 	margin: 0 auto;
-	padding-left: 6ch;
-	padding-top: 1ch;
-	padding-bottom: 1ch;
+	padding-left: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: "Hello Note";
 }
 
 .doc-title {
-	font-size: 7ch;
+	font-size: 80pt;
+	font-family: "Splashpoint";
 }
 
 .doc-author, .doc-date {
 	color: #999999;
-	font-size: 2.5ch;
+	font-size: 30pt;
+	font-family: "Splashpoint";
 }
 
 .doc-license {
 	color: #999999;
-	font-size: 2.5ch;
-	padding-top: 3ch;
+	font-size: 20pt;
+	padding-top: 80px;
+	font-family: "Hello Note";
 }
 </style>
 </head>
