@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="/res/manual/genetic-platformer/genetic-platformer.css"/>
+		<script src="/res/manual/genetic-platformer/genetic-platformer.js"></script>
+	</head>
+	<body>
+		<h1>Genetic Platformer</h1>
+		<h2>Usage</h2>
+		<p>
+			Eye tool: click near the edges of the popup to move the camera<br>
+			Box tool: drag to draw platform in that region<br>
+			Kill tool: drag to draw kill blocks in that region<br>
+			Spawnpoint tool: click to move the spawnpoint<br>
+			Goal tool: drag to draw a goal for players to reach<br>
+			Coin tool: add a coin which incentivizes players to move to it<br>
+			Eraser tool: click something to erase it<br>
+			Train AI: start the simulation with current parameters<br>
+			Kill AI: terminate the simulation
+		</p>
+		<h2>Play online</h2>
+		<button id="BtnSetPopulationSize">Set population size</button>
+		<input id="InputPopulationSize">
+		<button id="BtnSetMutationChance">Set mutation chance</button>
+		<input id="InputMutationChance">
+		<br>
+		<button id="BtnEye">Eye</button>
+		<button id="BtnBox">Box</button>
+		<button id="BtnKill">Kill</button>
+		<button id="BtnSpawnpoint">Spawnpoint</button>
+		<button id="BtnGoal">Goal</button>
+		<button id="BtnCoin">Coin</button>
+		<button id="BtnEraser">Eraser</button>
+		<button id="BtnTrainAi">Train AI</button>
+		<button id="BtnKillAi">Kill AI</button>
+		<div class="CanvasContainer">
+			<canvas id="MainCanvas" width="700" height="440"></canvas>
+		</div>
+		<h2>Download</h2>
+		<p><a href="https://github.com/tirimid/genetic-platformer">Read the source code</a></p>
+		<p><a href="https://addons.mozilla.org/en-US/firefox/addon/genetic-platformer/">Get the Firefox extension</a></p>
+	</body>
+</html>
