@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Development of Cubic Jumping</title>
+<style>@font-face {
+	font-family: "Hello Note";
+	font-style: normal;
+	src: url("/res/font/hellonote.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Splashpoint";
+	font-style: normal;
+	src: url("/res/font/splashpoint.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Splashpoint";
+	font-style: italic;
+	src: url("/res/font/splashpointital.woff") format("woff");
+}
+
+html {
+	background-image: url("/res/cliff_watcher.png");
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+body {
+	background-color: #000000bb;
+	border: 4px solid #cecece;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	color: #cecece;
+	font-weight: normal;
+	font-size: 180%;
+	box-shadow: 0 0 25px #000000;
+}
+
+h1 {
+	font-size: 50pt;
+}
+
+h2 {
+	font-size: 40pt;
+}
+
+h3 {
+	font-size: 30pt;
+}
+
+h4, h5, h6 {
+	font-size: 20pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-left: -20px;
+	margin-right: -20px;
+	background-color: #cecece;
+	color: #000000;
+	font-weight: bold;
+	font-family: "Hello Note";
+	padding: 15px;
+}
+
+li {
+	margin: 0 auto;
+	font-family: "Hello Note";
+}
+
+td {
+	margin: 0 auto;
+	padding: 10px;
+	font-family: "Hello Note";
+}
+
+table {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: block;
+	overflow-x: scroll;
+	border-collapse: collapse;
+}
+
+tr, td {
+	border: solid 4px #cecece;
+	border-collapse: collapse;
+}
+
+p {
+	text-indent: 50px;
+	margin: 0 auto;
+	font-family: "Hello Note";
+	padding: 10px;
+}
+
+.footnote {
+	padding: 10px;
+	font-family: "Hello Note";
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: #00ffff;
+}
+
+a:hover {
+	background-color: #00ffff;
+	color: #000000;
+}
+
+.long-code {
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 20px;
+	border: 4px solid #cecece;
+	white-space: pre-wrap;
+	tab-size: 2;
+	font-family: monospace;
+}
+
+blockquote {
+	text-indent: 0;
+	margin: 0 auto;
+	padding-left: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: "Hello Note";
+}
+
+.doc-title {
+	font-size: 80pt;
+	font-family: "Splashpoint";
+}
+
+.doc-author, .doc-date {
+	color: #999999;
+	font-size: 30pt;
+	font-family: "Splashpoint";
+}
+
+.doc-license {
+	color: #999999;
+	font-size: 20pt;
+	padding-top: 80px;
+	font-family: "Hello Note";
+}
+</style>
+</head>
+<body>
+<div class="doc-title">The Development of Cubic Jumping</div>
+<div class="doc-author">tirimid</div>
+<div class="doc-date">2025-04-14</div>
+<h1>Introduction</h1>
+<p>If you are not already familiar, some time ago I released a game titled
+Cubic Jumping, an abstract-style speedrun / rage platformer. This game was
+developed over about six months with on-and-off effort. The game runs on Windows
+and Linux systems and can be downloaded at <a href="https://tirimid.itch.io/cubic-jumping">the itch.io page</a>.
+The complete source code for the game is available at the itch.io page as well
+as on <a href="https://github.com/tirimid/cubic-jumping">the GitHub</a>. It was an
+immensely fun project to work on, and I think the result is satisfactory and
+reasonably high quality.</p>
+<p>In this article I hope to explain how I developed Cubic Jumping, what I
+learnt, and lay out a comprehensive history of the game&apos;s development. The
+contents are also entirely retrospective rather than realtime.</p>
+<h1>Prehistory</h1>
+<p>Why did I make Cubic Jumping? Why did I call it that? Why does the art style
+look the way it does? These questions are all answered by what I call &quot;Old Cubic
+Jumping&quot;. Back when I had just started trying to make games, I was learning the
+Unity 2D Engine, and I decided to make a simple 1-level platformer game called,
+well, Cubic Jumping. Due to not knowing how to make quality assets, I just went
+with simple colored squares - a red player and a black tilemap environment, all
+on a gray background.</p>
+<p>Hence was decided the style for Cubic Jumping, several years before I even
+decided to create it.</p>
+<h1>Starting Off</h1>
+<p>At first, the game was built using my build system, mincbuild, and licensed
+under the MIT license. Both of these things eventually changed and the project
+was relicensed under the GNU GPLv3.</p>
+<h1>Player Movement</h1>
+<p>In order to even design player movement, you need to decide on an physics
+tick. In the case of Cubic Jumping, there is a single tickrate, 100TPS, that is
+used for everything, including player movement and logic. This value directly
+determines basically everything regarding how the game feels.</p>
+<p>At first, player movement was not configurable, and the key input was
+hardcoded - users could not rebind movement to something they preferred. There
+was a basic and flawed tilemap collision detection system which endured with
+minor changes through the entire game&apos;s life.</p>
+<p>The collision works on this principle:</p>
+<ol>
+<li>The player is known to be within the bounds of the map.</li>
+<li>This means that the player will always have a tile above, below, left and right
+ of them.</li>
+<li>We can get the positions of these tiles.</li>
+<li>The player has an x-axis and y-axis velocity which are independent of each
+ other.</li>
+<li>If, on any given tick, the player will move into / through a tile due to their
+ high velocity, we can check this by comparing, e.g. (player position + player
+ velocity &lt;= left tile pos + 1).</li>
+<li>If the player would collide, we resolve the collision by zeroing the velocity
+ along that axis and setting the players position such that they are directly
+ next to the wall.</li>
+<li>Otherwise, player position += player velocity.</li>
+</ol>
+<p>This does not work well when the player would run into a corner, and this
+indeed caused issues on some playtests. However, for quite a long time, this
+collision algorithm was suitable.</p>
+<ul>
+<li>(INSERT DIAGRAM OF ALGORITHM)<i></i></li>
+</ul>
+<p>There are two other aspects that changed substantially between the initial
+and release versions. Initially, the jumping and powerjumping would continue
+indefinitely while the keys were held and did not need to be buffered, and the
+downwards dash was more of a &quot;fast fall&quot; which did nothing but increase the
+effect of gravity on the player. The feel of the game was rather different.</p>
+<h1>Map Editor and Map List</h1>
+<p>One part of a complete platformer game is a progression of maps on the
+player side. That is, the player has to click play, beat a level, and move onto
+the next level of a predetermined sequence. Cubic Jumping uses the Map List to
+do this. The Map List is literally an array of map structures placed in sequence
+along with an index into the current map being played. When the user reaches the
+end, the index is incremented and some behavior is triggered (e.g. move onto the
+next level).</p>
+<p>In new versions, the Map List also provides some information about each map,
+such as names or par times. User levels, on account of not being baked into the
+game, cannot be accessed from the Map List.</p>
+<p>All maps, official and user-generated, are created using the level editor.
+Here is the first insight I figured out - if it is applicable, make a map editor
+for your game as soon as you can. The earliest test levels were manually written
+out by punching values into the map file. As you can imagine, it was such a pain
+that I couldn&apos;t take it anymore and just make an editor.</p>
+<p>The first editor was so rudimentary that it was nearly unusable. No panels,
+everything is done using undocumented and arcane keyboard shortcuts - in short,
+terrible. However, it was such an upgrade over punching values into a text file
+that I was finally able to make real test maps for real features.</p>
+<ul>
+<li>(INSERT SCREENSHOT OF INITIAL LEVEL EDITOR)<i></i></li>
+</ul>
+<p>Make a level editor.
+</p>
+<div class="doc-license"><p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://tirimid.net">tirimid</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p></div></body>
+</html>
