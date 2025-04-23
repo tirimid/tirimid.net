@@ -1,6 +1,6 @@
 DOC-TITLE CMFC
 DOC-CREATED 2024-10-12
-DOC-REVISED 2024-10-22
+DOC-REVISED 2025-04-23
 
 =What is CMFC?
 
@@ -226,7 +226,50 @@ with it).
 
 ==Text formatting
 
-    stuff will be added here eventually...
+    Text formatting in CMF is done by embedding format modifiers within
+formattable text (as opposed to raw text, where formatting cannot be done). The
+supported format modifiers are as follows:
+
+--------------------------------------------------------------------------------
+| **Modifier**    | **Usage**        | **Remarks**                             |
+--------------------------------------------------------------------------------
+| Format escape   | `\\C`            | Interpret C (text / raw) as a character |
+|                 |                  | and not a modifier or something else    |
+--------------------------------------------------------------------------------
+| External link   | `\@[LINK\|TEXT]` | TEXT (text) will become a hyperlink     |
+|                 |                  | pointing to LINK (raw)                  |
+--------------------------------------------------------------------------------
+| Footnote link   | `\[^LINK\|TEXT]` | TEXT (text) will become a footnote with |
+|                 |                  | a reference pointing to the anchor      |
+|                 |                  | specified by link (raw)                 |
+--------------------------------------------------------------------------------
+| Footnote anchor | `\[^LINK]`       | Create a page anchor called LINK (raw)  |
+|                 |                  | which can be accessed by clicking on a  |
+|                 |                  | corresponding footnote link             |
+--------------------------------------------------------------------------------
+| Inline code     | `\`TEXT\``       | Interpret TEXT (text) as an inline code |
+|                 |                  | snippet stylistically                   |
+--------------------------------------------------------------------------------
+| Bold            | `\*\*TEXT\*\*`   | Interpret TEXT (text) as stylistically  |
+|                 |                  | bold                                    |
+--------------------------------------------------------------------------------
+| Italic          | `\*TEXT\*`       | Interpret TEXT (text) as stylistically  |
+|                 |                  | italicized                              |
+--------------------------------------------------------------------------------
+
+    Example formatting:
+
+```
+\\\*
+
+\@[https://gentoo.org|Gentoo Linux]
+
+Lorem\[^anchor|Lorem ipsum dolor sit amet]
+
+\[^anchor]anchor: Lorem ipsum dolor sit amet
+
+Lorem \`ipsum\` \*\*dolor\*\* \*sit\* amet
+```
 
 =Collected CMF example
 
@@ -286,6 +329,56 @@ this is a long code snippet
 |consequat            |                           |
 ---------------------------------------------------
 
-=DOC directives
+\*
 
-TODO: finish this article.
+@[https://gentoo.org|Gentoo Linux]
+
+Lorem[^anchor|Lorem ipsum dolor sit amet]
+
+[^anchor]anchor: Lorem ipsum dolor sit amet
+
+Lorem `ipsum` **dolor** *sit* amet
+
+=DOC directives and docdata
+
+    In publishing articles on this website, I have found myself needing more
+than just a nice way to lay out my writings. It would also be preferable if I
+could issue commands that specify meta-information about an article, such as
+what the title or author should be generated as. For this reason, CMF also
+supports such a system, here called DOC directives.
+    These DOC directives are called that because all of them begin with `DOC`,
+which stands for document. A DOC directive must be placed at the start of a line
+and be provided with the necessary argument in order to work. If an unknown DOC
+directive is encountered, CMFC will complain about that fact and refuse to build
+your article.
+    Here are all the supported directives:
+
+-------------------------------------------------------------------------------
+| **Directive** | **Usage**          | **Remarks**                            |
+-------------------------------------------------------------------------------
+| Title         | `DOC-TITLE TEXT`   | Specify document title as TEXT (text)  |
+-------------------------------------------------------------------------------
+| Author        | `DOC-AUTHOR TEXT`  | Specify document author as TEXT (text) |
+-------------------------------------------------------------------------------
+| Created       | `DOC-CREATED TEXT` | Specify document creation time as TEXT |
+|               |                    | (text)                                 |
+-------------------------------------------------------------------------------
+| Revised       | `DOC-REVISED TEXT` | Specify document revision time as TEXT |
+|               |                    | (text)                                 |
+-------------------------------------------------------------------------------
+| License       | `DOC-LICENSE TEXT` | Specify document license information   |
+|               |                    | as TEXT (text)                         |
+-------------------------------------------------------------------------------
+| Raw           | `DOC-RAW-TEXT N`   | Make CMFC parse formatted text as raw  |
+|               |                    | text based on if N is 0 or 1 (0 =      |
+|               |                    | format, 1 = raw)                       |
+-------------------------------------------------------------------------------
+
+    Since sometimes you will want to modify the publishing information for a
+bunch of related articles all at the same time, CMF has a mechanism called the
+docdata file to facilitate this. Instead of adding all of the above information
+into every CMF file, create a docdata file with all the common DOC directives.
+When compiling a CMF file using CMFC with the `-d FILE` option, FILE will be
+read and all of its DOC directives will be processed prior to compiling the
+input file. This mechanism makes it easy to batch-update things like license or
+authorial information.
