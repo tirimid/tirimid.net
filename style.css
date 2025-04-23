@@ -5,6 +5,12 @@
 }
 
 @font-face {
+	font-family: "Melon Camp";
+	font-style: normal;
+	src: url("/res/font/melon_camp.woff") format("woff");
+}
+
+@font-face {
 	font-family: "Splashpoint";
 	font-style: normal;
 	src: url("/res/font/splashpoint.woff") format("woff");
@@ -57,19 +63,19 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #cecece;
 	color: #000000;
 	font-weight: bold;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 	padding: 15px;
 }
 
 li {
 	margin: 0 auto;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 }
 
 td {
 	margin: 0 auto;
 	padding: 10px;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 }
 
 table {
@@ -90,13 +96,13 @@ tr, td {
 p {
 	text-indent: 50px;
 	margin: 0 auto;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 	padding: 10px;
 }
 
 .footnote {
 	padding: 10px;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 }
 
 img {
@@ -130,7 +136,7 @@ blockquote {
 	padding-left: 100px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 }
 
 .doc-title {
@@ -148,5 +154,5 @@ blockquote {
 	color: #999999;
 	font-size: 20pt;
 	padding-top: 80px;
-	font-family: "Hello Note";
+	font-family: "Melon Camp";
 }
