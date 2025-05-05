@@ -46,19 +46,19 @@ body {
 }
 
 h1 {
-	font-size: 50pt;
-}
-
-h2 {
 	font-size: 40pt;
 }
 
-h3 {
+h2 {
 	font-size: 30pt;
 }
 
-h4, h5, h6 {
+h3 {
 	font-size: 20pt;
+}
+
+h4, h5, h6 {
+	font-size: 10pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #000000;
 	font-weight: bold;
 	font-family: "Melon Camp";
-	padding: 15px;
+	padding: 10px;
 }
 
 li {
@@ -189,11 +189,11 @@ with simple colored squares - a red player and a black tilemap environment, all
 on a gray background.</p>
 <p>Hence was decided the style for Cubic Jumping, several years before I even
 decided to create it.</p>
-<h1>Starting Off</h1>
+<h1>Starting off</h1>
 <p>At first, the game was built using my build system, mincbuild, and licensed
 under the MIT license. Both of these things eventually changed and the project
 was relicensed under the GNU GPLv3.</p>
-<h1>Player Movement</h1>
+<h1>Player movement</h1>
 <p>In order to even design player movement, you need to decide on an physics
 tick. In the case of Cubic Jumping, there is a single tickrate, 100TPS, that is
 used for everything, including player movement and logic. This value directly
@@ -227,7 +227,7 @@ and release versions. Initially, the jumping and powerjumping would continue
 indefinitely while the keys were held and did not need to be buffered, and the
 downwards dash was more of a &quot;fast fall&quot; which did nothing but increase the
 effect of gravity on the player. The feel of the game was rather different.</p>
-<h1>Map Editor and Map List</h1>
+<h1>Map editor and map list</h1>
 <p>One part of a complete platformer game is a progression of maps on the
 player side. That is, the player has to click play, beat a level, and move onto
 the next level of a predetermined sequence. Cubic Jumping uses the Map List to
@@ -249,7 +249,7 @@ terrible. However, it was such an upgrade over punching values into a text file
 that I was finally able to make real test maps for real features.</p>
 <p>(INSERT SCREENSHOT OF INITIAL LEVEL EDITOR)</p>
 <p>Make a level editor.</p>
-<h1>Embedding Data and HFM</h1>
+<h1>Embedding data and HFM</h1>
 <p>One of the things I like doing for my game projects is embedding as much of
 the game&apos;s data into the executable binary as I can. Here, C comes in useful,
 and combined with utilities such as <code>bin2header</code> (which I used), the process of
@@ -273,7 +273,7 @@ and trivially decoding the first line of the file.</p>
 <p>That is the next interesting takeaway: if you want to store binary and C
 encodings of the same data for non-trivial or mutable dependencies, you should
 try storing the binary data in a comment at the top of the C header.</p>
-<h1>More Tiles and Triggers</h1>
+<h1>More tiles and triggers</h1>
 <p>Over the next days, I added several features, among which were launch tiles,
 bounce tiles, kill tiles and triggers.</p>
 <p>Making simple maps in the level editor, I noticed very quickly that, despite
@@ -296,7 +296,7 @@ them.</p>
 issues during playtesting. This is because I designed the levels in such a way
 that the player would never get enough velocity to skip through the triggers,
 either by slowing the player down or by making the triggers thick.</p>
-<h1>UI and Redoing Editor</h1>
+<h1>UI and redoing editor</h1>
 <p>The map editor, as stated earlier, was extremely rudimentary for a short
 while - better than literally nothing, but horrendously annoying for actual
 level design, which I obviously needed to do to make real levels. I decided that
@@ -308,7 +308,7 @@ editor quickly made it more recognizable as an actual editor and enabled my
 friends to make maps, which I could not really imagine with the old editor.</p>
 <p>Thus was born the first version of the new editor.</p>
 <p>(INSERT SCREENSHOT OF REVAMPED EDITOR)</p>
-<h1>Menu Navigation</h1>
+<h1>Menu navigation</h1>
 <p>With the game systems starting to take shape, I thought that the old command
 line interface for launching the game in different modes (gameplay v.s. editor)
 was no longer suitable. There had to be a main menu that launched the game&apos;s
@@ -335,7 +335,7 @@ the system rather than anything explicit.</p>
 <p>(INSERT DIAGRAM OF CONTROL FRAMES CONCEPT)</p>
 <p>You can try this method for menu control flow as it is fairly minimal and
 maintains menu state all the way down until it is not needed.</p>
-<h1>First Levels and Playtesting</h1>
+<h1>First levels and playtesting</h1>
 <p>At this point, I made the first few real levels. I had enough functionality
 to design levels, switch between them at runtime, and gameplay was satisfactory.
 I did some work on improving player collisions and configuring some gameplay

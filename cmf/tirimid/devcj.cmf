@@ -29,13 +29,13 @@ on a gray background.
     Hence was decided the style for Cubic Jumping, several years before I even
 decided to create it.
 
-=Starting Off
+=Starting off
 
     At first, the game was built using my build system, mincbuild, and licensed
 under the MIT license. Both of these things eventually changed and the project
 was relicensed under the GNU GPLv3.
 
-=Player Movement
+=Player movement
 
     In order to even design player movement, you need to decide on an physics
 tick. In the case of Cubic Jumping, there is a single tickrate, 100TPS, that is
@@ -73,7 +73,7 @@ indefinitely while the keys were held and did not need to be buffered, and the
 downwards dash was more of a "fast fall" which did nothing but increase the
 effect of gravity on the player. The feel of the game was rather different.
 
-=Map Editor and Map List
+=Map editor and map list
 
     One part of a complete platformer game is a progression of maps on the
 player side. That is, the player has to click play, beat a level, and move onto
@@ -99,7 +99,7 @@ that I was finally able to make real test maps for real features.
 
     Make a level editor.
 
-=Embedding Data and HFM
+=Embedding data and HFM
 
     One of the things I like doing for my game projects is embedding as much of
 the game's data into the executable binary as I can. Here, C comes in useful,
@@ -127,7 +127,7 @@ and trivially decoding the first line of the file.
 encodings of the same data for non-trivial or mutable dependencies, you should
 try storing the binary data in a comment at the top of the C header.
 
-=More Tiles and Triggers
+=More tiles and triggers
 
     Over the next days, I added several features, among which were launch tiles,
 bounce tiles, kill tiles and triggers.
@@ -154,7 +154,7 @@ issues during playtesting. This is because I designed the levels in such a way
 that the player would never get enough velocity to skip through the triggers,
 either by slowing the player down or by making the triggers thick.
 
-=UI and Redoing Editor
+=UI and redoing editor
 
     The map editor, as stated earlier, was extremely rudimentary for a short
 while - better than literally nothing, but horrendously annoying for actual
@@ -169,7 +169,7 @@ friends to make maps, which I could not really imagine with the old editor.
 
     (INSERT SCREENSHOT OF REVAMPED EDITOR)
 
-=Menu Navigation
+=Menu navigation
 
     With the game systems starting to take shape, I thought that the old command
 line interface for launching the game in different modes (gameplay v.s. editor)
@@ -200,7 +200,7 @@ the system rather than anything explicit.
     You can try this method for menu control flow as it is fairly minimal and
 maintains menu state all the way down until it is not needed.
 
-=First Levels and Playtesting
+=First levels and playtesting
 
     At this point, I made the first few real levels. I had enough functionality
 to design levels, switch between them at runtime, and gameplay was satisfactory.

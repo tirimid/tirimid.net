@@ -24,17 +24,21 @@ code to this website is available at @[https://github.com/tirimid/tirimid.net|it
 tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
-=Interactive Pages
+=Some of My Stuff
+
+    Well, you came to my website, so you want to see what I've made, right?
+
+==Interactive Pages
 
 *@[manual/genetic-platformer.html|Genetic Platformer]: A small game I made over
  a weekend where you train genetic algorithm AIs to beat obstacle courses
 
-=Developer Commentary
+==Developer Commentary
 
 *@[tirimid/devcj.html|The Development of Cubic Jumping]: A commentary on how I
  developed and released my standalone speedrun / rage platformer game
 
-=Technical Works
+==Technical Works
 
 *@[tirimid/bfc.html|BFC]: A tiny brainfuck compiler that turns Brainfuck source
  input into GNU-as-compatible assembly output
@@ -50,7 +54,7 @@ not expect an immediate response.
 *@[tirimid/vvsml.html|VVSML]: A very simple markup language with fun syntax and
  utterly deranged features
 
-=Creative Works
+==Creative Works
 
 *@[tirimid/quevish.html|Quevish]: A conlang based on semantic "evaluation" of a
  queue with a fairly regular and consistent syntax
@@ -59,7 +63,7 @@ not expect an immediate response.
 *@[tirimid/firstrg.html|What was the First Rhythm Game?]: A short historical
  work of research, trying to figure out what the first rhythm game was
 
-=Miscellaneous Pages
+==Miscellaneous Pages
 
 *@[tirimid/shellcheatsheet.html|Shell Commands Cheatsheet]: A simple cheatsheet
  for Linux command line beginners, featuring some of the most used commands

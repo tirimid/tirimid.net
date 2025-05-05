@@ -42,19 +42,19 @@ body {
 }
 
 h1 {
-	font-size: 50pt;
-}
-
-h2 {
 	font-size: 40pt;
 }
 
-h3 {
+h2 {
 	font-size: 30pt;
 }
 
-h4, h5, h6 {
+h3 {
 	font-size: 20pt;
+}
+
+h4, h5, h6 {
+	font-size: 10pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #000000;
 	font-weight: bold;
 	font-family: "Melon Camp";
-	padding: 15px;
+	padding: 10px;
 }
 
 li {
