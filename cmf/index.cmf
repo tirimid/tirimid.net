@@ -51,6 +51,7 @@ not expect an immediate response.
 *@[tirimid/medioed.html|medioed]: My first personal mediocre text editor
 *@[tirimid/mincbuild.html|mincbuild]: A minimal C(++) buildsystem which doesn't
  require you to learn any new technology, like a DSL
+*@[tirimid/nimped.html|nimped]: My second personal text editor
 *@[tirimid/vvsml.html|VVSML]: A very simple markup language with fun syntax and
  utterly deranged features
 
