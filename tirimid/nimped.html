@@ -165,7 +165,7 @@ blockquote {
 <body>
 <div class="doc-title">nimped</div>
 <div class="doc-author">tirimid</div>
-<div class="doc-date">2025-05-17</div>
+<div class="doc-date">2025-05-17 (rev. 2025-05-18)</div>
 <h1>Introduction</h1>
 <p>nimped stands for (N)ew and (Imp)roved Text (Ed)itor. The reason for this,
 is that it is my second personal text editor, improving upon medioed, which I
@@ -194,15 +194,17 @@ single time, as a dynamically loaded config file system was implemented.</p>
 $ cd nimped</div>
 <p>Then, build the <code>nimped</code> binary:</p>
 <div class="long-code">$ ./build.sh</div>
-<p>After a successful build, install the binary to the system:</p>
+<p>After a successful build, you can install the binary to the system:</p>
 <div class="long-code"># ./install-bin.sh</div>
 <p>You will also need the user config installed to your <code>$HOME/.config</code>
-directory in order to use nimped, so run:</p>
+directory in order to use nimped. Alternatively, you can use the <code>-o</code> option to
+open configuration from a local directory. However, if you wish to install
+config to your user home, run:</p>
 <div class="long-code">$ ./install-conf.sh</div>
 <p>(See the <code>README.md</code> file for information regarding installing themes and
 uninstalling nimped from your system).</p>
 <h1>Dynamically configuring nimped</h1>
-<p>The user configuration will be installed to <code>$HOME/.config/nimped</code>. Inside,
+<p>The user configuration can be installed to <code>$HOME/.config/nimped</code>. Inside,
 you will find several conf files. Inspect these files for anything interesting;
 in particular, you will find the following options in <code>layout.conf</code>:</p>
 <div class="long-code">margin = 80

@@ -1,6 +1,7 @@
 DOC-TITLE nimped
 DOC-AUTHOR tirimid
 DOC-CREATED 2025-05-17
+DOC-REVISED 2025-05-18
 
 =Introduction
 
@@ -43,14 +44,16 @@ $ cd nimped
 $ ./build.sh
 ```
 
-    After a successful build, install the binary to the system:
+    After a successful build, you can install the binary to the system:
 
 ```
 # ./install-bin.sh
 ```
 
     You will also need the user config installed to your `$HOME/.config`
-directory in order to use nimped, so run:
+directory in order to use nimped. Alternatively, you can use the `-o` option to
+open configuration from a local directory. However, if you wish to install
+config to your user home, run:
 
 ```
 $ ./install-conf.sh
@@ -61,7 +64,7 @@ uninstalling nimped from your system).
 
 =Dynamically configuring nimped
 
-    The user configuration will be installed to `$HOME/.config/nimped`. Inside,
+    The user configuration can be installed to `$HOME/.config/nimped`. Inside,
 you will find several conf files. Inspect these files for anything interesting;
 in particular, you will find the following options in `layout.conf`:
 
