@@ -165,8 +165,75 @@ blockquote {
 <body>
 <div class="doc-title">nimped</div>
 <div class="doc-author">tirimid</div>
-<div class="doc-date">2025-05-17 (rev. 2025-05-18)</div>
-<h1>Introduction</h1>
+<div class="doc-date">2025-05-17 (rev. 2025-05-31)</div>
+<h1>Keybind cheatsheet</h1>
+<h2>Base mode</h2>
+<ul>
+<li><code>h</code>: Move left one character</li>
+<li><code>l</code>: Move right one character</li>
+<li><code>j</code>: Move down one line</li>
+<li><code>k</code>: Move up one line</li>
+<li><code>a</code>: Move to the start of the current line</li>
+<li><code>e</code>: Move to the end of the current line</li>
+<li><code>f</code>: Move forward one word</li>
+<li><code>b</code>: Move backward one word</li>
+<li><code>C-x C-c</code>: Quit nimped</li>
+<li><code>C-n</code>: Create a new scratch frame</li>
+<li><code>C-f</code>: Create a frame from a file</li>
+<li><code>C-k</code>: Kill the current frame</li>
+<li><code>C-s</code>: Save the contents of the current frame to a file</li>
+<li><code>n</code>: Goto the next frame</li>
+<li><code>p</code>: Goto the previous frame</li>
+<li><code>m</code>: Set the current frame as master</li>
+<li><code>u</code>: Undo the last changes made to the frame</li>
+<li><code>/</code>: Search the frame forwards for literal text</li>
+<li><code>?</code>: Search the frame backwards for literal text</li>
+<li><code>c</code>: Copy the current line</li>
+<li><code>d</code>: Cut the current line</li>
+<li><code>q c</code>: Copy a given number of lines</li>
+<li><code>q d</code>: Cut a given number of lines</li>
+<li><code>v</code>: Paste the clipboard contents</li>
+<li><code>z</code>: Center the frame around the cursor</li>
+<li><code>g</code>: Goto a given line</li>
+<li><code>F3</code>: Start recording a macro</li>
+<li><code>F4</code>: Stop recording / execute a macro</li>
+<li><code>i</code>: Enter write mode</li>
+<li><code>C-h</code>: Display a help menu</li>
+</ul>
+<h2>Write mode</h2>
+<ul>
+<li><code>C-g</code>: Quit write mode</li>
+<li><code>C-d</code>: Delete the character in front of the cursor</li>
+<li><code>BACKSPC</code>: Delete the character behind the cursor (handling smart parens)</li>
+<li><code>M-BACKSPC</code>: Delete the word behind the cursor</li>
+<li><code>RET</code>: Insert a new line (handling indentation and smart parens)</li>
+<li><code>(</code>: Insert a smart left-paren</li>
+<li><code>[</code>: Insert a smart left-bracket</li>
+<li><code>{</code>: Insert a smart left-brace</li>
+<li><code>&quot;</code>: Insert a smart double-quote</li>
+</ul>
+<h2>Prompt mode</h2>
+<ul>
+<li><code>C-g</code>: Quit prompt with failure</li>
+<li><code>y</code>: (Confirmation prompts) quit prompt with success</li>
+<li><code>n</code>: (Confirmation prompts) quit prompt with failure</li>
+<li><code>RET</code>: (Text prompts) quit prompt with success</li>
+<li><code>C-f</code>: (Text prompts) move right one character</li>
+<li><code>C-b</code>: (Text prompts) move left one character</li>
+<li><code>C-a</code>: (Text prompts) move to the start of the prompt</li>
+<li><code>C-e</code>: (Text prompts) move to the end of the prompt</li>
+<li><code>M-f</code>: (Text prompts) move forward one word</li>
+<li><code>M-b</code>: (Text prompts) move backward one word</li>
+<li><code>C-d</code>: (Text prompts) delete the character in front of the cursor</li>
+<li><code>BACKSPC</code>: (Text prompts) delete the character behind the cursor (handling
+ smart parens)</li>
+<li><code>M-BACKSPC</code>: (Text prompts) delete the word behind the cursor</li>
+<li><code>(</code>: (Text prompts) insert a smart left-paren</li>
+<li><code>[</code>: (Text prompts) insert a smart left-bracket</li>
+<li><code>{</code>: (Text prompts) insert a smart left-brace</li>
+<li><code>&quot;</code>: (Text prompts) insert a smart double-quote</li>
+</ul>
+<h1>What is nimped?</h1>
 <p>nimped stands for (N)ew and (Imp)roved Text (Ed)itor. The reason for this,
 is that it is my second personal text editor, improving upon medioed, which I
 made public and posted about on social media over a year ago. If you are not
@@ -217,69 +284,5 @@ is as follows:</p>
 <div class="long-code">$ nimped [options] file1 file2 file3 ...</div>
 <p>For specific usage information and help with command line flags, run:</p>
 <div class="long-code">$ nimped -h</div>
-<h1>Keybind cheatsheet</h1>
-<h2>Base mode</h2>
-<ul>
-<li><code>h</code>: Move left one character</li>
-<li><code>l</code>: Move right one character</li>
-<li><code>j</code>: Move down one line</li>
-<li><code>k</code>: Move up one line</li>
-<li><code>a</code>: Move to the start of the current line</li>
-<li><code>e</code>: Move to the end of the current line</li>
-<li><code>f</code>: Move forward one word</li>
-<li><code>b</code>: Move backward one word</li>
-<li><code>C-x</code>: Quit nimped</li>
-<li><code>C-n</code>: Create a new scratch frame</li>
-<li><code>C-f</code>: Create a frame from a file</li>
-<li><code>C-k</code>: Kill the current frame</li>
-<li><code>C-s</code>: Save the contents of the current frame to a file</li>
-<li><code>n</code>: Goto the next frame</li>
-<li><code>p</code>: Goto the previous frame</li>
-<li><code>m</code>: Set the current frame as master</li>
-<li><code>u</code>: Undo the last changes made to the frame</li>
-<li><code>/</code>: Search the frame forwards for literal text</li>
-<li><code>?</code>: Search the frame backwards for literal text</li>
-<li><code>c</code>: Copy the current line</li>
-<li><code>d</code>: Cut the current line</li>
-<li><code>q c</code>: Copy a given number of lines</li>
-<li><code>q d</code>: Cut a given number of lines</li>
-<li><code>v</code>: Paste the clipboard contents</li>
-<li><code>z</code>: Center the frame around the cursor</li>
-<li><code>g</code>: Goto a given line</li>
-<li><code>F3</code>: Start recording a macro</li>
-<li><code>F4</code>: Stop recording / execute a macro</li>
-<li><code>i</code>: Enter write mode</li>
-</ul>
-<h2>Write mode</h2>
-<ul>
-<li><code>C-x</code>: Quit write mode</li>
-<li><code>C-d</code>: Delete the character in front of the cursor</li>
-<li><code>BACKSPC</code>: Delete the character behind the cursor (handling smart parens)</li>
-<li><code>M-BACKSPC</code>: Delete the word behind the cursor</li>
-<li><code>RET</code>: Insert a new line (handling indentation and smart parens)</li>
-<li><code>(</code>: Insert a smart left-paren</li>
-<li><code>[</code>: Insert a smart left-bracket</li>
-<li><code>{</code>: Insert a smart left-brace</li>
-<li><code>&quot;</code>: Insert a smart double-quote</li>
-</ul>
-<h2>Prompt mode</h2>
-<ul>
-<li><code>C-x</code>: Quit prompt with failure</li>
-<li><code>RET</code>: Quit prompt with success</li>
-<li><code>C-f</code>: Move right one character</li>
-<li><code>C-b</code>: Move left one character</li>
-<li><code>C-a</code>: Move to the start of the prompt</li>
-<li><code>C-e</code>: Move to the end of the prompt</li>
-<li><code>M-f</code>: Move forward one word</li>
-<li><code>M-b</code>: Move backward one word</li>
-<li><code>C-d</code>: Delete the character in front of the cursor</li>
-<li><code>BACKSPC</code>: Delete the character behind the cursor (handling smart parens)</li>
-<li><code>M-BACKSPC</code>: Delete the word behind the cursor</li>
-<li><code>(</code>: Insert a smart left-paren</li>
-<li><code>[</code>: Insert a smart left-bracket</li>
-<li><code>{</code>: Insert a smart left-brace</li>
-<li><code>&quot;</code>: Insert a smart double-quote
-</li>
-</ul>
 <div class="doc-license"><p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://tirimid.net">tirimid</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p></div></body>
 </html>

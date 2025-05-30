@@ -1,9 +1,78 @@
 DOC-TITLE nimped
 DOC-AUTHOR tirimid
 DOC-CREATED 2025-05-17
-DOC-REVISED 2025-05-18
+DOC-REVISED 2025-05-31
 
-=Introduction
+=Keybind cheatsheet
+
+==Base mode
+
+*`h`: Move left one character
+*`l`: Move right one character
+*`j`: Move down one line
+*`k`: Move up one line
+*`a`: Move to the start of the current line
+*`e`: Move to the end of the current line
+*`f`: Move forward one word
+*`b`: Move backward one word
+*`C-x C-c`: Quit nimped
+*`C-n`: Create a new scratch frame
+*`C-f`: Create a frame from a file
+*`C-k`: Kill the current frame
+*`C-s`: Save the contents of the current frame to a file
+*`n`: Goto the next frame
+*`p`: Goto the previous frame
+*`m`: Set the current frame as master
+*`u`: Undo the last changes made to the frame
+*`/`: Search the frame forwards for literal text
+*`?`: Search the frame backwards for literal text
+*`c`: Copy the current line
+*`d`: Cut the current line
+*`q c`: Copy a given number of lines
+*`q d`: Cut a given number of lines
+*`v`: Paste the clipboard contents
+*`z`: Center the frame around the cursor
+*`g`: Goto a given line
+*`F3`: Start recording a macro
+*`F4`: Stop recording / execute a macro
+*`i`: Enter write mode
+*`C-h`: Display a help menu
+
+==Write mode
+
+*`C-g`: Quit write mode
+*`C-d`: Delete the character in front of the cursor
+*`BACKSPC`: Delete the character behind the cursor (handling smart parens)
+*`M-BACKSPC`: Delete the word behind the cursor
+*`RET`: Insert a new line (handling indentation and smart parens)
+*`(`: Insert a smart left-paren
+*`[`: Insert a smart left-bracket
+*`{`: Insert a smart left-brace
+*`"`: Insert a smart double-quote
+
+==Prompt mode
+
+*`C-g`: Quit prompt with failure
+*`y`: (Confirmation prompts) quit prompt with success
+*`n`: (Confirmation prompts) quit prompt with failure
+*`RET`: (Text prompts) quit prompt with success
+*`C-f`: (Text prompts) move right one character
+*`C-b`: (Text prompts) move left one character
+*`C-a`: (Text prompts) move to the start of the prompt
+*`C-e`: (Text prompts) move to the end of the prompt
+*`M-f`: (Text prompts) move forward one word
+*`M-b`: (Text prompts) move backward one word
+*`C-d`: (Text prompts) delete the character in front of the cursor
+*`BACKSPC`: (Text prompts) delete the character behind the cursor (handling
+ smart parens)
+*`M-BACKSPC`: (Text prompts) delete the word behind the cursor
+*`(`: (Text prompts) insert a smart left-paren
+*`[`: (Text prompts) insert a smart left-bracket
+*`{`: (Text prompts) insert a smart left-brace
+*`"`: (Text prompts) insert a smart double-quote
+
+
+=What is nimped?
 
     nimped stands for (N)ew and (Imp)roved Text (Ed)itor. The reason for this,
 is that it is my second personal text editor, improving upon medioed, which I
@@ -90,67 +159,3 @@ $ nimped [options] file1 file2 file3 ...
 ```
 $ nimped -h
 ```
-
-=Keybind cheatsheet
-
-==Base mode
-
-*`h`: Move left one character
-*`l`: Move right one character
-*`j`: Move down one line
-*`k`: Move up one line
-*`a`: Move to the start of the current line
-*`e`: Move to the end of the current line
-*`f`: Move forward one word
-*`b`: Move backward one word
-*`C-x`: Quit nimped
-*`C-n`: Create a new scratch frame
-*`C-f`: Create a frame from a file
-*`C-k`: Kill the current frame
-*`C-s`: Save the contents of the current frame to a file
-*`n`: Goto the next frame
-*`p`: Goto the previous frame
-*`m`: Set the current frame as master
-*`u`: Undo the last changes made to the frame
-*`/`: Search the frame forwards for literal text
-*`?`: Search the frame backwards for literal text
-*`c`: Copy the current line
-*`d`: Cut the current line
-*`q c`: Copy a given number of lines
-*`q d`: Cut a given number of lines
-*`v`: Paste the clipboard contents
-*`z`: Center the frame around the cursor
-*`g`: Goto a given line
-*`F3`: Start recording a macro
-*`F4`: Stop recording / execute a macro
-*`i`: Enter write mode
-
-==Write mode
-
-*`C-x`: Quit write mode
-*`C-d`: Delete the character in front of the cursor
-*`BACKSPC`: Delete the character behind the cursor (handling smart parens)
-*`M-BACKSPC`: Delete the word behind the cursor
-*`RET`: Insert a new line (handling indentation and smart parens)
-*`(`: Insert a smart left-paren
-*`[`: Insert a smart left-bracket
-*`{`: Insert a smart left-brace
-*`"`: Insert a smart double-quote
-
-==Prompt mode
-
-*`C-x`: Quit prompt with failure
-*`RET`: Quit prompt with success
-*`C-f`: Move right one character
-*`C-b`: Move left one character
-*`C-a`: Move to the start of the prompt
-*`C-e`: Move to the end of the prompt
-*`M-f`: Move forward one word
-*`M-b`: Move backward one word
-*`C-d`: Delete the character in front of the cursor
-*`BACKSPC`: Delete the character behind the cursor (handling smart parens)
-*`M-BACKSPC`: Delete the word behind the cursor
-*`(`: Insert a smart left-paren
-*`[`: Insert a smart left-bracket
-*`{`: Insert a smart left-brace
-*`"`: Insert a smart double-quote
