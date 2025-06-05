@@ -57,14 +57,21 @@ h4, h5, h6 {
 	font-size: 20pt;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
 	margin-left: -20px;
 	margin-right: -20px;
 	background-color: #cecece;
 	color: #000000;
 	font-weight: bold;
 	font-family: "Melon Camp";
-	padding: 10px;
+}
+
+h6 {
+	text-align: center;
+	font-weight: bold;
+	font-family: "Melon Camp";
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 li {
