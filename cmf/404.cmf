@@ -1,4 +1,7 @@
 DOC-TITLE HTTP status 404
+DOC-RAW-TEXT 1
+DOC-FAVICON /res/favicon.png
+DOC-RAW-TEXT 0
 
     The 404 HTTP status code, Not Found, is returned by the server when you try
 to access a resource that does not exist, or under rare circumstances, due to
