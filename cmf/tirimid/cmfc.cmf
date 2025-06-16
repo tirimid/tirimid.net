@@ -1,6 +1,6 @@
 DOC-TITLE CMFC
 DOC-CREATED 2024-10-12
-DOC-REVISED 2025-04-23
+DOC-REVISED 2025-06-16
 
 =What is CMFC?
 
@@ -368,6 +368,9 @@ your article.
 -------------------------------------------------------------------------------
 | License       | `DOC-LICENSE TEXT` | Specify document license information   |
 |               |                    | as TEXT (text)                         |
+-------------------------------------------------------------------------------
+| Favicon       | `DOC-FAVICON TEXT` | Specify document favicon as TEXT       |
+|               |                    | (text)                                 |
 -------------------------------------------------------------------------------
 | Raw           | `DOC-RAW-TEXT N`   | Make CMFC parse formatted text as raw  |
 |               |                    | text based on if N is 0 or 1 (0 =      |
