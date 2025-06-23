@@ -160,7 +160,7 @@ you want to show up in the document.
     Example image:
 
 ```
-!()../res/gamingfumo.png
+!()../res/favicon.png
 ```
 
 ==Blockquotes
@@ -301,7 +301,7 @@ dolore eu fugiat nulla pariatur.
 ***Double-nested ordered list item 2
 *Ordered list item 3
 
-!()../res/gamingfumo.png
+!()../res/favicon.png
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
