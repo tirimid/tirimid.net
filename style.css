@@ -19,21 +19,25 @@ h1 {
 	padding-top: 1ch;
 	font-size: 4.5ch;
 	font-weight: bold;
+	text-align: center;
 }
 
 h2 {
 	font-size: 3ch;
 	font-weight: bold;
+	text-align: center;
 }
 
 h3 {
 	font-size: 2.5ch;
 	font-weight: bold;
+	text-align: center;
 }
 
 h4, h5, h6 {
 	font-size: 2ch;
 	font-weight: bold;
+	text-align: center;
 }
 
 li {
