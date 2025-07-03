@@ -27,7 +27,7 @@ $ cargo add ipa-translate
     To clone the source from GitHub, run:
 
 ```
-$ git clone https://github.com/tirimid/ipa-translate
+$ git clone https:\//github.com/tirimid/ipa-translate
 ```
 
     ipa-translate 0.1.8+ has only one dependency, lazy-static, which a massive
@@ -52,13 +52,13 @@ fn main() {
     let branner = "prj^Ivj^et";
     let sil = "prj^i=vj^et";
 
-    // forward translation.
+    \// forward translation.
     assert_eq!(ipa_translate::xsampa_to_ipa(xsampa), ipa);
     assert_eq!(ipa_translate::praat_to_ipa(praat), ipa);
     assert_eq!(ipa_translate::branner_to_ipa(branner), ipa);
     assert_eq!(ipa_translate::sil_to_ipa(sil), ipa);
 
-    // inverse translation.
+    \// inverse translation.
     assert_eq!(ipa_translate::ipa_to_xsampa(ipa), xsampa);
     assert_eq!(ipa_translate::ipa_to_praat(ipa), praat);
     assert_eq!(ipa_translate::ipa_to_branner(ipa), branner);

@@ -31,7 +31,7 @@ multiple source files, allowing for incremental compilation.
 using:
 
 ```
-$ git clone https://github.com/tirimid/mincbuild
+$ git clone https:\//github.com/tirimid/mincbuild
 $ cd mincbuild
 ```
 

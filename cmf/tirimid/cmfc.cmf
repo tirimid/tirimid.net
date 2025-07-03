@@ -33,7 +33,7 @@ clone @[https://github.com/tirimid/cmfc|the repository], Make it, then install
 it to your system as follows:
 
 ```
-$ git clone https://github.com/tirimid/cmfc
+$ git clone https:\//github.com/tirimid/cmfc
 $ cd cmfc
 $ make
 # make install
@@ -262,7 +262,7 @@ supported format modifiers are as follows:
 ```
 \\\*
 
-\@[https://gentoo.org|Gentoo Linux]
+\@[https:\//gentoo.org|Gentoo Linux]
 
 Lorem\[^anchor|Lorem ipsum dolor sit amet]
 

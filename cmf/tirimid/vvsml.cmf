@@ -19,9 +19,9 @@ no dedicated features for conlanging - which I wanted.
 You can do so using:
 
 ```
-$ git clone https://github.com/tirimid/vvsml
+$ git clone https:\//github.com/tirimid/vvsml
 $ cd vvsml
-$ cargo build --release
+$ cargo build \--release
 $ sudo cp target/release/vvsml /usr/bin
 ```
 
@@ -233,7 +233,7 @@ destination. See:
 contents
 {
     text {the below link will send you to google.com:}
-    text {.link {a link to google.com} {https://google.com/}}
+    text {.link {a link to google.com} {https:\//google.com/}}
 }
 ```
 

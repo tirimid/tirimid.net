@@ -29,7 +29,7 @@ rather than some consistent design principle.
 and enter the cloned directory by doing:
 
 ```
-$ git clone https://github.com/tirimid/medioed
+$ git clone https:\//github.com/tirimid/medioed
 $ cd medioed
 ```
 

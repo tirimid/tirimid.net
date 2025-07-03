@@ -23,7 +23,7 @@ implementing a Brainfuck compiler.
 build the project using @[mincbuild.html|mincbuild], and install it.
 
 ```
-$ git clone https://github.com/tirimid/bfc
+$ git clone https:\//github.com/tirimid/bfc
 $ mincbuild
 # ./install.sh
 ```
@@ -99,11 +99,11 @@ Otherwise, the block is executed. The minimum to fulfill this would be two jump
 labels, and a conditional jump instruction, something like this:
 
 ```
-    cmpb $0, (%r13) // BFC uses `r13` to store the data pointer.
+    cmpb $0, (%r13) \// BFC uses `r13` to store the data pointer.
     je .Lce_1
-.Lcb_0: // BFC uses `cb_` as a prefix for condbegin jump labels.
-    // ...
-.Lce_1: // BFC uses `ce_` as a prefix for condend jump labels.
+.Lcb_0: \// BFC uses `cb_` as a prefix for condbegin jump labels.
+    \// ...
+.Lce_1: \// BFC uses `ce_` as a prefix for condend jump labels.
 ```
 
     Assuming a well-formed program - you can assume, upon entering a condbegin,
@@ -163,22 +163,22 @@ the way data increments and decrements interact.
 shortening". That is, something like the following code:
 
 ```
-    // equivalent to Brainfuck `++++`.
+    \// equivalent to Brainfuck `++++`.
 .Lcb_0:
     incb (%r13)
     incb (%r13)
     incb (%r13)
     incb (%r13)
-    // ...
+    \// ...
 ```
 
     ... would get optimized to:
 
 ```
-    // equivalent to Brainfuck `++++`.
+    \// equivalent to Brainfuck `++++`.
 .Lcb_0:
     addb $4, (%r13)
-    // ...
+    \// ...
 ```
 
     ... which is not only more efficient in terms of speed, but also in terms of
@@ -191,25 +191,25 @@ your own compiler.
     For instance, this code:
 
 ```
-    // equivalent to Brainfuck `+++--`.
+    \// equivalent to Brainfuck `+++\--`.
 .Lcb_0:
     inb (%r13)
     inb (%r13)
     inb (%r13)
     decb (%r13)
     decb (%r13)
-    // ...
+    \// ...
 ```
 
     ... could trivially be optimized to:
 
 ```
-    // equivalent to Brainfuck `+++--`.
-    // three increments and two decrements is mathematically equivalent to one
-    // increment.
+    \// equivalent to Brainfuck `+++\--`.
+    \// three increments and two decrements is mathematically equivalent to one
+    \// increment.
 .Lcb_0:
     addb $1, (%r13)
-    // ...
+    \// ...
 ```
 
     The compiler could even be made to check for a special case of +/-1 and

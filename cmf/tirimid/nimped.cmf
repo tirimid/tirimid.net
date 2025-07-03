@@ -103,7 +103,7 @@ single time, as a dynamically loaded config file system was implemented.
     Clone the repository from GitHub and `cd` into it:
 
 ```
-$ git clone https://git.tirimid.net/nimped
+$ git clone https:\//git.tirimid.net/nimped
 $ cd nimped
 ```
 

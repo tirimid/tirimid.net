@@ -22,7 +22,7 @@ tool which is extremely easy to manage and has zero dependencies.
 then build and install escl. This can be done with:
 
 ```
-$ git clone https://github.com/tirimid/escl
+$ git clone https:\//github.com/tirimid/escl
 $ cd escl
 $ make
 $ su
