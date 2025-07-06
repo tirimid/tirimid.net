@@ -118,8 +118,15 @@ blockquote {
 }
 
 .doc-title {
+	padding-top: 1ch;
 	font-size: 7ch;
-	text-align: left;
+	text-align: center;
+}
+
+.doc-subtitle {
+	color: #555555;
+	font-size: 3ch;
+	text-align: center;
 }
 
 .doc-author, .doc-date {
