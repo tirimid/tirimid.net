@@ -3,14 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>IB Geography Case Studies Reference</title>
-<style>html {
+<style>@font-face {
+	font-family: "EB Garamond";
+	font-style: normal;
+	src: url("/res/font/garamond/EBGaramond-Regular.woff");
+}
+
+@font-face {
+	font-family: "EB Garamond";
+	font-style: italic;
+	src: url("/res/font/garamond/EBGaramond-Italic.woff");
+}
+
+html {
 	background-color: #000000;
 	padding-top: 5ch;
 	padding-bottom: 5ch;
 }
 
 body {
-	background-color: #f9edd8;
+	background-color: #f9f2e6;
 	padding-top: 2ch;
 	padding-bottom: 2ch;
 	padding-left: 5ch;
@@ -19,7 +31,7 @@ body {
 	margin-right: auto;
 	width: 65ch;
 	color: #000000;
-	font-family: serif;
+	font-family: "EB Garamond";
 	font-weight: normal;
 	text-align: justify;
 	zoom: 1.3;
@@ -46,7 +58,6 @@ h3 {
 
 h4, h5, h6 {
 	font-size: 2ch;
-	font-weight: bold;
 	text-align: center;
 }
 
@@ -79,7 +90,6 @@ tr, td {
 p {
 	text-indent: 4ch;
 	margin: 0 auto;
-	line-height: 2.5ch;
 }
 
 .footnote {
@@ -128,10 +138,12 @@ blockquote {
 	text-align: center;
 }
 
-.doc-subtitle {
+.doc-subtitle, h4 {
 	color: #555555;
 	font-size: 3ch;
 	text-align: center;
+	font-style: italic;
+	font-weight: normal;
 }
 
 .doc-author, .doc-date {
