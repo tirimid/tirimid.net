@@ -85,10 +85,12 @@ tr, td {
 p {
 	text-indent: 4ch;
 	margin: 0 auto;
+	line-height: 2.5ch;
 }
 
 .footnote {
 	padding: 1ch;
+	line-height: 2.5ch;
 }
 
 img {
