@@ -1,12 +1,13 @@
 DOC-TITLE Society of a Machine
 DOC-CREATED 2025-06-05
+DOC-REVISED 2025-07-30
 
 ======1
 
     When we talk about "AI" in the modern world, we have to reckon with the fact
 that the vast majority of people who use and peddle it didn't even know what
-that term meant until GPT came around. Talk with anybody non-technical and
-you'll notice these two things - 1) they don't even know what a neural network
+that term meant until GPT 3.0 came around. Talk with anybody non-technical and
+you'll notice these two things --- 1) they don't even know what a neural network
 is, 2) they probably make active use of GPT, Stable Diffusion, etc.
 
 ======2
@@ -15,7 +16,7 @@ is, 2) they probably make active use of GPT, Stable Diffusion, etc.
 intelligence that these models can mimic. It "understands" what you tell it,
 responds in natural language, and the now-existing tooling enables it to even
 perform certain tasks; this is known as an AI *agent*. Language and naming here
-show their importance - why an "agent"? Because this term grants the model's
+show their importance --- why an "agent"? Because this term grants the model's
 actions legitimacy, grants them *agency*. The illusion that supports the average
 person's perception of AI as intelligent exists even at the subtlest level of
 language.
@@ -27,9 +28,9 @@ foundation. Indeed, when we even say "AI" in a general context, we mean GPT, we
 mean image generation, agents and so forth. Of course, understanding the history
 of older AI models, this is kind of absurd, as this "AI" constitutes but a small
 fraction of things that can plausibly be considered AI. Despite this, we speak
-of "AI" even when we're aware of this - constantly being more precise by saying
-"LLM", "Diffusion Model", etc. begins to feel needlessly verbose. After all, we
-all know what "AI" is.
+of "AI" even when we're aware of this --- constantly being more precise by
+saying "LLM", "Diffusion Model", etc. begins to feel needlessly verbose. After
+all, we all know what "AI" is.
 
 ======4
 
@@ -56,7 +57,7 @@ internet. Even in relatively forward-thinking curricula such as the IB, we see
 that teaching is oriented around setting goals and meeting them. Once a goal is
 formulated, it's only a matter of time before it is automated. The best learning
 occurs when you are half-blindly stumbling through a novel topic and figuring
-things out as you go - the obsession with quantification and goal-setting is
+things out as you go --- the obsession with quantification and goal-setting is
 diametrically counterposed to this.
 
 ======7
@@ -64,10 +65,11 @@ diametrically counterposed to this.
     Once there is no "figuring it out" in the process of learning, there is no
 longer any inherently human aspect. The joy of learning is torn asunder and the
 student can no longer find any value in working. Gradually, more and more of the
-student body cuts the final corner - copy-pasting and paraphrasing is no longer
-the most optimal way to finish work for little effort. Instead, most assignments
-can be completed through a sequence of less than a dozen clicks and the entry of
-a sentence in a text field. When they do this, we can hardly be surprised.
+student body cuts the final corner --- copy-pasting and paraphrasing is no
+longer the most optimal way to finish work for little effort. Instead, most
+assignments can be completed through a sequence of less than a dozen clicks and
+the entry of a sentence in a text field. When they do this, we can hardly be
+surprised.
 
 ======8
 
@@ -85,7 +87,7 @@ past the point they graduate.
 process. While GPT vomits up your homework, the social media recommendation
 algorithm vomits up your favorite content. The attention-span-shortening
 addictive prowess of modern social media is nothing to laugh at. You automate
-your only interaction with creative work to save time - for what? To make
+your only interaction with creative work to save time --- for what? To make
 yourself dumber and weaker in the mind over time. AI generates free time for its
 user, which it then proceeds to exploit for itself, and the user is left
 surveilled and servile at the whims of a machine they do not control or
@@ -117,7 +119,7 @@ way. In a sense, the AI proponents are correct when they say that AI has
 to a five-year-old born with tablet in hand can generate spam with less value
 than the energy taken to create it. This is the essense of capitalist democracy,
 you have the freedom to democratically go fuck yourself while all the real
-decisions of society (including how your self-copulation should occur) are made
+decisions of society (including how your autocopulation should occur) are made
 right at the levers of power held by the wealthy.
 
 ======13
@@ -129,22 +131,22 @@ understanding of their jobs can use them, we should be asking what kind of
 culture and economic structure allows these people to write the software that
 powers the entire world to begin with. Looking deeper, we should ask what kind
 of world allows them to be stupid (in nature, or in effect) at all. Indeed, the
-degradation of key software is a trend that predates AI - this is merely the
+degradation of key software is a trend that predates AI --- this is merely the
 newest wrench in an incompetent mechanic's toolbox.
 
 ======14
 
     No matter how we cut it, the product generated by AI is almost always of
 middling quality. The main case where the average person finds actual value in
-the output itself is - unsurprisingly - in the cultural domain where it doesn't
-really matter. Basically, shitposts. An environment where spam is considered a
-virtue and the target audience explicitly wants something bad.
+the output itself is --- unsurprisingly --- in the cultural domain where it
+doesn't really matter. Basically, shitposts. An environment where spam is
+considered a virtue and the target audience explicitly wants something bad.
 
 ======15
 
     AI creativity is a crude fascimile of human creativity. The only reason we
 can even use the term "AI art" is because it approximates human art. Think again
-about the nature of language and how we perceive things - if we really thought
+about the nature of language and how we perceive things --- if we really thought
 that AI art was art, would we tack "AI" on as an adjective? It would seem
 redundant to do so, but the fact that we do appears to reveal something
 fundamental about our view of human v.s. AI creativity. Think further to
@@ -158,7 +160,7 @@ humans. And whenever we are sold AI work as if it were human, we feel cheated.
     Besides the obvious examples of AI intruding upon our lives comes the fact
 that web searches are becoming increasingly useless in the face of AI generating
 millions of articles worth of valueless nonsense that only approaches the truth
-in rare cases. Ironically, many people come to see AI as the solution - as GPT
+in rare cases. Ironically, many people come to see AI as the solution --- as GPT
 gains secondary function as a "better search engine".
 
 ======17
@@ -202,13 +204,13 @@ destruction of natural resources finally catches up with us?
 in person, where the world's most brilliant engineers are tasked with making you
 addicted to something that makes you dumber, where school and education have
 already been turned upside down and students have no reason to learn but their
-own - increasingly rare - wish to do so, where creativity is increasingly
+own --- increasingly rare --- wish to do so, where creativity is increasingly
 automated and we will eventually get used to that fact; losing respect for the
 works of art that made us human to begin with. We are entering the world of AI.
 
 ======21
 
-    Two main things are possible - we will either eliminate the profit motives
+    Two main things are possible --- we will either eliminate the profit motives
 foundational to society which make perversions of technology possible, or we
 will forever mark the 21st century as the turning point in the global
 apocalypse. The environmental concerns of technology such as AI are simply too
@@ -245,7 +247,7 @@ have gotten as bad as they have.
 
     AI does have some potential to be a worthwhile tool in some limited use
 cases. People have generally started to realize that the scare about self-aware
-AI coming about and subjugating the human race was mostly that - a scare. We
+AI coming about and subjugating the human race was mostly that --- a scare. We
 will not get trapped in some terrifying dystopia; we already have much worse, a
 boring dystopia. A boring and profoundly mediocre dystopia where all that is
 solid melts to commercial sludge. As humans, we have no hope of stopping this
