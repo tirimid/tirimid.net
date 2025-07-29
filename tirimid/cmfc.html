@@ -163,7 +163,7 @@ blockquote {
 </style>
 <link rel="icon" type="image/x-icon" href="/res/favicon.png">
 <div class="doc-author">tirimid</div>
-<div class="doc-date">2024-10-12 (rev. 2025-06-16)</div>
+<div class="doc-date">2024-10-12 (rev. 2025-07-30)</div>
 <div class="doc-title">CMFC</div>
 </head>
 <body>
@@ -175,16 +175,16 @@ anybody want to use them. CMFC was created specifically for my personal website
 features. Still, I think it is good enough for simple articles and sharing my
 basic thoughts on the internet.</p>
 <p>Of course, this leads to the question of &quot;why not just use Markdown and
-Jekyll build with GitHub pages?&quot;. The answer to this question is twofold - first
-of all, it&apos;s cool to make things yourself. Second of all, it irritates me how,
-in Markdown, paragraphs always have to begin on a double-newline separation. I
-would much rather write my plaintext document files in a style more similar to
-academic books, where the preferred style is generally no linebreaks but use of
-indentation to mark paragraph starts. Similarly, I&apos;d prefer for blockquotes to
-be indented sections rather than just double-newline separated blocks with a <code>&gt;</code>
-in front of them. Those are the main reasons I created CMF. And CMFC was created
-so that I could write documents in CMF and have them manifest as HTML files on
-my website.</p>
+Jekyll build with GitHub pages?&quot;. The answer to this question is twofold &mdash;
+first of all, it&apos;s cool to make things yourself. Second of all, it irritates me
+how, in Markdown, paragraphs always have to begin on a double-newline
+separation. I would much rather write my plaintext document files in a style
+more similar to books, where the preferred style is generally no linebreaks but
+use of indentation to mark paragraph starts. Similarly, I&apos;d prefer for
+blockquotes to be indented sections rather than just double-newline separated
+blocks with a <code>&gt;</code> in front of them. Those are the main reasons I created CMF.
+And CMFC was created so that I could write documents in CMF and have them
+manifest as HTML files on my website.</p>
 <p>CMF stands for Custom Markup Format, and CMFC stands for Custom Markup
 Format Compiler. I suggest using the <code>.cmf</code> file extension for CMF files.</p>
 <h1>Installation</h1>
@@ -285,8 +285,8 @@ you want to show up in the document.</p>
 <p>Example image:</p>
 <div class="long-code">!()../res/favicon.png</div>
 <h2>Blockquotes</h2>
-<p>Blockquotes are meant to look how they do in academic books. To acheive such
-an effect, every line of a blockquote is indented by six spaces. I also suggest
+<p>Blockquotes are meant to look how they do in books. To acheive such an
+effect, every line of a blockquote is indented by six spaces. I also suggest
 placing linebreaks between paragraphs and blockquote text. To initiate a
 blockquote, simply start a line with six spaces. Consecutive blockquote lines do
 not need to be similarly indented, but you should still do so for readability
@@ -315,21 +315,21 @@ three consecutive <code>-</code>s immediately after a double-linebreak. Note tha
 cell can take up more than one line, unlike in Markdown (another problem I have
 with it).</p>
 <p>Example table:</p>
-<div class="long-code">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<div class="long-code">---------------------------------------------------
 |Lorem ipsum dolor sit|consectetur adipiscing elit|
 |amet                 |                           |
-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+---------------------------------------------------
 |sed do eiusmod tempor|Ut enim ad minim veniam    |
 |incididunt ut labore |                           |
 |et dolore magna      |                           |
 |aliqua               |                           |
-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+---------------------------------------------------
 |quis nostrud         |Duis aute irure dolor in   |
 |exercitation ullamco |reprehenderit in voluptate |
 |laboris nisi ut      |velit esse cillum dolore eu|
 |aliquip ex ea commodo|fugiat nulla pariatur      |
 |consequat            |                           |
-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div>
+---------------------------------------------------</div>
 <h2>Text formatting</h2>
 <p>Text formatting in CMF is done by embedding format modifiers within
 formattable text (as opposed to raw text, where formatting cannot be done). The
@@ -508,7 +508,35 @@ into every CMF file, create a docdata file with all the common DOC directives.
 When compiling a CMF file using CMFC with the <code>-d FILE</code> option, FILE will be
 read and all of its DOC directives will be processed prior to compiling the
 input file. This mechanism makes it easy to batch-update things like license or
-authorial information.
+authorial information.</p>
+<h1>Easy character entry</h1>
+<p>CMFC also converts certain characters sequences into others &mdash; specifically
+commonly used typographical marks that would otherwise be difficult or
+impractical to enter on a standard keyboard. If you want to enter any of the
+following as they are, the characters in the sequence should be escaped.</p>
+<table>
+<tr>
+<td> <b>Sequence</b> </td>
+<td> <b>Name of replacement</b> </td>
+<td> <b>What it looks like</b> </td>
+</tr>
+<tr>
+<td> <code>---</code>      </td>
+<td> Em-dash                 </td>
+<td> &mdash;                    </td>
+</tr>
+<tr>
+<td> <code>--</code>        </td>
+<td> En-dash                 </td>
+<td> &ndash;                     </td>
+</tr>
+<tr>
+<td> <code>//</code>        </td>
+<td> Line break              </td>
+<td> <br>                     </td>
+</tr>
+</table>
+<p>Note that these replacements are only active when in TEXT rather than RAW.
 </p>
 <div class="doc-license"><p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://tirimid.net">tirimid</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p></div></body>
 </html>

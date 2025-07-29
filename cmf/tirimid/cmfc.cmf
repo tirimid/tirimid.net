@@ -1,6 +1,6 @@
 DOC-TITLE CMFC
 DOC-CREATED 2024-10-12
-DOC-REVISED 2025-06-16
+DOC-REVISED 2025-07-30
 
 =What is CMFC?
 
@@ -11,16 +11,16 @@ anybody want to use them. CMFC was created specifically for my personal website
 features. Still, I think it is good enough for simple articles and sharing my
 basic thoughts on the internet.
     Of course, this leads to the question of "why not just use Markdown and
-Jekyll build with GitHub pages?". The answer to this question is twofold - first
-of all, it's cool to make things yourself. Second of all, it irritates me how,
-in Markdown, paragraphs always have to begin on a double-newline separation. I
-would much rather write my plaintext document files in a style more similar to
-academic books, where the preferred style is generally no linebreaks but use of
-indentation to mark paragraph starts. Similarly, I'd prefer for blockquotes to
-be indented sections rather than just double-newline separated blocks with a `>`
-in front of them. Those are the main reasons I created CMF. And CMFC was created
-so that I could write documents in CMF and have them manifest as HTML files on
-my website.
+Jekyll build with GitHub pages?". The answer to this question is twofold ---
+first of all, it's cool to make things yourself. Second of all, it irritates me
+how, in Markdown, paragraphs always have to begin on a double-newline
+separation. I would much rather write my plaintext document files in a style
+more similar to books, where the preferred style is generally no linebreaks but
+use of indentation to mark paragraph starts. Similarly, I'd prefer for
+blockquotes to be indented sections rather than just double-newline separated
+blocks with a `>` in front of them. Those are the main reasons I created CMF.
+And CMFC was created so that I could write documents in CMF and have them
+manifest as HTML files on my website.
     CMF stands for Custom Markup Format, and CMFC stands for Custom Markup
 Format Compiler. I suggest using the `.cmf` file extension for CMF files.
 
@@ -165,8 +165,8 @@ you want to show up in the document.
 
 ==Blockquotes
 
-    Blockquotes are meant to look how they do in academic books. To acheive such
-an effect, every line of a blockquote is indented by six spaces. I also suggest
+    Blockquotes are meant to look how they do in books. To acheive such an
+effect, every line of a blockquote is indented by six spaces. I also suggest
 placing linebreaks between paragraphs and blockquote text. To initiate a
 blockquote, simply start a line with six spaces. Consecutive blockquote lines do
 not need to be similarly indented, but you should still do so for readability
@@ -207,21 +207,21 @@ with it).
     Example table:
 
 ```
----------------------------------------------------
+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 |Lorem ipsum dolor sit|consectetur adipiscing elit|
 |amet                 |                           |
----------------------------------------------------
+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 |sed do eiusmod tempor|Ut enim ad minim veniam    |
 |incididunt ut labore |                           |
 |et dolore magna      |                           |
 |aliqua               |                           |
----------------------------------------------------
+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 |quis nostrud         |Duis aute irure dolor in   |
 |exercitation ullamco |reprehenderit in voluptate |
 |laboris nisi ut      |velit esse cillum dolore eu|
 |aliquip ex ea commodo|fugiat nulla pariatur      |
 |consequat            |                           |
----------------------------------------------------
+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 ```
 
 ==Text formatting
@@ -385,3 +385,22 @@ When compiling a CMF file using CMFC with the `-d FILE` option, FILE will be
 read and all of its DOC directives will be processed prior to compiling the
 input file. This mechanism makes it easy to batch-update things like license or
 authorial information.
+
+=Easy character entry
+
+    CMFC also converts certain characters sequences into others --- specifically
+commonly used typographical marks that would otherwise be difficult or
+impractical to enter on a standard keyboard. If you want to enter any of the
+following as they are, the characters in the sequence should be escaped.
+
+-------------------------------------------------------------------
+| **Sequence** | **Name of replacement** | **What it looks like** |
+-------------------------------------------------------------------
+| `-\-\-`      | Em-dash                 | ---                    |
+-------------------------------------------------------------------
+| `-\-`        | En-dash                 | --                     |
+-------------------------------------------------------------------
+| `/\/`        | Line break              | //                     |
+-------------------------------------------------------------------
+
+    Note that these replacements are only active when in TEXT rather than RAW.
