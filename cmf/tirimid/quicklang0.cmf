@@ -1,0 +1,495 @@
+DOC-TITLE Quicklang Zero
+DOC-CREATED 2025-08-26
+DOC-REVISED 2025-08-28
+
+=Preface
+
+    This is not too serious of an attempt at a conlang. I simply had free time
+at school, and so decided to spend it by making a quick language --- hence,
+Quicklang.
+
+=Phonology
+
+==Consonants
+
+---------------------------------------------------------------------------------
+| **-**               | **Bilabial** | **Alveolar** | **Retroflex** | **Velar** |
+---------------------------------------------------------------------------------
+| **Plosive**         | p b          | t d          |               | k g       |
+---------------------------------------------------------------------------------
+| **Nasal**           | m            | n            |               |           |
+---------------------------------------------------------------------------------
+| **Tap or flap**     |              | ɾ            |               |           |
+---------------------------------------------------------------------------------
+| **Fricative**       | ɸ β          | s z          | ʂ ʐ           | x ɣ       |
+---------------------------------------------------------------------------------
+| **Lateral approx.** |              | l            |               |           |
+---------------------------------------------------------------------------------
+
+==Vowels
+
+------------------------------------------------------
+| **-**          | **Front** | **Middle** | **Back** |
+------------------------------------------------------
+| **Close**      | i         |            | u        |
+------------------------------------------------------
+| **Near-close** | ɪ         |            | ʊ        |
+------------------------------------------------------
+| **Closemid**   | e         |            | o        |
+------------------------------------------------------
+| **Middle**     |           | ə          |          |
+------------------------------------------------------
+| **Open**       | a         |            |          |
+------------------------------------------------------
+
+==Sonority scale
+
+    The scale goes from most sonorous (top) to least sonorous (bottom).
+
+------------------------------------------------
+| **Sound type**       | **Matching phonemes** |
+------------------------------------------------
+| Low vowels           | a                     |
+------------------------------------------------
+| Mid vowels           | e o ə                 |
+------------------------------------------------
+| High vowels          | i u ɪ ʊ               |
+------------------------------------------------
+| Flaps                | ɾ                     |
+------------------------------------------------
+| Laterals             | l                     |
+------------------------------------------------
+| Nasals               | m n                   |
+------------------------------------------------
+| Voiced fricatives    | β z ʐ ɣ               |
+------------------------------------------------
+| Voiceless fricatives | ɸ s ʂ x               |
+------------------------------------------------
+| Voiced plosives      | b d g                 |
+------------------------------------------------
+| Voiceless plosives   | p t k                 |
+------------------------------------------------
+
+==Phonotactics
+
+    Syllables have the following structure:
+
+      C1 (C2) V (C3)
+
+    C2 and C3 are optional consonants. If C2 is present in the syllable, then it
+must have a higher sonority than C1, and must be of a different manner of
+articulation than C1. The C1+C2 sound /lɾ/ is illegal.
+    Examples of legal syllables:
+
+*psun
+*βe
+*gɾiɾ
+*klon
+*nle
+*mɾu
+*sna
+
+    Examples of illegal syllables:
+
+*pbun
+*lne
+*dga
+*ɣziʂ
+
+==Lexical stress
+
+    Lexical stress of a word always falls on the penultimate syllable. This rule
+is never broken, even with loanwords or morphological changes. A syllable being
+stressed means it can be pronounced with more emphasis --- e.g. louder, with a
+longer vowel, etc.
+    Unstressed syllables have their vowels reduced as such:
+
+-------------------------------------------
+| **Unreduced vowel** | **Reduced vowel** |
+-------------------------------------------
+| i                   | ɪ                 |
+-------------------------------------------
+| u                   | ʊ                 |
+-------------------------------------------
+| e                   | ɪ                 |
+-------------------------------------------
+| o                   | ə                 |
+-------------------------------------------
+| i                   | ə                 |
+-------------------------------------------
+
+=Orthography
+
+==Words and lettering
+
+----------------------------------
+| **Phoneme** | **Written form** |
+----------------------------------
+| p           | p                |
+----------------------------------
+| b           | b                |
+----------------------------------
+| t           | t                |
+----------------------------------
+| d           | d                |
+----------------------------------
+| k           | k                |
+----------------------------------
+| g           | g                |
+----------------------------------
+| m           | n                |
+----------------------------------
+| ɾ           | r                |
+----------------------------------
+| ɸ           | pь               |
+----------------------------------
+| β           | bь               |
+----------------------------------
+| s           | s                |
+----------------------------------
+| z           | z                |
+----------------------------------
+| ʂ           | sь               |
+----------------------------------
+| ʐ           | zь               |
+----------------------------------
+| x           | kь               |
+----------------------------------
+| ɣ           | gь               |
+----------------------------------
+| l           | l                |
+----------------------------------
+| i/ɪ         | i                |
+----------------------------------
+| u/ʊ         | u                |
+----------------------------------
+| e/ɪ         | e                |
+----------------------------------
+| o/ə         | o                |
+----------------------------------
+| a/ə         | a                |
+----------------------------------
+
+    The legal syllables from the previous section, when written out in the above
+orthography, look like this:
+
+*psun --- psun
+*βe --- bьe
+*gɾiɾ --- grir
+*klon --- klon
+*nle --- nle
+*mɾu --- mru
+
+    Here is another example, a rough transliteration of the first part of the UN
+Universal Declaration of Human Rights from English (since syllables cannot start
+with vowels, any cases of this have been prepended with an l). Note that this is
+only meant to serve as a slightly longer example of the orthography and
+phonotactic rules at play, rather than provide an actual translation.
+
+      Lol kьuman binzi lar bor pьri lan likal lin digiti lan ras. Bьe lar lenda
+libь rizon lan konsьan lan sьu la tugьar lan lanabьar lin la siri lobь
+brabьakьu.
+
+      /lol 'xu.mən 'bin.zɪ laɾ boɾ ɸɾi lan 'li.kəl lin dɪ'gi.tɪ lan ɾas. βe laɾ
+'len.də liβ 'ɾi.zən lan 'kon.ʂən lan ʂu la 'tu.ɣəɾ lan lə'na.βəɾ lin la 'si.ɾɪ
+loβ bɾə'βa.xʊ./
+
+      All human beings are born free and equal in dignity and rights. They are
+endowed with reason and conscience and should act towards one another in a
+spirit of brotherhood.
+
+==Punctuation
+
+    The first letter of a sentence is punctuated. Inline quotations are
+indicated using quotes, "like this".
+    --- As for dialog, well, it's done like this...
+    --- Oh, I see, that's common across other languages, right?
+    --- Yes, it is.
+    The other punctuation marks used are commas, full stops, semicolons, colons,
+ellipses, and parentheses. Their usages are the same as in English.
+
+==Alphabet
+
+-----------------------------------------------------
+| A a   | B b   | BЬ bь | G g | D d | E e   | ZЬ zь |
+-----------------------------------------------------
+| Z z   | I i   | K k   | L l | M m | N n   | O o   |
+-----------------------------------------------------
+| P p   | R r   | S s   | T t | U u | PЬ pь | KЬ kь |
+-----------------------------------------------------
+| GЬ gь | SЬ sь |       |     |     |       |       |
+-----------------------------------------------------
+
+=Morphology
+
+    The morphology is mixed concatenative-nonconcatenative. Roots are first
+taken, then transformed into verb, noun, adjectival, or adverbial forms. From
+there, those forms are inflected according to the desired morphology. Each root
+is defined by three consonants and one or two vowels. The consonants / vowels of
+a root are referred to by C1-C2-C3-V1 (in the case of single-vowel roots) or
+C1-C2-C3-V1-V2 (in the case of double-vowel roots). There are also special cases
+where a root has only two consonants and one vowel (C1-C2-V1).
+    If the inflection of a root creates a phonotactically invalid syllable, then
+you must logically follow this procedure to resolve it:
+
+#If swapping the illegal consonants in the syllable would resolve the conflict,
+ then do so
+#If splitting the syllable at the illegal consonant line would resolve the
+ conflict, then split the syllable into two by adding /o/ after the first
+ consonant
+
+==First root forms
+
+-----------------------------------------
+| **Type**             | **Form**       |
+-----------------------------------------
+| Noun (1 vowel)       | C1 C2 V1 C3    |
+-----------------------------------------
+| Verb (1 vowel)       | C1 V1 C2 C3    |
+-----------------------------------------
+| Adjective (1 vowel)  | C3 C2 V1 C1    |
+-----------------------------------------
+| Adverb (1 vowel)     | C3 V1 C2 C1    |
+-----------------------------------------
+| Noun (2 vowels)      | C1 V1 C2 V2 C3 |
+-----------------------------------------
+| Verb (2 vowels)      | C1 C2 V1 C3 V2 |
+-----------------------------------------
+| Adjective (2 vowels) | C3 V2 C2 V1 C1 |
+-----------------------------------------
+| Adverb (2 vowels)    | C3 C2 V1 C1 V2 |
+-----------------------------------------
+| Noun (special)       | C1 C2 V1       |
+-----------------------------------------
+| Verb (special)       | C1 V1 C2       |
+-----------------------------------------
+| Adjective (special)  | C2 C1 V1       |
+-----------------------------------------
+| Adverb (special)     | C2 V1 C1       |
+-----------------------------------------
+
+    Example (1 vowel):
+
+*Sьler --- decay (noun)
+*Sьelor --- die (verb)
+*Rolesь --- dying (adjective)
+*Relosь --- dyingly (adverb)
+
+    Example (2 vowels):
+
+*Kukьon --- professional cooking (noun)
+*Kkьuno --- cook professionally (verb)
+*Nokьuk --- cooked professionally (adjective)
+*Nokьuko --- cooking professionally (abverb)
+
+    Example (special):
+
+*Zьne --- reality (noun)
+*Zьen --- be (verb)
+*Nozьe --- actual (adjective)
+*Nezь --- existing (adverb)
+
+==Noun morphology
+
+===Case marking
+
+    Case marking is applied after all other morphological changes.
+
+----------------------------------
+| **Case**          | **Suffix** |
+----------------------------------
+| Nominative        | -Ø         |
+----------------------------------
+| Accusative        | -(i)l      |
+----------------------------------
+| Dative            | -(i)b      |
+----------------------------------
+| Genitive          | -(i)pь     |
+----------------------------------
+| Prepositional     | -(u)sь     |
+----------------------------------
+| Vocative formal   | -(i)dgьe   |
+----------------------------------
+| Vocative informal | -(i)gьe    |
+----------------------------------
+| Instrumental      | -(u)zь     |
+----------------------------------
+
+===Agent nouns
+
+    Agent nouns are formed through reduplication of the last syllable, with the
+removal of the C1 and (if present) C2. For example:
+
+*Kukьon --- professional cooking
+*Kukьonon --- chef
+*Lesьapь --- professional driving
+*Lesьapьapь --- driver
+*Kьobьet --- romantic love
+*Kьobьetet -- lover
+
+==Verb morphology
+
+===Tense marking
+
+    Tense marking is applied after all other morphological changes.
+
+---------------------------------------
+| **Tense**              | **Suffix** |
+---------------------------------------
+| Infinitive             | -Ø         |
+---------------------------------------
+| Present simple         | -(u)n      |
+---------------------------------------
+| Present continuous     | -(a)n      |
+---------------------------------------
+| Present habitual       | -(i)n      |
+---------------------------------------
+| Past                   | -(a)bь     |
+---------------------------------------
+| Past habitual          | -(e)bьe    |
+---------------------------------------
+| Future                 | -(i)l      |
+---------------------------------------
+| Imperative formal      | -(e)zьlen  |
+---------------------------------------
+| Imperative informal    | -(e)zьe    |
+---------------------------------------
+| Interrogative formal   | -(a)kra    |
+---------------------------------------
+| Interrogative informal | -(a)ku     |
+---------------------------------------
+
+===Negation
+
+    Negation is achieved through reduplication of the first syllable, with the
+removal of the (if present) C3. For example:
+
+*Rogod --- murder
+*Rorogod --- not murder
+*Zьen --- be
+*Zьezьen --- not be
+*Kkьuno --- cook professionally
+*Kkьukkьuno --- not cook professionally
+
+===Reflexive verbs
+
+    Reflexive verbs are formed through reduplication of the last syllable, with
+the removal of the C1 and (if present) C2. For example:
+
+*Rogod --- murder
+*Rogodod --- kill oneself
+*Kьebьot --- love
+*Kьebьotot --- self-obsess
+
+==Adjective morphology
+
+===Case marking
+
+    Case marking is applied after all other morphological changes.
+
+-------------------------------------------
+| **Case**                   | **Suffix** |
+-------------------------------------------
+| Nominative                 | -Ø         |
+-------------------------------------------
+| Accusative                 | -(i)l      |
+-------------------------------------------
+| Dative                     | -(i)b      |
+-------------------------------------------
+| Genitive                   | -(i)pь     |
+-------------------------------------------
+| Prepositional              | -(u)sь     |
+-------------------------------------------
+| Vocative formal / informal | -(i)ko     |
+-------------------------------------------
+| Instrumental               | -(u)zь     |
+-------------------------------------------
+
+===Negation
+
+TODO: write up.
+
+===Intensification
+
+TODO: write up.
+
+=Pronouns
+
+==Personal
+
+---
+| **-**                 | **1sg** | **1pl** | **2sg** | **2pl** | **3sg** | **3pl** |
+| **Nominative**        | Kьa     | Kьen    | Zra     | Zren    | Ra      | Ren     |
+| **Accusative**        | Kьopь   | Kьebь   | Zropь   | Zrebь   | Ropь    | Rebь    |
+| **Dative**            | Kьos    | Kьez    | Zros    | Zrez    | Ros     | Rez     |
+| **Genitive**          | Kьlat   | Kьrebь  | Zlat    | Zrebь   | Rat     | Rebь    |
+| **Prepositional**     | Kьusь   | Kьesi   | Zrusь   | Zresi   | Rusь    | Resi    |
+| **Vocative formal**   | Kьalto  | Kьelto  | Zralto  | Zrelto  | Ralto   | Relto   |
+| **Vocative informal** |
+| **Instrumental**      |
+
+==Possessive determiners
+
+TODO: write up.
+
+=Root dictionary
+
+==B-K-T-O
+
+#Artisanal
+#Craftsmanship
+
+==ZЬ-N-E
+
+#Be, equal, connection
+#Existance, reality
+
+==Z-B-Z-U
+
+#Wild animal
+#Hostile wilderness
+#Animalistic danger
+
+==K-PЬ-M-U-O
+
+#Cook (for yourself)
+#Cooking generally at an amateur or average level
+#Performing any action at an average or unskilled level
+
+==K-KЬ-N-U-O
+
+#Cook (for someone else) with intensive care for the recipient
+#Cooking generally at a high level
+#Performing any action with skill and intentionality
+
+==L-SЬ-PЬ-E-A
+
+#Drive or conduct a vehicle professionally
+#Drive or conduct a vehicle as a learner / new driver
+#Drive or conduct a vehicle generally
+
+==M-N-ZЬ-I
+
+#Male
+#Masculinity
+
+==R-G-D-A
+
+#Murder, killing, destruction
+#Removal, causing something to stop existing
+
+==KЬ-BЬ-T-E
+
+#Love for something (romantic)
+#Lustful
+
+==GЬ-D-P-A-A
+
+#Love for something (non-romantic), appreciation
+#Passion or calling in life
+#Love for something (mockingly / fakely romantic)
+
+==SЬ-L-R-E
+
+#Death from natural causes, passing away
+#Inevitable decay
