@@ -1,19 +1,13 @@
-DOC-TITLE Quicklang Zero
+DOC-TITLE Kьalte Nipekob
 DOC-CREATED 2025-08-26
-DOC-REVISED 2025-08-28
-
-=Preface
-
-    This is not too serious of an attempt at a conlang. I simply had free time
-at school, and so decided to spend it by making a quick language --- hence,
-Quicklang.
+DOC-REVISED 2025-08-29
 
 =Phonology
 
 ==Consonants
 
 ---------------------------------------------------------------------------------
-| **-**               | **Bilabial** | **Alveolar** | **Retroflex** | **Velar** |
+|                     | **Bilabial** | **Alveolar** | **Retroflex** | **Velar** |
 ---------------------------------------------------------------------------------
 | **Plosive**         | p b          | t d          |               | k g       |
 ---------------------------------------------------------------------------------
@@ -29,7 +23,7 @@ Quicklang.
 ==Vowels
 
 ------------------------------------------------------
-| **-**          | **Front** | **Middle** | **Back** |
+|                | **Front** | **Middle** | **Back** |
 ------------------------------------------------------
 | **Close**      | i         |            | u        |
 ------------------------------------------------------
@@ -98,10 +92,12 @@ articulation than C1. The C1+C2 sound /lɾ/ is illegal.
 
 ==Lexical stress
 
-    Lexical stress of a word always falls on the penultimate syllable. This rule
-is never broken, even with loanwords or morphological changes. A syllable being
-stressed means it can be pronounced with more emphasis --- e.g. louder, with a
-longer vowel, etc.
+    Lexical stress of a word always falls on the penultimate syllable, or, in
+the case of a single-syllable word, that syllable. This rule is never broken,
+even with loanwords or morphological changes. A syllable being stressed means it
+can be pronounced with more emphasis --- e.g. louder, with a longer vowel, etc.
+Single-syllable words may be pronounced as if it were unstressed if it would be
+easier to speak the sentence that way.
     Unstressed syllables have their vowels reduced as such:
 
 -------------------------------------------
@@ -187,16 +183,16 @@ only meant to serve as a slightly longer example of the orthography and
 phonotactic rules at play, rather than provide an actual translation.
 
       Lol kьuman binzi lar bor pьri lan likal lin digiti lan ras. Bьe lar lenda
-libь rizon lan konsьan lan sьu la tugьar lan lanabьar lin la siri lobь
-brabьakьu.
+      libь rizon lan konsьan lan sьu la tugьar lan lanabьar lin la siri lobь
+      brabьakьu.
 
       /lol 'xu.mən 'bin.zɪ laɾ boɾ ɸɾi lan 'li.kəl lin dɪ'gi.tɪ lan ɾas. βe laɾ
-'len.də liβ 'ɾi.zən lan 'kon.ʂən lan ʂu la 'tu.ɣəɾ lan lə'na.βəɾ lin la 'si.ɾɪ
-loβ bɾə'βa.xʊ./
+      'len.də liβ 'ɾi.zən lan 'kon.ʂən lan ʂu la 'tu.ɣəɾ lan lə'na.βəɾ lin la
+      'si.ɾɪ loβ bɾə'βa.xʊ./
 
       All human beings are born free and equal in dignity and rights. They are
-endowed with reason and conscience and should act towards one another in a
-spirit of brotherhood.
+      endowed with reason and conscience and should act towards one another in a
+      spirit of brotherhood.
 
 ==Punctuation
 
@@ -237,6 +233,13 @@ you must logically follow this procedure to resolve it:
 #If splitting the syllable at the illegal consonant line would resolve the
  conflict, then split the syllable into two by adding /o/ after the first
  consonant
+
+    Morphological changes are applied in this order:
+
+#Initial root is transformed to first root form
+#Ablaut is performed
+#Reduplication is performed
+#Word is inflected according to case / tense
 
 ==First root forms
 
@@ -293,8 +296,6 @@ you must logically follow this procedure to resolve it:
 
 ===Case marking
 
-    Case marking is applied after all other morphological changes.
-
 ----------------------------------
 | **Case**          | **Suffix** |
 ----------------------------------
@@ -315,6 +316,18 @@ you must logically follow this procedure to resolve it:
 | Instrumental      | -(u)zь     |
 ----------------------------------
 
+===Plurality
+
+    Plurality is marked through reduplication of the first syllable, with the
+removal of the (if present) C3. For example:
+
+*Zobuz --- wild animal
+*Zozobuz --- wild animals
+*Monizь --- man
+*Momonizь --- men
+*Pnir --- woman
+*Pnipnir --- women
+
 ===Agent nouns
 
     Agent nouns are formed through reduplication of the last syllable, with the
@@ -325,13 +338,11 @@ removal of the C1 and (if present) C2. For example:
 *Lesьapь --- professional driving
 *Lesьapьapь --- driver
 *Kьobьet --- romantic love
-*Kьobьetet -- lover
+*Kьobьetet --- lover
 
 ==Verb morphology
 
 ===Tense marking
-
-    Tense marking is applied after all other morphological changes.
 
 ---------------------------------------
 | **Tense**              | **Suffix** |
@@ -385,8 +396,6 @@ the removal of the C1 and (if present) C2. For example:
 
 ===Case marking
 
-    Case marking is applied after all other morphological changes.
-
 -------------------------------------------
 | **Case**                   | **Suffix** |
 -------------------------------------------
@@ -407,30 +416,112 @@ the removal of the C1 and (if present) C2. For example:
 
 ===Negation
 
-TODO: write up.
+    Negation is achieved through reduplication of the first syllable, with the
+removal of the (if present) C3. For example:
+
+*Rodo --- big
+*Rorodo --- not big
+*Nozьe --- actual
+*Nonozьe --- not actual
 
 ===Intensification
 
-TODO: write up.
+    Intensification is achieved through reduplication of the last syllable, with
+the removal of the C1 and (if present) C2. For example:
+
+*Rodo --- big
+*Rododo --- stunningly massive
+*Nokьuk --- done with significant skill
+*Nokьukuk --- utterly prodigous
+*Mopьuk --- done with average skill
+*Mopьukuk --- profoundly mediocre
 
 =Pronouns
 
 ==Personal
 
----
-| **-**                 | **1sg** | **1pl** | **2sg** | **2pl** | **3sg** | **3pl** |
+-------------------------------------------------------------------------------------
+|                       | **1sg** | **1pl** | **2sg** | **2pl** | **3sg** | **3pl** |
+-------------------------------------------------------------------------------------
 | **Nominative**        | Kьa     | Kьen    | Zra     | Zren    | Ra      | Ren     |
+-------------------------------------------------------------------------------------
 | **Accusative**        | Kьopь   | Kьebь   | Zropь   | Zrebь   | Ropь    | Rebь    |
+-------------------------------------------------------------------------------------
 | **Dative**            | Kьos    | Kьez    | Zros    | Zrez    | Ros     | Rez     |
+-------------------------------------------------------------------------------------
 | **Genitive**          | Kьlat   | Kьrebь  | Zlat    | Zrebь   | Rat     | Rebь    |
+-------------------------------------------------------------------------------------
 | **Prepositional**     | Kьusь   | Kьesi   | Zrusь   | Zresi   | Rusь    | Resi    |
+-------------------------------------------------------------------------------------
 | **Vocative formal**   | Kьalto  | Kьelto  | Zralto  | Zrelto  | Ralto   | Relto   |
-| **Vocative informal** |
-| **Instrumental**      |
+-------------------------------------------------------------------------------------
+| **Vocative informal** | Kьal    | Kьel    | Zral    | Zrel    | Ral     | Rel     |
+-------------------------------------------------------------------------------------
+| **Instrumental**      | Kьonom  | Kьonesь | Zronom  | Zronesь | Ronom   | Ronesь  |
+-------------------------------------------------------------------------------------
 
 ==Possessive determiners
 
+-------------------------------------------------------------------
+|              | **1st person** | **2nd person** | **3rd person** |
+-------------------------------------------------------------------
+| **Singular** | Kьalte         | Zralte         | Ralte          |
+-------------------------------------------------------------------
+| **Plural**   | Kьunsьle       | Zrunsьle       | Runsьle        |
+-------------------------------------------------------------------
+
+=Conjunctions
+
+-------------------------------------------------------------------------------
+| **Conjunction** | **What it does**                                          |
+-------------------------------------------------------------------------------
+| Tel             | Considers two noun phrases together                       |
+-------------------------------------------------------------------------------
+| Der             | Considers a noun phrase and something else together       |
+-------------------------------------------------------------------------------
+| De              | Considers any two other grammatical structures together   |
+-------------------------------------------------------------------------------
+| Sьal            | Considers two noun phrases separately                     |
+-------------------------------------------------------------------------------
+| Zьar            | Considers a noun phrase and something else separately     |
+-------------------------------------------------------------------------------
+| Zьa             | Considers any two other grammatical structures separately |
+-------------------------------------------------------------------------------
+
+=Prepositions
+
 TODO: write up.
+
+=Examples
+
+==UN Universal Declaration of Human Rights, Article 1
+
+    Original:
+
+      **All human beings are born free and equal and should be treated the same
+      way.**
+
+      All human beings are born free and equal in dignity and rights. They are
+      endowed with reason and conscience and should act towards one another in a
+      spirit of brotherhood.
+
+    Translation:
+
+      **Lopa mamasьom sьegodan zokipьil de nozьel, de solun bьizьizь nezь.**
+
+TODO: finish writing up.
+
+    Pronunciation:
+
+TODO: finish writing up.
+
+    Gloss:
+
+TODO: finish writing up.
+
+    Translation back into English:
+
+TODO: finish writing up.
 
 =Root dictionary
 
@@ -438,6 +529,18 @@ TODO: write up.
 
 #Artisanal
 #Craftsmanship
+
+==BЬ-ZЬ-I
+
+#Relationships, relate
+#Treat in some way
+#Interconnections, clues
+
+==D-R-O
+
+#Big or massive (size)
+#Highly important
+#Unexpectedness
 
 ==ZЬ-N-E
 
@@ -473,10 +576,40 @@ TODO: write up.
 #Male
 #Masculinity
 
+==M-SЬ-M-A
+
+#Human
+#Personhood (legal or otherwise)
+
+==N-P-SЬ-I-E
+
+#Talking, conversation
+#Language
+#Linguistics or learning languages
+
+==P-L-A
+
+#Totality, everything, all
+
+==P-N-R-I
+
+#Female
+#Femininity
+
 ==R-G-D-A
 
 #Murder, killing, destruction
 #Removal, causing something to stop existing
+
+==S-L-O
+
+#Necessity, should
+
+==PЬ-K-Z-I-O
+
+#Freedom and openness
+#Availability
+#Non-infringement
 
 ==KЬ-BЬ-T-E
 
@@ -489,7 +622,33 @@ TODO: write up.
 #Passion or calling in life
 #Love for something (mockingly / fakely romantic)
 
+==SЬ-G-D-E
+
+#Birth (of a living creature)
+#Creation (of something artificial)
+#The natural life cycle
+
 ==SЬ-L-R-E
 
 #Death from natural causes, passing away
 #Inevitable decay
+
+=Fixed dictionary
+
+==Zьen kьobьetetil zobuzipь
+
+    Lit. "to be a lover of the dangerous wilderness"
+
+#To frequently engage in reckless danger for fun
+
+==Nipekob
+
+    From Nipesь + Tokob, lit. "artisanal language"
+
+#(n.) Conlang
+
+==Nipozьe
+
+    From Nipesь + Nozьe, lit. "existing language"
+
+#(n.) Natural language
