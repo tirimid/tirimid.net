@@ -27,45 +27,35 @@ not expect an immediate response.
 
 ==Interactive Pages
 
-*@[manual/genetic-platformer.html|Genetic Platformer]: A small game I made over
- a weekend where you train genetic algorithm AIs to beat obstacle courses
+*@[manual/genetic-platformer.html|Genetic Platformer]
 
 ==Developer Commentary
 
-*@[tirimid/devcj.html|The Development of Cubic Jumping]: A commentary on how I
- developed and released my standalone speedrun / rage platformer game
+*@[tirimid/devcj.html|The Development of Cubic Jumping]
+
+==Book highlights
+
+*@[tirimid/hl-fanon-black-skin-white-masks.html|Highlights for Frantz Fanon --- Black Skin, White Masks]
 
 ==Technical Works
 
-*@[tirimid/bfc.html|BFC]: A tiny brainfuck compiler that turns Brainfuck source
- input into GNU-as-compatible assembly output
-*@[tirimid/cmfc.html|CMFC]: A custom markup format / compiler I designed and
- implemented
-*@[tirimid/escl.html|escl]: A hyperminimalist privelege elevation program,
- similar to sudo or doas
-*@[tirimid/ipa-translate.html|ipa-translate]: A Rust crate for translating ASCII
- text into the International Phonetic Alphabet (IPA)
-*@[tirimid/medioed.html|medioed]: My first personal mediocre text editor
-*@[tirimid/mincbuild.html|mincbuild]: A minimal C(++) buildsystem which doesn't
- require you to learn any new technology, like a DSL
-*@[tirimid/nimped.html|nimped]: My second personal text editor
-*@[tirimid/vvsml.html|VVSML]: A very simple markup language with fun syntax and
- utterly deranged features
+*@[tirimid/bfc.html|BFC]
+*@[tirimid/cmfc.html|CMFC]
+*@[tirimid/escl.html|escl]
+*@[tirimid/ipa-translate.html|ipa-translate]
+*@[tirimid/medioed.html|medioed]
+*@[tirimid/mincbuild.html|mincbuild]
+*@[tirimid/nimped.html|nimped]
+*@[tirimid/vvsml.html|VVSML]
 
 ==Creative Works
 
-*@[tirimid/kalte-nipekob.html|Kьalte Nipekob]: A conlang I made when I had some
- free time at school
-*@[tirimid/scpsandbox.html|Old SCP Sandbox Entries]: Some of my old entries on
- the SCP Sandbox wiki which I wrote when bored at school --- custom SCPs, etc.
-*@[tirimid/quevish.html|Quevish]: A conlang based on semantic "evaluation" of a
- queue with a fairly regular and consistent syntax
-*@[tirimid/societymachine.html|Society of a Machine]: Some thoughts about the
- current state of AI technology, and our world's adoption of it
-*@[tirimid/sleeptalkerritual.html|The Sleeptalker Ritual]: A ritualpasta-style
- thing about talking to spirits by doing an intentional possession of a person
-*@[tirimid/firstrg.html|What was the First Rhythm Game?]: A short historical
- work of research, trying to figure out what the first rhythm game was
+*@[tirimid/kalte-nipekob.html|Kьalte Nipekob]
+*@[tirimid/scpsandbox.html|Old SCP Sandbox Entries]
+*@[tirimid/quevish.html|Quevish]
+*@[tirimid/societymachine.html|Society of a Machine]
+*@[tirimid/sleeptalkerritual.html|The Sleeptalker Ritual]
+*@[tirimid/firstrg.html|What was the First Rhythm Game?]
 
 ==Song translations
 
@@ -73,5 +63,4 @@ not expect an immediate response.
 
 ==Miscellaneous Pages
 
-*@[tirimid/shellcheatsheet.html|Shell Commands Cheatsheet]: A simple cheatsheet
- for Linux command line beginners, featuring some of the most used commands
+*@[tirimid/shellcheatsheet.html|Shell Commands Cheatsheet]
