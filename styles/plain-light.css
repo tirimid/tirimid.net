@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>HTTP status 404</title>
-<style>html {
+html {
 	background-color: #ffffff;
 	padding-top: 5ch;
 	padding-bottom: 5ch;
@@ -126,23 +121,3 @@ blockquote {
 	font-size: 2.5ch;
 	padding-top: 3ch;
 }
-</style>
-<link rel="icon" type="image/x-icon" href="/res/favicon.png">
-<div class="doc-title">HTTP status 404</div>
-</head>
-<body>
-<h1></h1>
-<p>The 404 HTTP status code, Not Found, is returned by the server when you try
-to access a resource that does not exist, or under rare circumstances, due to
-another server error.</p>
-<p>This is probably happening because:</p>
-<ul>
-<li>You clicked on a link that doesn&apos;t exist on tirimid.net anymore</li>
-<li>You typed the web address incorrectly and tried to access a page that never
- existed on tirimid.net</li>
-<li>You tried to access a page which has moved locations in the website&apos;s directory
- tree
-</li>
-</ul>
-</body>
-</html>

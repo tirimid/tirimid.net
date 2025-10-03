@@ -5,63 +5,58 @@ DOC-RAW-TEXT 0
 
 =About Me
 
-*Online usernames: tirimid, Tirimid, polytopelover
-*Languages I understand: English (fluent), Russian (fluent), Spanish (limited)
-*Some things I do: programming, writing, music
-
     Hello, I'm tirimid (sometimes Tirimid or polytopelover) and this is my
-personal website for publishing things I make --- which means essays, guides,
-documentation and so on. Whenever I create something that I want to put out into
-the world for others to see, I will probably create a page about it on this
-site. Obviously not everything I've ever made is something I'm comfortable with
-uploading here, so this is not a definitive catalog of my works.
-    I am strongly in favor of free software, privacy, and security. The source
-code to this website is available at @[https://github.com/tirimid/tirimid.net|its GitHub].
+personal website for publishing things I make. Obviously not everything I've
+ever made will be present here, so this is not a definitive catalog of my
+works.
     If you need to contact me for some reason, you can send an email to
 tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
 =Some of My Stuff
 
-    Well, you came to my website, so you want to see what I've made, right?
+==The Caver
 
-==Interactive Pages
-
-*@[manual/genetic-platformer.html|Genetic Platformer]
-
-==Developer Commentary
-
-*@[tirimid/devcj.html|The Development of Cubic Jumping]
-
-==Book highlights
-
-*@[tirimid/hl-fanon-black-skin-white-masks.html|Highlights for Frantz Fanon --- Black Skin, White Masks]
+*@[tirimid/caverpref.html|The Caver: A Novel (Preface)]
+*@[tirimid/caver1.html|The Caver: A Novel (First part)]
 
 ==Technical Works
 
-*@[tirimid/bfc.html|BFC]
-*@[tirimid/cmfc.html|CMFC]
-*@[tirimid/escl.html|escl]
-*@[tirimid/ipa-translate.html|ipa-translate]
-*@[tirimid/medioed.html|medioed]
-*@[tirimid/mincbuild.html|mincbuild]
-*@[tirimid/nimped.html|nimped]
-*@[tirimid/vvsml.html|VVSML]
+*@[tirimid/bfc.html|BFC] --- Small BrainFuck compiler translating BrainFuck
+ source to assembly output
+*@[tirimid/cmfc.html|CMFC] --- Custom markup format and translator used as the
+ backbone for tirimid.net
+*@[tirimid/escl.html|escl] --- Minimal privilege elevation program
+*@[manual/genetic-platformer.html|Genetic Platformer] --- Little web game and
+ browser extension where you make courses for genetic algorithm players to learn
+*@[tirimid/ipa-translate.html|ipa-translate] --- Rust library for translating
+ ASCII schemes for representing IPA text to Unicode and back
+*@[tirimid/medioed.html|medioed] --- First personal text editor I made
+*@[tirimid/mincbuild.html|mincbuild] --- Minimal C build system
+*@[tirimid/nimped.html|nimped] --- Second personal text editor I made
+*@[tirimid/devcj.html|The Development of Cubic Jumping] --- Developer commentary
+ on how I developed my platformer game Cubic Jumping
+*@[tirimid/vvsml.html|VVSML] --- Custom markup format and translator
 
-==Creative Works
+==Essays
 
-*@[tirimid/kalte-nipekob.html|Kьalte Nipekob]
-*@[tirimid/scpsandbox.html|Old SCP Sandbox Entries]
-*@[tirimid/quevish.html|Quevish]
-*@[tirimid/societymachine.html|Society of a Machine]
-*@[tirimid/sleeptalkerritual.html|The Sleeptalker Ritual]
-*@[tirimid/firstrg.html|What was the First Rhythm Game?]
+*@[tirimid/societymachine.html|Society of a Machine] --- Opinions and general
+ thoughts on the contemporary state of "AI"
+*@[tirimid/firstrg.html|What was the First Rhythm Game?] --- Work of research on
+ the origin of rhythm games
 
-==Song translations
+==Freestanding Creative Works
 
-*@[tirimid/nazhmi-na-knopku.html|Translation of Нажми На Кнопку (Press the Button)]
+*@[tirimid/kalte-nipekob.html|Kьalte Nipekob] --- Constructed language
+*@[tirimid/scpsandbox.html|Old SCP Sandbox Entries] --- Collected entries from
+ my SCP Sandbox that I'd write when bored at school
+*@[tirimid/quevish.html|Quevish] --- Constructed language
+*@[tirimid/sleeptalkerritual.html|The Sleeptalker Ritual] --- Old
+ ritualpasta-style fake guide on talking to spirits by posessing a person
 
-==Miscellaneous Pages
+==Miscellaneous pages
 
+*@[tirimid/hl-fanon-black-skin-white-masks.html|Highlights for Frantz Fanon --- Black Skin, White Masks]
 *@[tirimid/ibgeonotes.html|IB Geography Notes]
 *@[tirimid/shellcheatsheet.html|Shell Commands Cheatsheet]
+*@[tirimid/nazhmi-na-knopku.html|Translation of Нажми На Кнопку (Press the Button)]
