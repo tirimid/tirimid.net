@@ -1,5 +1,6 @@
 DOC-TITLE Shell Commands Cheatsheet
 DOC-CREATED 2025-02-21
+DOC-REVISED 2025-10-20
 
 =
 
@@ -44,6 +45,7 @@ with capital letters and surrounded with angle brackets, `<LIKE THIS>`.
 -------------------------------------------------------------------
 |`$ sudo <COMMAND>`   |Run a command with elevated privileges     |
 -------------------------------------------------------------------
+| `$ mv <>
 
 =Compiling code
 
