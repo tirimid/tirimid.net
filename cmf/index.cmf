@@ -22,39 +22,29 @@ not expect an immediate response.
 
 ==Technical Works
 
-*@[tirimid/bfc.html|BFC] --- Small BrainFuck compiler translating BrainFuck
- source to assembly output
-*@[tirimid/cmfc.html|CMFC] --- Custom markup format and translator used as the
- backbone for tirimid.net
+*@[tirimid/bfc.html|BFC] --- Small BrainFuck compiler translating BrainFuck source to assembly output
+*@[tirimid/cmfc.html|CMFC] --- Custom markup format and translator used as the backbone for tirimid.net
 *@[tirimid/escl.html|escl] --- Minimal privilege elevation program
-*@[manual/genetic-platformer.html|Genetic Platformer] --- Little web game and
- browser extension where you make courses for genetic algorithm players to learn
-*@[tirimid/ipa-translate.html|ipa-translate] --- Rust library for translating
- ASCII schemes for representing IPA text to Unicode and back
+*@[manual/genetic-platformer.html|Genetic Platformer] --- Little web game and browser extension where you make courses for genetic algorithm players to learn
+*@[tirimid/ipa-translate.html|ipa-translate] --- Rust library for translating ASCII schemes for representing IPA text to Unicode and back
 *@[tirimid/medioed.html|medioed] --- First personal text editor I made
 *@[tirimid/mincbuild.html|mincbuild] --- Minimal C build system
 *@[tirimid/nimped.html|nimped] --- Second personal text editor I made
-*@[tirimid/devcj.html|The Development of Cubic Jumping] --- Developer commentary
- on how I developed my platformer game Cubic Jumping
+*@[tirimid/devcj.html|The Development of Cubic Jumping] --- Developer commentary on how I developed my platformer game Cubic Jumping
 *@[tirimid/vvsml.html|VVSML] --- Custom markup format and translator
 
 ==Essays
 
-*@[tirimid/societymachine.html|Society of a Machine] --- Opinions and general
- thoughts on the contemporary state of "AI"
-*@[tirimid/firstrg.html|What was the First Rhythm Game?] --- Work of research on
- the origin of rhythm games
+*@[tirimid/societymachine.html|Society of a Machine] --- Opinions and general thoughts on the contemporary state of "AI"
+*@[tirimid/firstrg.html|What was the First Rhythm Game?] --- Work of research on the origin of rhythm games
 
 ==Freestanding Creative Works
 
 *@[tirimid/kalte-nipekob.html|Kьalte Nipekob] --- Constructed language
-*@[tirimid/scpsandbox.html|Old SCP Sandbox Entries] --- Collected entries from
- my SCP Sandbox that I'd write when bored at school
+*@[tirimid/scpsandbox.html|Old SCP Sandbox Entries] --- Collected entries from my SCP Sandbox that I'd write when bored at school
 *@[tirimid/quevish.html|Quevish] --- Constructed language
-*@[tirimid/sleeptalkerritual.html|The Sleeptalker Ritual] --- Old
- ritualpasta-style fake guide on talking to spirits by posessing a person
-*@[tirimid/poshli-v-magazin.html|Пошли в Магазин] --- Let's go to the store to
- get carrots and cabbage
+*@[tirimid/sleeptalkerritual.html|The Sleeptalker Ritual] --- Old ritualpasta-style fake guide on talking to spirits by posessing a person
+*@[tirimid/radi-supa.html|Ради Супа] --- Let's go to the store to get carrots and cabbage
 
 ==Miscellaneous pages
 
