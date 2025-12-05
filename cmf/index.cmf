@@ -3,7 +3,7 @@ DOC-RAW-TEXT 1
 DOC-FAVICON /res/favicon.png
 DOC-RAW-TEXT 0
 
-=About Me
+=About me
 
     Hello, I'm tirimid (sometimes Tirimid or polytopelover) and this is my
 personal website for publishing things I make. Obviously not everything I've
@@ -13,14 +13,14 @@ works.
 tirimid@tirimid.net. I usually check this mailbox at least once a day, but do
 not expect an immediate response.
 
-=Some of My Stuff
+=Some of my stuff
 
-==The Caver
+==The caver
 
-*@[tirimid/caverpref.html|The Caver: A Novel (Preface)]
-*@[tirimid/caver1.html|The Caver: A Novel (First part)]
+*@[tirimid/caverpref.html|The caver: A novel (preface)]
+*@[tirimid/caver1.html|The caver: A novel (first part)]
 
-==Technical Works
+==Technical works
 
 *@[tirimid/bfc.html|BFC] --- Small BrainFuck compiler translating BrainFuck source to assembly output
 *@[tirimid/cmfc.html|CMFC] --- Custom markup format and translator used as the backbone for tirimid.net
@@ -30,15 +30,15 @@ not expect an immediate response.
 *@[tirimid/medioed.html|medioed] --- First personal text editor I made
 *@[tirimid/mincbuild.html|mincbuild] --- Minimal C build system
 *@[tirimid/nimped.html|nimped] --- Second personal text editor I made
-*@[tirimid/devcj.html|The Development of Cubic Jumping] --- Developer commentary on how I developed my platformer game Cubic Jumping
+*@[tirimid/devcj.html|The development of cubic jumping] --- Developer commentary on how I developed my platformer game Cubic Jumping
 *@[tirimid/vvsml.html|VVSML] --- Custom markup format and translator
 
 ==Essays
 
-*@[tirimid/societymachine.html|Society of a Machine] --- Opinions and general thoughts on the contemporary state of "AI"
-*@[tirimid/firstrg.html|What was the First Rhythm Game?] --- Work of research on the origin of rhythm games
+*@[tirimid/societymachine.html|Society of a machine] --- Opinions and general thoughts on the contemporary state of "AI"
+*@[tirimid/firstrg.html|What was the first rhythm game?] --- Work of research on the origin of rhythm games
 
-==Freestanding Creative Works
+==Freestanding creative works
 
 *@[tirimid/kalte-nipekob.html|Kьalte Nipekob] --- Constructed language
 *@[tirimid/scpsandbox.html|Old SCP Sandbox Entries] --- Collected entries from my SCP Sandbox that I'd write when bored at school
