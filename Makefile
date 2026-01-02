@@ -3,9 +3,9 @@
 CMF_FILES := $(shell find cmf -type f -name "*.cmf")
 HTML_FILES := $(patsubst cmf/%.cmf,html/%.html,$(CMF_FILES))
 
-BASE_STYLE := plain-light
-TIRIMID_STYLE := plain-light
-CHETRUCHMY_STYLE := plain-light
+BASE_STYLE := leftward
+TIRIMID_STYLE := leftward
+CHETRUCHMY_STYLE := leftward
 
 all: $(HTML_FILES)
 	cp -r html/* .
